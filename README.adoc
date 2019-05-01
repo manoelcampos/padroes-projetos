@@ -1,1 +1,5 @@
-= padroes-projetos
+= Padrões de Projeto em Java
+
+= Material Complementar
+
+Uma lista de materais complementares está disponível na https://github.com/manoelcampos/padroes-projetos/wiki[Wiki].
