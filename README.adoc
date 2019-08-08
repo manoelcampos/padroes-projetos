@@ -1,5 +1,15 @@
 = Padrões de Projeto em Java
 
-= Material Complementar
+== Categorias de Padrões
+
+=== Padrões Comportamentais
+
+- link:strategy.adoc[Strategy]
+
+=== Padrões Estruturais
+
+=== Padrões Criacionais
+
+== Material Complementar
 
 Uma lista de materais complementares está disponível na https://github.com/manoelcampos/padroes-projetos/wiki[Wiki].
