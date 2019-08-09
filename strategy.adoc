@@ -103,14 +103,13 @@ image:retorno-boleto-class-diagram.png[]
 Mesmo que uma classe não tenha um determinado comportamento, como o definido pela interface `ComportamentoA`, haverá uma associação entre a classe e o comportamento.
 Se a classe não precisar de uma implementação de tal comportamento, o atributo que representa a associação pode estar nulo. Ao tentar usar o comportamento é gerada a exceção `NullPointerException`.
 
-Para resolver isso, podemos criar uma classe que implemente o comportamento, mas que tenha uma implementação vazia, não fazendo nada.
-Isto normalmente pode ser implementado pelo padrão Null Object que veremos posteriormente.
+Para resolver isso, podemos criar uma classe que tenha uma implementação vazia para o comportamento, ou seja, que não faz nada. Isto normalmente pode ser implementado pelo padrão Null Object que veremos posteriormente.
 
 === Modelagem utilizando Programação Funcional
 
-Observando o diagrama base para a implementação do padrão Strategy, pode-se perceber que são criadas muitas classes e interfaces. Cada classes implementando essas interfaces não possuem atributos e têm apenas um único método que representa a implementaçãoo em si da estratégia.
+Observando o diagrama base para a implementação do padrão Strategy, pode-se perceber que são criadas muitas classes e interfaces. As classes implementando essas interfaces não possuem atributos e têm apenas um único método que representa a implementação da estratégia em si.
 
-Graças à Programação Funcional em diversas linguagens como Java 8+, JavaScript, PHP, Phython e outras, podemos simplificar este diagrama, e consequentemente a implementação, drasticamente como mostra a figura a seguir.
+Graças à Programação Funcional em diversas linguagens como Java 8+, JavaScript, PHP, Phython e outras, podemos simplificar este diagrama, e consequentemente a implementação, como mostra a figura a seguir.
 
 image:strategy-base-funcional-class-diagram.png[]
 
@@ -123,22 +122,22 @@ Se precisarmos fazer a super classe ou qualquer subclasse usar um comportamento 
 `Function` é uma das interfaces em Java 8+ que permite representar métodos isolados e armazenar referências deles em variáveis. 
 Estas são chamadas de interfaces funcionais.
 
-Em linguagens distintas, a forma de implementar o padrão strategy usando programação funcional é diferente.
+Em linguagens distintas, a forma de implementar o padrão Strategy usando programação funcional é diferente.
 
 == Modelagem convencional sem o padrão Strategy
 
-A modelagem convencional de diferentes comportamentos sem o uso do padrão Strategy requer o uso de herança para os diferentes comportamentos e é visualmente mais simples.
-No entanto, tal implementação tem algumas características que podem ser um problema, dependendo dos requisitos do seu sistema, por não permitir:
+A modelagem convencional de diferentes comportamentos sem a aplicação do padrão Strategy requer o uso de herança para os diferentes comportamentos e é visualmente mais simples.
+No entanto, tal implementação tem algumas características que podem ser um problema (ou não), dependendo dos requisitos do seu sistema, por não permitir:
 
 - alterar um comportamento em tempo de execução;
-- comportilhar implementações de um mesmo comportamento entre diferentes classes filhas, levando à duplicação de código (que deve ser evitado ao máximo);
+- compartilhar implementações de um mesmo comportamento entre diferentes classes filhas, levando à duplicação de código (que deve ser evitado ao máximo);
 - combinar comportamentos distintos em um só, reaproveitando código.
 
 image:no-strategy-class-diagram.png[]
 
 == Onde o padrão é usado no JDK
 
-Um forma de identificar a aplicação do padrão Strategy quando estiver usando as classes do JDK é quando um método *requer uma interface que possui apenas um método a ser implementado*. Estas são chamadas de interfaces funcionais a partir do Java 8 (que possivelmente estão anotadas com `@FunctionalInterface`). A implementação de tal interface não é fornecida pelo JDK mas por você.
+Um forma de identificar a aplicação do padrão Strategy nas classes do JDK que você usa é quando um método *requer uma interface que possui apenas um método a ser implementado*. Estas são chamadas de interfaces funcionais a partir do Java 8 (que possivelmente estão anotadas com `@FunctionalInterface`). A implementação de tal interface não é fornecida pelo JDK mas por você.
 Você deve então fornecer um algoritmo (função) que será executado pela classe que estiver utilizando o padrão.
 
 === List.sort(Comparator<T> comparator)
@@ -154,10 +153,13 @@ uma lista de uma maneira e posteriormente decidirmos que queremos ordenar de out
 
 == Exercícios
 
-Considere que temos um sistema de vendas onde existem diferentes formas de desconto podem ser implementadas de acordo as promoções vigentes, como em datas comemorativas.
+Considere que temos um sistema de vendas onde diferentes formas de desconto podem ser implementadas de acordo as promoções vigentes, como em datas comemorativas.
 O sistema deve permitir o cálculo do desconto sobre a venda das seguintes maneiras:
 
 - percentual de desconto definido (que pode vir de um banco de dados);
 - percentual de desconto progressivo: `valor da compra/25`, não podendo ultrapassar 20%;
 - desconto de 15% na data de aniversário do cliente;
 // - desconto de 20% no segundo item do mesmo produto.
+
+E como poderíamos implementar estes tipos de desconto sem utilizar Padrões de Projetos?
+Quais os problemas que tal implementação traria?
