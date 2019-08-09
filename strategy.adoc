@@ -99,7 +99,7 @@ Um diagrama de classes para tal implementação pode ser como abaixo.
 
 image:retorno-boleto-class-diagram.png[]
 
-=== Possíveis Problemas
+=== Possíveis Problemas do Padrão
 
 Mesmo que uma classe não tenha um determinado comportamento, como o definido pela interface `ComportamentoA`, haverá uma associação entre a classe e o comportamento.
 Se a classe não precisar de uma implementação de tal comportamento, o atributo que representa a associação pode estar nulo. Ao tentar usar o comportamento é gerada a exceção `NullPointerException`.
@@ -136,3 +136,29 @@ No entanto, tal implementação tem algumas características que podem ser um pr
 - combinar comportamentos distintos em um só, reaproveitando código.
 
 image:no-strategy-class-diagram.png[]
+
+== Onde o padrão é usado no JDK
+
+Um forma de identificar a aplicação do padrão Strategy quando estiver usando as classes do JDK é quando um método *requer uma interface que possui apenas um método a ser implementado*. Estas são chamadas de interfaces funcionais a partir do Java 8 (que possivelmente estão anotadas com `@FunctionalInterface`). A implementação de tal interface não é fornecida pelo JDK mas por você.
+Você deve então fornecer um algoritmo (função) que será executado pela classe que estiver utilizando o padrão.
+
+=== List.sort(Comparator<T> comparator)
+
+Tal método da interface List permite ordenar os valores dentra da lista.
+`Comparator` é uma interface cujas implementações representam as estratégias de ordenação de uma lista. `Comparator` é uma interface funcional, logo, conseguimos usar programação funcional para implementar as estratégias apenas criando-se funções. Assim, não temos que obrigatoriamente criar uma classe para cada estratégia. Como podemos implementar ordenação de uma infinidade de maneiras como:
+
+- por ordem alfabética crescente ou descrescente;
+- utilizando algoritmos mais ou menos eficientes como Bubble Sort, Shell Sort, Quick Sort, etc
+
+usar o padrão Strategy aqui faz todo o sentido. Podemos inclusive em um momento ordenar
+uma lista de uma maneira e posteriormente decidirmos que queremos ordenar de outra maneira.
+
+=== Exercícios
+
+Considere que temos um sistema de vendas onde existem diferentes formas de desconto podem ser implementadas de acordo as promoções vigentes, como em datas comemorativas.
+O sistema deve permitir o cálculo do desconto sobre a venda das seguintes maneiras:
+
+- percentual de desconto definido (que pode vir de um banco de dados);
+- percentual de desconto progressivo: `valor da compra/25`, não podendo ultrapassar 20%;
+- desconto de 15% na data de aniversário do cliente;
+// - desconto de 20% no segundo item do mesmo produto.
