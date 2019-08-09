@@ -62,7 +62,7 @@
 											"top": 151,
 											"width": 215.68701171875,
 											"height": 13,
-											"text": "SuperClasse"
+											"text": "Estrategista"
 										},
 										{
 											"_type": "LabelView",
@@ -2801,7 +2801,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFsbYESIqkO0eE="
 					},
-					"name": "SuperClasse",
+					"name": "Estrategista",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -5097,7 +5097,7 @@
 											"top": 143,
 											"width": 160.4052734375,
 											"height": 13,
-											"text": "SuperClasse"
+											"text": "Estrategista"
 										},
 										{
 											"_type": "LabelView",
@@ -5814,7 +5814,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFscrgRdLkBd9M="
 					},
-					"name": "SuperClasse",
+					"name": "Estrategista",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
@@ -5945,7 +5945,7 @@
 											"top": 199,
 											"width": 183.1552734375,
 											"height": 13,
-											"text": "SuperClasse"
+											"text": "NaoEstrategista"
 										},
 										{
 											"_type": "LabelView",
@@ -6679,7 +6679,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFsctgQ6rqgB1M="
 					},
-					"name": "SuperClasse",
+					"name": "NaoEstrategista",
 					"operations": [
 						{
 							"_type": "UMLOperation",

@@ -34,17 +34,16 @@ Pode ser aplicado quando:
 
 image::strategy-base-class-diagram.png[]
 
-A `SuperClasse` é que que irá usar as estratégias, que são representadas pelas classes que implementam os comportamentos.
+A classe `Estrategista` é que que irá usar as estratégias, que são representadas pelas classes que implementam os comportamentos.
 Cada comportamento (estratégia) é normalmente definido como uma interface. Assim, podem existir N implementações de cada comportamento (diferentes estratégias).
 
-Perceba que a relação entre a `SuperClasse` e os comportamentos não é herança, mas pode ser uma associação normal, composição ou agregação. Cada comportamento não é implementado como uma subclasse da `SuperClasse`, cada tipo de comportamento estará contido como um atributo dentro da `SuperClasse`. Por isso é comum representar como agregação/composição. Definindo o comportamento como atributo é que nos permite alterar em tempo de execução sua implementação.
+Perceba que a relação entre a `Estrategista` e os comportamentos não é herança, mas pode ser uma associação normal, composição ou agregação. Cada comportamento não é implementado como uma subclasse da `Estrategista`, cada tipo de comportamento estará contido como um atributo dentro da `Estrategista`. Por isso é comum representar como agregação/composição. Definindo o comportamento como atributo é que nos permite alterar em tempo de execução sua implementação.
 
 O comportamento em si é definido por um método na interface. No exemplo, o método é `executarComportamentoA()` para o `ComportamentoA`. O nome do método é o desenvolvedor quem define, normalmente sendo um nome que faça sentido para o sistema.
 A assinatura do método também é livre. Neste exemplo o método não recebe parâmetros e retorna um tipo genérico `T`. O tipo do retorno vai depender das suas necessidades. Veja os exemplos concretos na seção a seguir.
 
-Podem existir diferentes classes filhas desta `SuperClasse`. Cada classe filha podem ter comportamentos diferentes umas das outras.
+Podem existir diferentes classes filhas desta `Estrategista`. Cada classe filha podem ter comportamentos diferentes umas das outras.
 Com o padrão Strategy, o comportamento de qualquer classe (mãe ou filha) pode mudar em tempo de execução, de acordo com os requisitos do sistema.
-
 
 === Princípios utilizados
 
@@ -153,7 +152,7 @@ Tal método da interface List permite ordenar os valores dentra da lista.
 usar o padrão Strategy aqui faz todo o sentido. Podemos inclusive em um momento ordenar
 uma lista de uma maneira e posteriormente decidirmos que queremos ordenar de outra maneira.
 
-=== Exercícios
+== Exercícios
 
 Considere que temos um sistema de vendas onde existem diferentes formas de desconto podem ser implementadas de acordo as promoções vigentes, como em datas comemorativas.
 O sistema deve permitir o cálculo do desconto sobre a venda das seguintes maneiras:
