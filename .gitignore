@@ -1,2 +1,6 @@
 ~$*
 *.mp4
+
+#IntelliJ Files
+*.iml
+.idea
