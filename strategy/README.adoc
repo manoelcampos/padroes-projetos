@@ -98,6 +98,12 @@ Um diagrama de classes para tal implementação pode ser como abaixo.
 
 image:retorno-boleto-class-diagram.png[]
 
+===== Código Fonte
+
+O código fonte com uma implementação de exemplo pode ser obtido link:retorno-boleto[aqui].
+Tente primeiro fazer sua implementação a partir da leitura do diagrama,
+para depois analisar o código disponibilizado.
+
 === Possíveis Problemas do Padrão
 
 Mesmo que uma classe não tenha um determinado comportamento, como o definido pela interface `ComportamentoA`, haverá uma associação entre a classe e o comportamento.

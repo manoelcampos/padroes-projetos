@@ -22,6 +22,15 @@ public class ProcessarBoletos {
         this.leituraRetorno = leituraRetorno;
     }
 
+    /**
+     * Realiza de fato o processamento de um dado arquivo de retorno de boleto bancário,
+     * utilizando uma estratégia definida em {@link #leituraRetorno}.
+     * Este método pode realizar diversas operações após a leitura do arquivo,
+     * como gravar dados em um banco, enviar emails de notificação, etc.
+     * Neste caso, por simplificação, estamos apenas imprimindo os dados no terminal.
+     *
+     * @param nomeArquivo Nome do arquivo a ser lido
+     */
     public void processar(String nomeArquivo){
         System.out.println("Boletos");
         System.out.println("----------------------------------------------------------------------------------");
@@ -31,6 +40,10 @@ public class ProcessarBoletos {
         }
     }
 
+    /**
+     * Altera a estratégia a ser utilizada para leitura de arquivos de retorno de boletos bancários.
+     * @param leituraRetorno nova estratégia a ser utilizada
+     */
     public void setLeituraRetorno(LeituraRetorno leituraRetorno) {
         this.leituraRetorno = leituraRetorno;
     }
