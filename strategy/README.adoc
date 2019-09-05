@@ -70,27 +70,27 @@ NOTE: Apesar de atualmente termos formatos de arquivos mais utilizados como JSON
 
 Para este exemplo, vamos considerar que o Banco do Brasil usa um tipo de arquivo onde cada linha com as informações sobre o pagamento de um boleto contém os seguintes campos, separados por ponto-e-vírgula:
 
-- id do boleto com 10 dígitos
-- código do banco onde o boleto foi pago, com 3 dígitos
-- data vencimento no formato dd/mm/yyyy
-- data pagamento no formato dd/mm/yyyy
-- CPF do cliente com 11 dígitos (sem . e -)
-- valor do boleto no formato decimal 10.2
-- multa por atraso no formato decimal 10.2
-- juros no formato no formato decimal 10.2
+1. id do boleto com 10 dígitos
+1. código do banco onde o boleto foi pago, com 3 dígitos
+1. data vencimento no formato dd/mm/yyyy
+1. data pagamento no formato dd/mm/yyyy
+1. CPF do cliente com 11 dígitos (sem . e -)
+1. valor do boleto no formato decimal 10.2
+1. multa por atraso no formato decimal 10.2
+1. juros no formato no formato decimal 10.2
 
 Mas digamos que você também precisa receber arquivos do Bradesco que possui o seguinte formato:
 
-- id do boleto com 10 dígitos
-- código do banco onde o boleto foi pago, com 3 dígitos
-- *agência onde o boleto foi pago, com 6 dígitos
-- *conta do cliente para possível extorno de pagamento, com 9 dígitos
-- data vencimento no formato dd/mm/yyyy
-- *data/hora pagamento no formato dd/mm/yyyy hh:nn:ss
-- *CPF do cliente com 11 dígitos (com . e -)
-- valor do boleto no formato decimal 10.2
-- multa por atraso no formato decimal 10.2
-- juros no formato no formato decimal 10.2
+1. id do boleto com 10 dígitos
+1. código do banco onde o boleto foi pago, com 3 dígitos
+1. *agência onde o boleto foi pago, com 6 dígitos
+1. *conta do cliente para possível extorno de pagamento, com 9 dígitos
+1. data vencimento no formato dd/mm/yyyy
+1. *data/hora pagamento no formato dd/mm/yyyy hh:nn:ss
+1. *CPF do cliente com 11 dígitos (com . e -)
+1. valor do boleto no formato decimal 10.2
+1. multa por atraso no formato decimal 10.2
+1. juros no formato no formato decimal 10.2
 
 *__Campos adicionais ou diferentes do formato anterior.__
 
@@ -111,7 +111,53 @@ Se a classe não precisar de uma implementação de tal comportamento, o atribut
 
 Para resolver isso, podemos criar uma classe que tenha uma implementação vazia para o comportamento, ou seja, que não faz nada. Isto normalmente pode ser implementado pelo padrão Null Object que veremos posteriormente.
 
-=== Modelagem utilizando Programação Funcional
+Se a classe estrategista é obrigada a ter um determinado comportamento,
+para evitar `NullPointerException`, podemos não incluir um construtor sem parâmetros e inclui um que exija uma implementação de estratégia a ser usada.
+
+== Modelagem convencional sem o padrão Strategy
+
+A modelagem convencional de diferentes comportamentos sem a aplicação do padrão Strategy requer o uso de herança para os diferentes comportamentos e é visualmente mais simples.
+No entanto, tal implementação tem algumas características que podem ser um problema (ou não), dependendo dos requisitos do seu sistema, por não permitir:
+
+- alterar um comportamento em tempo de execução;
+- compartilhar implementações de um mesmo comportamento entre diferentes classes filhas, levando à duplicação de código (que deve ser evitado ao máximo);
+- combinar comportamentos distintos em um só, reaproveitando código.
+
+image:no-strategy-class-diagram.png[]
+
+=== Como não implementar uma solução para um problema
+
+Uma implementação de uma solução sem utilizar o padrão Strategy normalmente é por meio de uma única classe, a qual chamaremos de `NaoEstrategista`. Não há nem ao menos um diagrama, pois a solução seria composta de fato apenas por esta classe. Tal classe então teria métodos como `T executarComportamentoA()`. Todas as implementações deste "Comportamento A" seriam incluídas no método citado.
+
+Para o exemplo do retorno de boletos bancários, isto significa que tal método seria algo como:
+
+[source,java]
+----
+public void processar(String nomeArquivo){
+    if(nomeArquivo.contains("banco-brasil")){
+        //processa arquivo do Banco do Brasil
+    }
+    else if(nomeArquivo.contains("bradesco")){
+        //processa arquivo do Bradesco
+    }
+}
+----
+
+Tal código é extremamente mais simples. Tem uma única classe e tudo é feito em um único método.
+Apesar de parecer muito melhor por simplificar as coisas e dar a impressão que estamos usando o princípio https://pt.wikipedia.org/wiki/Princípio_KISS[KISS], não chamaria esta solução de simples, mas simplista e ingênua. Soluções simplistas normalmente vão lhe trazer dores de cabeça para manutenção do software.
+
+Considerando que podemos ter diferentes formatos de arquivos para bancos distintos e que precisamos processar arquivos de vários bancos, esta solução apresenta alguns problemas. O método `processar`:
+
+- vai ficar longo e possivelmente confuso;
+- não tem uma única responsabilidade (viola o princípio https://en.wikipedia.org/wiki/Single_responsibility_principle[SRP]), pois ele processa arquivos de diferentes bancos, no lugar de processar arquivos de um banco específico;
+- cada vez que um novo banco precisar ser incluído, o código precisará ser alterado (viola o princípio https://en.wikipedia.org/wiki/Open–closed_principle[OCP]).
+
+O problema da violação do OCP é o mais problemático aqui. O uso de _if's_ (ou qualquer estrutura condicional como `switch`) para decidir qual algoritmo será executado em cada situação deixa claro que uma nova condição precisará ser adicionada sempre que um novo banco precisar ser suportado. Se em outros lugares do sistema você precisa realizar outras tarefas com estes arquivos de retorno, tende-se a repetir esta mesma cadeia de _if's_. 
+Se por acaso em um lugar do sistema você precisa processar os arquivos e incluir os dados em um banco de dados e em outro você precisa processar e gerar PDFs com comprovantes de pagamentos ou enviar emails de notificação, em cada um desses locais você precisará deste bloco de _if's_.
+O problema surge quando você precisar incluir um novo banco e tiver que incluir um novo _if_ em cada um desses locais.
+Você pode simplesmente esquecer de adicionar tal _if_ em todos os locais necessários e o recurso funcionar em parte do sistema e em outras partes não.
+
+=== Modelagem do Padrão utilizando Programação Funcional
 
 Observando o diagrama base para a implementação do padrão Strategy, pode-se perceber que são criadas muitas classes e interfaces. As classes implementando essas interfaces não possuem atributos e têm apenas um único método que representa a implementação da estratégia em si.
 
@@ -129,17 +175,6 @@ Se precisarmos fazer a super classe ou qualquer subclasse usar um comportamento 
 Estas são chamadas de interfaces funcionais.
 
 Em linguagens distintas, a forma de implementar o padrão Strategy usando programação funcional é diferente.
-
-== Modelagem convencional sem o padrão Strategy
-
-A modelagem convencional de diferentes comportamentos sem a aplicação do padrão Strategy requer o uso de herança para os diferentes comportamentos e é visualmente mais simples.
-No entanto, tal implementação tem algumas características que podem ser um problema (ou não), dependendo dos requisitos do seu sistema, por não permitir:
-
-- alterar um comportamento em tempo de execução;
-- compartilhar implementações de um mesmo comportamento entre diferentes classes filhas, levando à duplicação de código (que deve ser evitado ao máximo);
-- combinar comportamentos distintos em um só, reaproveitando código.
-
-image:no-strategy-class-diagram.png[]
 
 == Onde o padrão é usado no JDK
 

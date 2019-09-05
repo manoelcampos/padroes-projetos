@@ -1,4 +1,6 @@
+import com.manoelcampos.retornoboleto.LeituraRetorno;
 import com.manoelcampos.retornoboleto.LeituraRetornoBancoBrasil;
+import com.manoelcampos.retornoboleto.LeituraRetornoBradesco;
 import com.manoelcampos.retornoboleto.ProcessarBoletos;
 
 /**
@@ -11,7 +13,7 @@ public class Principal {
         /*Instancia o objeto estrategista ProcessarBoletos,
         * indicando qual estratégia de leitura de boletos ele vai usar agora.
         * Neste caso, estamos iniciando com a leitura de boletos do Banco do Brasil.*/
-        ProcessarBoletos processar = new ProcessarBoletos(new LeituraRetornoBancoBrasil());
+        final ProcessarBoletos processar = new ProcessarBoletos(new LeituraRetornoBancoBrasil());
 
         /*No lugar de passar o caminho absoluto do arquivo a ser lido (que pode mudar e vai fazer
         * com que a aplicação não funcione em qualquer máquina, sem atualizar o caminho),

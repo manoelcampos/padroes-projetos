@@ -9,6 +9,7 @@ Utilize o http://staruml.io[StarUML 3+] para abrir o arquivo.
 === Padrões Comportamentais
 
 - link:strategy/[Strategy]
+- link:template-method/[Template Method]
 
 === Padrões Estruturais
 

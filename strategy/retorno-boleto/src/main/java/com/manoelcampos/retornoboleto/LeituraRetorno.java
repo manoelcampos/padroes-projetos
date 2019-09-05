@@ -1,5 +1,6 @@
 package com.manoelcampos.retornoboleto;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -9,5 +10,7 @@ import java.util.List;
  * @author Manoel Campos da Silva Filho
  */
 public interface LeituraRetorno {
+    DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     List<Boleto> lerArquivo(String nomeArquivo) ;
 }

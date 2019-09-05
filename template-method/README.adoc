@@ -1,0 +1,75 @@
+:imagesdir: ../images/patterns/
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Comportamentais (Behavioural Design Patterns)
+
+== Template Method (Método Modelo)
+
+=== Definição
+
+"O padrão Template Method define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos para as subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>.
+
+
+
+=== Aplicabilidade
+
+Pode ser aplicado quando:
+
+
+=== Modelagem do Padrão
+
+image:template-method-base.png[]
+
+=== Princípios utilizados
+
+- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], pois separa as partes que mudam (os comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
+- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. 
+
+=== Exemplos
+
+==== xxxxxx
+
+xxxxxxx
+
+Um diagrama de classes para tal implementação pode ser como abaixo.
+
+image:-class-diagram.png[]
+
+===== Código Fonte
+
+O código fonte com uma implementação de exemplo pode ser obtido [aqui].
+Tente primeiro fazer sua implementação a partir da leitura do diagrama,
+para depois analisar o código disponibilizado.
+
+=== Possíveis Problemas do Padrão
+
+
+=== Modelagem utilizando Programação Funcional
+
+xxxx
+
+image:.png[]
+
+
+== Modelagem convencional sem o padrão Template Method
+
+
+image:-class-diagram.png[]
+
+== Onde o padrão é usado no JDK
+
+
+== Exercícios
+
+Qual a diferença entre Strategy e Template Method, já que os dois estão relacionados a algoritmos?
