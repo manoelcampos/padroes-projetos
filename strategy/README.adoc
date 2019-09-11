@@ -161,20 +161,42 @@ Você pode simplesmente esquecer de adicionar tal _if_ em todos os locais necess
 
 Observando o diagrama base para a implementação do padrão Strategy, pode-se perceber que são criadas muitas classes e interfaces. As classes implementando essas interfaces não possuem atributos e têm apenas um único método que representa a implementação da estratégia em si.
 
-Graças à Programação Funcional em diversas linguagens como Java 8+, JavaScript, PHP, Phython e outras, podemos simplificar este diagrama, e consequentemente a implementação, como mostra a figura a seguir.
+Graças à Programação Funcional em diversas linguagens como Java 8+, JavaScript, Phython e outras, podemos simplificar este diagrama, e consequentemente a implementação, como mostra a figura a seguir.
 
 image:strategy-base-funcional-class-diagram.png[]
 
-Observe que não temos mais as interfaces e classes específicas dos comportamentos.
-Como cada comportamento nada mais é do que a implementação de um método (como o `executarComportamentoA()` do primeiro diagrama), podemos ter um atributo, na classe que usará tais comportamentos, que é simplesmente uma referência (um ponteiro, link) para o método a ser utilizado. 
+Observe que não temos mais as interfaces e classes específicas dos comportamentos. Cada comportamento nada mais é do que a implementação de um método (como o `executarComportamentoA()` do primeiro diagrama). O que precisamos de fato é permitir a troca da implementação de tal método em tempo de execução. Mas para isso, usando Programação Orientada a Objetos, tivemos que primeiro criar um conjunto de classes e interfaces pra isso. 
 
-Assim, o atributo como `comportamentoA` é do tipo `Function`, um tipo básico do Java 8+ que indica que o atributo não armazena dados, mas sim uma referência para um método que a classe pode chamar. Sendo que a referência para o método está armazenada em um atributo, se tivermos um método como o `comportamentoA1` mostrado no primeiro diagrama, podemos armazenar uma referência para tal método no atributo `comportamentoA`.
+Usando Programação Funcional podemos armazenar uma função em uma variável, no lugar de ter que armazenar um objeto inteiro que possui apenas um único método. A partir de tal variável, podemos então chamar a função. Se uma nova função for atribuída a tal variável, quando usarmos a variável novamente, estaremos chamando esta nova função, como espera-se que o padrão Strategy funcione.
+
+No diagrama, o atributo como `comportamentoA` é do tipo `Function`, uma interface do Java 8+ (dentro muitas outras) que indica que o atributo contém uma referência para um método que a classe pode chamar, no lugar de armazenar um dado primitivo ou objeto convencional. Sendo que a referência para o método está armazenada em um atributo, se tivermos um método como o `comportamentoA1` mostrado no primeiro diagrama, podemos armazenar uma referência para tal método no atributo `comportamentoA`.
 Se precisarmos fazer a super classe ou qualquer subclasse usar um comportamento diferente, podemos atribuir, por exemplo, o método `comportamentoA2` ao atributo `comportamentoA` em tempo de execução.
 
 `Function` é uma das interfaces em Java 8+ que permite representar métodos isolados e armazenar referências deles em variáveis. 
-Estas são chamadas de interfaces funcionais.
+Estas são chamadas de interfaces funcionais. Lembre-se que interfaces são como tipos. Assim como uma variável do tipo `int` indica que somente números inteiros podem ser armazenados nela, uma interface funcional indica o tipo de métodos que podem ser atribuídos a uma variável de tal tipo. 
+Em outras palavras, tais interfaces indicam que assinatura um método deve ter para ser possível atribuí-lo a uma variável cujo tipo é uma interface funcional.
 
-Em linguagens distintas, a forma de implementar o padrão Strategy usando programação funcional é diferente.
+Uma variável `Function` indica que podemos atribuir a ela qualquer método que receba um único parâmetro e retorne um determinado valor.
+Se voltarmos ao exemplo dos boletos, a assinatura do nosso método que implementa os comportamentos de leitura dos arquivos de retorno é:
+
+[source,java]
+----
+List<Boleto> lerArquivo(String nomeArquivo)
+----
+
+Observe que tal função/método recebe um parâmetro (neste caso `String`) e retorna um valor (`List<Boleto>`).
+Assim, uma função como `lerArquivo` pode então ser atribuída a uma variável do tipo `Function`.
+Se você tiver um método com uma assinatura diferente e precisar armazenar tal método em um variável,
+justamente para permitir trocar a implementação de tal método em tempo de execução usando Programação Funcional,
+um ponto de partida é estudar a documentação do pacote https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html[java.util.function] que descreve as interfaces funcionais padrões do Java 8+.
+
+Programação funcional é um assunto bastante extenso que poderia ser um curso totalmente a parte,
+que envolve muitos conceitos novos. Existe muito material disponível na internet. 
+Mas é difícil encontrar material gratuito, em português e abrangentes.
+Existe muito material em inglês, mas novamente espalhado pela web.
+Se desejarem aprofundar no assunto, acessem esta https://github.com/manoelcampos/sistemas-distribuidos/tree/master/projects/00-programacao-funcional[página].
+
+NOTE: Em linguagens distintas, a forma de implementar o padrão Strategy usando programação funcional é diferente.
 
 == Onde o padrão é usado no JDK
 
@@ -194,6 +216,8 @@ uma lista de uma maneira e posteriormente decidirmos que queremos ordenar de out
 
 == Exercícios
 
+=== Descontos
+
 Considere que temos um sistema de vendas onde diferentes formas de desconto podem ser implementadas de acordo as promoções vigentes, como em datas comemorativas.
 O sistema deve permitir o cálculo do desconto sobre a venda das seguintes maneiras:
 
@@ -204,3 +228,7 @@ O sistema deve permitir o cálculo do desconto sobre a venda das seguintes manei
 
 E como poderíamos implementar estes tipos de desconto sem utilizar Padrões de Projetos?
 Quais os problemas que tal implementação traria?
+
+=== Ordenação de Listas
+
+Implementar a ordenação de listas utilizando programação funcional no Java 8+.
