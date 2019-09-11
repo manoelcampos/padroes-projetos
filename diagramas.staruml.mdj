@@ -906,7 +906,7 @@
 													"model": {
 														"$ref": "AAAAAAFsbbKHPq3TBMQ="
 													},
-													"font": "Arial;13;0",
+													"font": "Arial;13;2",
 													"left": 77,
 													"top": 67,
 													"width": 183.1552734375,
@@ -1644,7 +1644,7 @@
 													"model": {
 														"$ref": "AAAAAAFsbbNL8a5sa/M="
 													},
-													"font": "Arial;13;0",
+													"font": "Arial;13;2",
 													"left": 77,
 													"top": 275,
 													"width": 183.1552734375,
@@ -2964,7 +2964,8 @@
 											"type": "T",
 											"direction": "return"
 										}
-									]
+									],
+									"isAbstract": true
 								}
 							]
 						},
@@ -3039,7 +3040,8 @@
 											"type": "T",
 											"direction": "return"
 										}
-									]
+									],
+									"isAbstract": true
 								}
 							]
 						},
@@ -3098,7 +3100,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFs/g+XmTbq9aA="
 					},
-					"name": "strategy-retorno-boleto",
+					"name": "strategy-boleto",
 					"ownedElements": [
 						{
 							"_type": "UMLClassDiagram",
@@ -3166,7 +3168,7 @@
 													"top": -144,
 													"width": 169.78076171875,
 													"height": 13,
-													"text": "(from strategy-retorno-boleto)"
+													"text": "(from strategy-boleto)"
 												},
 												{
 													"_type": "LabelView",
@@ -3342,7 +3344,7 @@
 													"top": -128,
 													"width": 169.78076171875,
 													"height": 13,
-													"text": "(from strategy-retorno-boleto)"
+													"text": "(from strategy-boleto)"
 												},
 												{
 													"_type": "LabelView",
@@ -3519,7 +3521,7 @@
 													"top": -160,
 													"width": 169.78076171875,
 													"height": 13,
-													"text": "(from strategy-retorno-boleto)"
+													"text": "(from strategy-boleto)"
 												},
 												{
 													"_type": "LabelView",
@@ -3587,7 +3589,7 @@
 													"model": {
 														"$ref": "AAAAAAFsbdKGJbCbF7k="
 													},
-													"font": "Arial;13;0",
+													"font": "Arial;13;2",
 													"left": 149,
 													"top": 149,
 													"width": 272.05419921875,
@@ -3714,7 +3716,7 @@
 													"top": -208,
 													"width": 169.78076171875,
 													"height": 13,
-													"text": "(from strategy-retorno-boleto)"
+													"text": "(from strategy-boleto)"
 												},
 												{
 													"_type": "LabelView",
@@ -4344,7 +4346,7 @@
 													"top": -112,
 													"width": 169.78076171875,
 													"height": 13,
-													"text": "(from strategy-retorno-boleto)"
+													"text": "(from strategy-boleto)"
 												},
 												{
 													"_type": "LabelView",
@@ -4867,7 +4869,8 @@
 											"type": "List<Boleto>",
 											"direction": "return"
 										}
-									]
+									],
+									"isAbstract": true
 								}
 							]
 						},
@@ -6877,7 +6880,7 @@
 													"_parent": {
 														"$ref": "AAAAAAFs/hHyGjdKYSM="
 													},
-													"font": "Arial;13;1",
+													"font": "Arial;13;3",
 													"left": 357,
 													"top": 71,
 													"width": 129.6826171875,
@@ -6981,7 +6984,7 @@
 													"model": {
 														"$ref": "AAAAAAFs/hJXhTd5xkI="
 													},
-													"font": "Arial;13;0",
+													"font": "Arial;13;2",
 													"left": 357,
 													"top": 119,
 													"width": 129.6826171875,
@@ -6998,7 +7001,7 @@
 													"model": {
 														"$ref": "AAAAAAFs/hJ9YTeAvi4="
 													},
-													"font": "Arial;13;0",
+													"font": "Arial;13;2",
 													"left": 357,
 													"top": 134,
 													"width": 129.6826171875,
@@ -7015,7 +7018,7 @@
 													"model": {
 														"$ref": "AAAAAAFs/hKckzeHdeA="
 													},
-													"font": "Arial;13;0",
+													"font": "Arial;13;2",
 													"left": 357,
 													"top": 149,
 													"width": 129.6826171875,
@@ -7755,7 +7758,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFs/hHyGjdHFOE="
 									},
-									"name": "operacaoPrimitiva1"
+									"name": "operacaoPrimitiva1",
+									"isAbstract": true
 								},
 								{
 									"_type": "UMLOperation",
@@ -7763,7 +7767,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFs/hHyGjdHFOE="
 									},
-									"name": "operacaoPrimitiva2"
+									"name": "operacaoPrimitiva2",
+									"isAbstract": true
 								},
 								{
 									"_type": "UMLOperation",
@@ -7771,9 +7776,11 @@
 									"_parent": {
 										"$ref": "AAAAAAFs/hHyGjdHFOE="
 									},
-									"name": "operacaoPrimitivaN"
+									"name": "operacaoPrimitivaN",
+									"isAbstract": true
 								}
-							]
+							],
+							"isAbstract": true
 						},
 						{
 							"_type": "UMLClass",

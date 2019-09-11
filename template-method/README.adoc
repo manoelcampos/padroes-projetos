@@ -20,16 +20,21 @@ endif::[]
 
 "O padrão Template Method define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos para as subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>.
 
-
-
 === Aplicabilidade
 
 Pode ser aplicado quando:
 
+- um método (algoritmo) possuir determinados passos definidos mas outros não; a implementação destes outros passos variar de uma subclasse para outra.
+- você começar a implementar um método em diversas subclasses e verificar que existem partes comuns (código duplicado) e outras partes que mudam de uma subclasse para outra.
 
 === Modelagem do Padrão
 
 image:template-method-base.png[]
+
+A classe que implementará o Template Method realmente deve ser uma classe abstrata ou uma interface do Java 8+ com um método `default` (que possui implementação). No diagrama, o `templateMethod()` é que implementa o padrão. Ele que define a estrutudo do algoritmo a ser implementado.
+Os métodos como `operacaoPrimitivaN()` são então métodos abstratos, que definem parte da implementação do algoritmo do `templateMethod()`.
+Tais operações primitivas são então chamadas em algum lugar dentro do `templateMethod()`.
+Cada subclasse pode ter sua própria implementação de cada uma destas operações.
 
 === Princípios utilizados
 
@@ -38,19 +43,16 @@ image:template-method-base.png[]
 
 === Exemplos
 
-==== xxxxxx
+==== Leitura de Retorno de Boletos
 
-xxxxxxx
-
-Um diagrama de classes para tal implementação pode ser como abaixo.
-
-image:-class-diagram.png[]
+Anteriormente aplicamos o padrão link:../strategy[Strategy] para implementar a leitura de retorno de boletos bancários.
+Como pudemos perceber, o código do método que lê arquivos do Banco do Brasil é muito parecido com o do Bradesco, havendo
+muita duplicação de código. Neste caso, podemos adicionalmente aplicar o padrão Template Method para definir uma estrutura comum
+para o algoritmo de leitura de arquivos de retorno, isolando as partes que alteram em métodos nas subclasses.
 
 ===== Código Fonte
 
-O código fonte com uma implementação de exemplo pode ser obtido [aqui].
-Tente primeiro fazer sua implementação a partir da leitura do diagrama,
-para depois analisar o código disponibilizado.
+// O código fonte com uma implementação de exemplo pode ser obtido [aqui]. Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
 
 === Possíveis Problemas do Padrão
 
