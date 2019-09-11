@@ -127,7 +127,7 @@ image:no-strategy-class-diagram.png[]
 
 === Como não implementar uma solução para um problema
 
-Uma implementação de uma solução sem utilizar o padrão Strategy normalmente é por meio de uma única classe, a qual chamaremos de `NaoEstrategista`. Não há nem ao menos um diagrama, pois a solução seria composta de fato apenas por esta classe. Tal classe então teria métodos como `T executarComportamentoA()`. Todas as implementações deste "Comportamento A" seriam incluídas no método citado.
+Uma solução sem utilizar o padrão Strategy normalmente é implementada por meio de uma única classe, a qual chamaremos de `NaoEstrategista`. Não será mostrado nem ao menos um diagrama, pois a solução seria composta de fato apenas por esta classe. Ela então teria métodos como `T executarComportamentoA()`. Todas as implementações deste "Comportamento A" seriam incluídas no método citado.
 
 Para o exemplo do retorno de boletos bancários, isto significa que tal método seria algo como:
 
@@ -143,7 +143,7 @@ public void processar(String nomeArquivo){
 }
 ----
 
-Tal código é extremamente mais simples. Tem uma única classe e tudo é feito em um único método.
+Tal código é extremamente mais simples, tem uma única classe e tudo é feito em um único método.
 Apesar de parecer muito melhor por simplificar as coisas e dar a impressão que estamos usando o princípio https://pt.wikipedia.org/wiki/Princípio_KISS[KISS], não chamaria esta solução de simples, mas simplista e ingênua. Soluções simplistas normalmente vão lhe trazer dores de cabeça para manutenção do software.
 
 Considerando que podemos ter diferentes formatos de arquivos para bancos distintos e que precisamos processar arquivos de vários bancos, esta solução apresenta alguns problemas. O método `processar`:
@@ -153,7 +153,7 @@ Considerando que podemos ter diferentes formatos de arquivos para bancos distint
 - cada vez que um novo banco precisar ser incluído, o código precisará ser alterado (viola o princípio https://en.wikipedia.org/wiki/Open–closed_principle[OCP]).
 
 O problema da violação do OCP é o mais problemático aqui. O uso de _if's_ (ou qualquer estrutura condicional como `switch`) para decidir qual algoritmo será executado em cada situação deixa claro que uma nova condição precisará ser adicionada sempre que um novo banco precisar ser suportado. Se em outros lugares do sistema você precisa realizar outras tarefas com estes arquivos de retorno, tende-se a repetir esta mesma cadeia de _if's_. 
-Se por acaso em um lugar do sistema você precisa processar os arquivos e incluir os dados em um banco de dados e em outro você precisa processar e gerar PDFs com comprovantes de pagamentos ou enviar emails de notificação, em cada um desses locais você precisará deste bloco de _if's_.
+Por exemplo, se em um lugar do sistema você precisa processar os arquivos e incluir os dados em um banco de dados e em outro você precisa processar e gerar PDFs com comprovantes de pagamentos ou enviar emails de notificação, em cada um desses locais você precisará deste bloco de _if's_.
 O problema surge quando você precisar incluir um novo banco e tiver que incluir um novo _if_ em cada um desses locais.
 Você pode simplesmente esquecer de adicionar tal _if_ em todos os locais necessários e o recurso funcionar em parte do sistema e em outras partes não.
 
