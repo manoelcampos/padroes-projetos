@@ -231,4 +231,5 @@ Quais os problemas que tal implementação traria?
 
 === Ordenação de Listas
 
-Implementar a ordenação de listas utilizando programação funcional no Java 8+.
+Ordenar uma lista de estudantes utilizando programação funcional no Java 8+.
+O projeto disponível link:lista-alunos[aqui] pode ser usado como base, pois ele gera uma lista de estudantes aleatoriamente.
