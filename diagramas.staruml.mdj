@@ -5962,7 +5962,7 @@
 													"_parent": {
 														"$ref": "AAAAAAFsctmnpbq+rjA="
 													},
-													"font": "Arial;13;1",
+													"font": "Arial;13;3",
 													"left": 213,
 													"top": 199,
 													"width": 183.1552734375,
@@ -6723,7 +6723,8 @@
 									],
 									"isAbstract": true
 								}
-							]
+							],
+							"isAbstract": true
 						},
 						{
 							"_type": "UMLClass",

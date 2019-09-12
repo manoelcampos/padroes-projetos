@@ -1,0 +1,8 @@
+:source-highlighter: highlightjs
+
+= Leitura de Retorno de Boletos Bancários usando Strategy Pattern com Programação Funcional
+
+Esta versão do projeto implementa a leitura de retorno de boletos de uma forma mais
+simples utilizando programação funcional no Java 8+.
+Com tais recursos, precisamos criar menos classes para fornecer uma implementação
+do padrão Strategy.

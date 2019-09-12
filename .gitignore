@@ -4,4 +4,6 @@ target/
 
 #IntelliJ Files
 *.iml
+*.ipr
+*.iws
 .idea

@@ -196,6 +196,8 @@ Mas é difícil encontrar material gratuito, em português e abrangentes.
 Existe muito material em inglês, mas novamente espalhado pela web.
 Se desejarem aprofundar no assunto, acessem esta https://github.com/manoelcampos/sistemas-distribuidos/tree/master/projects/00-programacao-funcional[página].
 
+O código fonte do projeto usando programação funcional está disponível link:retorno-boleto-funcional[aqui].
+
 NOTE: Em linguagens distintas, a forma de implementar o padrão Strategy usando programação funcional é diferente.
 
 == Onde o padrão é usado no JDK
