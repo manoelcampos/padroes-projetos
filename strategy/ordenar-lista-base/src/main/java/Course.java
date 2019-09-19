@@ -7,14 +7,20 @@ public class Course{
     private int id;
     private String name;
     private int semesters;
+    private Campus campus;
 
     public Course(){
     }
 
-    public Course(int id, String name, int semesters){
+    public Course(int id, String name, int semesters, Campus campus){
         setId(id);
         setName(name);
         setSemesters(semesters);
+        setCampus(campus);
+    }
+
+    private void setCampus(Campus campus) {
+        this.campus = campus;
     }
 
     public int getId() {
