@@ -11,3 +11,44 @@ do padrão Strategy.
 A implementação é baseada no diagrama a seguir:
 
 image:strategy-base-funcional-class-diagram.png[]
+
+== Detalhes de Implementação
+
+Ao criar uma implementação funcional para o padrão Strategy, além de reduzir o número
+de classes que temos que criar, depois de entender os conceitos de programação funcional,
+perceba que a essência de como implementar o padrão não muda.
+
+Usando a implementação puramente orientada a objetos, o método `processar` da classe `ProcessarBoletos`
+possui um código como:
+
+[source,java]
+----
+public final void processar(String nomeArquivo){
+    List<Boleto> boletos = leituraRetorno.lerArquivo(nomeArquivo);
+    for (Boleto boleto : boletos) {
+        System.out.println(boleto);
+    }
+}
+----
+
+Já a implementação funcional do mesmo método é esta abaixo:
+
+[source,java]
+----
+public void processar(String nomeArquivo){
+    List<Boleto> boletos = leituraRetorno.apply(nomeArquivo);
+    for (Boleto boleto : boletos) {
+        System.out.println(boleto);
+    }
+}
+----
+
+Observe que o código é praticamente o mesmo, só muda que na primeira implementação
+temos um interface `LeituraRetorno` que possui um método `lerArquivo()`.
+Já na implementação funcional, a estratégia é definida por meio de um 
+atributo do tipo `Function`, que armazena a implementação (a função)
+a ser utilizada para ler de fato o arquivo. `Function` é o que chamamos de
+interface funcional a partir do Java 8. Como ela não foi definida por nós,
+ela já possui um método definido, chamado `apply`.
+Assim, internamente, o método `processar` da classe estrategista (`ProcessarBoletos`) apenas
+chama um método diferente na primeira linha de cada trecho de código acima.

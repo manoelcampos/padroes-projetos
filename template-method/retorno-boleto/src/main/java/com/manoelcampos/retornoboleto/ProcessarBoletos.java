@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -12,13 +14,10 @@ import java.util.function.Function;
 /**
  * @author Manoel Campos da Silva Filho
  */
-public class ProcessarBoletos {
+public abstract class ProcessarBoletos {
+    public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    private Function<String[], Boleto> processarLinhaArquivo;
-
-    public ProcessarBoletos(Function<String[], Boleto> processarLinhaArquivo){
-        this.processarLinhaArquivo = processarLinhaArquivo;
-    }
+    public abstract Boleto processarLinhaArquivo(String[] vetor);
 
     public void processar(String nomeArquivo){
         try {
@@ -27,16 +26,12 @@ public class ProcessarBoletos {
             List<Boleto> boletos = new ArrayList<>();
             while ((line = reader.readLine()) != null) {
                 String[] vetor = line.split(";");
-                Boleto boleto = processarLinhaArquivo.apply(vetor);
+                Boleto boleto = processarLinhaArquivo(vetor);
                 boletos.add(boleto);
                 System.out.println(boleto);
             }
         }catch(IOException ex){
             throw new UncheckedIOException(ex);
         }
-    }
-
-    public void setProcessarLinhaArquivo(Function<String[], Boleto> processarLinhaArquivo) {
-        this.processarLinhaArquivo = processarLinhaArquivo;
     }
 }

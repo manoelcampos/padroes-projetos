@@ -31,7 +31,7 @@ public class ProcessarBoletos {
      *
      * @param nomeArquivo Nome do arquivo a ser lido
      */
-    public void processar(String nomeArquivo){
+    public final void processar(String nomeArquivo){
         System.out.println("Boletos");
         System.out.println("----------------------------------------------------------------------------------");
         List<Boleto> boletos = leituraRetorno.lerArquivo(nomeArquivo);

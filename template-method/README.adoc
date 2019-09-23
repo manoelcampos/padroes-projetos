@@ -134,7 +134,10 @@ Assim, com o padrão podemos definir o `templateMethod()` como `final` (o que n�
 
 == Onde o padrão é usado no JDK
 
+Os seguintes métodos não abstratos nas classe abaixo:
 
+- `AbstractList.add`, `AbstractList.addAll`, `AbstractMap.putAll`
+- `InputStream.read`, `OutputStream.write`, `Reader.read` e `Writer.write`.
 
 == Exercícios
 

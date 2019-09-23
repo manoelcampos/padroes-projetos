@@ -1,0 +1,7 @@
+:source-highlighter: highlightjs
+
+= Leitura de Retorno de Boletos Bancários usando Template Method
+
+Esta versão do projeto implementa a leitura de retorno de boletos com o padrão
+Template Method, evitando a duplicação de código existente na versão anterior utilizando apenas
+o padrão Strategy.
