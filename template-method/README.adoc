@@ -146,4 +146,45 @@ Os seguintes métodos não abstratos nas classe abaixo são exemplos de uso do T
 
 == Exercícios
 
+=== Strategy x Template Method
+
 Qual a diferença entre Strategy e Template Method, já que os dois estão relacionados à estrutura para implementação de algoritmos?
+
+=== Processo de finalização de uma compra
+
+Considere um sistema de loja onde você pode comprar vários itens.
+Do ponto da loja, é então registrada uma venda que pode possuir vários itens.
+Ao finalizar tal venda, algumas operações devem ser finalizadas:
+
+1. reservar produto no estoque (para impedir que seja vendido para outro usuário);
+2. realizar pagamento;
+3. emitir nota fiscal;
+4. encaminhar solicitação para próximo setor responsável.
+
+Dependendo se o cliente está na loja física ou virtual,
+algumas etapas do processo de finalização da venda podem ser diferentes ou nem existirem.
+
+Se o cliente está na loja virtual, o processo de realização do pagamento deve ser feito online,
+a partir da geração de um boleto bancário ou pelo número do cartão de crédito.
+
+Se estiver na loja física, o pagamento pode ser por:
+
+- carnê para pagamento na loja ou boleto (nos dois casos, não requer dados adicionais do cliente pois tudo deve estar no cadastro dele);
+- cartão de crédito/débito físico, que deve ser inserido na máquina de cartão e o sistema deve aguardar a confirmação da compra pela máquina.
+
+A emissão da nota fiscal deve obrigatoriamente ser eletrônica atualmente. No entanto,
+se a venda for pela loja física, caso o cliente não tenha email cadastrado, a nota é gerada mas não é enviada a ele.
+Adicionalmente, o sistema deve solicitar a impressão da nota para entrega ao cliente.
+
+Por fim, o setor para o qual o trâmite após a venda deve seguir também muda, de acordo com a loja em que o cliente está.
+Na loja virtual, o pedido deve ser enviado para o setor de separação de produtos,
+enquanto na loja física deve ser enviado para o setor de entrega de produtos.
+
+A partir do diagrama abaixo, implemente as classes apresentadas aplicando o padrão Template Method.
+Observe que apenas os relacionamentos foram definidos. Os métodos e atributos devem ser definidos por você.
+Os atributos não tem importância para a implementação do padrão. Assim, defina apenas o que for
+necessário para a sua implementação.
+
+image:template-method-venda.png[]
+
+
