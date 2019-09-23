@@ -54,22 +54,86 @@ para o algoritmo de leitura de arquivos de retorno, isolando as partes que alter
 
 // O código fonte com uma implementação de exemplo pode ser obtido [aqui]. Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
 
-=== Possíveis Problemas do Padrão
-
-
 === Modelagem utilizando Programação Funcional
 
-xxxx
+A modelagem do padrão utilizando programação funcional é extremamente simples.
+Teremos apenas uma classe concreta (no lugar de abstrata) e não necessariamente precisaremos de sub-classes.
+Assim, o diagrama básico é apenas uma única classe como abaixo.
 
-image:.png[]
+image:template-method-funcional.png[]
 
+O `templateMethod()` então deve chamar as operações primitivas internamente. Estas são definidas como atributos do tipo `Function` (por exemplo),
+indicando que eles armazenam a implementação de uma função. É a mesma lógica que utilizamos para o link:../strategy/retorno-boleto-funcional[projeto funcional para o padrão Strategy].
 
 == Modelagem convencional sem o padrão Template Method
 
+Uma modelagem convencional que não utiliza o Template Method é normalmente modelada como apresentado no diagrama a seguir.
 
 image:no-template-method.png[]
 
+Utilizando o padrão:
+
+- `method()` na superclasse é concreto;
+- as operações primitivas serão abstratas na superclasse e terão comportamentos diferentes em cada subclasse. 
+
+Sem utilizar o padrão (como é mostrado acima):
+
+- temos apenas o `method()` que é abstrato na superclasse e terão comportamentos diferentes em cada subclasse;
+- não temos operações primitivas.
+
+Como já discutido, isso leva à duplicação de código quando as implementações do `method()` em cada subclasse mudam em apenas algumas partes.
+Caso as subclasses precisam apenas estender o `method()` da superclasse (adicionando operações no início ou no final do método), 
+podemos definir uma implementação base tal método e apenas estender o método nas subclasses.
+Isto poderia ser implementado em uma subclasse simplesmente com o código abaixo:
+
+[source,java]
+----
+public SubClasse1{
+    @Override
+    public TipoRetorno method(){
+        TipoRetorno valor = super.method();
+        operacao1;
+        operacao2;
+        operacaoN;
+        return valor;
+    }
+}
+----
+
+Neste caso, estamos estendendo o método apenas executando algumas operações depois da chamada do método na superclasse.
+Poderíamos também executar tais operações antes e/ou depois, como:
+
+
+[source,java]
+----
+public SubClasse1{
+    @Override
+    public TipoRetorno method(){
+        operacao1;
+        operacao2;
+        TipoRetorno valor = super.method();
+        operacaoN;
+        return valor;
+    }
+}
+----
+
+No entanto, o algoritmo base definido no `method()` na superclasse pode ser completamente modificado por qualquer subclasse,
+o que normalmente é algo indesejado. Podemos fazer isso apenas eliminando a chamada `super.method()`.
+Para evitar tal problema, poderíamos simplesmente definir o `method()` na superclasse como `final`,
+indicando que o método não pode ser sobrescrito nas subclasses.
+Tal abordagem impede que as subclasses possam incluir mais operações como mostrado acima.
+Neste caso, temos que recorrer ao padrão Template Method para resolver tal problema.
+
+== Detalhes de Implementação
+
+Dependendo de como você implementar o padrão, deverá estar atento a alguns detalhes.
+Em qualquer implementação, uma subclasse pode subescrever tal método e mudar completamente toda a implementação do algoritmo, o que é algo que normalmente queremos evitar quando usamos o padrão. Isto foi discutido na seção acima para a implementação sem o padrão. 
+No entanto, como as partes do algoritmo que alteram foram isoladas nas operações primitivas, as subclasses não tem que modificar o `templateMethod()` na superclasse (veja o primeiro diagrama).
+Assim, com o padrão podemos definir o `templateMethod()` como `final` (o que não podemos sem o padrão). Isto impede que subclasses possam alterar a implementação dele, mas somente das operações primitivas.
+
 == Onde o padrão é usado no JDK
+
 
 
 == Exercícios

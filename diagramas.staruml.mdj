@@ -7939,12 +7939,12 @@
 													"_parent": {
 														"$ref": "AAAAAAFtXj138XkHNC8="
 													},
-													"font": "Arial;13;3",
+													"font": "Arial;13;1",
 													"left": 277,
 													"top": 103,
 													"width": 174.84619140625,
 													"height": 13,
-													"text": "ClasseAbstrata"
+													"text": "ClasseConcreta"
 												},
 												{
 													"_type": "LabelView",
@@ -8157,7 +8157,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFtXjLQ9XjEbOA="
 							},
-							"name": "ClasseAbstrata",
+							"name": "ClasseConcreta",
 							"attributes": [
 								{
 									"_type": "UMLAttribute",
@@ -8200,8 +8200,7 @@
 									"name": "templateMethod",
 									"isLeaf": true
 								}
-							],
-							"isAbstract": true
+							]
 						}
 					]
 				},
