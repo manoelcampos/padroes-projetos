@@ -1,22 +1,12 @@
 :source-highlighter: highlightjs
 
-= Leitura de Retorno de Boletos Bancários usando Strategy Pattern com Programação Funcional
+= Leitura de Retorno de Boletos Bancários usando implementação funcional do Template Method
 
-Esta versão do projeto implementa a leitura de retorno de boletos de uma forma mais
-simples utilizando programação funcional no Java 8+.
-Com tais recursos, precisamos criar menos classes para fornecer uma implementação
-do padrão Strategy.
+Esta versão do projeto implementa a leitura de retorno de boletos com o padrão
+Strategy e Template Method, evitando a duplicação de código existente na versão anterior utilizando apenas
+o padrão Strategy. No entanto, o projeto utiliza programação funcional para tornar
+as implementações mais simples.
 
-Tal versão utiliza o padrão Template Method onde a implementação
-das estratégias definidas no projeto anterior agora são implementadas
-de forma a não duplicar código.
-Cada estratégia implementada (para Banco do Brasil, Bradesco, etc) é então uma implementação
-de uma operação primitiva no padrão Template Method.
-
-Observe que agora, a estratégia agora é um método que somente processa uma única linha
-de cada vez, no lugar de processar todas as linhas.
-Na versão funcional do padrão Strategy, a estratégia era uma função
-que recebia o nome do arquivo e retornava uma lista de Boletos.
-Agora com o padrão Template Method, a estratégia recebe um vetor de Strings já
-com os dados de uma linha do arquivo dividos em diferentes posições e retorna 
-um Boleto com tais dados adequadamente processados.
+Por estar utilizando os dois padrões em conjunto, note que
+a estrutura das classes não reflete exatamente os diagramas apresentados
+na link:../[pasta anterior].
