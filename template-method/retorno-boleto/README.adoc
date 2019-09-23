@@ -3,5 +3,9 @@
 = Leitura de Retorno de Boletos Bancários usando Template Method
 
 Esta versão do projeto implementa a leitura de retorno de boletos com o padrão
-Template Method, evitando a duplicação de código existente na versão anterior utilizando apenas
+Strategy e Template Method, evitando a duplicação de código existente na versão anterior utilizando apenas
 o padrão Strategy.
+
+Por estar utilizando os dois padrões em conjunto, note que
+a estrutura das classes não reflete exatamente os diagramas apresentados
+na link:../[pasta anterior].

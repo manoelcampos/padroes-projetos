@@ -1,6 +1,5 @@
 package com.manoelcampos.retornoboleto;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -12,13 +11,29 @@ import java.time.format.DateTimeFormatter;
  * do arquivo de retorno, no lugar de processar todas as linhas do arquivo inteiro
  * em um único método.
  *
- * <p>O método aqui definido representam uma operação primitiva do padrão Template Method.
+ * <p>O método aqui definido representa uma operação primitiva do padrão Template Method.
  * No nosso caso, temos apenas uma operação, o processamento de uma linha
  * de um arquivo de retorno.
  * </p>
  *
+ * <p>Anteriormente, utilizando o padrão Strategy, tal interface
+ * representa a implementação de uma estratégia
+ * para fazer a leitura completa de um arquivo de retorno de boleto.
+ * Agora ela representa apenas uma parte deste algoritimo,
+ * que é responsável por processar uma única linha do arquivo por vez</p>
+ *
  * @author Manoel Campos da Silva Filho
+ * @see ProcessarBoletos
  */
 public interface LeituraRetorno {
+    DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+    /**
+     * Recebe um vetor com os dados lidos de uma linha de um arquivo
+     * de retorno de boleto
+     * @param vetor vetor contendo os dados de uma linha lida do arquivo,
+     *              onde cada posição representa uma coluna do boleto
+     * @return um objeto {@link Boleto} com os dados processados da linha do arquivo
+     */
+    Boleto processarLinhaArquivo(String[] vetor);
 }
