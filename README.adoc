@@ -1,4 +1,4 @@
-= Padrões de Projeto em Java
+= Padrões de Projeto em Java image:https://img.shields.io/travis/manoelcampos/padroes-projetos[Travis (.org)]
 
 Os diagramas dos diferentes padrões estão todos disponíveis
 no arquivo link:diagramas.staruml.mdj[diagramas.staruml.mdj].
