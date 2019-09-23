@@ -1,20 +1,21 @@
 package com.manoelcampos.retornoboleto;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Define uma classe onde as operações para processar uma linha
- * de um arquivo de retorno de boletos (como Banco do Brasil e Bradesco)
- * serão implementadas. Tal implementação usa o padrão Template Method
- * para implementar apenas o processamento de uma linha individual
- * do arquivo de retorno, no lugar de processar todas as linhas do arquivo inteiro
- * em um único método.
+ * Define uma classe onde as estratégias para
+ * leitura de arquivos de retorno de boletos (como Banco do Brasil e Bradesco)
+ * serão implementadas.
  *
- * <p>Os métodos aqui definidos representam as operações primitivas do padrão Template Method.
- * No nosso caso, temos apenas uma operação primitiva, o processamento de uma linha
- * de um arquivo de retorno.
- * Cada método nesta classe representa uma implementação independentemente de tal operação.
+ * <p>Cada estratégia é implementada independentemente como uma método.
  * Por mais que as diferentes implementações estejam dentro de uma mesma classe,
  * uma implementação não interfere na outra.
  * Deste modo, não estamos violando de fato o princípio Open/Closed.</p>
@@ -31,11 +32,14 @@ import java.time.format.DateTimeFormatter;
  * </p>
  *
  * <p>Aqui, LeituraRetorno é usada
- * apenas para guardar as implementações das operações primitivas do padrão Template Method
+ * apenas para guardar as implementações das estratégias
  * em um lugar centralizado. Sendo que agora, usando programação
  * funcional cada implementação nada mais é que um simples método,
  * tais métodos foram colocados aqui para organização.
- * </p>
+ * A implementação de uma estratégia não é uma classe
+ * que implementa LeituraRetorno, mas um método
+ * que recebe o nome do arquivo a ser lido e retorna uma lista
+ * de Boletos.</p>
  *
  * <p>Definir LeituraRetorno como uma classe evita
  * possíveis confusões mas traz outras.
@@ -62,18 +66,30 @@ public final class LeituraRetorno {
         //Não faz nada intencioalmente, pois a classe não deve ser instanciada.
     }
 
-    public static Boleto processarLinhaBancoBrasil(String[] vetor) {
-        Boleto boleto = new Boleto();
-        boleto.setId(Integer.parseInt(vetor[0]));
-        boleto.setCodBanco(vetor[1]);
+    public static List<Boleto> lerBancoBrasil(String nomeArquivo) {
+        try {
+            BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
+            String line;
+            List<Boleto> boletos = new ArrayList<>();
+            while((line = reader.readLine()) != null){
+                String[] vetor = line.split(";");
+                Boleto boleto = new Boleto();
+                boleto.setId(Integer.parseInt(vetor[0]));
+                boleto.setCodBanco(vetor[1]);
 
-        boleto.setDataVencimento(LocalDate.parse(vetor[2], LeituraRetorno.FORMATO_DATA));
-        boleto.setDataPagamento(LocalDate.parse(vetor[3], LeituraRetorno.FORMATO_DATA).atTime(0, 0, 0));
+                boleto.setDataVencimento(LocalDate.parse(vetor[2], FORMATO_DATA));
+                boleto.setDataPagamento(LocalDate.parse(vetor[3], FORMATO_DATA).atTime(0, 0, 0));
 
-        boleto.setCpfCliente(vetor[4]);
-        boleto.setValor(Double.parseDouble(vetor[5]));
-        boleto.setMulta(Double.parseDouble(vetor[6]));
-        boleto.setJuros(Double.parseDouble(vetor[7]));
-        return boleto;
+                boleto.setCpfCliente(vetor[4]);
+                boleto.setValor(Double.parseDouble(vetor[5]));
+                boleto.setMulta(Double.parseDouble(vetor[6]));
+                boleto.setJuros(Double.parseDouble(vetor[7]));
+                boletos.add(boleto);
+            }
+
+            return boletos;
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 }
