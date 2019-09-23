@@ -52,7 +52,7 @@ para o algoritmo de leitura de arquivos de retorno, isolando as partes que alter
 
 ===== Código Fonte
 
-// O código fonte com uma implementação de exemplo pode ser obtido [aqui]. Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
+O código fonte do projeto convencional para leitura de arquivos de retorno está disponível link:retorno-boleto[aqui].. Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
 
 === Modelagem utilizando Programação Funcional
 
@@ -65,7 +65,11 @@ image:template-method-funcional.png[]
 O `templateMethod()` então deve chamar as operações primitivas internamente. Estas são definidas como atributos do tipo `Function` (por exemplo),
 indicando que eles armazenam a implementação de uma função. É a mesma lógica que utilizamos para o link:../strategy/retorno-boleto-funcional[projeto funcional para o padrão Strategy].
 
-== Modelagem convencional sem o padrão Template Method
+===== Código Fonte
+
+O código fonte do projeto funcional para leitura de arquivos de retorno está disponível link:retorno-boleto-funcional[aqui].
+
+== Modelagem convencional Sem o padrão Template Method
 
 Uma modelagem convencional que não utiliza o Template Method é normalmente modelada como apresentado no diagrama a seguir.
 
@@ -129,8 +133,8 @@ Neste caso, temos que recorrer ao padrão Template Method para resolver tal prob
 
 Dependendo de como você implementar o padrão, deverá estar atento a alguns detalhes.
 Em qualquer implementação, uma subclasse pode subescrever tal método e mudar completamente toda a implementação do algoritmo, o que é algo que normalmente queremos evitar quando usamos o padrão. Isto foi discutido na seção acima para a implementação sem o padrão. 
-No entanto, como as partes do algoritmo que alteram foram isoladas nas operações primitivas, as subclasses não tem que modificar o `templateMethod()` na superclasse (veja o primeiro diagrama).
-Assim, com o padrão podemos definir o `templateMethod()` como `final` (o que não podemos sem o padrão). Isto impede que subclasses possam alterar a implementação dele, mas somente das operações primitivas.
+
+No entanto, como as partes do algoritmo que alteram foram isoladas nas operações primitivas, as subclasses não têm que modificar o `templateMethod()` na superclasse (veja o primeiro diagrama). Assim, com o padrão podemos definir o `templateMethod()` como `final` (o que não podemos sem o padrão). Isto impede que subclasses possam alterar a implementação dele, mas somente das operações primitivas.
 
 == Onde o padrão é usado no JDK
 
@@ -141,4 +145,4 @@ Os seguintes métodos não abstratos nas classe abaixo são exemplos de uso do T
 
 == Exercícios
 
-Qual a diferença entre Strategy e Template Method, já que os dois estão relacionados a algoritmos?
+Qual a diferença entre Strategy e Template Method, já que os dois estão relacionados à estrutura para implementação de algoritmos?
