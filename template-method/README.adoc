@@ -1,4 +1,4 @@
-:imagesdir: ../images/patterns/
+:imagesdir: ../images/patterns/template-method
 :source-highlighter: highlightjs
 :numbered:
 :unsafe:
@@ -67,7 +67,7 @@ image:.png[]
 == Modelagem convencional sem o padrão Template Method
 
 
-image:-class-diagram.png[]
+image:no-template-method.png[]
 
 == Onde o padrão é usado no JDK
 

@@ -14,7 +14,6 @@ public class Campus {
         this.name = name;
     }
 
-
     public int getId() {
         return id;
     }

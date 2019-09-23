@@ -89,8 +89,9 @@ public class Student{
 
     @Override
     public String toString(){
+        final String courseName = String.format("%-35s", course == null ? "" : "Curso: " + course.getName());
         return String.format(
-                "Id: %6d Nome: %-30s Sexo: %c Nota: %5.2f Ano Grad.: %4d | Curso %s",
-                id, name, gender, score, gradYear, course);
+                "Id: %6d Nome: %-30s Sexo: %c Nota: %5.2f Ano Grad: %4d %s",
+                id, name, gender, score, gradYear, courseName);
     }
 }

@@ -1,7 +1,8 @@
 = Aplicação de exemplo para ordenação de uma lista de estudantes
 
-Este é um projeto base que gera uma lista aleatório de estudantes.
-Utilize os recursos de programação funcional do Java 8+,
+Este é um projeto base que gera uma lista aleatório de estudantes
+para que você possa implementar seu próprio código.
+Implemente seu próprio código utilizando os recursos de programação funcional do Java 8+,
 por meio do método `sort()` da interface `List` para ordenar
 tal lista de estudantes.
 

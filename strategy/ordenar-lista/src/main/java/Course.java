@@ -19,10 +19,6 @@ public class Course{
         setCampus(campus);
     }
 
-    private void setCampus(Campus campus) {
-        this.campus = campus;
-    }
-
     public int getId() {
         return id;
     }
@@ -45,6 +41,14 @@ public class Course{
 
     public final void setSemesters(int semesters) {
         this.semesters = semesters;
+    }
+
+    public Campus getCampus() {
+        return campus;
+    }
+
+    private void setCampus(Campus campus) {
+        this.campus = campus;
     }
 
     @Override

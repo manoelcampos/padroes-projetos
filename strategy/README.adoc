@@ -1,4 +1,4 @@
-:imagesdir: ../images/patterns/
+:imagesdir: ../images/patterns/strategy
 :source-highlighter: highlightjs
 :numbered:
 :unsafe:
