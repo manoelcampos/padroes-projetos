@@ -24,5 +24,4 @@ public class ProcessarBoletos {
             System.out.println(boleto);
         }
     }
-
 }

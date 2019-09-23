@@ -235,3 +235,12 @@ Quais os problemas que tal implementação traria?
 
 Ordenar uma lista de estudantes utilizando programação funcional no Java 8+.
 O projeto disponível link:lista-alunos[aqui] pode ser usado como base, pois ele gera uma lista de estudantes aleatoriamente.
+
+=== Diferenças da implementação puramente OO vs funcional
+
+A página inicial do link:retorno-boleto-funcional[projeto funcional disponível aqui] apresenta algumas diferenças
+de implementação do padrão Strategy utilizando puramente programação orientada a objetos e outra versão
+utilizando programação funcional.
+
+Descreva em detalhes qual a diferença em utilizar um atributo do tipo `LeituraRetorno` na implementação puramente OO
+e um atributo do tipo `Function` na implementação funcional.

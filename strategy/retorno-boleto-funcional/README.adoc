@@ -18,37 +18,44 @@ Ao criar uma implementação funcional para o padrão Strategy, além de reduzir
 de classes que temos que criar, depois de entender os conceitos de programação funcional,
 perceba que a essência de como implementar o padrão não muda.
 
-Usando a implementação puramente orientada a objetos, o método `processar` da classe `ProcessarBoletos`
+Usando a implementação puramente orientada a objetos, a classe `ProcessarBoletos`
 possui um código como:
 
 [source,java]
 ----
-public final void processar(String nomeArquivo){
-    List<Boleto> boletos = leituraRetorno.lerArquivo(nomeArquivo);
-    for (Boleto boleto : boletos) {
-        System.out.println(boleto);
+public class ProcessarBoletos {
+    private LeituraRetorno leituraRetorno;
+
+    public final void processar(String nomeArquivo){
+        List<Boleto> boletos = leituraRetorno.lerArquivo(nomeArquivo);
+        for (Boleto boleto : boletos) {
+            System.out.println(boleto);
+        }
     }
 }
 ----
 
-Já a implementação funcional do mesmo método é esta abaixo:
+Já a mesma classe no projeto funcional possui a seguinte implementação de tal classe:
 
 [source,java]
 ----
-public void processar(String nomeArquivo){
-    List<Boleto> boletos = leituraRetorno.apply(nomeArquivo);
-    for (Boleto boleto : boletos) {
-        System.out.println(boleto);
+public class ProcessarBoletos {
+    private Function<String, List<Boleto>> leituraRetorno;
+    
+    public void processar(String nomeArquivo){
+        List<Boleto> boletos = leituraRetorno.apply(nomeArquivo);
+        for (Boleto boleto : boletos) {
+            System.out.println(boleto);
+        }
     }
 }
 ----
 
 Observe que o código é praticamente o mesmo, só muda que na primeira implementação
-temos um interface `LeituraRetorno` que possui um método `lerArquivo()`.
+temos um atributo `leituraRetorno` do tipo `LeituraRetorno`, esta uma interface que possui um método `lerArquivo()`.
 Já na implementação funcional, a estratégia é definida por meio de um 
-atributo do tipo `Function`, que armazena a implementação (a função)
-a ser utilizada para ler de fato o arquivo. `Function` é o que chamamos de
-interface funcional a partir do Java 8. Como ela não foi definida por nós,
-ela já possui um método definido, chamado `apply`.
+atributo de mesmo nome, mas do tipo `Function`, que armazena a implementação (a função)
+a ser utilizada para ler de fato o arquivo. `Function` é o que chamamos de interface funcional a partir do Java 8. 
+Como ela não foi definida por nós, ela já possui um método definido, chamado `apply`.
 Assim, internamente, o método `processar` da classe estrategista (`ProcessarBoletos`) apenas
-chama um método diferente na primeira linha de cada trecho de código acima.
+chama um método diferente na primeira linha dos métodos `processar` nos exemplos acima.
