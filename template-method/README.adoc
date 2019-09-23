@@ -87,36 +87,37 @@ Sem utilizar o padrão (como é mostrado acima):
 
 Como já discutido, isso leva à duplicação de código quando as implementações do `method()` em cada subclasse mudam em apenas algumas partes.
 Caso as subclasses precisam apenas estender o `method()` da superclasse (adicionando operações no início ou no final do método), 
-podemos definir uma implementação base tal método e apenas estender o método nas subclasses.
+podemos definir uma implementação base na superclasse e apenas estender o método nas subclasses.
 Isto poderia ser implementado em uma subclasse simplesmente com o código abaixo:
 
 [source,java]
 ----
-public SubClasse1{
+public SubClasse1 extends ClasseAbstrata {
     @Override
     public TipoRetorno method(){
         TipoRetorno valor = super.method();
-        operacao1;
-        operacao2;
-        operacaoN;
+        operacaoPrimitiva1();
+        operacaoPrimitiva2();
+        operacaoPrimitivaN();
+        
         return valor;
     }
 }
 ----
 
 Neste caso, estamos estendendo o método apenas executando algumas operações depois da chamada do método na superclasse.
-Poderíamos também executar tais operações antes e/ou depois, como:
-
+Poderíamos também executar tais operações antes e/ou depois, de acordo com as necessidades, como:
 
 [source,java]
 ----
-public SubClasse1{
+public SubClasse1 extends ClasseAbstrata {
     @Override
     public TipoRetorno method(){
-        operacao1;
-        operacao2;
+        operacaoPrimitiva1();
+        operacaoPrimitiva2();
         TipoRetorno valor = super.method();
-        operacaoN;
+        operacaoPrimitivaN();
+
         return valor;
     }
 }
