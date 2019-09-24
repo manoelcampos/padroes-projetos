@@ -1,0 +1,133 @@
+:imagesdir: ../images/patterns/factory
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Criacionais (Creational Design Patterns)
+
+== Simple Factory (Fábrica Simples)
+
+=== Definição
+
+Simple Factory permite encapsular a criação de objetos em uma classe que representa uma fábrica.
+Ela não é de fato um padrão de projeto, podendo ser definida como um modelo para a criação de objetos.
+
+=== Aplicabilidade
+
+Sabemos que para instanciar objetos em Java em outras linguagens é utilizado o operador `new`.
+Apesar de podermos declarar uma variável com um tipo abstrato, ao instanciar um objeto para tal variável,
+estamos definindo explicitamente qual tipo concreto será usado. 
+
+Se existir uma lógica que define qual tipo concreto será utilizado em um determinado momento e tivermos que 
+utilizar esta lógica em diversas partes do código quando precisarmos instanciar um objeto, podemos utilizar
+a Simple Factory para encapsular a criação destes objetos. Com isto, evitamos de duplicar esta lógica em 
+vários locais do projeto. 
+Esta lógica normalmente é definida por um bloco de ifs que define as condições para a criação dos objetos.
+
+Adicionalmente, considere que temos um tipo abstrato/super-tipo (classe abstrata ou interface) e vários sub-tipos (sub-classes) que podem ser instanciados.
+Se utilizarmos new para instanciar um determinado sub-tipo em diferentes locais do sistema e precisarmos
+substituir estas instâncias por um sub-tipo diferente, teríamos que fazer isso manualmente alterando 
+os vários locais no código. Utilizando a Simple Factory, a crição de objetos de um determinado super-tipo
+fica encapsulada e centralizada em um método da Simple Factory.
+
+=== Modelagem
+
+A Simple Factory pode ser modelada como demonstrado no diagrama a seguir.
+
+image::simple-factory.png[caption="Figura 1: Modelagem da Simple"]
+
+Teremos uma classe `SimpleFactory` que você deve dar um nome apropriado.
+Alguns exemplos incluem:
+
+- `SimplePizzaFactory` ou `PizzaFactory` para criar pizzas;
+- `SimpleProdutoFactory` ou `ProdutoFactory` para criar produtos.
+
+A `ClasseCliente` é uma classe qualquer que precise utilizar 
+objetos produzidos pela Factory. Assim, podemos ter várias classes clientes.
+
+NOTE: Não confunda o termo Cliente amplamente utilizado quando falamos de padrões de projeto e POO com um cliente (pessoa) de uma empresa.
+Aqui, o termo cliente é mais genérico: representa uma classe que usa os serviços de outra classe.
+
+Por exemplo, em um sistema de uma loja poderíamos uma classe que cria novos
+produtos para serem inseridos no estoque. Tal classe seria cliente da Factory.
+Para simplificar, imagine que você tem uma página web que é responsável por fazer
+o cadastro de um produto. Tal página então utiliza a fábrica para criar um objeto
+produto a partir dos dados preenchidos na página.
+
+NOTE: Na prática, uma página web não deve estar preocupada em instanciar objetos de negócio como produtos. 
+Ela deve conter apenas a interface gráfica (front-end) com os campos e regras de validação de dados.
+Mas isso é assunto para o padrão MVC.
+
+O `TipoAbstrato` é um super tipo representado por uma interface ou classe abstrata. 
+Como ele é abstrato, a Factory criará objetos de algum dos sub-tipos disponíveis,
+de acordo com uma possível lógica que você definir.
+
+O método `createObject` da `SimpleFactory` retorna um `TipoAbstrato`, mas internamente ele 
+cria um objeto de algum dos sub-tipos existentes para retornar. 
+A forma mais fácil de implementar a Simple Factory é definir tal método como estático. 
+Assim, não é preciso instanciar uma fábrica para depois criar objetos, basta chamar o método diretamente da classe
+fazendo `SimpleFactory.createObject()`.
+Tal método também pode receber parâmetros para definir qual e/ou como um objeto será criado.
+O nome do método também deve ser definido adequadamente, como `createPizza()`, `createProduto()`, etc.
+
+=== Princípios utilizados
+
+==== Open-Closed Principle
+
+Com o https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], separamos as partes que mudam, i.e. a lógica de criação de objetos, de dentro da classe que utiliza tais objetos. Isto torna a classe que utiliza a factory "aberta para extensão e fechada para modificação".
+
+==== Programar para uma "interface" não uma implementação
+
+https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação] (GoF) indica que devemos declaramos variáveis com tipos abstratos (`TipoAbstrato`) e usar tipos concretos apenas na instanciação (`SubTipo1` ... `SubTipoN`).
+
+==== Dependency Inversion Principle
+
+Ao aplicar o https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)], a classe cliente que utiliza a factory não depende mais de tipos concretos, mas sim de tipos abstratos (interfaces ou classes abstratas).
+Se não utilizássemos a Simple Factory, a classe cliente seria responsável pela lógica de criação dos objetos,
+dependendo de cada um dos objetos que pode criar, como mostra o diagrama a seguir.
+
+image::no-simple-factory.png[caption="Figura 2: Não utilização da Simple Factory"]
+
+Se observarmos a Figura 1 acima, podemos ver que a `ClasseCliente` depende da `SimpleFactory`, que depende do `TipoAbstrato`. 
+Assim, podemos dizer que a `ClasseCliente` depende indiretamente do `TipoAbstrato` (no sentido de que não é ela que cria
+objetos de tal tipo). Então, podemos esquecer a `SimpleFactory` por um momento e visualizar esta dependência como no diagrama a seguir.
+
+image::simple-factory-dip.png[caption="Figura 3: Dependência intereta da ClasseCliente com o TipoAbstrato"]
+
+Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi invertida. A `ClasseCliente` deixou de depender de tipos concretos e passou a depender de um tipo abstrato.
+
+=== Exemplos
+
+==== XXXX
+
+image:xxxxx.png[]
+
+===== Código Fonte
+
+O código fonte com uma implementação de exemplo pode ser obtido link:xxxx[aqui].
+Tente primeiro fazer sua implementação a partir da leitura do diagrama,
+para depois analisar o código disponibilizado.
+
+=== Detalhes de Implementação
+
+
+== Padrões Relacionados
+
+Padrões que possuem similaridades ou podem ser usados em conjunto:
+
+- Template Method
+
+== Onde o padrão é usado no JDK
+
+
+== Exercícios
+

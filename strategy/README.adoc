@@ -48,7 +48,7 @@ Com o padrão Strategy, o comportamento de qualquer classe (mãe ou filha) pode 
 === Princípios utilizados
 
 - https://en.wikipedia.org/wiki/Composition_over_inheritance[Favorecer composição no lugar de herança].
-- https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação] (GoF).
+- https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação] (GoF): declaramos variáveis com tipos abstratos (uma interface de comportamento) e usamos tipos concretos (uma classe que implementa um comportamento) apenas na instanciação.
 - https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], pois separa as partes que mudam (os comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
 - https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. 
 - https://en.wikipedia.org/wiki/Liskov_substitution_principle[Liskov Substitution Principle (LSP)] pois podemos substituir um comportamento por qualquer implementação dele, de forma transparente, até mesmo em tempo de execução, sem que sejam necessárias alterações no código interno da classe que utiliza tais comportamentos.
@@ -199,6 +199,12 @@ Se desejarem aprofundar no assunto, acessem esta https://github.com/manoelcampos
 O código fonte do projeto usando programação funcional está disponível link:retorno-boleto-funcional[aqui].
 
 NOTE: Em linguagens distintas, a forma de implementar o padrão Strategy usando programação funcional é diferente.
+
+== Padrões Relacionados
+
+Padrões que possuem similaridades ou podem ser usados em conjunto:
+
+- Template Method
 
 == Onde o padrão é usado no JDK
 

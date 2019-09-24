@@ -27,7 +27,7 @@ public class ProcessarBoletos {
      *
      * @param nomeArquivo Nome do arquivo a ser processado
      */
-    public void processar(String nomeArquivo){
+    public final List<Boleto> processar(String nomeArquivo){
         try {
             BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
             String line;
@@ -36,8 +36,10 @@ public class ProcessarBoletos {
                 String[] vetor = line.split(";");
                 Boleto boleto = leituraRetorno.processarLinhaArquivo(vetor);
                 boletos.add(boleto);
-                System.out.println(boleto);
+                //System.out.println(boleto);
             }
+
+            return boletos;
         }catch(IOException ex){
             throw new UncheckedIOException(ex);
         }

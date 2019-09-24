@@ -125,10 +125,20 @@ public SubClasse1 extends ClasseAbstrata {
 
 No entanto, o algoritmo base definido no `method()` na superclasse pode ser completamente modificado por qualquer subclasse,
 o que normalmente é algo indesejado. Podemos fazer isso apenas eliminando a chamada `super.method()`.
-Para evitar tal problema, poderíamos simplesmente definir o `method()` na superclasse como `final`,
+Para isto, poderíamos simplesmente definir o `method()` na superclasse como `final`,
 indicando que o método não pode ser sobrescrito nas subclasses.
-Tal abordagem impede que as subclasses possam incluir mais operações como mostrado acima.
-Neste caso, temos que recorrer ao padrão Template Method para resolver tal problema.
+Por outro lado, tal abordagem impede que as subclasses possam incluir mais operações como mostrado acima.
+
+Adicionalmente, com a abordagem acima, não temos como garantir que cada operação primitiva será incluída nas subclasses
+no exato local onde elas precisam ser executadas ou se mesmo todas as operações esperadas serão incluídas, 
+o que pode gerar erros e resultados incorretos.
+Por exemplo, imagine que a `operacaoPrimitiva2()` precisasse:
+
+- adicionar conteúdo em um arquivo que só seria criado após a chamada de `method()` na superclasse;
+- ou usar um valor retornado pelo `method()` na superclasse.
+
+Com a implementação mostrada acima, não temos como garantir nada disso. 
+Logo, temos que recorrer ao padrão Template Method.
 
 == Detalhes de Implementação
 
@@ -136,6 +146,13 @@ Dependendo de como você implementar o padrão, deverá estar atento a alguns de
 Em qualquer implementação, uma subclasse pode subescrever tal método e mudar completamente toda a implementação do algoritmo, o que é algo que normalmente queremos evitar quando usamos o padrão. Isto foi discutido na seção acima para a implementação sem o padrão. 
 
 No entanto, como as partes do algoritmo que alteram foram isoladas nas operações primitivas, as subclasses não têm que modificar o `templateMethod()` na superclasse (veja o primeiro diagrama). Assim, com o padrão podemos definir o `templateMethod()` como `final` (o que não podemos sem o padrão). Isto impede que subclasses possam alterar a implementação dele, mas somente das operações primitivas.
+
+== Padrões Relacionados
+
+Padrões que possuem similaridades ou podem ser usados em conjunto:
+
+- Strategy
+- Command
 
 == Onde o padrão é usado no JDK
 
@@ -153,7 +170,7 @@ Qual a diferença entre Strategy e Template Method, já que os dois estão relac
 === Processo de finalização de uma compra
 
 Considere um sistema de loja onde você pode comprar vários itens.
-Do ponto da loja, é então registrada uma venda que pode possuir vários itens.
+Do ponto de vista da loja, é então registrada uma venda que pode possuir vários itens.
 Ao finalizar tal venda, algumas operações devem ser finalizadas:
 
 1. reservar produto no estoque (para impedir que seja vendido para outro usuário);
@@ -169,6 +186,7 @@ a partir da geração de um boleto bancário ou pelo número do cartão de créd
 
 Se estiver na loja física, o pagamento pode ser por:
 
+- dinheiro;
 - carnê para pagamento na loja ou boleto (nos dois casos, não requer dados adicionais do cliente pois tudo deve estar no cadastro dele);
 - cartão de crédito/débito físico, que deve ser inserido na máquina de cartão e o sistema deve aguardar a confirmação da compra pela máquina.
 
