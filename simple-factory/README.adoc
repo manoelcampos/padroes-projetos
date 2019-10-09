@@ -43,7 +43,8 @@ fica encapsulada e centralizada em um método da Simple Factory.
 
 A Simple Factory pode ser modelada como demonstrado no diagrama a seguir.
 
-image::simple-factory.png[caption="Figura 1: Modelagem da Simple"]
+.Modelagem da Simple Factory
+image::simple-factory.png[]
 
 Teremos uma classe `SimpleFactory` que você deve dar um nome apropriado.
 Alguns exemplos incluem:
@@ -73,11 +74,6 @@ de acordo com uma possível lógica que você definir.
 
 O método `createObject` da `SimpleFactory` retorna um `TipoAbstrato`, mas internamente ele 
 cria um objeto de algum dos sub-tipos existentes para retornar. 
-A forma mais fácil de implementar a Simple Factory é definir tal método como estático. 
-Assim, não é preciso instanciar uma fábrica para depois criar objetos, basta chamar o método diretamente da classe
-fazendo `SimpleFactory.createObject()`.
-Tal método também pode receber parâmetros para definir qual e/ou como um objeto será criado.
-O nome do método também deve ser definido adequadamente, como `createPizza()`, `createProduto()`, etc.
 
 === Princípios utilizados
 
@@ -95,13 +91,15 @@ Ao aplicar o https://en.wikipedia.org/wiki/Dependency_inversion_principle[Depend
 Se não utilizássemos a Simple Factory, a classe cliente seria responsável pela lógica de criação dos objetos,
 dependendo de cada um dos objetos que pode criar, como mostra o diagrama a seguir.
 
-image::no-simple-factory.png[caption="Figura 2: Não utilização da Simple Factory"]
+.Não utilização da Simple Factory
+image::no-simple-factory.png[]
 
 Se observarmos a Figura 1 acima, podemos ver que a `ClasseCliente` depende da `SimpleFactory`, que depende do `TipoAbstrato`. 
 Assim, podemos dizer que a `ClasseCliente` depende indiretamente do `TipoAbstrato` (no sentido de que não é ela que cria
 objetos de tal tipo). Então, podemos esquecer a `SimpleFactory` por um momento e visualizar esta dependência como no diagrama a seguir.
 
-image::simple-factory-dip.png[caption="Figura 3: Dependência intereta da ClasseCliente com o TipoAbstrato"]
+.Dependência indireta da ClasseCliente com o TipoAbstrato
+image::simple-factory-dip.png[]
 
 Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi invertida. A `ClasseCliente` deixou de depender de tipos concretos e passou a depender de um tipo abstrato.
 
@@ -109,16 +107,24 @@ Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi i
 
 ==== XXXX
 
+.Título
 image:xxxxx.png[]
 
 ===== Código Fonte
 
-O código fonte com uma implementação de exemplo pode ser obtido link:xxxx[aqui].
-Tente primeiro fazer sua implementação a partir da leitura do diagrama,
-para depois analisar o código disponibilizado.
+// O código fonte com uma implementação de exemplo pode ser obtido link:xxxx[aqui]. Tente primeiro fazer sua implementação a partir da leitura do diagrama,para depois analisar o código disponibilizado.
 
 === Detalhes de Implementação
 
+A forma mais fácil de implementar a Simple Factory, como apresentado na Figura 1, é definir o método `createObject` na classe `SimpleFactory` como estático. 
+Assim, não é preciso instanciar uma fábrica para depois criar objetos, basta chamar o método diretamente da classe
+fazendo `SimpleFactory.createObject()`. Isto torna o uso da fábrica mais fácil.
+Se a fábrica não armazena nenhum atributo, pode não haver uma razão específica para exigir que ela seja instanciada
+para podermos chamar seus métodos. É apenas preciso ter em mente que ao declarar o método como estático,
+ele não poderá ser modificado em possíveis sub-classes. Se não pretende fazer override do método, não há problema.
+
+O método `createObject` também pode receber parâmetros para definir qual e/ou como um objeto será criado.
+O nome do método também deve ser definido adequadamente, como `createPizza()`, `createProduto()`, etc.
 
 == Padrões Relacionados
 
