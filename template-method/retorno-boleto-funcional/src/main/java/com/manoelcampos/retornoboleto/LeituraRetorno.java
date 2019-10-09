@@ -52,7 +52,7 @@ import java.time.format.DateTimeFormatter;
  * @author Manoel Campos da Silva Filho
  */
 public final class LeituraRetorno {
-    static DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     /**
      * Construtor privado para evitar instanciar a classe,

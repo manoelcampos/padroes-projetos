@@ -105,20 +105,12 @@ Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi i
 
 === Exemplos
 
-==== Projetos Anteriores
+Podemos utilizar a Simple Factory para definir qual estratégia de leitura de arquivo de retorno de boleto bancário
+será utilizada. Assim, não teremos que manualmente decidir qual estratégia instanciar cada vez que
+precisarmos ler arquivos de retorno. 
+Baseado no projeto link:../template-method/retorno-boleto-funcional[retorno-boleto-funcional], vamos implementar a Simple Factory.
 
-Podemos utilizar a Simple Factory em dois projetos desenvolvidos anteriormente. Que projetos são esses?
-
-==== Exportação de dados
-
-Implemente um conjunto de classes que recebe uma lista de produtos e permite exportar tais produtos em diferentes formatos como Tabela HTML, CSV, tabela Markdown. 
-
-NOTE: Existem inúmeras bibliotecas que realizam tal tarefa, mas o objetivo aqui é praticar. Se precisar realmente exportar dados em qualquer formato, tente utilizar uma biblioteca existente. Pode-se exportar dados em XML e JSON utilizando bibliotecas padrões do JDK.
-
-==== Tornando a exportação de dados genérica
-
-O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos exportar outros dados como clientes ou vendas, precisaremos criar um novo conjunto de classes para cada tipo de objeto que queremos exportar. Isto é bastante trabalhoso e repetitivo.
-Neste projeto vamos usar reflection com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
+//O código fonte do projeto está disponível aqui link:xxx[].
 
 === Detalhes de Implementação
 
@@ -152,3 +144,13 @@ Note que dentro do método ele define diferentes tipos de calendário, como greg
 
 == Exercícios
 
+=== Exportação de dados
+
+Implemente um conjunto de classes que recebe uma lista de produtos e permite exportar tais produtos em diferentes formatos como Tabela HTML, CSV, tabela Markdown. 
+
+NOTE: Existem inúmeras bibliotecas que realizam tal tarefa, mas o objetivo aqui é praticar. Se precisar realmente exportar dados em qualquer formato, tente utilizar uma biblioteca existente. Pode-se exportar dados em XML e JSON utilizando bibliotecas padrões do JDK.
+
+=== Tornando a exportação de dados genérica
+
+O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos exportar outros dados como clientes ou vendas, precisaremos criar um novo conjunto de classes para cada tipo de objeto que queremos exportar. Isto é bastante trabalhoso e repetitivo.
+Neste projeto vamos usar reflection com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
