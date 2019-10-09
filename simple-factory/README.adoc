@@ -52,8 +52,8 @@ Alguns exemplos incluem:
 - `SimplePizzaFactory` ou `PizzaFactory` para criar pizzas;
 - `SimpleProdutoFactory` ou `ProdutoFactory` para criar produtos.
 
-A `ClasseCliente` é uma classe qualquer que precise utilizar 
-objetos produzidos pela Factory. Assim, podemos ter várias classes clientes.
+A `ClasseCliente` é uma classe qualquer que precisa utilizar objetos produzidos pela Factory. 
+Assim, podemos ter várias classes clientes.
 
 NOTE: Não confunda o termo Cliente amplamente utilizado quando falamos de padrões de projeto e POO com um cliente (pessoa) de uma empresa.
 Aqui, o termo cliente é mais genérico: representa uma classe que usa os serviços de outra classe.
@@ -134,6 +134,15 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 == Onde o padrão é usado no JDK
 
+A classe `Calendar` no JDK é abstrata, logo, não pode ser instanciada. 
+Existem diferentes tipos de calendário que podem ser instanciados, de acordo 
+com a região geográfica definida para o sistema (`Locale`).
+O método `getInstance()` então é responsável por definir qual subclasse de `Calendar`
+será usada para instanciar um calendário.
+
+Ele utiliza o método auxiliar `createCalendar` para isto. Note que, como falado
+anteriormente, neste caso o método possui parâmetros para definir como criar o objeto.
+Note que dentro do método ele define diferentes tipos de calendário, como gregorianos (o nosso), japonês e budista.
 
 == Exercícios
 
