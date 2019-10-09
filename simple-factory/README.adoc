@@ -105,14 +105,8 @@ Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi i
 
 === Exemplos
 
-==== XXXX
-
-.Título
-image:xxxxx.png[]
-
-===== Código Fonte
-
-// O código fonte com uma implementação de exemplo pode ser obtido link:xxxx[aqui]. Tente primeiro fazer sua implementação a partir da leitura do diagrama,para depois analisar o código disponibilizado.
+Podemos utilizar a Simple Factory em dois projetos desenvolvidos anteriormente.
+Que projetos são esses?
 
 === Detalhes de Implementação
 
