@@ -108,9 +108,9 @@ Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi i
 Podemos utilizar a Simple Factory para definir qual estratégia de leitura de arquivo de retorno de boleto bancário
 será utilizada. Assim, não teremos que manualmente decidir qual estratégia instanciar cada vez que
 precisarmos ler arquivos de retorno. 
-Baseado no projeto link:../template-method/retorno-boleto-funcional[retorno-boleto-funcional], vamos implementar a Simple Factory.
+Baseado no projeto link:../template-method/retorno-boleto-template-funcional[retorno-boleto-template-funcional], vamos implementar a Simple Factory.
 
-//O código fonte do projeto está disponível aqui link:xxx[].
+O código fonte do projeto está disponível link:retorno-boleto-simple-factory[aqui].
 
 === Detalhes de Implementação
 
