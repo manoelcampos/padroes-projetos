@@ -52,7 +52,7 @@ para o algoritmo de leitura de arquivos de retorno, isolando as partes que alter
 
 ===== Código Fonte
 
-O código fonte do projeto convencional para leitura de arquivos de retorno está disponível link:retorno-boleto[aqui].. Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
+O código fonte do projeto convencional para leitura de arquivos de retorno está disponível link:retorno-boleto-template[aqui].. Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
 
 === Modelagem utilizando Programação Funcional
 
@@ -67,7 +67,7 @@ indicando que eles armazenam a implementação de uma função. É a mesma lógi
 
 ===== Código Fonte
 
-O código fonte do projeto funcional para leitura de arquivos de retorno está disponível link:retorno-boleto-funcional[aqui].
+O código fonte do projeto funcional para leitura de arquivos de retorno está disponível link:retorno-boleto-template-funcional[aqui].
 
 == Modelagem convencional Sem o padrão Template Method
 

@@ -56,7 +56,8 @@ import java.util.List;
  * @author Manoel Campos da Silva Filho
  */
 public final class LeituraRetorno {
-    static DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static final DateTimeFormatter FORMATO_DATA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
     /**
      * Construtor privado para evitar instanciar a classe,
