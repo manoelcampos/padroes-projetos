@@ -155,7 +155,11 @@ Implemente um conjunto de classes que recebe uma lista de produtos e permite exp
 
 NOTE: Existem inúmeras bibliotecas que realizam tal tarefa, mas o objetivo aqui é praticar. Se precisar realmente exportar dados em qualquer formato, tente utilizar uma biblioteca existente. Pode-se exportar dados em XML e JSON utilizando bibliotecas padrões do JDK.
 
+O código fonte do projeto está disponível link:exportador-simple-factory[aqui], mas tente primeiro implementar antes de ver o projeto.
+
 === Tornando a exportação de dados genérica
 
 O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos exportar outros dados como clientes ou vendas, precisaremos criar um novo conjunto de classes para cada tipo de objeto que queremos exportar. Isto é bastante trabalhoso e repetitivo.
 Neste projeto vamos usar reflection com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
+
+O código fonte do projeto está disponível link:exportador-simple-factory-reflection[aqui], mas tente primeiro implementar antes de ver o projeto.
