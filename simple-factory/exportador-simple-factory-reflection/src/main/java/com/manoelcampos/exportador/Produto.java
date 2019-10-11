@@ -11,9 +11,21 @@ public class Produto {
     private int estoque;
 
     public Produto(){
-
     }
 
+    /**
+     * Construtor que inicializa todos os atributos do produto.
+     * Ele possui uma grande quantidade de parâmetros, que não é recomendável
+     * por tornar a chamada do método confusa.
+     * Ele foi usado aqui apenas para tornar o exemplo mais simples.
+     * Sempre que possível, defina métodos com no máximo 3 parâmetros.
+     *
+     * @param id
+     * @param descricao
+     * @param marca
+     * @param modelo
+     * @param estoque
+     */
     public Produto(int id, String descricao, String marca, String modelo, int estoque) {
         this.id = id;
         this.descricao = descricao;

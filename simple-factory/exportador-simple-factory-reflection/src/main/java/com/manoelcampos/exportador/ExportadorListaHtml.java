@@ -1,9 +1,10 @@
 package com.manoelcampos.exportador;
 
 /**
+ * Exporta dados de uma lista de objetos para HTML.
  * @author Manoel Campos da Silva Filho
  */
-public class ExportadorListaHtml<T> extends AbstractExportadorLista<T> {
+public class ExportadorListaHtml extends AbstractExportadorLista {
     @Override
     public String abrirTabela() {
         return "<table>\n";

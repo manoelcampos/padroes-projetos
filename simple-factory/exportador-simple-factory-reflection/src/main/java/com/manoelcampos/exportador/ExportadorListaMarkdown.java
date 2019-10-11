@@ -3,7 +3,7 @@ package com.manoelcampos.exportador;
 /**
  * @author Manoel Campos da Silva Filho
  */
-public class ExportadorListaMarkdown<T> extends AbstractExportadorLista<T> {
+public class ExportadorListaMarkdown extends AbstractExportadorLista {
     private static final String SEPARADOR_LN = "-";
     private static final String SEPARADOR_COL = "|";
 

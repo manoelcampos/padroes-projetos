@@ -20,13 +20,21 @@ public class Principal {
         produtos.add(new Produto(2, "Notebook", "Asus", "New age", 341));
         produtos.add(new Produto(3, "Smartphone", "Samsung", "Galaxy S10", 214));
 
+        //Usa o método getInstance() para instanciar um exportador padrão (neste caso, que gera HTML)
+        final ExportadorLista exportadorPadrao = ExportadorLista.getInstance();
+        System.out.println("Lista de Clientes em HTML----------------------------------------------------------\n");
+        System.out.println(exportadorPadrao.exportar(clientes));
 
-        ExportadorLista exportador = ExportadorLista.getInstance();
-        System.out.println("Lista de Clientes\n");
-        System.out.println(exportador.exportar(clientes));
+        System.out.println("Lista de Produtos em HTML----------------------------------------------------------\n");
+        System.out.println(exportadorPadrao.exportar(produtos));
 
-        System.out.println("--------------------------------------------------------------------------------------");
-        System.out.println("Lista de Produtos\n");
-        System.out.println(exportador.exportar(produtos));
+        //Usa a outra versão do método getInstance() para instanciar um exportador específico para o formato Markdown (md)
+        final ExportadorLista exportadorMarkdown = ExportadorLista.getInstance("md");
+        System.out.println("Lista de Clientes em Markdown------------------------------------------------------\n");
+        System.out.println(exportadorMarkdown.exportar(clientes));
+
+        System.out.println("Lista de Produtos em Markdown------------------------------------------------------\n");
+        System.out.println(exportadorMarkdown.exportar(produtos));
+
     }
 }

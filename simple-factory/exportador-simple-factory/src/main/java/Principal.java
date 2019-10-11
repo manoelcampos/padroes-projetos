@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Executa a aplicação para exibir os resultados.
  * @author Manoel Campos da Silva Filho
  */
 public class Principal {

@@ -1,6 +1,7 @@
 package com.manoelcampos.exportador;
 
 /**
+ * Exporta dados de uma lista de {@link Produto} para Markdown (arquivos md).
  * @author Manoel Campos da Silva Filho
  */
 public class ExportadorListaProdutoMarkdown extends AbstractExportadorListaProduto {

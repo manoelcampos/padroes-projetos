@@ -1,8 +1,7 @@
 package com.manoelcampos.exportador;
 
-import java.util.List;
-
 /**
+ * Exporta dados de uma lista de {@link Produto} para HTML.
  * @author Manoel Campos da Silva Filho
  */
 public class ExportadorListaProdutoHtml extends AbstractExportadorListaProduto {
