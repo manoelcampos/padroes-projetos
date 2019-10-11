@@ -24,9 +24,30 @@ class EstrategiaBoletoFactory {
      */
     private EstrategiaBoletoFactory(){/**/}
 
+    /**
+     * Cria uma instância da estratégia ({@link Function}) para
+     * processamento de um determinado tipo de arquivo de retorno.
+     * A estratégia é automaticamente selecionada a partir
+     * do nome do arquivo que deve possuir o nome do banco.
+     *
+     * @param nomeArquivo nome do arquivo de retorno de boletos bancários de um determinado banco,
+     *                    cujo nome do banco deve estar dentro do nome do arquivo.
+     * @return
+     */
     static Function<String[], Boleto> createStrategy(String nomeArquivo){
         Function<String[], Boleto> estrategia;
         if(nomeArquivo.contains("banco-brasil")){
+            /**
+             * Obseve que como estamos usando programação funcional,
+             * a estratégia de processamento do arquivo não é um objeto,
+             * mas uma função. Assim, não estamos de fato instanciando
+             * um objeto, mas apenas obtendo uma referência (um link)
+             * para a função que será usada pela classe
+             * {@link ProcessarBoletos}.
+             * Os caracteres :: indicam que estamos apenas obtendo
+             * a referência de uma função e armazenando
+             * em uma variável do tipo {@link Function}.
+             */
             estrategia = LeituraRetorno::processarLinhaBancoBrasil;
         }
         else if(nomeArquivo.contains("bradesco")){

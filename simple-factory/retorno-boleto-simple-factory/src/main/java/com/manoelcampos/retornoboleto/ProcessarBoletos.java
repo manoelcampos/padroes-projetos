@@ -6,7 +6,6 @@ import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.function.Function;
 
@@ -15,10 +14,8 @@ import java.util.function.Function;
  */
 public class ProcessarBoletos {
     public void processar(String nomeArquivo){
-        Function<String[], Boleto> processarLinhaArquivo =
-                EstrategiaBoletoFactory.createStrategy(nomeArquivo);
+        Function<String[], Boleto> processarLinhaArquivo = EstrategiaBoletoFactory.createStrategy(nomeArquivo);
 
-        Calendar.getInstance();
         try {
             BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
             String line;
