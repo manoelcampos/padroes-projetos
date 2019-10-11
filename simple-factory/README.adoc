@@ -110,6 +110,11 @@ será utilizada. Assim, não teremos que manualmente decidir qual estratégia in
 precisarmos ler arquivos de retorno. 
 Baseado no projeto link:../template-method/retorno-boleto-template-funcional[retorno-boleto-template-funcional], vamos implementar a Simple Factory.
 
+Implemente o projeto seguindo a modelagem abaixo:
+
+.Simple Factory para a instanciação de estratégias de processamento de arquivos de retorno de boleto bancário.
+image::simple-factory-boleto.png[]
+
 O código fonte do projeto está disponível link:retorno-boleto-simple-factory[aqui].
 
 === Detalhes de Implementação
