@@ -163,3 +163,6 @@ O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos
 Neste projeto vamos usar reflection com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
 
 O código fonte do projeto está disponível link:exportador-simple-factory-reflection[aqui], mas tente primeiro implementar antes de ver o projeto.
+
+
+NOTE: Os projetos de exportação de dados apresentados aqui são apenas exemplos e não trazem tantos recursos e flexibilidade quanto se desejaria em uma aplicação real. Por exemplo, as colunas de uma tabela HTML estão sendo geradas com a tag `<td>`, enquanto há a tag `<th>` específica para isto. As classes apenas retornam strings, não facilitando, por exemplo, gerar o conteúdo diretamente em um arquivo. Se quiser ver uma implementação utilizada em um projeto real, veja as classes no pacote link:https://github.com/manoelcampos/cloudsim-plus/tree/master/cloudsim-plus/src/main/java/org/cloudsimplus/builders/tables[deste link] de um de meus projetos.
