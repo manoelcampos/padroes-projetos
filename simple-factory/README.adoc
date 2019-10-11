@@ -113,7 +113,7 @@ Baseado no projeto link:../template-method/retorno-boleto-template-funcional[ret
 Implemente o projeto seguindo a modelagem abaixo:
 
 .Simple Factory para a instanciação de estratégias de processamento de arquivos de retorno de boleto bancário.
-image::simple-factory-boleto.png[]
+image::simple-factory-boleto-funcional.png[]
 
 O código fonte do projeto está disponível link:retorno-boleto-simple-factory[aqui].
 
