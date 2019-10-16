@@ -15,7 +15,7 @@ Utilize o http://staruml.io[StarUML 3+] para abrir o arquivo.
 
 === Padrões Criacionais
 
-- link:simple-factory/[Simple Factory]
+- link:factory/simple-factory/[Simple Factory]
 
 == Material Complementar
 
