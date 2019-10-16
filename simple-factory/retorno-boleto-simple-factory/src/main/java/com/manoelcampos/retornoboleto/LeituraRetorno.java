@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Define uma classe onde as operações para processar uma linha
  * de um arquivo de retorno de boletos (como Banco do Brasil e Bradesco)
- * serão implementadas. Tal implementação usa o padrão Template Method
+ * serão implementadas. O projeto usa o padrão Template Method
  * para implementar apenas o processamento de uma linha individual
  * do arquivo de retorno, no lugar de processar todas as linhas do arquivo inteiro
  * em um único método.

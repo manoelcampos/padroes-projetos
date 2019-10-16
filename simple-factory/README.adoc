@@ -91,7 +91,7 @@ Ao aplicar o https://en.wikipedia.org/wiki/Dependency_inversion_principle[Depend
 Se *não* utilizássemos a Simple Factory, a classe cliente seria responsável pela lógica de criação dos objetos,
 dependendo de cada um dos objetos que pode criar, como mostra o diagrama a seguir.
 
-.Não utilização da Simple Factory
+.Dependências com a não utilização da Simple Factory
 image::no-simple-factory.png[]
 
 Se observarmos a Figura 1 na Seção 1.3, podemos ver que a `ClasseCliente` depende da `SimpleFactory`, que depende do `TipoAbstrato`. 
@@ -116,6 +116,9 @@ Implemente o projeto seguindo a modelagem abaixo:
 image::simple-factory-boleto-funcional.png[]
 
 O código fonte do projeto está disponível link:retorno-boleto-simple-factory[aqui].
+Uma implementação alternativa, que não utiliza programação funcional e descobre dinamicamente o nome da
+classe para leitura do arquivo de retorno informado pode ser vista link:retorno-boleto-simple-factory-dynamic[aqui].
+Veja a documentação no link acima para detalhes do projeto.
 
 === Detalhes de Implementação
 
