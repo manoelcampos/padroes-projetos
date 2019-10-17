@@ -80,8 +80,8 @@ public interface ExportadorLista {
      * gerado no formado especificado ao criar uma instância de {@link ExportadorLista}.
      *
      * @return
-     * @see #getInstance() 
-     * @see #getInstance(String)
+     * @see #newInstance()
+     * @see #newInstance(String)
      */
     List<String> getNomesCampos();
 
@@ -91,8 +91,8 @@ public interface ExportadorLista {
      * Neste caso, tal formato padrão é HTML.
      * @return
      */
-    static ExportadorLista getInstance(){
-        return getInstance("html");
+    static ExportadorLista newInstance(){
+        return newInstance("html");
     }
 
     /**
@@ -102,7 +102,7 @@ public interface ExportadorLista {
      *                                  como html, csv, md (markdown), etc.
      * @return
      */
-    static ExportadorLista getInstance(String extensaoArquivoExportacao){
+    static ExportadorLista newInstance(String extensaoArquivoExportacao){
         switch (extensaoArquivoExportacao){
             case "html": return new ExportadorListaHtml();
             case "md": return new ExportadorListaMarkdown();

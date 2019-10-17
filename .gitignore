@@ -1,3 +1,4 @@
+*.alias.*
 ~$*
 *.mp4
 target/

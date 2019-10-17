@@ -66,8 +66,8 @@ public interface ExportadorListaProduto {
      * Neste caso, tal formato padrão é HTML.
      * @return
      */
-    static ExportadorListaProduto getInstance(){
-        return getInstance("html");
+    static ExportadorListaProduto newInstance(){
+        return newInstance("html");
     }
 
     /**
@@ -77,7 +77,7 @@ public interface ExportadorListaProduto {
      *                                  como html, csv, md (markdown), etc.
      * @return
      */
-    static ExportadorListaProduto getInstance(String extensaoArquivoExportacao){
+    static ExportadorListaProduto newInstance(String extensaoArquivoExportacao){
         switch (extensaoArquivoExportacao){
             case "html": return new ExportadorListaProdutoHtml();
             case "md": return new ExportadorListaProdutoMarkdown();

@@ -17,7 +17,7 @@ public class Produto {
      * Construtor que inicializa todos os atributos do produto.
      * Ele possui uma grande quantidade de parâmetros, que não é recomendável
      * por tornar a chamada do método confusa.
-     * Ele foi usado aqui apenas para tornar o exemplo mais simples.
+     * Ele foi usado aqui apenas para exigir menos linhas para instanciar um produto.
      * Sempre que possível, defina métodos com no máximo 3 parâmetros.
      *
      * @param id

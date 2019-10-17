@@ -15,7 +15,13 @@ public class Principal {
         produtos.add(new Produto(2, "Notebook", "Asus", "New age", 341));
         produtos.add(new Produto(3, "Smartphone", "Samsung", "Galaxy S10", 214));
 
-        ExportadorListaProduto exportador = ExportadorListaProduto.getInstance();
-        System.out.println(exportador.exportar(produtos));
+        ExportadorListaProduto exportadorPadrao = ExportadorListaProduto.newInstance();
+        System.out.println("Lista de Produtos em HTML\n");
+        System.out.println(exportadorPadrao.exportar(produtos));
+
+        ExportadorListaProduto exportadorMarkdown = ExportadorListaProduto.newInstance("md");
+        System.out.println("Lista de Produtos em Markdown\n");
+        System.out.println(exportadorMarkdown.exportar(produtos));
+
     }
 }

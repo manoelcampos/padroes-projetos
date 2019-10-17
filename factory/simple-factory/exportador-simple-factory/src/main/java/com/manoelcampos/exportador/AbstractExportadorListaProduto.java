@@ -22,7 +22,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
     protected static final List<String> TITULOS_COLUNAS = Arrays.asList("ID", "Descrição", "Marca", "Modelo", "Estoque");
 
     @Override
-    public String exportar(List<Produto> listaProdutos) {
+    public final String exportar(List<Produto> listaProdutos) {
         this.listaProdutos = listaProdutos;
         final StringBuilder sb = new StringBuilder();
         sb.append(abrirTabela());

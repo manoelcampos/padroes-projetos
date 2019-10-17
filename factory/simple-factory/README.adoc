@@ -1,4 +1,4 @@
-:imagesdir: ../images/patterns/factory
+:imagesdir: ../../images/patterns/factory
 :source-highlighter: highlightjs
 :numbered:
 :unsafe:
@@ -154,7 +154,18 @@ Note que dentro do método ele define diferentes tipos de calendário, como greg
 
 === Exportação de dados
 
-Implemente um conjunto de classes que recebe uma lista de produtos e permite exportar tais produtos em diferentes formatos como Tabela HTML, CSV, tabela Markdown. 
+Implemente um conjunto de classes que recebe uma lista de produtos e permite exportar tais produtos em diferentes formatos como Tabela HTML, CSV, tabela Markdown. Utilize a diagrama de classes abaixo como base para sua implementação. Tenha em mente que um diagrama desses pode apresentar os detalhes mais importantes como métodos e atributos que já se sabe previamente. No entanto, durante o desenvolvimento, pode-se
+perceber que são necessários mais métodos e/ou atributos. O diagrama apresenta apenas os elementos públicos e protegidos.
+Novos métodos que precisem ser incluídos, que serão usados pelos apresentados, normalmente são privados,
+exatamente por serem apenas métodos auxiliares que não fazem sentido serem chamados de fora das classes.
+
+.Diagrama de classes para implementação do exportador de lista de produtos para HTML e Markdown
+image::exportador-simple-factory.png[]
+
+Observe que neste caso, não temos uma classe específica para a Simple Factory.
+Temos apenas os métodos estáticos `newInstance()` na interface `ExportadorListaProdutos`
+que instanciam objetos da própria classe. Esta é a mesma modelagem utilizada pela classe `Calendar`
+do JDK. Métodos estáticos em interfaces é um dos recursos do Java 8.
 
 NOTE: Existem inúmeras bibliotecas que realizam tal tarefa, mas o objetivo aqui é praticar. Se precisar realmente exportar dados em qualquer formato, tente utilizar uma biblioteca existente. Pode-se exportar dados em XML e JSON utilizando bibliotecas padrões do JDK.
 
@@ -162,7 +173,7 @@ O código fonte do projeto está disponível link:exportador-simple-factory[aqui
 
 === Tornando a exportação de dados genérica
 
-O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos exportar outros dados como clientes ou vendas, precisaremos criar um novo conjunto de classes para cada tipo de objeto que queremos exportar. Isto é bastante trabalhoso e repetitivo.
+O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos exportar outros dados como clientes ou vendas, teremos que criar um novo conjunto de classes para cada tipo de objeto que queremos exportar. Isto é bastante trabalhoso e repetitivo.
 Neste projeto vamos usar reflection com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
 
 O código fonte do projeto está disponível link:exportador-simple-factory-reflection[aqui], mas tente primeiro implementar antes de ver o projeto.
