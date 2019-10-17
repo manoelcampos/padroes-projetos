@@ -8,3 +8,7 @@ target/
 *.ipr
 *.iws
 .idea
+
+#GitHub Pages Jekyll Plugin
+_site
+.bundle
