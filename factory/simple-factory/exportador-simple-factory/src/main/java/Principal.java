@@ -11,9 +11,9 @@ import java.util.List;
 public class Principal {
     public static void main(String[] args) {
         final List<Produto> produtos = new ArrayList<>();
-        produtos.add(new Produto(1, "TV", "LG", "132-A", 120));
-        produtos.add(new Produto(2, "Notebook", "Asus", "New age", 341));
-        produtos.add(new Produto(3, "Smartphone", "Samsung", "Galaxy S10", 214));
+        produtos.add(new Produto("TV", "LG", "132-A", 120));
+        produtos.add(new Produto("Notebook", "Asus", "New age", 341));
+        produtos.add(new Produto("Smartphone", "Samsung", "Galaxy S10", 214));
 
         ExportadorListaProduto exportadorPadrao = ExportadorListaProduto.newInstance();
         System.out.println("Lista de Produtos em HTML\n");

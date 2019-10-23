@@ -3,14 +3,23 @@ package com.manoelcampos.exportador;
 /**
  * @author Manoel Campos da Silva Filho
  */
-public class Cliente {
+public class Usuario {
+    /**
+     * Último ID gerado automaticamente.
+     */
+    private static int ultimoId = 0;
+
     private int id;
     private String nome;
     private String cpf;
     private String cidade;
 
-    public Cliente(int id, String nome, String cpf, String cidade) {
-        this.id = id;
+    public Usuario(){
+        this.id = ++ultimoId;
+    }
+
+    public Usuario(String nome, String cpf, String cidade) {
+        this();
         this.nome = nome;
         this.cpf = cpf;
         this.cidade = cidade;
@@ -18,10 +27,6 @@ public class Cliente {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {

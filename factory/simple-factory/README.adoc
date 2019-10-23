@@ -23,7 +23,7 @@ Ela não é de fato um padrão de projeto, podendo ser definida como um modelo p
 
 === Aplicabilidade
 
-Sabemos que para instanciar objetos em Java em outras linguagens é utilizado o operador `new`.
+Sabemos que para instanciar objetos em Java e outras linguagens é utilizado o operador `new`.
 Apesar de podermos declarar uma variável com um tipo abstrato, ao instanciar um objeto para tal variável,
 estamos definindo explicitamente qual tipo concreto será usado. 
 
@@ -31,10 +31,10 @@ Se existir uma lógica que define qual tipo concreto será utilizado em um deter
 utilizar esta lógica em diversas partes do código quando precisarmos instanciar um objeto, podemos utilizar
 a Simple Factory para encapsular a criação destes objetos. Com isto, evitamos de duplicar esta lógica em 
 vários locais do projeto. 
-Esta lógica normalmente é definida por um bloco de ifs que define as condições para a criação dos objetos.
+Esta lógica normalmente é definida por um bloco de `if()` que define as condições para a criação dos objetos.
 
 Adicionalmente, considere que temos um tipo abstrato/super-tipo (classe abstrata ou interface) e vários sub-tipos (sub-classes) que podem ser instanciados.
-Se utilizarmos new para instanciar um determinado sub-tipo em diferentes locais do sistema e precisarmos
+Se utilizarmos `new` para instanciar um determinado sub-tipo em diferentes locais do sistema e precisarmos
 substituir estas instâncias por um sub-tipo diferente, teríamos que fazer isso manualmente alterando 
 os vários locais no código. Utilizando a Simple Factory, a crição de objetos de um determinado super-tipo
 fica encapsulada e centralizada em um método da Simple Factory.
@@ -55,8 +55,7 @@ Alguns exemplos incluem:
 A `ClasseCliente` é uma classe qualquer que precisa utilizar objetos produzidos pela Factory. 
 Assim, podemos ter várias classes clientes.
 
-NOTE: Não confunda o termo "cliente" amplamente utilizado quando falamos de padrões de projeto e POO com um cliente (pessoa) de uma empresa.
-Aqui, o termo cliente é mais genérico: representa uma classe que usa os serviços de outra classe.
+NOTE: O termo "cliente", amplamente utilizado quando falamos de padrões de projeto e POO, representa uma classe que usa os serviços de outra classe, como uma pessoa que usa os serviços de uma empresa.
 
 Por exemplo, em um sistema de uma loja poderíamos uma classe que cria novos
 produtos para serem inseridos no estoque. Tal classe seria cliente da Factory.
@@ -73,7 +72,7 @@ Como ele é abstrato, a Factory criará objetos de algum dos sub-tipos disponív
 de acordo com uma possível lógica que você definir.
 
 O método `createObject` da `SimpleFactory` retorna um `TipoAbstrato`, mas internamente ele 
-cria um objeto de algum dos sub-tipos existentes para retornar. 
+cria um objeto de algum dos sub-tipos existentes. 
 
 === Princípios utilizados
 
