@@ -1,0 +1,10 @@
+:source-highlighter: highlightjs
+
+= Exportação de lista de objetos em diferentes formatos
+
+Esta versão do projeto apresentado link:../../simple-factory/exportador-simple-factory-reflection[anteriormente] implementa
+a exportação de dados de uma lista genérica de objetos para formatos como HTML e Markdown (extensão .md).
+
+É aplicado o padrão link:../[Factory Method] para deixar as subclasses de `AbstractExportadorLista`
+decidirem qual classe será instanciada quando decidirmos criar mais colunas para uma tabela em um formato
+específico.

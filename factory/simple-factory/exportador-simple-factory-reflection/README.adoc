@@ -1,0 +1,12 @@
+:source-highlighter: highlightjs
+
+= Exportação de lista de objetos em diferentes formatos
+
+Esta versão do projeto apresentado link:../exportador-simple-factory[anteriormente] implementa
+a exportação de dados de uma lista de qualquer tipo de objetos para formatos como HTML e Markdown (extensão .md).
+
+Tal versão utiliza o recurso de Reflection da linguagem Java para descobrir automaticamente
+os atributos existentes nos objetos da lista a ser exportada.
+Assim, tais atributos se transformam nas colunas da tabela gerada no formato escolhido.
+
+Esta é uma implementação mais flexível e realista, pois permite exportar qualquer tipo de lista.

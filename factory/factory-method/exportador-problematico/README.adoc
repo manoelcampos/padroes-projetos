@@ -1,0 +1,15 @@
+:source-highlighter: highlightjs
+
+= Exportação de lista de objetos em diferentes formatos
+
+Esta versão do projeto apresentado link:../exportador-factory-method-reflection[anteriormente] implementa
+a exportação de dados de uma lista genérica de objetos para formatos como HTML e Markdown (extensão .md).
+
+Aqui **NÃO** é aplicado o padrão link:../[Factory Method] e isso pode trazer problemas quando você
+decidir adicionar novas colunas em uma tabela. Por exemplo, considerando que a classe `Usuario`
+tem os atributos id, nome, cpf e cidade, podemos querer incluir uma coluna a mais na tabela gerada
+a partir de uma lista destes objetos. Um exemplo seria a adição de uma coluna contendo apenas o sobrenome
+do usuário. 
+
+A classe `Principal` atualmente já está gerando tabelas de usuários com esta coluna "Sobrenome".
+Altere o código da classe e tente descobrir qual problema pode acarretar.

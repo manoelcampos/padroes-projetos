@@ -1,0 +1,64 @@
+:imagesdir: ../../images/patterns/factory
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Criacionais (Creational Design Patterns)
+
+== Factory Method (Método Fábrica)
+
+=== Definição
+
+
+=== Aplicabilidade
+
+
+
+=== Modelagem
+
+
+.Modelagem do Factory Method
+image::factory-method.png[]
+
+
+=== Princípios utilizados
+
+
+=== Exemplos
+
+Podemos utilizar o Factory Method para xxxxxxx.
+Baseado no projeto link:../xxxxxx[xxxxx], vamos implementar o Factory Method.
+
+Implemente o projeto seguindo a modelagem abaixo:
+
+.Factory Method para a instanciação de colunas de uma tabela em formato específico
+image::xxxxxxx.png[]
+
+O código fonte do projeto está disponível link:exportador-factory-method-reflection[aqui].
+
+=== Detalhes de Implementação
+
+== Problemas da não utilização do padrão
+
+Veja o projeto link:exportador-problematico[exportador-problematico].
+
+== Padrões Relacionados
+
+Padrões que possuem similaridades ou podem ser usados em conjunto:
+
+- Template Method
+- Simple Factory
+
+== Onde o padrão é usado no JDK
+
+- xxxx
+- xxxx

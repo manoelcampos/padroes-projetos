@@ -1,0 +1,8 @@
+:source-highlighter: highlightjs
+
+= Exportação de lista de objetos em diferentes formatos
+
+Este é um projeto que implementa a exportação de dados de uma lista de produtos para formatos como HTML e Markdown (extensão .md).
+Ela é uma versão introdutória bastante limitada, pois só trabalha com lista de produtos.
+Para exportar uma lista de outro tipo de objeto, seria necessário implementar novas classes,
+não sendo uma solução viável.

@@ -86,19 +86,6 @@ public interface ExportadorLista<T> {
     /**
      * Adiciona uma coluna à tabela.
      * @param coluna coluna a ser adicionada
-     * @see #newColuna(Function, String)
      */
     void addColuna(ColunaTabela coluna);
-
-    /**
-     * Cria uma coluna para ser inserida na tabela, cujo valor a ser exibido será obtido
-     * a partir de uma função que recebe um objeto da lista a ser exportada e retorna
-     * uma String com dados obtidos de qualquer atributo deste objeto.
-     *  @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
-     *                          da lista a ser exportada e retorna uma String
-     *                          que representa o conteúdo a ser exibido para a coluna
-     * @param titulo título a ser exibido na coluna
-     * @return
-     */
-    ColunaTabela<T> newColuna(Function<T, String> funcaoValorColuna, String titulo);
 }
