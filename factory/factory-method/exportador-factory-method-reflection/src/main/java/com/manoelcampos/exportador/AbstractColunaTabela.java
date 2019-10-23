@@ -44,6 +44,7 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
     /**
      * Instancia uma coluna para uma tabela, cujo valor a ser exibido será obtido
      * a partir de um campo (atributo) específico de um objeto.
+     * <p>Este construtor é protegido pois é usado apenas internamente.</p>
      *
      * @param campo  campo (atributo) do objeto a ser obtido o valor
      *
@@ -63,6 +64,12 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * Instancia uma coluna para uma tabela, cujo valor a ser exibido será obtido
      * a partir de uma função que recebe um objeto da lista a ser exportada e retorna
      * uma String com dados obtidos de qualquer atributo deste objeto.
+     *
+     * <p>Este construtor é definido como protegido para evitar que ele seja
+     * chamado diretamente, uma vez que classes como {@link ExportadorListaHtml}
+     * implementam o Factory Method {@link ExportadorListaHtml#newColuna(Function, String)},
+     * usado para criar instâncias de subclasses específicas quando estiver sendo
+     * gerada uma tabela em um determinado formato.</p>
      *
      * @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
      *                          da lista a ser exportada e retorna uma String
