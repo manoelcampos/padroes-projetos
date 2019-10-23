@@ -19,6 +19,34 @@ import java.util.function.Function;
  */
 public interface ExportadorLista<T> {
     /**
+     * Cria uma instância de uma classe
+     * que realiza a exportação de dados para um formato padrão.
+     * Neste caso, tal formato padrão é HTML.
+     *
+     * @param lista Lista genérica de objetos a ser exportada.
+     * @return
+     */
+    static <T> ExportadorLista<T> newInstance(final List<T> lista){
+        return newInstance(lista, "html");
+    }
+
+    /**
+     * Cria uma instância de uma classe
+     * que realiza a exportação de dados para um formato definido.
+     * @param lista Lista genérica de objetos a ser exportada.
+     * @param extensaoArquivoExportacao extensão de arquivo que indica o formato para converter os dados,
+     *                                  como html, csv, md (markdown), etc.
+     * @return
+     */
+    static <T> ExportadorLista<T> newInstance(final List<T> lista, String extensaoArquivoExportacao){
+        switch (extensaoArquivoExportacao){
+            case "html": return new ExportadorListaHtml<>(lista);
+            case "md": return new ExportadorListaMarkdown<>(lista);
+            default: throw new UnsupportedOperationException("Formato de arquivo não suportado: " + extensaoArquivoExportacao);
+        }
+    }
+
+    /**
      * Retorna o código HTML para abertura de uma tabela.
      * @return
      */
@@ -56,49 +84,24 @@ public interface ExportadorLista<T> {
     String exportar();
 
     /**
-     * Cria uma instância de uma classe
-     * que realiza a exportação de dados para um formato padrão.
-     * Neste caso, tal formato padrão é HTML.
-     *
-     * @param lista Lista genérica de objetos a ser exportada.
-     * @return
-     */
-    static <T> ExportadorLista<T> newInstance(final List<T> lista){
-        return newInstance(lista, "html");
-    }
-
-    /**
-     * Cria uma instância de uma classe
-     * que realiza a exportação de dados para um formato definido.
-     * @param lista Lista genérica de objetos a ser exportada.
-     * @param extensaoArquivoExportacao extensão de arquivo que indica o formato para converter os dados,
-     *                                  como html, csv, md (markdown), etc.
-     * @return
-     */
-    static <T> ExportadorLista<T> newInstance(final List<T> lista, String extensaoArquivoExportacao){
-        switch (extensaoArquivoExportacao){
-            case "html": return new ExportadorListaHtml<>(lista);
-            case "md": return new ExportadorListaMarkdown<>(lista);
-            default: throw new UnsupportedOperationException("Formato de arquivo não suportado: " + extensaoArquivoExportacao);
-        }
-    }
-
-    /**
-     * Adiciona uma coluna à tabela.
-     * @param coluna coluna a ser adicionada
-     * @see #newColuna(Function, String)
-     */
-    void addColuna(ColunaTabela coluna);
-
-    /**
      * Cria uma coluna para ser inserida na tabela, cujo valor a ser exibido será obtido
      * a partir de uma função que recebe um objeto da lista a ser exportada e retorna
      * uma String com dados obtidos de qualquer atributo deste objeto.
-     *  @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
+     * <b>Este método representa a aplicação do padrão Factory Method,
+     * uma vez que as subclasses é que vão decidir qual objeto criar.</b>
+     *
+     * @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
      *                          da lista a ser exportada e retorna uma String
      *                          que representa o conteúdo a ser exibido para a coluna
      * @param titulo título a ser exibido na coluna
      * @return
      */
     ColunaTabela<T> newColuna(Function<T, String> funcaoValorColuna, String titulo);
+
+    /**
+     * Adiciona uma coluna à tabela.
+     * @param coluna coluna a ser adicionada
+     * @see #newColuna(Function, String)
+     */
+    void addColuna(ColunaTabela<T> coluna);
 }

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class Principal {
     private static final List<Usuario> USUARIOS = Arrays.asList(
-            new Usuario("Manoel Campos", "123.456.789-01", "Palmas"),
+            new Usuario("Manoel Campos da Silva Filho", "123.456.789-01", "Palmas"),
             new Usuario("Joana Brito", "444.555.666-77", "Porto Nacional"),
             new Usuario("Lúcia Alves", "999.888.777-66", "Palmas")
     );
@@ -34,6 +34,9 @@ public class Principal {
     private void exportarUsuarios() {
         //Usa o método getInstance() para instanciar um exportador padrão (neste caso, que gera HTML)
         final ExportadorLista<Usuario> exportadorPadrao = ExportadorLista.newInstance(USUARIOS);
+
+        /* Este método newColuna é que representa a implementação do padrão Factory Method.
+        * Veja a documentação dele para mais detalhes */
         ColunaTabela<Usuario> coluna = exportadorPadrao.newColuna(this::getSobrenomeUsuario, "Sobrenome");
         exportadorPadrao.addColuna(coluna);
 
@@ -58,7 +61,7 @@ public class Principal {
      * @return sobrenome do usuário ou vazio se não existir
      */
     private String getSobrenomeUsuario(Usuario usuario){
-        Pattern regexPattern = Pattern.compile(".+\\s(.*)");
+        Pattern regexPattern = Pattern.compile(".+?\\s(.*)");
         Matcher matcher = regexPattern.matcher(usuario.getNome());
         return matcher.matches() ? matcher.group(1) : "";
     }

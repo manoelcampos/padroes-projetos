@@ -5,7 +5,6 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
 
 /**
  * Classe abstrata que fornece uma implementação base para as subclasses
@@ -149,7 +148,7 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
     }
 
     @Override
-    public void addColuna(ColunaTabela coluna) {
+    public void addColuna(ColunaTabela<T> coluna) {
         colunas.add(coluna);
     }
 

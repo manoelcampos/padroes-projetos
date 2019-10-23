@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  */
 public class Principal {
     private static final List<Usuario> USUARIOS = Arrays.asList(
-            new Usuario("Manoel Campos", "123.456.789-01", "Palmas"),
+            new Usuario("Manoel Campos da Silva Filho", "123.456.789-01", "Palmas"),
             new Usuario("Joana Brito", "444.555.666-77", "Porto Nacional"),
             new Usuario("Lúcia Alves", "999.888.777-66", "Palmas")
     );
@@ -54,7 +54,7 @@ public class Principal {
      * @return sobrenome do usuário ou vazio se não existir
      */
     private String getSobrenomeUsuario(Usuario usuario){
-        Pattern regexPattern = Pattern.compile(".+\\s(.*)");
+        Pattern regexPattern = Pattern.compile(".+?\\s(.*)");
         Matcher matcher = regexPattern.matcher(usuario.getNome());
         return matcher.matches() ? matcher.group(1) : "";
     }

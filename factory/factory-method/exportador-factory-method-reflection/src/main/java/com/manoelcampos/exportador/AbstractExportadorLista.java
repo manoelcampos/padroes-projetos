@@ -149,16 +149,18 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
     }
 
     @Override
-    public void addColuna(ColunaTabela coluna) {
+    public void addColuna(ColunaTabela<T> coluna) {
         colunas.add(coluna);
     }
 
     /**
      * Adiciona uma nova coluna para ser inserida na tabela, cujo valor a ser exibido será obtido
      * a partir de um campo (atributo) específico de um objeto.
-     * <p>O método é usado apenas internamente para gerar colunas
-     * baseadas nos atributos existentes dos objetos
-     * da lista sendo exportada.
+     * <b>Este método representa a aplicação do padrão Factory Method,
+     * uma vez que as subclasses é que vão decidir qual objeto criar.</b>
+     *
+     * <p>O método é protegido pois é usado apenas internamente para gerar colunas
+     * baseadas nos atributos existentes dos objetos da lista sendo exportada.
      * Para adicionar colunas manualmente, veja o método {@link #newColuna(Function, String)}.</p>
      *
      * @param campo  campo de onde o dado a ser exibido na coluna será obtido
