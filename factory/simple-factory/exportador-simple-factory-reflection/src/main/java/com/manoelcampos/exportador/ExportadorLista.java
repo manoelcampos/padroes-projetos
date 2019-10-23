@@ -61,18 +61,9 @@ public interface ExportadorLista {
     /**
      * Inicia a exportação da lista de objetos para um formato específico.
      *
-     * @param lista Lista de objetos a ser exportada. Observe que o tipo não é {@code List<Object>},
-     *              mas {@code List<? extends Object>}. Usando o primeiro tipo,
-     *              não poderíamos passar uma {@code List<Cliente>} ou {@code List<Produto>}.
-     *              Teríamos que passar exatamente uma {@code List<Object>}.
-     *              Como dissemos que a lista a ser recebida pode conter qualquer tipo
-     *              que estenda {@link Object}, podemos passar uma lista de qualquer coisa.
-     *              Para isto, estamos usando um dos recursos de Generics do Java.
-     *              Podemos identificar o uso de Generics pela presença dos sinais {@code < e >}
-     *              depois de um tipo qualquer como List.
-     * @return String contendo o conteúdo da lista de objetos em um formato específico
+     * @param lista Lista de objetos a ser exportada.
      */
-    String exportar(List<? extends Object> lista);
+    String exportar(List<?> lista);
 
     /**
      * Obtém uma lista com o nome dos atributos dos objetos contidos nela.

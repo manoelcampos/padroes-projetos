@@ -1,6 +1,7 @@
 package com.manoelcampos.exportador;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -13,9 +14,18 @@ import java.util.Objects;
  */
 public abstract class AbstractExportadorLista implements ExportadorLista {
     /**
-     * Lista de objetos a serem exportados para um formato define pelas subclasses.
+     * Lista de objetos a serem exportados para um formato definido pelas subclasses.
+     * Observe que o tipo não é {@code List<Object>},
+     * mas {@code List<?>}.
+     * Usando o primeiro tipo, não poderíamos passar uma {@code List<Cliente>} ou {@code List<Produto>}.
+     * Teríamos que passar exatamente uma {@code List<Object>}.
+     * Como dissemos que a lista a ser recebida pode conter qualquer tipo
+     * (representando pela interrogação), podemos passar uma lista de qualquer coisa.
+     * Para isto, estamos usando um dos recursos de Generics do Java.
+     * Podemos identificar o uso de Generics pela presença dos sinais {@code < e >}
+     * depois de um tipo qualquer como List.
      */
-    private List<? extends Object> lista;
+    private List<?> lista;
 
     /**
      * Colunas a serem exibidas na tabela gerada no processo de exportação.
@@ -24,7 +34,7 @@ public abstract class AbstractExportadorLista implements ExportadorLista {
     private List<String> nomesCampos;
 
     @Override
-    public String exportar(List<? extends Object> lista) {
+    public String exportar(List<?> lista) {
         Objects.requireNonNull(lista);
         if(lista.isEmpty()){
             throw new IllegalArgumentException("A lista fornecida está vazia");
@@ -63,7 +73,10 @@ public abstract class AbstractExportadorLista implements ExportadorLista {
         //Obtém o nome dos campos (fields) declarados diretamente na classe do objeto.
         Field[] campos = objeto.getClass().getDeclaredFields();
         for (Field campo : campos) {
-            titulosColunas.add(campo.getName());
+            //Atributos estáticos não serão incluídos na tabela gerada
+            if(!Modifier.isStatic(campo.getModifiers())) {
+                titulosColunas.add(campo.getName());
+            }
         }
 
         return titulosColunas;
