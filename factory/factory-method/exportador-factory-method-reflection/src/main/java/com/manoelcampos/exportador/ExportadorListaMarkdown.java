@@ -57,13 +57,13 @@ public class ExportadorListaMarkdown<T> extends AbstractExportadorLista<T> {
     }
 
     @Override
-    public ColunaTabela newColuna(T objeto, Field campo) {
-        return new ColunaMarkdown<>(objeto, campo);
+    public ColunaTabela newColuna(Field campo) {
+        return new ColunaMarkdown<>(campo);
     }
 
     @Override
-    public ColunaTabela newColuna(T objeto, Function<T, String> funcaoValorColuna, String titulo) {
-        return new ColunaMarkdown<>(objeto, funcaoValorColuna, titulo);
+    public ColunaTabela<T> newColuna(Function<T, String> funcaoValorColuna, String titulo) {
+        return new ColunaMarkdown<>(funcaoValorColuna, titulo);
     }
 
 }

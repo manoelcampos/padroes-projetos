@@ -1,6 +1,5 @@
 package com.manoelcampos.exportador;
 
-import java.lang.reflect.Field;
 import java.util.List;
 import java.util.function.Function;
 
@@ -64,7 +63,7 @@ public interface ExportadorLista<T> {
      * @param lista Lista genérica de objetos a ser exportada.
      * @return
      */
-    static <T> ExportadorLista newInstance(final List<T> lista){
+    static <T> ExportadorLista<T> newInstance(final List<T> lista){
         return newInstance(lista, "html");
     }
 
@@ -76,7 +75,7 @@ public interface ExportadorLista<T> {
      *                                  como html, csv, md (markdown), etc.
      * @return
      */
-    static <T> ExportadorLista newInstance(final List<T> lista, String extensaoArquivoExportacao){
+    static <T> ExportadorLista<T> newInstance(final List<T> lista, String extensaoArquivoExportacao){
         switch (extensaoArquivoExportacao){
             case "html": return new ExportadorListaHtml(lista);
             case "md": return new ExportadorListaMarkdown(lista);
@@ -92,27 +91,13 @@ public interface ExportadorLista<T> {
 
     /**
      * Adiciona uma nova coluna para ser inserida na tabela, cujo valor a ser exibido será obtido
-     * a partir de um campo (atributo) específico de um objeto.
-     *
-     * @param objeto Objeto de onde o dado a ser exibido para a coluna será obtido.
-     *               A coluna exibe o valor de um atributo (campo) do objeto informado
-     * @param campo  campo de onde o dado a ser exibido na coluna será obtido
-     * @return uma nova coluna para uma tabela
-     * @see #newColuna(Object, Function, String)
-     */
-    ColunaTabela newColuna(T objeto, Field campo);
-
-    /**
-     * Adiciona uma nova coluna para ser inserida na tabela, cujo valor a ser exibido será obtido
      * a partir de uma função que recebe um objeto da lista a ser exportada e retorna
      * uma String com dados obtidos de qualquer atributo deste objeto.
-     *
-     * @param objeto            objeto de onde o valor de um determinado campo será obtido
-     * @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
+     *  @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
      *                          da lista a ser exportada e retorna uma String
      *                          que representa o conteúdo a ser exibido para a coluna
      * @param titulo título a ser exibido na coluna
-     * @see #newColuna(Object, Field)
+     * @return
      */
-    ColunaTabela newColuna(T objeto, Function<T, String> funcaoValorColuna, String titulo);
+    ColunaTabela<T> newColuna(Function<T, String> funcaoValorColuna, String titulo);
 }

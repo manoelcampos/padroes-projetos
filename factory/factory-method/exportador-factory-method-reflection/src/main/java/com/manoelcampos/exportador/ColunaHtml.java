@@ -13,27 +13,24 @@ public class ColunaHtml<T> extends AbstractColunaTabela<T> {
      * Instancia uma coluna para uma tabela HTML, cujo valor a ser exibido será obtido
      * a partir de um campo (atributo) específico de um objeto.
      *
-     * @param objeto objeto de onde o valor de um determinado campo será obtido
      * @param campo  campo (atributo) do objeto a ser obtido o valor
      * @return o valor do campo como String ou vazio se o campo for null
      */
-    protected ColunaHtml(T objeto, Field campo) {
-        super(objeto, campo);
+    protected ColunaHtml(Field campo) {
+        super(campo);
     }
 
     /**
      * Instancia uma coluna para uma tabela HTML, cujo valor a ser exibido será obtido
      * a partir de uma função que recebe um objeto da lista a ser exportada e retorna
      * uma String com dados obtidos de qualquer atributo deste objeto.
-     *
-     * @param objeto            objeto de onde o valor de um determinado campo será obtido
-     * @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
+     *  @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
      *                          da lista a ser exportada e retorna uma String
      *                          que representa o conteúdo a ser exibido para a coluna
      * @param titulo título a ser exibido na coluna
      */
-    protected ColunaHtml(T objeto, Function<T, String> funcaoValorColuna, String titulo) {
-        super(objeto, funcaoValorColuna, titulo);
+    protected ColunaHtml(Function<T, String> funcaoValorColuna, String titulo) {
+        super(funcaoValorColuna, titulo);
     }
     @Override
     public String abrir()  {

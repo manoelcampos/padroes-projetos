@@ -19,7 +19,7 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * de um campo, o valor que um determinado objeto armazena
      * para tal campo, o tipo do campo, etc.
      *
-     * <p>Tal atributo só é usado se o construtor {@link #AbstractColunaTabela(Object, Field)}
+     * <p>Tal atributo só é usado se o construtor {@link #AbstractColunaTabela(Field)}
      * for chamado. Caso contrário, o valor a ser exibido para a coluna é obtido
      * de {@link #funcaoValorColuna}.</p>
      */
@@ -35,7 +35,7 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * Função ({@link Function}) que recebe um objeto
      * da lista a ser exportada e retorna uma String
      * que representa o conteúdo a ser exibido para a coluna.
-     * Tal atributo só é usado se o construtor {@link #AbstractColunaTabela(Object, Function, String)}
+     * Tal atributo só é usado se o construtor {@link #AbstractColunaTabela(Function, String)}
      * for chamado. Caso contrário, o valor a ser exibido para a coluna é obtido
      * de {@link #campo}.
      */
@@ -45,13 +45,12 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * Instancia uma coluna para uma tabela, cujo valor a ser exibido será obtido
      * a partir de um campo (atributo) específico de um objeto.
      *
-     * @param objeto objeto de onde o valor de um determinado campo será obtido
      * @param campo  campo (atributo) do objeto a ser obtido o valor
      *
-     * @see #AbstractColunaTabela(Object, Function, String)
+     * @see #AbstractColunaTabela(Function, String)
      */
-    protected AbstractColunaTabela(T objeto, Field campo) {
-        this(objeto, campo.getName());
+    protected AbstractColunaTabela(Field campo) {
+        this(campo.getName());
         this.campo = campo;
 
         /*Como estamos acessando um campo (que possivelmente é privado) via Reflection e não
@@ -65,35 +64,27 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * a partir de uma função que recebe um objeto da lista a ser exportada e retorna
      * uma String com dados obtidos de qualquer atributo deste objeto.
      *
-     * @param objeto            objeto de onde o valor de um determinado campo será obtido
      * @param funcaoValorColuna uma função ({@link Function}) que recebe um objeto
      *                          da lista a ser exportada e retorna uma String
      *                          que representa o conteúdo a ser exibido para a coluna
      * @param titulo título a ser exibido na coluna
      *
-     * @see #AbstractColunaTabela(Object, Field)
+     * @see #AbstractColunaTabela(Field)
      */
-    protected AbstractColunaTabela(T objeto, Function<T, String> funcaoValorColuna, String titulo) {
-        this(objeto, titulo);
+    protected AbstractColunaTabela(Function<T, String> funcaoValorColuna, String titulo) {
+        this(titulo);
         this.funcaoValorColuna = funcaoValorColuna;
     }
 
     /**
      * Construtor usado internamente para inicializar alguns atributos e evitar duplicação
      * de código entre os outros construtores
-     * @param objeto objeto de onde o valor de um determinado campo será obtido
      * @param titulo título a ser exibido na coluna
      *
-     * @see #AbstractColunaTabela(Object, Field)
-     * @see #AbstractColunaTabela(Object, Function, String)
+     * @see #AbstractColunaTabela(Field)
+     * @see #AbstractColunaTabela(Function, String)
      */
-    private AbstractColunaTabela(T objeto, String titulo) {
-        /**
-         * Objeto genérico de onde o dado da coluna será obtido para exibição.
-         * Cada coluna representa um determinado atributo (campo) de tal objeto.
-         *
-         * @see #campo
-         */
+    private AbstractColunaTabela(String titulo) {
         setTitulo(titulo);
     }
 
@@ -105,9 +96,8 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * @return o valor do campo como String ou vazio se o campo for null
      */
     private String getValor(T objeto) {
-        /*
-         * Se o valor da coluna foi definido para ser obtido a partir de uma
-         * função passada em um dos construtores, chama tal função.*/
+        /* Se o valor da coluna foi definido para ser obtido a partir de uma
+         * função passada em um dos construtores, chama tal função. */
         if(funcaoValorColuna != null){
             return funcaoValorColuna.apply(objeto);
         }

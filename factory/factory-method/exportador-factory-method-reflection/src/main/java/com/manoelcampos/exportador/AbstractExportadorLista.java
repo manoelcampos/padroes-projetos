@@ -84,7 +84,7 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
         for (Field campo : campos) {
             //Atributos estáticos não serão incluídos na tabela gerada
             if (!Modifier.isStatic(campo.getModifiers())) {
-                colunas.add(newColuna(objeto, campo));
+                colunas.add(newColuna(campo));
             }
         }
 
@@ -153,4 +153,16 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
         colunas.add(coluna);
     }
 
+    /**
+     * Adiciona uma nova coluna para ser inserida na tabela, cujo valor a ser exibido será obtido
+     * a partir de um campo (atributo) específico de um objeto.
+     * <p>O método é usado apenas internamente para gerar colunas
+     * baseadas nos atributos existentes dos objetos
+     * da lista sendo exportada.
+     * Para adicionar colunas manualmente, veja o método {@link #newColuna(Function, String)}.</p>
+     *
+     * @param campo  campo de onde o dado a ser exibido na coluna será obtido
+     * @return uma nova coluna para uma tabela
+     */
+    protected abstract ColunaTabela newColuna(Field campo);
 }
