@@ -35,13 +35,14 @@ image::factory-method.png[]
 
 === Exemplos
 
-Podemos utilizar o Factory Method para xxxxxxx.
-Baseado no projeto link:../xxxxxx[xxxxx], vamos implementar o Factory Method.
+Podemos utilizar o Factory Method para encapsular a instanciação de colunas de uma tabela em formato específico.
+Baseado no projeto link:../simple-factory/exportador-simple-factory-reflection[exportador-simple-factory-reflection], 
+vamos implementar o Factory Method.
 
 Implemente o projeto seguindo a modelagem abaixo:
 
 .Factory Method para a instanciação de colunas de uma tabela em formato específico
-image::xxxxxxx.png[]
+image::factory-method-exportador.png[]
 
 O código fonte do projeto está disponível link:exportador-factory-method-reflection[aqui].
 
@@ -50,6 +51,11 @@ O código fonte do projeto está disponível link:exportador-factory-method-refl
 == Problemas da não utilização do padrão
 
 Veja o projeto link:exportador-problematico[exportador-problematico].
+Ele é uma implementação do exportador de dados sem utilizar o padrão Factory Method,
+seguindo a modelagem do diagrama abaixo:
+
+.Exportador de dados que NÃO usa o padrão Factory Method
+image::no-factory-method-exportador.png[]
 
 == Padrões Relacionados
 
