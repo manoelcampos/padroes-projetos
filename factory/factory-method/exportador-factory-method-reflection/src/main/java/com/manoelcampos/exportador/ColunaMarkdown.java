@@ -5,10 +5,17 @@ import java.util.function.Function;
 
 /**
  * Gera dados de um atributo de um objeto como uma coluna em uma tabela Markdown.
+ *
+ * <p>Observe que, como estamos usando o padrão Factory Method para instanciar
+ * objetos {@link Coluna}, as classes concretas como esta são definidas com visibilidade "package",
+ * não podendo ser acessadas fora do pacote.
+ * Assim, não teremos como instanciar diretamente tais classes.
+ * O Factory Method faz isso pra nós.</p>
+ *
  * @param <T> tipo de objetos da lista a ser exportada
  * @author Manoel Campos da Silva Filho
  */
-public class ColunaMarkdown<T> extends AbstractColuna<T> {
+class ColunaMarkdown<T> extends AbstractColuna<T> {
     public static final String SEPARADOR = "|";
 
     /**

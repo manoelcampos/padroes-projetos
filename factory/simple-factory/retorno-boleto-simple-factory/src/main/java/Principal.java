@@ -1,8 +1,4 @@
-import com.manoelcampos.retornoboleto.Boleto;
-import com.manoelcampos.retornoboleto.LeituraRetorno;
 import com.manoelcampos.retornoboleto.ProcessarBoletos;
-
-import java.util.function.Function;
 
 /**
  * Executa a aplicação para ler um arquivo de

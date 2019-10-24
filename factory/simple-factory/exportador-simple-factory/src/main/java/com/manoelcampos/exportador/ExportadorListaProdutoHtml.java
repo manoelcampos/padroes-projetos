@@ -2,9 +2,16 @@ package com.manoelcampos.exportador;
 
 /**
  * Exporta dados de uma lista de {@link Produto} para HTML.
+ *
+ * <p>Observe que, como estamos usando o padrão Simple Factory para instanciar
+ * objetos {@link ExportadorListaProduto}, as classes concretas como esta são definidas com visibilidade "package",
+ * não podendo ser acessadas fora do pacote.
+ * Assim, não teremos como instanciar diretamente tais classes.
+ * A Simple Factory faz isso pra nós.</p>
+ *
  * @author Manoel Campos da Silva Filho
  */
-public class ExportadorListaProdutoHtml extends AbstractExportadorListaProduto {
+class ExportadorListaProdutoHtml extends AbstractExportadorListaProduto {
     @Override
     public String abrirTabela() {
         return "<table>\n";

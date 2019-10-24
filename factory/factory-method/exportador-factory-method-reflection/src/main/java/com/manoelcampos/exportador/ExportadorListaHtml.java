@@ -6,9 +6,16 @@ import java.util.function.Function;
 
 /**
  * Exporta dados de uma lista de objetos para o formato HTML.
+ *
+ * <p>Observe que, como estamos usando o padrão Simple Factory para instanciar
+ * objetos {@link ExportadorLista}, as classes concretas como esta são definidas com visibilidade "package",
+ * não podendo ser acessadas fora do pacote.
+ * Assim, não teremos como instanciar diretamente tais classes.
+ * A Simple Factory faz isso pra nós.</p>
+ *
  * @author Manoel Campos da Silva Filho
  */
-public class ExportadorListaHtml<T> extends AbstractExportadorLista<T> {
+class ExportadorListaHtml<T> extends AbstractExportadorLista<T> {
 
     /**
      * Instancia um exportador de uma determinada lista de objetos para o formato HTML.

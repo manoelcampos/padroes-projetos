@@ -50,9 +50,23 @@ import java.time.format.DateTimeFormatter;
  * Para evitar esta última confusão, a classe possui um construtor
  * privado, impossibilitando qualquer instanciação.</p>
  *
+ * <p>Observe que, como estamos usando o padrão Simple Factory para
+ * selecionar a estratégia a ser usada para ler um determinado arquivo
+ * de retorno, não quero que as estratégias sejam acessadas diretamente.
+ * Somente as classes deste pacote, como a {@link EstrategiaBoletoFactory},
+ * terão acesso. Assim, quem for usar este pacote para ler arquivos
+ * de retorno, não tem que se preocupar com as implementações específicas.
+ * Precisa apenas usar a classe {@link ProcessarBoletos}.
+ * Ela solicitará à factory para selecionar a estratégia correta
+ * para o arquivo de retorno de boletos informado.
+ * Aqui uso a palavra "selecionar" pois, como estamos aplicando
+ * programação funcional, as estratégias não são objetos,
+ * mas apenas funções (métodos) dentro da classe {@link LeituraRetorno}.
+ * A factory apenas seleciona a função adequada.</p>
+ *
  * @author Manoel Campos da Silva Filho
  */
-public final class LeituraRetorno {
+final class LeituraRetorno {
     public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public static final DateTimeFormatter FORMATO_DATA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
@@ -64,7 +78,7 @@ public final class LeituraRetorno {
         //Não faz nada intencioalmente, pois a classe não deve ser instanciada.
     }
 
-    public static Boleto processarLinhaBancoBrasil(String[] vetor) {
+    static Boleto processarLinhaBancoBrasil(String[] vetor) {
         Boleto boleto = new Boleto();
         boleto.setId(Integer.parseInt(vetor[0]));
         boleto.setCodBanco(vetor[1]);
@@ -79,7 +93,7 @@ public final class LeituraRetorno {
         return boleto;
     }
 
-    public static Boleto processarLinhaBradesco(String[] vetor) {
+    static Boleto processarLinhaBradesco(String[] vetor) {
         Boleto boleto = new Boleto();
         boleto.setId(Integer.parseInt(vetor[0]));
         boleto.setCodBanco(vetor[1]);

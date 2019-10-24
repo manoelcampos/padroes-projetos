@@ -5,10 +5,17 @@ import java.util.function.Function;
 
 /**
  * Gera dados de um atributo de um objeto como uma coluna em uma tabela HTML.
+ *
+ * <p>Observe que, como estamos usando o padrão Factory Method para instanciar
+ * objetos {@link Coluna}, as classes concretas como esta são definidas com visibilidade "package",
+ * não podendo ser acessadas fora do pacote.
+ * Assim, não teremos como instanciar diretamente tais classes.
+ * O Factory Method faz isso pra nós.</p>
+ *
  * @param <T> tipo de objetos da lista a ser exportada
  * @author Manoel Campos da Silva Filho
  */
-public class ColunaHtml<T> extends AbstractColuna<T> {
+class ColunaHtml<T> extends AbstractColuna<T> {
     /**
      * Instancia uma coluna para uma tabela HTML, cujo valor a ser exibido será obtido
      * a partir de um campo (atributo) específico de um objeto.

@@ -11,8 +11,8 @@ import java.util.function.Function;
  * foram definidos com visibilidade package
  * pois, neste caso, não quero que a classe seja utilizada
  * fora do pacote.
- * Assim, somente classes como {@link ProcessarBoletos} podem
- * acessar esta factory.</p>
+ * Assim, somente classes como {@link ProcessarBoletos} podem acessar esta factory
+ * para criar objetos.</p>
  *
  * @author Manoel Campos da Silva Filho
  */
