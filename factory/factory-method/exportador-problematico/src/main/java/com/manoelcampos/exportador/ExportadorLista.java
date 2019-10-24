@@ -86,5 +86,5 @@ public interface ExportadorLista<T> {
      * Adiciona uma coluna à tabela.
      * @param coluna coluna a ser adicionada
      */
-    void addColuna(ColunaTabela<T> coluna);
+    void addColuna(Coluna<T> coluna);
 }

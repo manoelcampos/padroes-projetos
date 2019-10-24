@@ -7,7 +7,7 @@ import java.util.function.Function;
  * @param <T> tipo de objetos da lista a ser exportada
  * @author Manoel Campos da Silva Filho
  */
-public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
+public abstract class AbstractColuna<T> implements Coluna<T> {
 
     /**
      * Representa um determinado campo (atributo) de um objeto.
@@ -19,7 +19,7 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * de um campo, o valor que um determinado objeto armazena
      * para tal campo, o tipo do campo, etc.
      *
-     * <p>Tal atributo só é usado se o construtor {@link #AbstractColunaTabela(Field)}
+     * <p>Tal atributo só é usado se o construtor {@link #AbstractColuna(Field)}
      * for chamado. Caso contrário, o valor a ser exibido para a coluna é obtido
      * de {@link #funcaoValorColuna}.</p>
      */
@@ -35,7 +35,7 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * Função ({@link Function}) que recebe um objeto
      * da lista a ser exportada e retorna uma String
      * que representa o conteúdo a ser exibido para a coluna.
-     * Tal atributo só é usado se o construtor {@link #AbstractColunaTabela(Function, String)}
+     * Tal atributo só é usado se o construtor {@link #AbstractColuna(Function, String)}
      * for chamado. Caso contrário, o valor a ser exibido para a coluna é obtido
      * de {@link #campo}.
      */
@@ -47,9 +47,9 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      *
      * @param campo  campo (atributo) do objeto a ser obtido o valor
      *
-     * @see #AbstractColunaTabela(Function, String)
+     * @see #AbstractColuna(Function, String)
      */
-    protected AbstractColunaTabela(Field campo) {
+    protected AbstractColuna(Field campo) {
         this(campo.getName());
         this.campo = campo;
 
@@ -69,9 +69,9 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      *                          que representa o conteúdo a ser exibido para a coluna
      * @param titulo título a ser exibido na coluna
      *
-     * @see #AbstractColunaTabela(Field)
+     * @see #AbstractColuna(Field)
      */
-    public AbstractColunaTabela(Function<T, String> funcaoValorColuna, String titulo) {
+    public AbstractColuna(Function<T, String> funcaoValorColuna, String titulo) {
         this(titulo);
         this.funcaoValorColuna = funcaoValorColuna;
     }
@@ -81,10 +81,10 @@ public abstract class AbstractColunaTabela<T> implements ColunaTabela<T> {
      * de código entre os outros construtores
      * @param titulo título a ser exibido na coluna
      *
-     * @see #AbstractColunaTabela(Field)
-     * @see #AbstractColunaTabela(Function, String)
+     * @see #AbstractColuna(Field)
+     * @see #AbstractColuna(Function, String)
      */
-    private AbstractColunaTabela(String titulo) {
+    private AbstractColuna(String titulo) {
         setTitulo(titulo);
     }
 

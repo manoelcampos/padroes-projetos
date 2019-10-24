@@ -8,7 +8,7 @@ package com.manoelcampos.exportador;
  * @author Manoel Campos da Silva Filho
  * @param <T> tipo de objetos da lista a ser exportada
  */
-public interface ColunaTabela<T> {
+public interface Coluna<T> {
     /**
      * Obtém o título a ser exibido na coluna da tabela.
      * Por padrão, o título é o nome do atributo dos objetos contidos na

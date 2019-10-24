@@ -8,7 +8,7 @@ import java.util.function.Function;
  * @param <T> tipo de objetos da lista a ser exportada
  * @author Manoel Campos da Silva Filho
  */
-public class ColunaMarkdown<T> extends AbstractColunaTabela<T> {
+public class ColunaMarkdown<T> extends AbstractColuna<T> {
     public static final String SEPARADOR = "|";
 
     /**

@@ -31,7 +31,7 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
     /**
      * Lista de colunas que foramarão a tabela a ser exportada.
      */
-    private List<ColunaTabela> colunas;
+    private List<Coluna> colunas;
 
     /**
      * Instancia um exportador de uma determinada lista de objetos.
@@ -70,14 +70,14 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
      *
      * @return a lista de colunas da tabela
      */
-    private List<ColunaTabela> geraListaColunas() {
+    private List<Coluna> geraListaColunas() {
         /*
         Pega o primeiro objeto da lista para podermos descobrir o nome dos atributos dele.
         Se a lista estiver vazia, já será gerada uma exceção anteriormente.
         */
         final T objeto = lista.get(0);
 
-        final List<ColunaTabela> colunas = new ArrayList<>();
+        final List<Coluna> colunas = new ArrayList<>();
 
         //Obtém o nome dos campos (fields) declarados diretamente na classe do objeto.
         final Field[] campos = objeto.getClass().getDeclaredFields();
@@ -102,7 +102,7 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
      */
     private void exportarTitulosColunas(StringBuilder sb) {
         sb.append(abrirLinha());
-        for (ColunaTabela coluna : colunas) {
+        for (Coluna coluna : colunas) {
             sb.append(coluna.exportarCabecalho());
         }
         sb.append(fecharLinha())
@@ -135,7 +135,7 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
      */
     private void exportarDadosColunas(StringBuilder sb, Object objeto) {
         sb.append(abrirLinha());
-        for (ColunaTabela coluna : colunas) {
+        for (Coluna coluna : colunas) {
             sb.append(coluna.exportarDado(objeto));
         }
         sb.append(fecharLinha());
@@ -144,12 +144,12 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
     /**
      * Lista de colunas que permitem gerar código no formato específico da tabela.
      */
-    public List<ColunaTabela> getColunas() {
+    public List<Coluna> getColunas() {
         return colunas;
     }
 
     @Override
-    public void addColuna(ColunaTabela<T> coluna) {
+    public void addColuna(Coluna<T> coluna) {
         colunas.add(coluna);
     }
 
@@ -166,5 +166,5 @@ public abstract class AbstractExportadorLista<T> implements ExportadorLista<T> {
      * @param campo  campo de onde o dado a ser exibido na coluna será obtido
      * @return uma nova coluna para uma tabela
      */
-    protected abstract ColunaTabela newColuna(Field campo);
+    protected abstract Coluna newColuna(Field campo);
 }

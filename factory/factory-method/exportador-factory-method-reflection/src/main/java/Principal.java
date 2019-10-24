@@ -1,9 +1,5 @@
-import com.manoelcampos.exportador.ColunaTabela;
-import com.manoelcampos.exportador.Usuario;
-import com.manoelcampos.exportador.ExportadorLista;
-import com.manoelcampos.exportador.Produto;
+import com.manoelcampos.exportador.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -37,7 +33,8 @@ public class Principal {
 
         /* Este método newColuna é que representa a implementação do padrão Factory Method.
         * Veja a documentação dele para mais detalhes */
-        ColunaTabela<Usuario> coluna = exportadorPadrao.newColuna(this::getSobrenomeUsuario, "Sobrenome");
+        Coluna<Usuario> coluna = exportadorPadrao.newColuna(this::getSobrenomeUsuario, "Sobrenome");
+
         exportadorPadrao.addColuna(coluna);
 
         System.out.println("Lista de Usuários em HTML----------------------------------------------------------\n");
@@ -45,6 +42,8 @@ public class Principal {
 
         //Usa a outra versão do método getInstance() para instanciar um exportador específico para o formato Markdown (md)
         final ExportadorLista<Usuario> exportadorMarkdown = ExportadorLista.newInstance(USUARIOS, "md");
+
+        coluna = exportadorMarkdown.newColuna(this::getSobrenomeUsuario, "Sobrenome");
         exportadorMarkdown.addColuna(coluna);
 
         System.out.println("Lista de Usuários em Markdown------------------------------------------------------\n");

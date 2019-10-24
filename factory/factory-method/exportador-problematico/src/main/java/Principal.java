@@ -30,15 +30,21 @@ public class Principal {
 
     private void exportarUsuarios() {
         //Usa o método getInstance() para instanciar um exportador padrão (neste caso, que gera HTML)
-        final ExportadorLista<Usuario> exportadorPadrao = ExportadorLista.newInstance(USUARIOS);
-        exportadorPadrao.addColuna(new ColunaHtml<>(this::getSobrenomeUsuario, "Sobrenome"));
+        final ExportadorLista<Usuario> exportadorPadrao =
+                ExportadorLista.newInstance(USUARIOS);
+        ColunaHtml<Usuario> colunaHtml =
+                new ColunaHtml<>(this::getSobrenomeUsuario, "Sobrenome");
+        exportadorPadrao.addColuna(colunaHtml);
 
         System.out.println("Lista de Usuários em HTML----------------------------------------------------------\n");
         System.out.println(exportadorPadrao.exportar());
 
         //Usa a outra versão do método getInstance() para instanciar um exportador específico para o formato Markdown (md)
-        final ExportadorLista<Usuario> exportadorMarkdown = ExportadorLista.newInstance(USUARIOS, "md");
-        exportadorMarkdown.addColuna(new ColunaMarkdown<>(this::getSobrenomeUsuario, "Sobrenome"));
+        final ExportadorLista<Usuario> exportadorMarkdown =
+                ExportadorLista.newInstance(USUARIOS, "md");
+        ColunaHtml<Usuario> colunaMd =
+                new ColunaHtml<>(this::getSobrenomeUsuario, "Sobrenome");
+        exportadorMarkdown.addColuna(colunaMd);
 
         System.out.println("Lista de Usuários em Markdown------------------------------------------------------\n");
         System.out.println(exportadorMarkdown.exportar());

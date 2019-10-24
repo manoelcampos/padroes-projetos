@@ -96,12 +96,12 @@ public interface ExportadorLista<T> {
      * @param titulo título a ser exibido na coluna
      * @return
      */
-    ColunaTabela<T> newColuna(Function<T, String> funcaoValorColuna, String titulo);
+    Coluna<T> newColuna(Function<T, String> funcaoValorColuna, String titulo);
 
     /**
      * Adiciona uma coluna à tabela.
      * @param coluna coluna a ser adicionada
      * @see #newColuna(Function, String)
      */
-    void addColuna(ColunaTabela<T> coluna);
+    void addColuna(Coluna<T> coluna);
 }

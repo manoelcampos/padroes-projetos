@@ -45,12 +45,12 @@ public class ExportadorListaHtml<T> extends AbstractExportadorLista<T> {
     }
 
     @Override
-    public ColunaTabela newColuna(Field campo) {
+    protected Coluna newColuna(Field campo) {
         return new ColunaHtml<>(campo);
     }
 
     @Override
-    public ColunaTabela<T> newColuna(Function<T, String> funcaoValorColuna, String titulo) {
+    public Coluna<T> newColuna(Function<T, String> funcaoValorColuna, String titulo) {
         return new ColunaHtml<>(funcaoValorColuna, titulo);
     }
 }

@@ -42,7 +42,7 @@ public class ExportadorListaMarkdown<T> extends AbstractExportadorLista<T> {
     @Override
     public String fecharLinhaTitulos() {
         StringBuilder sb = new StringBuilder();
-        for (ColunaTabela coluna : getColunas()) {
+        for (Coluna coluna : getColunas()) {
             String linha = stringRepeat(SEPARADOR_LN, coluna.getTitulo().length());
             sb.append(linha).append(ColunaMarkdown.SEPARADOR);
         }
@@ -56,7 +56,7 @@ public class ExportadorListaMarkdown<T> extends AbstractExportadorLista<T> {
     }
 
     @Override
-    public ColunaTabela newColuna(Field campo) {
+    public Coluna newColuna(Field campo) {
         return new ColunaMarkdown<>(campo);
     }
 

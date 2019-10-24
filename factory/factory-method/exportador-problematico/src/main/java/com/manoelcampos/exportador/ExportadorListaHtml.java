@@ -44,7 +44,7 @@ public class ExportadorListaHtml<T> extends AbstractExportadorLista<T> {
     }
 
     @Override
-    public ColunaTabela newColuna(Field campo) {
+    public Coluna newColuna(Field campo) {
         return new ColunaHtml<>(campo);
     }
 
