@@ -1,0 +1,19 @@
+:imagesdir: ../images/patterns/factory
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Criacionais (Creational Design Patterns)
+
+- link:simple-factory[Simple Factory (Fábrica Simples)]
+- link:factory-method[Factory Method (Método Fábrica)]
+- link:cep-service[Fábrica de Objetos em Java com o framework CDI (Context and Dependency Injection)]

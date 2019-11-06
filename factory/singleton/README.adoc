@@ -1,0 +1,84 @@
+:imagesdir: ../../images/patterns/factory
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Criacionais (Creational Design Patterns)
+
+== Singleton
+
+=== Definição
+
+
+=== Aplicabilidade
+
+
+=== Modelagem
+
+O padrão Singleton é representado por uma única classe como apresentado na figura a seguir.
+
+.Modelagem de uma classe que implementa o padrão Singleton
+image::singleton.png[]
+
+=== Princípios utilizados
+
+=== Exemplos
+
+Um sistema pode ter um conjunto de configurações que o usuário pode alterar.
+Tais configurações podem ser salvas em diferentes locais, como em um banco de dados ou em arquivo.
+Em arquivo é a maneira mais simples de fazer isso e em Java podemos criar arquivos com a extensão `.properties` para salvar tais configurações do sistema.
+
+Tal arquivo tem o formato abaixo:
+
+[source,properties]
+----
+configuracao1 = valor
+configuracao2 = valor
+configuracaoN = valor
+----
+
+Utilizando a classe `java.util.Properties`, podemos facilmente ler e gravar dados em
+um arquivo de tal tipo. Considere que as configurações do sistema podem ser acessadas e alteradas em diversos locais. Neste caso, o mais apropriado é criar uma classe, chamada por exemplo de `Config`, que encapsula o gerenciamento de tais configurações. Se instanciarmos objetos da classe `Config` em diferentes locais e alterarmos as configurações, podemos ver os valores atualizados em determinados locais, enquanto aparecer desatualizados em outros. Isto pode trazer problemas para o sistema.
+
+Neste caso, podemos aplicar o padrão Singleton à classe `Config` para permitir que uma única instância dela seja criada para todo o sistema. Mesmo que tenhamos diversas variáveis `Config` espalhadas pelo sistema, todas apontarão para o mesmo único objeto criado. Assim, ao alterar uma configuração por meio de qualquer dessas variáveis, estaremos alterando o mesmo objeto. Logo, teremos acesso aos mesmos dados, independetemente de qual variável utilizarmos.
+
+A figura abaixo apresenta a modelagem para a classe `Config` implementado o padrão Singleton.
+
+.Modelagem de uma classe que implementa o padrão Singleton para gerenciamento de configurações de um sistema
+image::singleton-config.png[]
+
+Observe que os getters e setters representam configurações existentes no arquivo `config.properties`.
+Estas são configurações definidas aleatoriamente apenas para exemplo.
+
+=== Detalhes de Implementação
+
+Para implementar o padrão Singleton, sempre tenha em mente os seguintes detalhes,
+conforme pode ser observado na Figura 1 acima.
+
+- Deve-se explicitamente definir um construtor privado para a classe Singleton. Em java, se nenhum construtor for definido, o compilador automaticamente incluirá um construtor padrão público, que permitirá que a classe seja instanciada de qualquer lugar, quantas vezes desejarmos. Isto vai totalmente contra o padrão Singleton.
+- A única instância a ser criada deve ser definida como um atributo privado e estático. Como ele é estático, só averá uma única instância armazenada dentro da própria classe. Como é privado, não será possível alterar tal instância depois de o atributo ter sido inicializado.
+- Deve existir um método `getInstance()` que deve verificar se um objeto já foi criado e apenas retorná-lo. Caso contrário, um novo objeto deve ser criado e armazenado no atributo estático comentado no item acima.
+
+== Padrões Relacionados
+
+Padrões que possuem similaridades ou podem ser usados em conjunto:
+
+- Factory Method
+
+== Onde o padrão é usado no JDK
+
+- java.awt.Desktop
+- java.lang.Runtime
+
+== Exercícios
+
+Implementar o padrão Singleton utilizando o framework CDI do Java para o projeto link:../cep-service/cep-service-producer[cep-service-producer].
