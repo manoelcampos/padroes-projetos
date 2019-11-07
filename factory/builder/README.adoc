@@ -32,16 +32,33 @@ image::builder.png[]
 
 === Exemplos
 
-
 A figura abaixo apresenta a modelagem do padrão Builder para a classe `Paciente`.
 
 .Modelagem do padrão Builder para uma classe Paciente
 image::builder-paciente.png[]
 
+O código fonte do projeto está disponível link:paciente-builder[aqui].
 
 === Detalhes de Implementação
 
+=== Geração automática de classes Builder
 
+Como podem ver no projeto disponibilizado anteriormente,
+implementar o padrão Builder é algo cansativo.
+A quantidade de código duplicado é absurda, pois todos
+os atributos existentes na classe de modelo terá que existir
+na classe Builder, assim como todos os setters.
+Ao adicionar novos atributos, a classe Builder tem que ser atualizada.
+Pra piorar, temos que repetir todo este processo para cada classe
+que desejarmos aplicar o padrão.
+
+Quando você implementa o padrão como mostrado, você inclusive estará violando o princípio _Don't Repeat Yourself (DRY)_: Não Repita Você mesmo. Estamos repetindo a declaração dos atributos e setters ao criar um Builder.
+
+Para evitar tais inconvenientes, podemos utilizar IDEs como o IntelliJ para gerar tais Builders automaticamente. https://youtu.be/vjVRDnra8-I[Este vídeo] mostra como isso pode ser feito. Apesar disso, sempre que incluirmos novos atributos na nossa classe, precisaremos excluir o Builder e solicitar a criação novamente.
+
+Alternativamente, podemos usar uma biblioteca que gera um Builder quando percisarmos, se encarregando de atualizar automaticamente o Builder sempre que atualizarmos a classe de negócio que ele constrói. Uma biblioteca excelente para isto é a http://immutables.github.io/factory.html[Immutables], que dentre vários recursos, gera Builders por meio de uma simples anotação.
+
+O projeto link:paciente-builder-automatico[paciente-builder-automatico] adiciona tal biblioteca no arquivo `pom.xml` e inclui a anotação `@Builder.Constructor` no construtor da classe `Paciente` e pronto: "automagicamente" a classe `PacienteBuilder` é criada/atualizada quando compilamos o projeto.
 
 == Padrões Relacionados
 

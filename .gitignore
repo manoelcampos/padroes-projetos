@@ -12,3 +12,5 @@ target/
 #GitHub Pages Jekyll Plugin
 _site
 .bundle
+
+/aulas/

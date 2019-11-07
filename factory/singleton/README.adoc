@@ -59,6 +59,8 @@ image::singleton-config.png[]
 Observe que os getters e setters representam configurações existentes no arquivo `config.properties`.
 Estas são configurações definidas aleatoriamente apenas para exemplo.
 
+O projeto link:arquivo-configuracoes-singleton[arquivo-configuracoes-singleton] fornece uma implementação do padrão Singleton.
+
 === Detalhes de Implementação
 
 Para implementar o padrão Singleton, sempre tenha em mente os seguintes detalhes,
@@ -78,6 +80,19 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 - java.awt.Desktop
 - java.lang.Runtime
+
+== Aplicando o Padrão Singleton por meio do framework CDI
+
+Anteriormente foi apresentado um projeto link:https://github.com/manoelcampos/vraptor-cep-service[cep-service] que utiliza o framework de injeção de dependência CDI para permitir encapsular e centralizar a instanciação de implementações de serviços de busca de endereço a partir do CEP.
+
+No link fornecido são mostradas duas versões do projeto:
+
+- uma onde definimos no código qual serviço de CEP será usado;
+- outra que utiliza dois serviços de CEP diferentes de forma alternada,
+  enviando consultas para um serviço, depois para outro.
+
+Qualquer uma das versões depende das necessidades do seu projeto.
+O projeto link:cep-service-singleton[cep-service-singleton] disponibilizado aqui é como a primeira versão mencionada, mas ele aplica o padrão Singleton por meio do framework CDI para que tenhamos uma única instância do serviço de CEP em toda a aplicação, independetemente de quantos usuários estiverem conectados a ela. Isto faz sentido pois as classes que implementam os serviços de CEP não armazenam nenhum atributo, logo, podemos usar uma única instância para toda a aplicação, consequentemente economizando memória.
 
 == Exercícios
 
