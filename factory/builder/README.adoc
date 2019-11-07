@@ -1,0 +1,73 @@
+:imagesdir: ../../images/patterns/factory
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Criacionais (Creational Design Patterns)
+
+== Builder (Construtor)
+
+=== Definição
+
+
+=== Aplicabilidade
+
+
+=== Modelagem
+
+
+.Modelagem do Padrão Builder para uma classe fictícia "MinhaClasse"
+image::builder.png[]
+
+=== Princípios utilizados
+
+=== Exemplos
+
+
+A figura abaixo apresenta a modelagem do padrão Builder para a classe `Paciente`.
+
+.Modelagem do padrão Builder para uma classe Paciente
+image::builder-paciente.png[]
+
+
+=== Detalhes de Implementação
+
+
+
+== Padrões Relacionados
+
+Padrões que possuem similaridades ou podem ser usados em conjunto:
+
+- Factory Method
+
+== Onde o padrão é usado no JDK
+
+
+== Exercícios
+
+Implemente uma classe `Produto` utilizando apenas um construtor sem parâmetros
+e que tenha os seguintes atributos:
+
+- id: long
+- descricao: String
+- marca: String
+- modelo: String
+- estoque: int
+- preco: double
+
+Todos os atributos são obrigatórios e devem ser atribuídos por meio dos setters.
+No entanto, a marca só pode ser atribuída se o modelo também for e vice-versa.
+Há como resolver isso da forma como a implementação foi sugerida acima?
+
+Resolva o problema aplicando o padrão Builder, realizando as alterações necessárias na classe `Produto`.
+
+NOTE: Em uma aplicação mais realista, existiriam as classes `Marca` e `Modelo`, sendo que um `Modelo` estaria vinculado a uma `Marca`. Assim, na classe `Produto` teríamos apenas um atributo `Modelo`. Se este for setado, ele deveria estar vinculado a uma `Marca`. Desta forma, resolveríamos o problema sem o Builder. Mas se não queremos criar as classes citadas e usar menos classes de negócio, o Builder é uma solução adequada.

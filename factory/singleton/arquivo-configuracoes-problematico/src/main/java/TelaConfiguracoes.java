@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Manoel Campos da Silva Filho
  */
 public class TelaConfiguracoes {
-    private Config config = new Config();
+    private Config config = Config.getInstance();
     private Scanner teclado = new Scanner(System.in);
 
     public void exibir(){

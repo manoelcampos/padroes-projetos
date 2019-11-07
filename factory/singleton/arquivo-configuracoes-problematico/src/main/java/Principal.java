@@ -1,5 +1,6 @@
 import com.manoelcampos.util.Config;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,6 @@ import java.util.Scanner;
  * @author Manoel Campos da Silva Filho
  */
 public class Principal {
-    private Config config = new Config();
     private Scanner teclado = new Scanner(System.in);
 
     public void exibir(){

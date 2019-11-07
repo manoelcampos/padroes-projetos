@@ -65,7 +65,7 @@ Para implementar o padrão Singleton, sempre tenha em mente os seguintes detalhe
 conforme pode ser observado na Figura 1 acima.
 
 - Deve-se explicitamente definir um construtor privado para a classe Singleton. Em java, se nenhum construtor for definido, o compilador automaticamente incluirá um construtor padrão público, que permitirá que a classe seja instanciada de qualquer lugar, quantas vezes desejarmos. Isto vai totalmente contra o padrão Singleton.
-- A única instância a ser criada deve ser definida como um atributo privado e estático. Como ele é estático, só averá uma única instância armazenada dentro da própria classe. Como é privado, não será possível alterar tal instância depois de o atributo ter sido inicializado.
+- A única instância a ser criada deve ser definida como um atributo privado e estático. Como ele é estático, só haverá uma única instância armazenada dentro da própria classe. Como é privado, não será possível alterar tal instância depois de o atributo ter sido inicializado.
 - Deve existir um método `getInstance()` que deve verificar se um objeto já foi criado e apenas retorná-lo. Caso contrário, um novo objeto deve ser criado e armazenado no atributo estático comentado no item acima.
 
 == Padrões Relacionados

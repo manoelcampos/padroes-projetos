@@ -32,19 +32,20 @@ import java.util.Properties;
  * @author Manoel Campos da Silva Filho
  */
 public class Config {
+
     private static final String NOME_ARQUIVO = "config.properties";
 
-    /**
-     * Objeto que permite ler as configurações diretamente do arquivo indicado
-     * em {@link #NOME_ARQUIVO}.
-     */
-    private Properties properties;
+    private static Config instance = new Config();
+
+    public static Config getInstance(){
+        return instance;
+    }
 
     /**
      * Instancia o objeto de configurações, carregando os dados
      * do arquivo {@link #NOME_ARQUIVO}.
      */
-    public Config(){
+    private Config(){
         properties = new Properties();
         try {
             properties.load(Files.newInputStream(getCaminhoArquivo()));
@@ -52,6 +53,12 @@ public class Config {
             throw new UncheckedIOException(e);
         }
     }
+
+    /**
+     * Objeto que permite ler as configurações diretamente do arquivo indicado
+     * em {@link #NOME_ARQUIVO}.
+     */
+    private Properties properties;
 
     /**
      * Obtém o caminho do arquivo de configurações, considerando que o mesmo está na raiz da pasta resources.
@@ -81,11 +88,13 @@ public class Config {
     }
 
     public boolean isExibirTotalUsuariosOnline() {
-        return Boolean.parseBoolean(properties.getProperty("exibirTotalUsuariosOnline"));
+        return Boolean.parseBoolean(
+                properties.getProperty("exibirTotalUsuariosOnline"));
     }
 
     public void setExibirTotalUsuariosOnline(boolean exibirTotalUsuariosOnline) {
-        properties.setProperty("exibirTotalUsuariosOnline", Boolean.toString(exibirTotalUsuariosOnline));
+        properties.setProperty("exibirTotalUsuariosOnline",
+                Boolean.toString(exibirTotalUsuariosOnline));
     }
 
     public boolean isExibirDataHoraUltimoAcesso() {
