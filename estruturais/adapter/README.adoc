@@ -1,0 +1,42 @@
+:imagesdir: ../../images/patterns/estruturais
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Estruturais (Structural Design Patterns)
+
+== Adapter (Adaptador)
+
+
+=== Definição
+
+
+=== Aplicabilidade
+
+
+=== Modelagem do Padrão
+
+image::xxxx.png[]
+
+=== Princípios utilizados
+
+
+=== Exemplos
+
+
+== Padrões Relacionados
+
+
+== Onde o padrão é usado no JDK
+
+== Exercícios
+

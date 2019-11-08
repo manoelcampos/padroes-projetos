@@ -20,8 +20,8 @@ endif::[]
 == Categorias de Padrões
 
 - link:comportamentais[Padrões Comportamentais]
-- Padrões Estruturais
 - link:criacionais[Padrões Criacionais]
+- link:estruturais[Padrões Estruturais]
 
 == Material Complementar
 
