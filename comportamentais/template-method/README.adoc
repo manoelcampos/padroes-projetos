@@ -1,4 +1,4 @@
-:imagesdir: ../images/patterns/template-method
+:imagesdir: ../../images/patterns/template-method
 :source-highlighter: highlightjs
 :numbered:
 :unsafe:
