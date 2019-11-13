@@ -1,0 +1,13 @@
+# Consumo de Serviços de CEP com VRaptor
+
+Esta versão da aplicação mostra como aplicar o padrão adapter
+de uma forma simplificada, adaptando o formato de dados
+recebido em diferentes serviços de consulta de CEP para um formato padrão.
+
+Ele usa as dependências `jackson-annotations` e `jackson-databind` no link:pom.xml[pom.xml]
+para fornecer tal recurso por meio da anotação `@JsonAlias` que é utilizada
+para atributos da classe `Endereco` que tem nomes distintos em diferentes
+serviços de CEP.
+
+Com isto, não temos que de fato implementar um adapter para ter um formato
+padrão para o endereço, independente de qual seja o serviço sendo acessado.

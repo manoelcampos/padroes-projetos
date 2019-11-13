@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.manoelcampos</groupId>
-    <artifactId>cotacao-bolsa-valores-adapter</artifactId>
+    <artifactId>cotacao-bolsa-valores</artifactId>
     <version>1.0.0</version>
 
     <properties>
