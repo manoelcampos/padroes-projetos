@@ -37,7 +37,7 @@ image::xxxx.png[]
 
 === Exemplos
 
-- Cotação de ações de empresas da bolsa de valores. Veja o projeto base link:cotacao-bolsa-valores[cotacao-bolsa-valores], a partir do qual pode-se aplicar o padrão adapter.
+- Geração de números verdadeiramente aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr
 
 == Padrões Relacionados
 
@@ -84,3 +84,9 @@ endereco.setLogradouro(object.getString("logradouro"));
 ----
 
 Veja o projeto link:cep-service-adapter-automatico[cep-service-adapter-automatico] para uma implementação extremamente simplificada.
+
+=== Cotações de Empresas da Bolsa de Valores
+
+A partir do projeto base link:cotacao-bolsa-valores[cotacao-bolsa-valores], 
+que realiza a cotação de ações de empresas da bolsa de valores, implemente o padrão
+Adapter para padronizar a interface de acesso a tais serviços.
