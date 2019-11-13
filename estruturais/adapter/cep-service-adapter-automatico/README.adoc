@@ -1,4 +1,4 @@
-# Consumo de Serviços de CEP com VRaptor
+= Consumo de Serviços de CEP com VRaptor
 
 Esta versão da aplicação mostra como aplicar o padrão adapter
 de uma forma simplificada, adaptando o formato de dados
