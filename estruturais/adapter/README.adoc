@@ -16,6 +16,9 @@ endif::[]
 
 == Adapter (Adaptador)
 
+image:adapter-tomada.jpg[]
+
+// https://youtu.be/45I9jX5uO9A
 
 === Definição
 
@@ -39,4 +42,40 @@ image::xxxx.png[]
 == Onde o padrão é usado no JDK
 
 == Exercícios
+
+Voltando ao link:../../../criacionais/cep-service/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
+
+Como podemos aplicar o padrão adapter para resolver este problema? 
+Qual a solução mais simples possível?
+
+Para resolver o problema, você precisará fazer o processamento manual do código JSON recebido
+pelo serviço, que representa o endereço de um determinado CEP.
+Para isso, vamos usar a biblioteca https://javaee.github.io/jsonp/getting-started.html[JSON-P (JSON Processing)] da plataforma Java. 
+Assim, adicione as seguintes dependências ao arquivo pom.xml do seu projeto Maven.
+
+[source,xml]
+----
+<dependency>
+    <groupId>javax.json</groupId>
+    <artifactId>javax.json-api</artifactId>
+    <version>1.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.glassfish</groupId>
+    <artifactId>javax.json</artifactId>
+    <version>1.0</version>
+</dependency>
+----
+
+Você pode usar um código como abaixo para fazer o tal processamento:
+
+[source,java]
+----
+JsonReader reader = Json.createReader(new StringReader(json));
+JsonObject object = reader.readObject();
+Endereco endereco = new Endereco();
+endereco.setLogradouro(object.getString("logradouro"));
+----
+
 

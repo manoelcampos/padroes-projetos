@@ -1,0 +1,132 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.manoelcampos</groupId>
+    <artifactId>cep-service-adapter</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+    <name>cep-service-adapter</name>
+    
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        
+        <!-- Each Jetty version works for a specific Weld (CDI implementation) version-->
+        <version.jetty>9.2.10.v20150310</version.jetty>
+        <version.weld>2.4.8.Final</version.weld>
+        <version.jersey>2.25</version.jersey> 	
+    </properties>
+    
+    <dependencies>
+        <!-- Servlet Container Dependencies (Jetty 9 versions) -->
+        <dependency>
+            <groupId>org.jboss.weld.servlet</groupId>
+            <artifactId>weld-servlet-core</artifactId>
+            <version>${version.weld}</version>
+        </dependency>      
+        <!-- /////////////////////////////////////////////////// -->
+         
+        <!--                         JAX-RS  Client              -->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${version.jersey}</version>
+        </dependency>
+        <dependency>
+            <!-- 
+            Permite usar o jackson como provedor de manipulação de json 
+            https://cassiomolin.com/2016/08/10/using-jackson-as-json-provider-in-jersey-2x/
+            -->
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${version.jersey}</version>
+        </dependency>
+
+        <!--
+        Dependências para usar a biblioteca JSON-P para processar manualmente o JSON recebido pelos
+        serviços de CEP, uma vez que cada serviço pode retornar um objeto endereço com campos diferentes.
+        Não funcionou com versão mais nova que 1.0 com o Jetty 9.
+        https://javaee.github.io/jsonp/getting-started.html
+        -->
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- /////////////////////////////////////////////////// -->
+
+        <dependency>
+            <groupId>br.com.caelum</groupId>
+            <artifactId>vraptor</artifactId>
+            <version>4.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>br.com.caelum.vraptor</groupId>
+            <artifactId>vraptor-java8</artifactId>
+            <version>4.0.0.Final</version> 
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>      
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Mesmo não usando Hibernate, esta dependência é exigida pelo VRaptor-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-cdi</artifactId>
+            <version>5.1.1.Final</version>
+        </dependency>    
+    </dependencies>
+    
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArguments>
+                        <parameters />
+                    </compilerArguments>                
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${version.jetty}</version>
+                <configuration>
+                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                    <contextXml>${project.basedir}/src/main/webapp/WEB-INF/jetty-context.xml</contextXml>
+                    <webApp>
+                        <jettyEnvXml>${project.basedir}/src/main/webapp/WEB-INF/jetty-env.xml</jettyEnvXml>
+                    </webApp>
+                    <stopKey>stop</stopKey>
+                    <stopPort>9999</stopPort>
+                </configuration>
+            </plugin>        
+        </plugins>
+    </build>
+</project>
