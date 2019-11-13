@@ -16,15 +16,17 @@ endif::[]
 
 == Adapter (Adaptador)
 
-image:adapter-tomada.jpg[]
-
-// https://youtu.be/45I9jX5uO9A
+https://youtu.be/45I9jX5uO9A[image:adapter-tomada.jpg[]]
 
 === Definição
 
+"O padrão adapter converte a interface de uma classe em outra interface que os clientes esperam. O adaptador permite que classes anteriormente incompatíveis possam trabalhar em conjunto". <<UCPP>>
 
 === Aplicabilidade
 
+Um dos casos onde o adapter é amplamente aplicado é quando utiliza-se um determinado serviço web ou biblioteca onde existem diferentes implementações dos mesmos, cada uma funcionando de uma forma diferente. Logo, o código necessário para usar um determinado serviço/biblioteca seria diferente de outro. Normalmente vão existir vários métodos com nomes e parâmetros diferentes (assinaturas). Assim, trocar tal serviço/biblioteca por outro pode ser um trabalho complexo. 
+
+Um adapter neste caso pode fornecer uma interface padrão a ser utilizada publicamente, encapsulando as diferenças entre um(a) serviço/biblioteca e outro(a).
 
 === Modelagem do Padrão
 
@@ -35,6 +37,7 @@ image::xxxx.png[]
 
 === Exemplos
 
+- Geração de números verdadeiramente aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr
 
 == Padrões Relacionados
 
@@ -42,6 +45,8 @@ image::xxxx.png[]
 == Onde o padrão é usado no JDK
 
 == Exercícios
+
+=== Adaptando a aplicação de consulta de CEP
 
 Voltando ao link:../../../criacionais/cep-service/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
 
@@ -78,4 +83,10 @@ Endereco endereco = new Endereco();
 endereco.setLogradouro(object.getString("logradouro"));
 ----
 
+Veja o projeto link:cep-service-adapter-automatico[cep-service-adapter-automatico] para uma implementação extremamente simplificada.
 
+=== Cotações de Empresas da Bolsa de Valores
+
+A partir do projeto base link:cotacao-bolsa-valores[cotacao-bolsa-valores], 
+que realiza a cotação de ações de empresas da bolsa de valores, implemente o padrão
+Adapter para padronizar a interface de acesso a tais serviços.

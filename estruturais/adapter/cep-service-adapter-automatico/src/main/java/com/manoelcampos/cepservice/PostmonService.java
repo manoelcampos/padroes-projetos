@@ -34,19 +34,6 @@ public final class PostmonService extends AbstractCepService {
     }
 
     @Override
-    protected Endereco jsonToEndereco(String json) {
-        JsonReader reader = Json.createReader(new StringReader(json));
-        JsonObject object = reader.readObject();
-        Endereco endereco = new Endereco();
-        endereco.setLogradouro(object.getString("logradouro"));
-        endereco.setBairro(object.getString("bairro"));
-        endereco.setLocalidade(object.getString("cidade"));
-        endereco.setUf(object.getString("estado"));
-        endereco.setCep(object.getString("cep"));
-        return endereco;
-    }
-
-    @Override
     protected String buildPath(final String cep) {
         return "v1/cep/" + cep;
     }
