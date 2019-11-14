@@ -16,6 +16,7 @@ endif::[]
 
 == Adapter (Adaptador)
 
+.https://youtu.be/45I9jX5uO9A
 https://youtu.be/45I9jX5uO9A[image:adapter-tomada.jpg[]]
 
 === Definição
@@ -48,12 +49,11 @@ image::xxxx.png[]
 
 === Adaptando a aplicação de consulta de CEP
 
-Voltando ao link:../../../criacionais/cep-service/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
+Voltando ao link:https://github.com/manoelcampos/vraptor-cep-service/tree/master/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
 
-Como podemos aplicar o padrão adapter para resolver este problema? 
-Qual a solução mais simples possível?
-
-Para resolver o problema, você precisará fazer o processamento manual do código JSON recebido
+Pense na modelagem da solução aplicando o padrão adapter e implemente tal projeto. 
+Uma solução simples, que não requer a criação de classes adapters, é apresentada abaixo.
+Você precisará fazer o processamento manual do código JSON recebido
 pelo serviço, que representa o endereço de um determinado CEP.
 Para isso, vamos usar a biblioteca https://javaee.github.io/jsonp/getting-started.html[JSON-P (JSON Processing)] da plataforma Java. 
 Assim, adicione as seguintes dependências ao arquivo pom.xml do seu projeto Maven.
@@ -83,7 +83,8 @@ Endereco endereco = new Endereco();
 endereco.setLogradouro(object.getString("logradouro"));
 ----
 
-Veja o projeto link:cep-service-adapter-automatico[cep-service-adapter-automatico] para uma implementação extremamente simplificada.
+Veja o projeto link:cep-service-adapter-automatico[cep-service-adapter-automatico], 
+que apenas usa recursos da biblioteca https://github.com/FasterXML/jackson[Jackson] e assim não requer a implementação do padrão Adapter.
 
 === Cotações de Empresas da Bolsa de Valores
 
