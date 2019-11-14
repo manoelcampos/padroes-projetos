@@ -25,13 +25,24 @@ https://youtu.be/45I9jX5uO9A[image:adapter-tomada.jpg[]]
 
 === Aplicabilidade
 
-Um dos casos onde o adapter é amplamente aplicado é quando utiliza-se um determinado serviço web ou biblioteca onde existem diferentes implementações dos mesmos, cada uma funcionando de uma forma diferente. Logo, o código necessário para usar um determinado serviço/biblioteca seria diferente de outro. Normalmente vão existir vários métodos com nomes e parâmetros diferentes (assinaturas). Assim, trocar tal serviço/biblioteca por outro pode ser um trabalho complexo. 
+Um dos casos onde o adapter é amplamente aplicado é quando utiliza-se um determinado serviço web ou biblioteca onde existem diferentes implementações destes, cada uma funcionando de uma forma diferente. Logo, o código necessário para usar um(a) determinado(a) serviço/biblioteca/framework seria diferente de outro. Normalmente vão existir vários métodos com nomes e parâmetros diferentes (assinaturas). Assim, trocar tal serviço/biblioteca/framework por outro(a) pode ser um trabalho complexo. 
 
-Um adapter neste caso pode fornecer uma interface padrão a ser utilizada publicamente, encapsulando as diferenças entre um(a) serviço/biblioteca e outro(a).
+Um adapter neste caso pode fornecer uma interface padrão a ser utilizada publicamente, encapsulando as diferenças entre um(a) serviço/biblioteca/framework e outro(a).
 
 === Modelagem do Padrão
 
-image::xxxx.png[]
+image::adapter.png[]
+
+Podemos ter 1 ou mais classes que precisam ser adaptadas, como as classes `AdaptadaAbc` e `AdaptadaXyz`.
+Cada uma dessas classes fornecem implementações diferentes de uma determinada funcionalidade.
+Por exemplo, cada classe pode representar o acesso a um determinado serviço na web,
+como obtenção da previsão do tempo. Cada uma obtém a previsão de um serviço (site) diferente.
+Podemos ter vários métodos diferentes que fornecem as mesmas funcionalidades, como obtenção da previsão para uma determinada data, média de temperatura para um determinado mês do ano, umidade relativa do ar, etc. No entanto, os métodos, parâmetros e tipos de cada uma dessas classes (como possivelmente foram implementadas por pessoas/equipes distintas), serão diferentes. 
+
+Para padronizarmos tais métodos e assim tornar idêntica a forma de usar qualquer uma dessas classes, devemos implementar um adaptador para cada classe a ser adaptada. No diagrama de exemplo, a classe `AdaptadaAbc` possui os métodos `metodoA()` e `metodoB()`. Já a  classe `AdaptadaXyz` possui os métodos `metodoY()` e `metodoX()`. A padronização pode ser feita pela criação de uma interface comum (`Alvo`) que será implementada por cada adaptador (`AbcAdapter` e `XyzAdapter`). `Cliente` é uma classe qualquer que vai usar esta interface para se comunicar com os objetos adaptados por meio de seus adaptadores.
+Assim, se a classe `Cliente` precisar trocar um objeto por outro, como o objeto será acessador por meio da interface `Alvo`, não precisaremos alterar a forma de utilizar um novo objeto.
+
+Observe que, por exemplo, um método como `metodo1()` na classe `AbcAdapter` vai apenas delegar a chamada para o `metodoA()` de um objeto `AbcAdapter`.
 
 === Princípios utilizados
 
@@ -89,5 +100,5 @@ que apenas usa recursos da biblioteca https://github.com/FasterXML/jackson[Jacks
 === Cotações de Empresas da Bolsa de Valores
 
 A partir do projeto base link:cotacao-bolsa-valores[cotacao-bolsa-valores], 
-que realiza a cotação de ações de empresas da bolsa de valores, implemente o padrão
+que realiza a cotação de ações de empresas da bolsa de valores, implemente o
 Adapter para padronizar a interface de acesso a tais serviços.
