@@ -39,7 +39,7 @@ Por exemplo, cada classe pode representar o acesso a um determinado serviço na 
 como obtenção da previsão do tempo. Cada uma obtém a previsão de um serviço (site) diferente.
 Podemos ter vários métodos diferentes que fornecem as mesmas funcionalidades, como obtenção da previsão para uma determinada data, média de temperatura para um determinado mês do ano, umidade relativa do ar, etc. No entanto, os métodos, parâmetros e tipos de cada uma dessas classes (como possivelmente foram implementadas por pessoas/equipes distintas), serão diferentes. 
 
-Para padronizarmos tais métodos e assim tornar idêntica a forma de usar qualquer uma dessas classes, devemos implementar um adaptador para cada classe a ser adaptada. No diagrama de exemplo, a classe `AdaptadaAbc` possui os métodos `metodoA()` e `metodoB()`. Já a  classe `AdaptadaXyz` possui os métodos `metodoY()` e `metodoX()`. A padronização pode ser feita pela criação de uma interface comum (`Alvo`) que será implementada por cada adaptador. O nome de cada classe Adapter normalmente é formado pelo nome da classe a ser adaptada, seguido da palavra `Adapter`. Assim, temos as classes `AbcAdapter` e `XyzAdapter` para o modelo apresentado.
+Para padronizarmos tais métodos e assim tornar idêntica a forma de usar qualquer uma dessas classes, devemos implementar um adaptador para cada classe a ser adaptada. No diagrama de exemplo, a classe `AdaptadaAbc` possui os métodos `metodoA()` e `metodoB()`. Já a  classe `AdaptadaXyz` possui os métodos `metodoY()` e `metodoX()`. A padronização pode ser feita pela criação de uma interface comum (`Alvo`) que será implementada por cada adaptador. O nome de cada classe Adapter normalmente é formado pelo nome da classe a ser adaptada, seguido da palavra `Adapter`. Assim, temos as classes `AbcAdapter` e `XyzAdapter` para o modelo apresentado. Uma classe `AbcAdapter` que implementa a interface `Alvo` é um adaptador para a classe `AdaptadaAbc`. Em outras palavras, ela adapta objetos `AdaptadaAbc` para funcionarem como se fossem do tipo `Alvo`.
 
 `Cliente` é uma classe qualquer que vai usar esta interface para se comunicar com os objetos adaptados por meio de seus adaptadores.
 Assim, se a classe `Cliente` precisar trocar um objeto por outro, como o objeto será acessador por meio da interface `Alvo`, não precisaremos alterar a forma de utilizar um novo objeto.
@@ -58,7 +58,7 @@ Observe que, por exemplo, um método como `metodo1()` na classe `AbcAdapter` vai
 
 == Onde o padrão é usado no JDK e outras bibliotecas
 
-- https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apache Log4J JUL Adapter]: permite utilizar a biblioteca https://logging.apache.org/log4j/[Apache Log4J] com o mesmo código exigido pela biblioteca JUL (java.util.logging) do JDK. Assim, se seu projeto estava usando a biblioteca JUL e deseja trocar pela Log4J, basta utilizar Adapter e assim não precisará alterar o código existente.
+O adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apache Log4J JUL Adapter] permite utilizar a biblioteca https://logging.apache.org/log4j/[Apache Log4J] com o mesmo código exigido pela biblioteca JUL (java.util.logging) do JDK. Assim, se seu projeto estava usando a biblioteca JUL e deseja trocar pela Log4J, basta utilizar tal Adapter e assim não precisará alterar o código existente.
 
 == Exercícios
 
@@ -108,3 +108,37 @@ que realiza a cotação de ações de empresas da bolsa de valores, implemente a
 Adapter para padronizar a interface de acesso a tais serviços.
 
 No projeto disponibilizado, a classe `Principal` é na nossa classe `Cliente` (como apresentado na Figura 1): é ela quem usa os adaptadores. Analisando o novo código da classe principal, que outro padrão poderíamos aplicar em seguida?
+
+=== Pensando em interfaces como adaptadores
+
+Em um classe que implementa múltiplas interfaces, podemos pensar na classe como sendo um adaptador para todas estas interfaces. Apesar de nem sempre o padrão Adapter está sendo de fato implementado nestes casos, ao pensar assim, podemos ter alguns benefícios.
+
+Na Java Collections Framework (JCF), classes como ArrayList e LinkedList funcionam como adaptadores para a interface List, pois alguns métodos têm assinaturas diferente uns dos outros. 
+Na classe ArrayList, utiliza-se `elementData(index)` para acessar um elemento 
+em uma determinada posição. Na classe LinkedList utiliza-se `node(index).item`.
+Mesmo as duas classes tendo sido implementadas em conjunto, elas representam estruturas
+de dados muito diferentes. Para tornar seu uso uniforme para nós desenvolvedores, 
+os métodos citados não são públicos. Temos o `public E get(int index)` em tais classes,
+que é herdado da interface `List`. Tal método padroniza o acesso aos elementos.
+
+Classes como ArrayList e LinkedList implementam múltiplas interfaces em uma hierarquia como List -> Collection -> Iterable. Tal hierarquia nos permite usar um ArrayList como se fosse um objeto List, Collection ou Iterable, de acordo com suas necessidades.
+
+Como exemplo, implemente o seguinte método:
+
+[source,java]
+----
+private void imprimir(ArrayList<Double> elementos){
+    for (Double e : elementos) {
+        System.out.println(e);
+    }
+
+    elementos.clear();
+}
+----
+
+Como pode ver, o método recebe um ArrayList, imprime todos os valores e apaga seus elementos.
+Pense em como podemos criar as seguintes versões deste método para:
+
+1. imprimir qualquer tipo de lista (ArrayList, LinkedList, etc)
+2. impedir que a lista seja modificada (por exemplo, pela remoção de elementos)
+3. imprimir qualquer tipo de coleção (ArrayList, LinkedList, HashSet, TreeSet, etc)

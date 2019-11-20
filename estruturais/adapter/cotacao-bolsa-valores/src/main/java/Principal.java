@@ -55,8 +55,7 @@ public class Principal {
         Você pode se cadastrar e obter uma chave em http://www.alphavantage.co
         */
         final String s = System.getenv("ALPHAVANTAGE_APIKEY");
-        final String apiKey = s == null ? "50M3AP1K3Y" :
-                s;
+        final String apiKey = s == null ? "50M3AP1K3Y" : s;
         final int timeout = 3000;
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
 
