@@ -15,7 +15,7 @@ endif::[]
 
 Em qualquer linguagem de programação existem geradores de números pseudo-aleatórios. Estes geradores são chamados assim pois os números não são de fato aleatórios, uma vez que é utilizada uma equação para calcular cada número gerado. Em Java, a classe `Random` do pacote `java.util` é uma das formas utilizadas para gerar tais números. No entanto, existem diferentes implementações destes geradores, cada uma com finalidades específicas ou diferentes níveis de qualidades em relação à aleatoriedade dos números gerados. 
 
-Bibliotecas como a https://commons.apache.org/proper/commons-math/[Apache Commons Math] fornecem, dentre outras funcionalidades, diversos geradores de números pseudo-aleatórios. Existem até serviços na web que geram números realmente aleatórios, como é o caso do http://random.irb.hr e http://random.org.
+Bibliotecas como a https://commons.apache.org/proper/commons-math/[Apache Commons Math] fornecem, dentre outras funcionalidades, diversos geradores de números pseudo-aleatórios. 
 
 == O problema
 
