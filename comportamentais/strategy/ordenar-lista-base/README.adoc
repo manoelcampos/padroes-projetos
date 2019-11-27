@@ -1,7 +1,7 @@
-= Aplicação de exemplo para ordenação de uma lista de estudantes
+= Aplicação de exemplo para ordenação de uma lista de estudantes (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/ordenar-lista-base[zip])s
 
 Este é um projeto base que gera uma lista aleatório de estudantes
-para que você possa implementar seu próprio código (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/ordenar-lista-base[zip]).
+para que você possa implementar seu próprio código.
 
 Implemente seu próprio código utilizando os recursos de programação funcional do Java 8+,
 por meio do método `sort()` da interface `List` para ordenar

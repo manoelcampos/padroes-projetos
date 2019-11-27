@@ -1,7 +1,7 @@
-= Consumo de Serviços de CEP com VRaptor
+= Consumo de Serviços de CEP com VRaptor (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter[zip])
 
 Esta versão do projeto mostra como aplicar o padrão adapter
 de uma forma simplificada, adaptando o formato de dados
-recebido em diferentes serviços de consulta de CEP para um formato padrão (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter[zip]).
+recebido em diferentes serviços de consulta de CEP para um formato padrão.
 
 Isto se deve ao fato de um determinado serviço, o objeto contendo o endereço poder ter campos com nomes diferentes de outro serviço. Assim, foi apenas incluído o método abstrato `protected abstract Endereco jsonToEndereco(String json)` na classe `AbstractCepService`. Tal método recebe uma String representando o código JSON do endereço recebido e deve retornar um objeto `Endereço`, contendo os dados obtidos do JSON. As classe filhas de `AbstractCepService` se encarregam de extrair corretamente tais dados do JSON e armazenar em um novo objeto `Endereco`. Com isto, não tivemos que criar classes Adapter para os serviços de CEP implementados.

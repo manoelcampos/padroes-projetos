@@ -1,10 +1,10 @@
 :imagesdir: ../../../images/patterns/strategy
 :source-highlighter: highlightjs
 
-= Leitura de Retorno de Boletos Bancários usando Strategy Pattern com Programação Funcional
+= Leitura de Retorno de Boletos Bancários usando Strategy Pattern com Programação Funcional (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/retorno-boleto-funcional[zip])
 
 Esta versão do projeto implementa a leitura de retorno de boletos de uma forma mais
-simples utilizando programação funcional no Java 8+ (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/retorno-boleto-funcional[zip]).
+simples utilizando programação funcional no Java 8+.
 Com tais recursos, precisamos criar menos classes para fornecer uma implementação
 do padrão Strategy.
 
