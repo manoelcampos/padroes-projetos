@@ -23,6 +23,10 @@ endif::[]
 - link:criacionais[Padrões Criacionais]
 - link:estruturais[Padrões Estruturais]
 
+== Exercícios
+
+Acesse o link:exercicios[link aqui].
+
 == Material Complementar
 
 Uma lista de materais complementares está disponível na https://github.com/manoelcampos/padroes-projetos/wiki[Wiki].
