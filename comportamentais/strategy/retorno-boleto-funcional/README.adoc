@@ -1,4 +1,4 @@
-:imagesdir: ../../images/patterns/strategy
+:imagesdir: ../../../images/patterns/strategy
 :source-highlighter: highlightjs
 
 = Leitura de Retorno de Boletos Bancários usando Strategy Pattern com Programação Funcional
