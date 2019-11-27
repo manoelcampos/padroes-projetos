@@ -64,7 +64,7 @@ em seus sistemas. Os bancos utilizam um arquivo de texto com campos de comprimen
 
 Um aplicação na empresa recebedora dos boletos deve ler tais arquivos para extrair os dados
 e normalmente gravar em um banco de dados. Existem diferentes formatos para tais arquivos
-e cada banco pode utilizar um formato diferente. Atualmente existem inúmeros projetos em diferentes linguagens para fazer a leitura de tais arquivos, https://github.com/manoelcampos/retorno-boletophp[como este]. Vamos implementar um solução simplificada aqui apenas para efeitos didáticos.
+e cada banco pode utilizar um formato diferente. Atualmente existem inúmeros projetos em diferentes linguagens para fazer a leitura de tais arquivos, /retorno-boletophp[como este]. Vamos implementar um solução simplificada aqui apenas para efeitos didáticos.
 
 NOTE: Apesar de atualmente termos formatos de arquivos mais utilizados como JSON e XML, formatos como o mencionado ainda são bastante utilizados, principalmente no meio acadêmico, por serem simplista. Um outro exemplo de tais formatos são os arquivos https://pt.wikipedia.org/wiki/Comma-separated_values[CSV]. Mas em aplicações Web e mobile, o mais comum é o uso de JSON e XML.
 
@@ -98,9 +98,7 @@ Um diagrama de classes para tal implementação pode ser como abaixo.
 
 image:retorno-boleto-class-diagram.png[]
 
-===== Código Fonte
-
-O código fonte com uma implementação de exemplo pode ser obtido link:retorno-boleto[aqui].
+O código fonte com uma implementação de exemplo pode ser obtido link:retorno-boleto[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/retorno-boleto[zip]).
 Tente primeiro fazer sua implementação a partir da leitura do diagrama,
 para depois analisar o código disponibilizado.
 
@@ -196,7 +194,7 @@ Mas é difícil encontrar material gratuito, em português e abrangentes.
 Existe muito material em inglês, mas novamente espalhado pela web.
 Se desejarem aprofundar no assunto, acessem esta https://github.com/manoelcampos/sistemas-distribuidos/tree/master/projects/00-programacao-funcional[página].
 
-O código fonte do projeto usando programação funcional está disponível link:retorno-boleto-funcional[aqui].
+O código fonte do projeto usando programação funcional está disponível link:retorno-boleto-funcional[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/retorno-boleto-funcional[zip]).
 
 NOTE: Em linguagens distintas, a forma de implementar o padrão Strategy usando programação funcional é diferente.
 
@@ -226,8 +224,7 @@ uma lista de uma maneira e posteriormente decidirmos que queremos ordenar de out
 
 === Descontos
 
-Considere que temos um sistema de vendas onde diferentes formas de desconto podem ser implementadas de acordo as promoções vigentes, como em datas comemorativas.
-O sistema deve permitir o cálculo do desconto sobre a venda das seguintes maneiras:
+Considere que temos um sistema de vendas onde diferentes formas de desconto podem ser implementadas de acordo as promoções vigentes, como em datas comemorativas. O sistema deve permitir o cálculo do desconto sobre a venda das seguintes maneiras:
 
 - percentual de desconto definido (que pode vir de um banco de dados);
 - percentual de desconto progressivo: `valor da compra/25`, não podendo ultrapassar 20%;
@@ -240,11 +237,11 @@ Quais os problemas que tal implementação traria?
 === Ordenação de Listas
 
 Ordenar uma lista de estudantes utilizando programação funcional no Java 8+.
-O projeto disponível link:lista-alunos[aqui] pode ser usado como base, pois ele gera uma lista de estudantes aleatoriamente.
+O projeto disponível link:ordenar-lista-base[aqui] ((link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/ordenar-lista-base[zip])) pode ser usado como base, pois ele gera uma lista de estudantes aleatoriamente.
 
 === Diferenças da implementação puramente OO vs funcional
 
-A página inicial do link:retorno-boleto-funcional[projeto funcional disponível aqui] apresenta algumas diferenças
+A página inicial do link:retorno-boleto-funcional[projeto funcional disponível aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/retorno-boleto-funcional[zip]) apresenta algumas diferenças
 de implementação do padrão Strategy utilizando puramente programação orientada a objetos e outra versão
 utilizando programação funcional.
 
