@@ -1,0 +1,17 @@
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Comportamentais (Behavioural Design Patterns)
+
+- link:strategy[Strategy]
+- link:template-method[Template Method]
