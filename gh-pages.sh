@@ -1,5 +1,9 @@
 #!/bin/bash
 
+git --version || (echo "git is not installed" && exit -1)
+asciidoctor -v | head -n 1 || (echo "asciidoctor is not installed" && exit -1)
+echo ""
+
 echo "Building GitHub Pages into gh-pages branch."
 
 if [[ $1 == "--help" || $1 == "-h" || $1 == "/h" ]]; then
