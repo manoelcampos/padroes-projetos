@@ -5,4 +5,4 @@
 Este é um projeto que implementa a exportação de dados de uma lista de produtos para formatos como HTML e Markdown (extensão .md).
 Ela é uma versão introdutória bastante limitada, pois só trabalha com lista de produtos.
 Para exportar uma lista de outro tipo de objeto, seria necessário implementar novas classes,
-não sendo uma solução viável.
+não sendo uma solução viável (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/arquivo-configuracoes-problematico[zip]).

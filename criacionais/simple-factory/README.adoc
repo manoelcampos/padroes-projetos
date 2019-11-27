@@ -114,9 +114,9 @@ Implemente o projeto seguindo a modelagem abaixo:
 .Simple Factory para a instanciação de estratégias de processamento de arquivos de retorno de boleto bancário.
 image::simple-factory-boleto-funcional.png[]
 
-O código fonte do projeto está disponível link:retorno-boleto-simple-factory[aqui].
+O código fonte do projeto está disponível link:retorno-boleto-simple-factory[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/retorno-boleto-simple-factory[zip]).
 Uma implementação alternativa, que não utiliza programação funcional e descobre dinamicamente o nome da
-classe para leitura do arquivo de retorno informado pode ser vista link:retorno-boleto-simple-factory-dynamic[aqui].
+classe para leitura do arquivo de retorno informado pode ser vista link:retorno-boleto-simple-factory-dynamic[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/retorno-boleto-simple-factory-dynamic[zip]).
 Veja a documentação no link acima para detalhes do projeto.
 
 === Detalhes de Implementação
@@ -168,14 +168,11 @@ do JDK. Métodos estáticos em interfaces é um dos recursos do Java 8.
 
 NOTE: Existem inúmeras bibliotecas que realizam tal tarefa, mas o objetivo aqui é praticar. Se precisar realmente exportar dados em qualquer formato, tente utilizar uma biblioteca existente. Pode-se exportar dados em XML e JSON utilizando bibliotecas padrões do JDK.
 
-O código fonte do projeto está disponível link:exportador-simple-factory[aqui], mas tente primeiro implementar antes de ver o projeto.
+O código fonte do projeto está disponível link:exportador-simple-factory[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/exportador-simple-factory[zip]), mas tente primeiro implementar antes de ver o projeto.
 
 === Tornando a exportação de dados genérica
 
 O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos exportar outros dados como clientes ou vendas, teremos que criar um novo conjunto de classes para cada tipo de objeto que queremos exportar. Isto é bastante trabalhoso e repetitivo.
 Neste projeto vamos usar reflection com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
 
-O código fonte do projeto está disponível link:exportador-simple-factory-reflection[aqui], mas tente primeiro implementar antes de ver o projeto.
-
-
-NOTE: Os projetos de exportação de dados apresentados aqui são apenas exemplos e não trazem tantos recursos e flexibilidade quanto se desejaria em uma aplicação real. Por exemplo, as colunas de uma tabela HTML estão sendo geradas com a tag `<td>`, enquanto há a tag `<th>` específica para isto. As classes apenas retornam strings, não facilitando, por exemplo, gerar o conteúdo diretamente em um arquivo. Se quiser ver uma implementação utilizada em um projeto real, veja as classes no pacote link:https://github.com/manoelcampos/cloudsim-plus/tree/master/cloudsim-plus/src/main/java/org/cloudsimplus/builders/tables[deste link] de um de meus projetos.
+O código fonte do projeto está disponível link:exportador-simple-factory-reflection[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/exportador-simple-factory-reflection[zip]), mas tente primeiro implementar antes de ver o projeto.

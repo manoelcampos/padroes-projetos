@@ -37,7 +37,7 @@ A figura abaixo apresenta a modelagem do padrão Builder para a classe `Paciente
 .Modelagem do padrão Builder para uma classe Paciente
 image::builder-paciente.png[]
 
-O código fonte do projeto está disponível link:paciente-builder[aqui].
+O código fonte do projeto está disponível link:paciente-builder[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder[zip]).
 
 === Detalhes de Implementação
 
@@ -58,7 +58,7 @@ Para evitar tais inconvenientes, podemos utilizar IDEs como o IntelliJ para gera
 
 Alternativamente, podemos usar uma biblioteca que gera um Builder quando percisarmos, se encarregando de atualizar automaticamente o Builder sempre que atualizarmos a classe de negócio que ele constrói. Uma biblioteca excelente para isto é a http://immutables.github.io/factory.html[Immutables], que dentre vários recursos, gera Builders por meio de uma simples anotação.
 
-O projeto link:paciente-builder-automatico[paciente-builder-automatico] adiciona tal biblioteca no arquivo `pom.xml` e inclui a anotação `@Builder.Constructor` no construtor da classe `Paciente` e pronto: "automagicamente" a classe `PacienteBuilder` é criada/atualizada quando compilamos o projeto.
+O projeto link:paciente-builder-automatico[paciente-builder-automatico] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder-automatico[zip]) adiciona tal biblioteca no arquivo `pom.xml` e inclui a anotação `@Builder.Constructor` no construtor da classe `Paciente` e pronto: "automagicamente" a classe `PacienteBuilder` é criada/atualizada quando compilamos o projeto.
 
 == Padrões Relacionados
 

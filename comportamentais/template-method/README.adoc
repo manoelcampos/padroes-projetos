@@ -50,9 +50,7 @@ Como pudemos perceber, o código do método que lê arquivos do Banco do Brasil 
 muita duplicação de código. Neste caso, podemos adicionalmente aplicar o padrão Template Method para definir uma estrutura comum
 para o algoritmo de leitura de arquivos de retorno, isolando as partes que alteram em métodos nas subclasses.
 
-===== Código Fonte
-
-O código fonte do projeto convencional para leitura de arquivos de retorno está disponível link:retorno-boleto-template[aqui].. Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
+O código fonte do projeto convencional para leitura de arquivos de retorno está disponível link:retorno-boleto-template[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/template-method/retorno-boleto-template[zip]). Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
 
 === Modelagem utilizando Programação Funcional
 
@@ -65,9 +63,7 @@ image:template-method-funcional.png[]
 O `templateMethod()` então deve chamar as operações primitivas internamente. Estas são definidas como atributos do tipo `Function` (por exemplo),
 indicando que eles armazenam a implementação de uma função. É a mesma lógica que utilizamos para o link:../strategy/retorno-boleto-funcional[projeto funcional para o padrão Strategy].
 
-===== Código Fonte
-
-O código fonte do projeto funcional para leitura de arquivos de retorno está disponível link:retorno-boleto-template-funcional[aqui].
+O código fonte do projeto funcional para leitura de arquivos de retorno está disponível link:retorno-boleto-template-funcional[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/template-method/retorno-boleto-template-funcional[zip]).
 
 == Modelagem convencional Sem o padrão Template Method
 

@@ -35,22 +35,20 @@ image::factory-method.png[]
 
 === Exemplos
 
-Podemos utilizar o Factory Method para encapsular a instanciação de colunas de uma tabela em formato específico.
-Baseado no projeto link:../simple-factory/exportador-simple-factory-reflection[exportador-simple-factory-reflection], 
-vamos implementar o Factory Method.
-
+Podemos utilizar o Factory Method para encapsular a instanciação de colunas de uma tabela em formato específico,
+baseado no projeto link:../simple-factory/exportador-simple-factory-reflection[exportador-simple-factory-reflection].
 Implemente o projeto seguindo a modelagem abaixo:
 
 .Factory Method para a instanciação de colunas de uma tabela em formato específico
 image::factory-method-exportador.png[]
 
-O código fonte do projeto está disponível link:exportador-factory-method-reflection[aqui].
+O código fonte do projeto está disponível link:exportador-factory-method-reflection[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-factory-method-reflection[zip]).
 
 === Detalhes de Implementação
 
 == Problemas da não utilização do padrão
 
-Veja o projeto link:exportador-problematico[exportador-problematico].
+Veja o projeto link:exportador-problematico[exportador-problematico] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-problematico[zip]).
 Ele é uma implementação do exportador de dados sem utilizar o padrão Factory Method,
 seguindo a modelagem do diagrama abaixo:
 

@@ -2,7 +2,7 @@
 
 Esta versão do projeto mostra como aplicar o padrão adapter
 de uma forma simplificada, adaptando o formato de dados
-recebido em diferentes serviços de consulta de CEP para um formato padrão.
+recebido em diferentes serviços de consulta de CEP para um formato padrão (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter-automatico[zip]).
 
 Ele usa as dependências `jackson-annotations` e `jackson-databind` no link:pom.xml[pom.xml]
 para fornecer tal recurso por meio da anotação `@JsonAlias` que é utilizada

@@ -59,7 +59,7 @@ image::singleton-config.png[]
 Observe que os getters e setters representam configurações existentes no arquivo `config.properties`.
 Estas são configurações definidas aleatoriamente apenas para exemplo.
 
-O projeto link:arquivo-configuracoes-singleton[arquivo-configuracoes-singleton] fornece uma implementação do padrão Singleton.
+O projeto link:arquivo-configuracoes-singleton[arquivo-configuracoes-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/arquivo-configuracoes-singleton[zip]) fornece uma implementação do padrão Singleton.
 
 === Detalhes de Implementação
 
@@ -92,7 +92,7 @@ No link fornecido são mostradas duas versões do projeto:
   enviando consultas para um serviço, depois para outro.
 
 Qualquer uma das versões depende das necessidades do seu projeto.
-O projeto link:cep-service-singleton[cep-service-singleton] disponibilizado aqui é como a primeira versão mencionada, mas ele aplica o padrão Singleton por meio do framework CDI para que tenhamos uma única instância do serviço de CEP em toda a aplicação, independetemente de quantos usuários estiverem conectados a ela. Isto faz sentido pois as classes que implementam os serviços de CEP não armazenam nenhum atributo, logo, podemos usar uma única instância para toda a aplicação, consequentemente economizando memória.
+O projeto link:cep-service-singleton[cep-service-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/cep-service-singleton[zip]) disponibilizado aqui é como a primeira versão mencionada, mas ele aplica o padrão Singleton por meio do framework CDI para que tenhamos uma única instância do serviço de CEP em toda a aplicação, independetemente de quantos usuários estiverem conectados a ela. Isto faz sentido pois as classes que implementam os serviços de CEP não armazenam nenhum atributo, logo, podemos usar uma única instância para toda a aplicação, consequentemente economizando memória.
 
 == Exercícios
 
