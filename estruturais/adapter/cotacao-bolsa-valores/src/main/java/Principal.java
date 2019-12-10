@@ -25,12 +25,18 @@ public class Principal {
         System.out.println();
 
         //No Yahoo Finance, as empresas brasileiras terminam com ".sa"
-        cotacaoUsandoYahooFinance("ITUB4.SA"); //ITUB4 = Itaú
+        cotacaoUsandoYahooFinance("MGLU3.SA"); //MGLU3 = Magazine Luiza
 
         cotacaoUsandoAlphaVantage("INTL"); //INTL = Intel
         cotacaoUsandoQuandl("WIKI/AAPL"); //AAPL = Apple
     }
 
+    /**
+     * Acessa a cotação de uma determinada empresa utilizando o serviço do <a href="https://finance.yahoo.com">Yahoo Finance</a>
+     * por meio da biblioteca  <a href="https://github.com/mainstringargs/yahoo-finance-scraper">Yahoo Finance Scrapper</a>.
+     * @param codigoEmpresa
+     * @see http://meumobi.github.io/stocks%20apis/2016/03/13/get-realtime-stock-quotes-yahoo-finance-api.html
+     */
     private static void cotacaoUsandoYahooFinance(String codigoEmpresa) {
         System.out.printf("Cotação da Empresa %s obtida pelo serviço Yahoo Finance: https://finance.yahoo.com%n", codigoEmpresa);
         YahooFinanceUrlBuilder builder =
@@ -44,9 +50,16 @@ public class Principal {
             System.out.printf("Data: Preço: %s %s%n", financials.getFinancialCurrency(), financials.getCurrentPrice().getRaw());
         }
 
+        System.out.println(builder.getURL());
+        System.out.println("https://query1.finance.yahoo.com/v8/finance/chart/"+codigoEmpresa+"?period1=1546311600&period2=1556593200&interval=1d&includePrePost=False");
         System.out.println("---------------------------------------------------------------------");
     }
 
+    /**
+     * Acessa a cotação de uma determinada empresa utilizando o serviço do <a href="https://www.alphavantage.co">AlphaVantage</a>
+     * por meio da biblioteca  <a href="https://github.com/mainstringargs/alpha-vantage-scraper">AlphaVantage Scrapper</a>.
+     * @param codigoEmpresa
+     */
     private static void cotacaoUsandoAlphaVantage(String codigoEmpresa) {
         System.out.printf("Cotação da Empresa %s obtida pelo serviço Alpha Vantage: http://www.alphavantage.co%n", codigoEmpresa);
 
@@ -73,6 +86,11 @@ public class Principal {
         System.out.println("---------------------------------------------------------------------");
     }
 
+    /**
+     * Acessa a cotação de uma determinada empresa utilizando o serviço do <a href="https://www.quandl.com">Quandl</a>
+     * por meio da biblioteca  <a href="http://quandl4j.org">quandl4j</a>.
+     * @param codigoEmpresa
+     */
     private static void cotacaoUsandoQuandl(String codigoEmpresa) {
         System.out.printf("Cotação da Empresa %s obtida pelo serviço Quandl: http://quandl.com/%n", codigoEmpresa);
         ClassicQuandlSession session = ClassicQuandlSession.create();

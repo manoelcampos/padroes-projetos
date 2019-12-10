@@ -28014,6 +28014,35 @@
 											"propertyLabel": {
 												"$ref": "AAAAAAFs/hOP7TgihCc="
 											}
+										},
+										{
+											"_type": "UMLNoteView",
+											"_id": "AAAAAAFu8Q0vMCpdwIQ=",
+											"_parent": {
+												"$ref": "AAAAAAFs/hCi+jczzpU="
+											},
+											"font": "Arial;13;0",
+											"left": 120,
+											"top": 320,
+											"width": 449,
+											"height": 145,
+											"text": "templateMethod(){\n    //Podem haver quaisquer outras operações em qualquer parte do método\n    umaOperacaoQualquer();\n    outraOperacaoQualquer();\n\n    operacaoPrimitiva1();\n    operacaoPrimitiva2();\n    operacaoPrimitiva3();\n}"
+										},
+										{
+											"_type": "UMLNoteLinkView",
+											"_id": "AAAAAAFu8RBdTyptT2I=",
+											"_parent": {
+												"$ref": "AAAAAAFs/hCi+jczzpU="
+											},
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAFu8Q0vMCpdwIQ="
+											},
+											"tail": {
+												"$ref": "AAAAAAFs/hHyGjdJlHM="
+											},
+											"lineStyle": 1,
+											"points": "351:114;232:112;232:280;271:319"
 										}
 									]
 								},

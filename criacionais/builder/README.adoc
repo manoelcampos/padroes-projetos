@@ -18,17 +18,33 @@ endif::[]
 
 === Definição
 
+"Separa a construção de um objeto complexo da sua representação, de modo que o mesmo processo de construção possa criar diferentes representações." (GoF)
+
+Em outras palavras, separa o código utilizado para a instanciação de objetos complexos do código da classe de tal objeto. As representações são as instâncias da classe: os objetos.
+
 
 === Aplicabilidade
 
+O padrão é utilizado quando um determinado objeto é complexo de ser criado, quando:
+
+- a instanciação exige muitos parâmetros no construtor (normalmente bem mais que 3);
+- existem dependências entre os atributos: se for definido um valor para o atributo  `a`, o atributo `b` também precisa de um valor;
+- existem atributos obrigatórios e outros opcionais;
+- regras de validação envolvem atributos em conjunto (para validar atributo `a` é preciso verificar o valor de `b` também);
+- etc.
+
+Normalmente o primeiro item já pode ser o suficiente para aplicarmos o padrão Builder a uma classe.
 
 === Modelagem
-
 
 .Modelagem do Padrão Builder para uma classe fictícia "MinhaClasse"
 image::builder.png[]
 
+No diagrama, a classe Builder foi representada como uma Inner Class: uma classe declarada dentro de outra. Se o código da `MinhaClasse` for extenso, incluir o Builder como uma Inner Class vai tornar o arquivo mais extenso ainda. Nestes casos, o ideal é criar a Builder em um arquivo separado.
+
 === Princípios utilizados
+
+- Separation of Concerns (SoC) - Separação de Preocupações: separa as regras de negócio da classe do processo de instanciação da mesma.
 
 === Exemplos
 

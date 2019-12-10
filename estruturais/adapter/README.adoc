@@ -31,6 +31,7 @@ Um adapter neste caso pode fornecer uma interface padrão a ser utilizada public
 
 === Modelagem do Padrão
 
+.Figura 1: Modelagem do padrão adapter
 image::adapter.png[]
 
 Podemos ter 1 ou mais classes que precisam ser adaptadas, como as classes `AdaptadaAbc` e `AdaptadaXyz`.
@@ -48,6 +49,7 @@ Observe que, por exemplo, um método como `metodo1()` na classe `AbcAdapter` vai
 
 === Princípios utilizados
 
+-
 
 === Exemplos
 
@@ -55,6 +57,7 @@ Observe que, por exemplo, um método como `metodo1()` na classe `AbcAdapter` vai
 
 == Padrões Relacionados
 
+- Decorator
 
 == Onde o padrão é usado no JDK e outras bibliotecas
 
@@ -62,11 +65,20 @@ O adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apac
 
 == Exercícios
 
+=== Cotações de Empresas da Bolsa de Valores
+
+A partir do projeto base link:cotacao-bolsa-valores[cotacao-bolsa-valores], 
+que realiza a cotação de ações de empresas da bolsa de valores, implemente as classes
+Adapter para padronizar a interface de acesso a tais serviços.
+
+No projeto disponibilizado, a classe `Principal` é na nossa classe `Cliente` (como apresentado na Figura 1): é ela quem usa os adaptadores. Analisando o novo código da classe principal, que outro padrão poderíamos aplicar em seguida?
+
 === Adaptando a aplicação de consulta de CEP
 
 Voltando ao link:https://github.com/manoelcampos/vraptor-cep-service/tree/master/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
 
-Pense na modelagem da solução aplicando o padrão adapter e implemente tal projeto. 
+Como o problema aqui é referente ao formato dos dados, precisamos apena adapter os dados para um formato comum.
+Assim, a implementação não precisa seguir a modelagem apresentada na Figura 1 acima.
 Uma solução simples, que não requer a criação de classes adapters, é apresentada abaixo.
 Você precisará fazer o processamento manual do código JSON recebido
 pelo serviço, que representa o endereço de um determinado CEP.
@@ -98,16 +110,8 @@ Endereco endereco = new Endereco();
 endereco.setLogradouro(object.getString("logradouro"));
 ----
 
-Veja o projeto link:cep-service-adapter-automatico[cep-service-adapter-automatico], 
+Alternativamente, veja o projeto link:cep-service-adapter-automatico[cep-service-adapter-automatico], 
 que apenas usa recursos da biblioteca https://github.com/FasterXML/jackson[Jackson] e assim não requer a implementação do padrão Adapter.
-
-=== Cotações de Empresas da Bolsa de Valores
-
-A partir do projeto base link:cotacao-bolsa-valores[cotacao-bolsa-valores], 
-que realiza a cotação de ações de empresas da bolsa de valores, implemente as classes
-Adapter para padronizar a interface de acesso a tais serviços.
-
-No projeto disponibilizado, a classe `Principal` é na nossa classe `Cliente` (como apresentado na Figura 1): é ela quem usa os adaptadores. Analisando o novo código da classe principal, que outro padrão poderíamos aplicar em seguida?
 
 === Pensando em interfaces como adaptadores
 
