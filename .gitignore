@@ -13,4 +13,5 @@ target/
 _site
 .bundle
 
-/aulas/
+aulas/
+provas/
