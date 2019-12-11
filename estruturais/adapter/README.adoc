@@ -12,7 +12,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Padrões de Projetos Estruturais (Structural Design Patterns)
+= Padrões de Projetos Estruturais
 
 == Adapter (Adaptador)
 
@@ -31,7 +31,7 @@ Um adapter neste caso pode fornecer uma interface padrão a ser utilizada public
 
 === Modelagem do Padrão
 
-.Figura 1: Modelagem do padrão adapter
+.Modelagem do padrão adapter
 image::adapter.png[]
 
 Podemos ter 1 ou mais classes que precisam ser adaptadas, como as classes `AdaptadaAbc` e `AdaptadaXyz`.

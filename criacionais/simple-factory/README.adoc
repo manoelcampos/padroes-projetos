@@ -12,7 +12,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Padrões de Projetos Criacionais (Creational Design Patterns)
+= Padrões de Projetos Criacionais
 
 == Simple Factory (Fábrica Simples)
 

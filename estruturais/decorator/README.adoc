@@ -12,7 +12,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Padrões de Projetos Estruturais (Structural Design Patterns)
+= Padrões de Projetos Estruturais
 
 == Decorator (Decorador)
 
