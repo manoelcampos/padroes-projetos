@@ -18,6 +18,7 @@ endif::[]
 
 === Definição
 
+Define uma interface para criar um objeto, mas permite às subclasses decidirem qual tipo de objeto instanciar. [UCPP]
 
 === Aplicabilidade
 
@@ -25,10 +26,28 @@ endif::[]
 
 === Modelagem
 
-
 .Modelagem do Factory Method
 image::factory-method.png[]
 
+`TipoAbstrato` é uma interface ou classe abstrata/super classe que representa o tipo dos objetos que a fábrica pode criar.
+As classes `TipoConcreto1` até `TipoConcretoN` representam os tipos concretos que podem ser instanciados de fato pela fábrica.
+`Criador` representa a implementação base da fábrica. Ela pode ter quaisquer métodos que forem necessários,
+incluindo um método abstrato `newObject()` que deverá ser implementados pelos criadores concretos.
+
+A classe `Criador` normalmente terá um método que chamará o `newObject()` para usar o objeto criado.
+Neste exemplo, tal método é o `useObject()`, mas em uma implementação real, o método deve ter um nome de acordo 
+com o problema sendo resolvido.
+
+Diferente da Simple Factory:
+
+- a lógica que define qual objeto será instanciado não é centralizada em uma classe, mas sim nas subclasses de `Criador`;
+- logo, o método `newObject()` é abstrato, pois as subclasses de `Criador` é que o implementarão.
+- tal método não deve ser estático se ele for usado por outros métodos da classe (como é o caso deste modelo);
+
+Cada subclasse de `Criador` é que definirá a lógica para a instanciação do objeto representado por `TipoAbstrato`.
+Para a Simple Factory não existem subclasses.
+
+Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
 
 === Princípios utilizados
 
@@ -59,8 +78,8 @@ image::no-factory-method-exportador.png[]
 
 Padrões que possuem similaridades ou podem ser usados em conjunto:
 
-- Template Method
 - Simple Factory
+- Template Method
 
 == Onde o padrão é usado no JDK
 

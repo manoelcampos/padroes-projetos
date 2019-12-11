@@ -1,0 +1,6 @@
+= Modelagem do Padrão Factory Method
+
+Apresenta um código de exemplo da modelagem do padrão Factory Method.
+Tal código não funciona de fato. Ele serve apenas de base para implementação
+de uma solução específica utilizando o padrão.
+Assim, nomes de classes, métodos e atributos precisam ser alterados para nomes específicos.

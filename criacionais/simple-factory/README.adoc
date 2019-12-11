@@ -52,7 +52,7 @@ Alguns exemplos incluem:
 - `SimplePizzaFactory` ou `PizzaFactory` para criar pizzas;
 - `SimpleProdutoFactory` ou `ProdutoFactory` para criar produtos.
 
-A `ClasseCliente` é uma classe qualquer que precisa utilizar objetos produzidos pela Factory. 
+`Cliente` é uma classe qualquer que precisa utilizar objetos produzidos pela Factory. 
 Assim, podemos ter várias classes clientes.
 
 NOTE: O termo "cliente", amplamente utilizado quando falamos de padrões de projeto e POO, representa uma classe que usa os serviços de outra classe, como uma pessoa que usa os serviços de uma empresa.
@@ -67,12 +67,27 @@ NOTE: Na prática, uma página web não deve estar preocupada em instanciar obje
 Ela deve conter apenas a interface gráfica (front-end) com os campos e regras de validação de dados.
 Mas isso é assunto para o padrão MVC.
 
-O `TipoAbstrato` é um super tipo representado por uma interface ou classe abstrata. 
+O `TipoAbstrato` é um super tipo representado por uma **interface** ou **classe abstrata**. 
 Como ele é abstrato, a Factory criará objetos de algum dos sub-tipos disponíveis,
 de acordo com uma possível lógica que você definir.
 
-O método `createObject` da `SimpleFactory` retorna um `TipoAbstrato`, mas internamente ele 
-cria um objeto de algum dos sub-tipos existentes. 
+Os métodos `newObject` da `SimpleFactory` retornam um `TipoAbstrato`, mas internamente 
+criam um objeto de algum dos sub-tipos existentes. Este método é normalmente definido como estático,
+assim, não temos que instanciar a fábrica para depois podermos instanciar os objetos que queremos.
+Observe que pode haver duas versões de tal método. A versão que não recebe parâmetros normalmente vai
+sempre retornar um tipo específico de objeto. Ao usar tal método em várias partes do sistema,
+se precisarmos trocar qual o tipo de objeto a ser instanciado, temos que apenas alterar este método.
+Os locais onde ele estava sendo usado não sofrem nenhuma alteração.
+
+A outra versão do método que possui parâmetros (cujo quantidade e tipos depende do seu problema)
+normalmente vai permitir, ao desenvolvedor que for usar a Facotry, informar qual objeto
+a ser criado e possíveis dados a serem usados para criar tal objeto, sem especificar
+qual classe será instanciada. Adicionalmente, se existir uma determinada lógica necessária
+para criar qualquer dos tipos de objeto possíveis, tal lógica ficará encapsulada
+dentro destes métodos `newObject`. Qualquer alteração neste lógica precisará ser feita
+em apenas um local.
+
+Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
 
 === Princípios utilizados
 

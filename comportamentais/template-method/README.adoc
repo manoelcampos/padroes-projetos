@@ -36,6 +36,8 @@ Os métodos como `operacaoPrimitivaN()` são então métodos abstratos, que defi
 Tais operações primitivas são então chamadas em algum lugar dentro do `templateMethod()`.
 Cada subclasse pode ter sua própria implementação de cada uma destas operações.
 
+Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
+
 === Princípios utilizados
 
 - https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], pois separa as partes que mudam (os comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).

@@ -45,6 +45,8 @@ A assinatura do método também é livre. Neste exemplo o método não recebe pa
 Podem existir diferentes classes filhas desta `Estrategista`. Cada classe filha podem ter comportamentos diferentes umas das outras.
 Com o padrão Strategy, o comportamento de qualquer classe (mãe ou filha) pode mudar em tempo de execução, de acordo com os requisitos do sistema.
 
+Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
+
 === Princípios utilizados
 
 - https://en.wikipedia.org/wiki/Composition_over_inheritance[Favorecer composição no lugar de herança].

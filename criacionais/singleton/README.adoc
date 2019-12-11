@@ -16,7 +16,12 @@ endif::[]
 
 == Singleton
 
+.Imagem: https://www.needpix.com
+image:lonely-2378396_1280.jpg[]
+
 === Definição
+
+"Garante que uma classe tenha penas uma instância e fornece um ponto global de acesso a ela" [UCPP]
 
 
 === Aplicabilidade
