@@ -47,6 +47,8 @@ Assim, se a classe `Cliente` precisar trocar um objeto por outro, como o objeto 
 
 Observe que, por exemplo, um método como `metodo1()` na classe `AbcAdapter` vai apenas delegar a chamada para o `metodoA()` de um objeto `AbcAdapter`.
 
+Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
+
 === Princípios utilizados
 
 -

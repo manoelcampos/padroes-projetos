@@ -1,0 +1,3 @@
+= Modelagem do Padrão Singleton
+
+Apresenta um código de exemplo da modelagem do padrão Singleton.

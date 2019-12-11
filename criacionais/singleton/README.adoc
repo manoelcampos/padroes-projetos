@@ -34,6 +34,30 @@ O padrão Singleton é representado por uma única classe como apresentado na fi
 .Modelagem de uma classe que implementa o padrão Singleton
 image::singleton.png[]
 
+O padrão Singleton é aplicado a uma única classe por vez. 
+A classe Singleton será aquela que desejamos aplicar o padrão, logo,
+normalmente é uma classe que já existe e que apenas desejamos impedir
+que sejam criadas múltiplas instâncias dela.
+Assim, não teremos de fato uma classe chamada Singleton,
+mas qualquer outro nome relacionado ao sistema que estamos desenvolvendo.
+
+O que faz com que a classe tenha apenas uma única instância, é armazenar tal instância
+em um atributo estático dentro da própria classe. Normalmente tal atributo é chamado
+simplesmente de `instance`. O tipo dele será a própria classe onde ele está sendo declarado.
+Se tivermos uma classe Singleton `ImpressoraFiscal`, ela terá um atributo `ImpressoraFiscal instance`.
+
+O método `getInstance()` deve retornar a instância armazenada no atributo `instance`,
+logo, o tipo do retorno de tal método é a própria classe. No exemplo acima, será `ImpressoraFiscal`.
+Ele é um método estático, uma vez que não devemos chamá-lo a partir de uma instância, mas sim a partir
+da classe para que o método retorna a instância.
+
+Um detalhe importante é que o construtor deve ser privado. Isto é o principal para garantir que apenas
+uma única instância da classe será criada.
+Para obter-se a instância única, devemos chamar o método `getInstance()`, já que não temos
+como usar o construtor fora da classe.
+
+Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Este é uma exemplo prático que implementa o padrão Singleton para classe que simula a comunicação com uma impressora fiscal.
+
 === Princípios utilizados
 
 === Exemplos
