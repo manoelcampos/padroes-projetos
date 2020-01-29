@@ -36,16 +36,16 @@ endif::[]
 === Exemplos
 
 - Detectar eventos de componentes em uma interface gráfica, como o click de um botão ou pressionamento de tecla em um campo.
-- Detectando alterações em um diretório https://www.baeldung.com/java-nio2-watchservice[<1>] https://docs.oracle.com/javase/tutorial/essential/io/notification.html[<2>]
+- Detectar alterações em um diretório https://www.baeldung.com/java-nio2-watchservice[<1>] https://docs.oracle.com/javase/tutorial/essential/io/notification.html[<2>]
 - https://developer.android.com/reference/android/os/FileObserver[Observando mudanças em um arquivo em apps Android]
 
 == Exercícios
 
-=== Compactação de Arquivos para download
 
-Implementar aplicação que realiza a compactação de arquivos de uma determinada pasta no servidor.
-Quando a compactação tiver sido finalizada, notificar o usuário, fornecendo um link para download.
+//=== Compactação de Arquivos para download
 
+//Implementar aplicação que realiza a compactação de arquivos de uma determinada pasta no servidor.
+//Quando a compactação tiver sido finalizada, notificar o usuário, fornecendo um link para download.
 // Implementar usando VRaptor. Ver classes de compactação de arquivos no WorkloadFileReader do CloudSim Plus.
 
 === Modelagem utilizando Programação Funcional
