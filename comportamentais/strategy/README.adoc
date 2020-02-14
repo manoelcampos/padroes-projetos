@@ -104,6 +104,8 @@ O código fonte com uma implementação de exemplo pode ser obtido link:retorno-
 Tente primeiro fazer sua implementação a partir da leitura do diagrama,
 para depois analisar o código disponibilizado.
 
+NOTE: Uma implementação em Node.js está disponível em link:javascript/retorno-boleto-js[retorno-boleto-js].
+
 === Detalhes de Implementação
 
 Mesmo que uma classe não tenha um determinado comportamento, como o definido pela interface `ComportamentoA`, haverá uma associação entre a classe e o comportamento.

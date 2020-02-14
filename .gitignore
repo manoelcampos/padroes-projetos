@@ -15,3 +15,5 @@ _site
 
 aulas/
 provas
+
+node_modules/
