@@ -75,32 +75,27 @@ Adapter para padronizar a interface de acesso a tais serviços.
 
 No projeto disponibilizado, a classe `Principal` é na nossa classe `Cliente` (como apresentado na Figura 1): é ela quem usa os adaptadores. Analisando o novo código da classe principal, que outro padrão poderíamos aplicar em seguida?
 
-=== Adaptando a aplicação de consulta de CEP
+=== Adaptando a aplicação de consulta de CEP (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter[zip])
 
-Voltando ao link:https://github.com/manoelcampos/vraptor-cep-service/tree/master/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
+Voltando ao link:../../criacionais/cep-service/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
 
 Como o problema aqui é referente ao formato dos dados, precisamos apena adapter os dados para um formato comum.
 Assim, a implementação não precisa seguir a modelagem apresentada na Figura 1 acima.
 Uma solução simples, que não requer a criação de classes adapters, é apresentada abaixo.
 Você precisará fazer o processamento manual do código JSON recebido
 pelo serviço, que representa o endereço de um determinado CEP.
-Para isso, vamos usar a biblioteca https://javaee.github.io/jsonp/getting-started.html[JSON-P (JSON Processing)] da plataforma Java. 
-Assim, adicione as seguintes dependências ao arquivo pom.xml do seu projeto Maven.
+Para isso, podemos usar a biblioteca https://javaee.github.io/jsonp/getting-started.html[JSON-P (JSON Processing)] da plataforma Java para o Quarkus, adicionando a dependência a seguir no pom.xml:
 
 [source,xml]
 ----
-<dependency>
-    <groupId>javax.json</groupId>
-    <artifactId>javax.json-api</artifactId>
-    <version>1.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.glassfish</groupId>
-    <artifactId>javax.json</artifactId>
-    <version>1.0</version>
-</dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jsonp</artifactId>
+      <version>${quarkus.version}</version>
+    </dependency>
 ----
+
+//No JavaEE tradicional as dependências são javax.json/javax.json-api e org.glassfish/javax.json
 
 Você pode usar um código como abaixo para fazer o tal processamento:
 
@@ -129,7 +124,7 @@ que é herdado da interface `List`. Tal método padroniza o acesso aos elementos
 
 Classes como ArrayList e LinkedList implementam múltiplas interfaces em uma hierarquia como List -> Collection -> Iterable. Tal hierarquia nos permite usar um ArrayList como se fosse um objeto List, Collection ou Iterable, de acordo com suas necessidades.
 
-Como exemplo, implemente o seguinte método:
+Como exemplo, veja o seguinte método com uma implementação não ideal:
 
 [source,java]
 ----
