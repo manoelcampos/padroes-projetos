@@ -1,3 +1,0 @@
-[submodule "criacionais/cep-service"]
-	path = criacionais/cep-service
-	url = https://github.com/manoelcampos/vraptor-cep-service.git
