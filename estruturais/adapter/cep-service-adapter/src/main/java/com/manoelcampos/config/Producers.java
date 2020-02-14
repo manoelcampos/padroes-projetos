@@ -21,12 +21,6 @@ public class Producers {
     private final static Logger LOGGER = Logger.getLogger(Producers.class.getSimpleName());
 
     /**
-     * Total de instâncias de {@link CepService} solicitadas pelo sistema
-     * pelo uso de {@code @Inject CepService cepService}.
-     */
-    private static int instanciasCepService = 0;
-
-    /**
      * Cria uma nova instância de {@link CepService}.
      * Método chamada automaticamente sempre que for utilizada a anotação @{@link Inject}
      * quando um código como {@code @Inject CepService cepService} for executado em qualquer
@@ -49,9 +43,7 @@ public class Producers {
      *
      * <p>Como temos duas implementações de {@link CepService}, ou seja,
      * temos dois serviços de consulta de CEP que podemos usar,
-     * esta fábrica alterna entre o uso de um e outro serviço.
-     * Sempre que o contador {@link #instanciasCepService} for par,
-     * ele instancia um serviço, quando for ímpar instancia outro.
+     * esta fábrica alterna aleatoriamente entre o uso de um e outro serviço.
      * Assim, estamos balanceando a carga das consultas de CEP entre
      * estes dois serviços implementados.</p>
      *
@@ -72,15 +64,15 @@ public class Producers {
      */
     @Produces
     public CepService newCepService() {
-        final CepService cepService;
+        /*Math.random() retorno um número entre 0 e 1,
+        * verificando se o valor retornando é maior que 0.5, estamos
+        * definindo 50% de probabilidade de escolher aleatoriamente
+        * qualquer um dos serviços.*/
+        final CepService cepService = Math.random() > 0.5 ?
+                                        new ViaCepService() :
+                                        new PostmonService();
 
-        if (instanciasCepService++ % 2 == 0)
-            cepService = new ViaCepService();
-        else cepService = new PostmonService();
-
-        LOGGER.info(
-                "Serviço de busca de CEP instanciado pela fábrica: " + cepService.getClass().getName() +
-                        ". Total de instâncias criadas: " + instanciasCepService);
+        LOGGER.info("Serviço de busca de CEP instanciado pela fábrica: " + cepService.getClass().getSimpleName());
         return cepService;
     }
 

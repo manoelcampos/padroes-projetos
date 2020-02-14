@@ -1,7 +1,60 @@
-= Consumo de Serviços de CEP com VRaptor (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter[zip])
+:source-highlighter: highlightjs
+:numbered:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Consumo de Serviços de CEP com framework Quarkus (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter[zip])
 
 Esta versão do projeto mostra como aplicar o padrão adapter
 de uma forma simplificada, adaptando o formato de dados
 recebido em diferentes serviços de consulta de CEP para um formato padrão.
 
-Isto se deve ao fato de um determinado serviço, o objeto contendo o endereço poder ter campos com nomes diferentes de outro serviço. Assim, foi apenas incluído o método abstrato `protected abstract Endereco jsonToEndereco(String json)` na classe `AbstractCepService`. Tal método recebe uma String representando o código JSON do endereço recebido e deve retornar um objeto `Endereço`, contendo os dados obtidos do JSON. As classe filhas de `AbstractCepService` se encarregam de extrair corretamente tais dados do JSON e armazenar em um novo objeto `Endereco`. Com isto, não tivemos que criar classes Adapter para os serviços de CEP implementados.
+Isto se deve ao fato de em um determinado serviço, o objeto contendo o endereço poder ter campos com nomes
+diferentes de outro serviço.
+Assim, foi apenas incluído o método abstrato `protected abstract Endereco jsonToEndereco(String json)` na classe `AbstractCepService`.
+Tal método recebe uma String representando o código JSON do endereço recebido e deve retornar um objeto `Endereço`,
+contendo os dados obtidos do JSON.
+As classe filhas de `AbstractCepService` se encarregam de extrair corretamente tais dados do JSON
+e armazenar em um novo objeto `Endereco`.
+Com isto, não tivemos que criar classes Adapter para os serviços de CEP implementados.
+
+Este é um projeto Java EE que utiliza o framework https://quarkus.io[Quarkus] que torna o desenvolvimento de backends en Java
+extremamente produtivo e eficiente, além de embutir um servidor de aplicação leve, tornando trivial a implantação da aplicação.
+Para mais detalhes sobre o Quarkus, veja a página oficial acima e um
+projeto de exemplo detalhada https://github.com/manoelcampos/sd-webservices/tree/master/4.5-ws-rest-quarkus-framework[aqui].
+
+== Requisitos
+
+- JDK 8 ou 11
+- Maven 3.5.3 ou superior
+
+== Executar o Projeto
+
+Você pode iniciar o servidor com sua aplicação de diferentes maneiras:
+
+- Usando o script mvnw incluído durante a criação do projeto: `./mvnw compile quarkus:dev`.
+- Ou simplesmente clicando no botão Play em IDEs como o NetBeans, pois foi incluído o plugin maven exec para executar o comando acima mais facilmente.
+
+==== Atualizando o projeto sem reiniciar o servidor
+
+Bem, atualizar o projeto no servidor em execução e ver as alterações que você fez na sua aplicação é realmente complicado com o Quarkus: você precisa apenas salvar o projeto e boom: normalmente em menos de 1 segundo a aplicação estará rodando com as novas alterações 😱🚀😁.
+
+Não é à toa que o slogan do Quarkus é "Supersonic Subatomic Java".
+
+==== Acessando a aplicação
+
+Se você estiver habituado a usar servidores como o GlassFish no NetBeans,
+sabe que ao clicar no botão Play, o projeto é compilado e executado,
+abrindo o navegador automaticamente.
+Usando o Quarkus isso não ocorrerá.
+Você deve abrir o navegador você mesmo. Neste caso, a aplicação estará disponível
+em http://localhost:8080.
+Observe que não há um caminho adicional com o nome da aplicação no final da URL,
+pois a aplicação executa na raiz do servidor.
