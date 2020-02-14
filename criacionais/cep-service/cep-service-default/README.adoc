@@ -1,0 +1,8 @@
+= Consumo de Serviços de CEP com framework Quarkus
+
+Esta é a primeira versão da aplicação que mostra como utilizar uma anotação de escopo
+( como `@Dependent`, `@RequestScoped`, `@SessionScoped` ou `@ApplicationScoped`)
+para definir qual classe de serviço de CEP será instanciada quando for utilizada
+injeção de dependência ao executar um código como `@Inject CepService cepService`.
+
+As informações de como executar o projeto foram mostradas na pasta anterior.
