@@ -2,6 +2,7 @@
 :allow-uri-read:
 :safe: unsafe
 :numbered:
+:toc: left
 
 = Padrões de Projeto em Java
 
