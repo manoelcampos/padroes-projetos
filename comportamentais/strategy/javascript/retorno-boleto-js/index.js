@@ -1,12 +1,5 @@
 const reader = require('line-reader');
 
-/*
- * Implementa a leitura de arquivos de retorno de boletos bancários utilizando
- * o padrão Strategy.
- * Este é apenas um projeto de exemplo e inclui todas as classes em um único
- * arquivo apenas para facilitar a leitura.
- */
-
 /**
  * "Classe" que representa um boleto bancário.
  * Não é utilizado o recurso de class do ES6 devido 
@@ -22,7 +15,8 @@ const reader = require('line-reader');
  * https://everyday.codes/javascript/please-stop-using-classes-in-javascript/
  */
 const Boleto = function({ id = 0, codBanco = "000", dataVencimento = "", dataPagamento = "",
-                  cpfCliente = "", valor = 0, multa = 0, juros = 0, contaBancaria = ""})
+                          cpfCliente = "", valor = 0, multa = 0, juros = 0, 
+                          agencia = "", contaBancaria = ""})
 {
     this.id = id;
     this.codBanco = codBanco;
@@ -32,6 +26,7 @@ const Boleto = function({ id = 0, codBanco = "000", dataVencimento = "", dataPag
     this.valor = valor;
     this.multa = multa;
     this.juros = juros;
+    this.agencia = agencia;
     this.contaBancaria = contaBancaria;
 };
 
@@ -65,9 +60,29 @@ const leituraRetornoBancoBrasil = (nomeArquivo) => {
     });    
 };
 
+/**
+ * Define a estratégia para leitura de arquivos do Bradesco.
+ */
 const leituraRetornoBradesco = (nomeArquivo) => {
-    console.log("Processando arquivo do Bradesco: " + nomeArquivo);
-    console.log("Falta implementar função do Bradesco");
+    console.log("Processando arquivo do Bradesco: " + nomeArquivo + "\n");
+    reader.eachLine(nomeArquivo, line => {
+        const array = line.split(";");
+        const boleto = new Boleto({
+            id: array[0],
+            codBanco: array[1],
+            agencia: array[2],
+            contaBancaria: array[3],
+            dataVencimento: array[4],
+            dataPagamento: array[5],
+            cpfCliente: array[6],
+            valor: array[7],
+            multa: array[8],
+            juros: array[9]
+        });
+
+        console.log(boleto);
+        console.log("");
+    });
 };
 
 /**
