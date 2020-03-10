@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * Processa arquivos de retorno de boletos bancários.
@@ -19,7 +18,7 @@ import java.util.function.Function;
  */
 public class ProcessarBoletos {
     public void processar(String nomeArquivo){
-        LeituraRetorno estrategia = EstrategiaBoletoFactory.createStrategy(nomeArquivo);
+        LeituraRetorno estrategia = EstrategiaBoletoFactory.newStrategy(nomeArquivo);
         System.out.println("Utilizando a classe " + estrategia.getClass().getSimpleName() + " para ler arquivo " + nomeArquivo + "\n");
 
         try {

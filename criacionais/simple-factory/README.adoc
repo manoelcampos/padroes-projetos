@@ -108,21 +108,21 @@ dependendo de cada um dos objetos que pode criar, como mostra o diagrama a segui
 .Dependências com a não utilização da Simple Factory
 image::no-simple-factory.png[]
 
-Se observarmos a Figura 1 na Seção 1.3, podemos ver que a `ClasseCliente` depende da `SimpleFactory`, que depende do `TipoAbstrato`. 
-Assim, podemos dizer que a `ClasseCliente` depende indiretamente do `TipoAbstrato` (no sentido de que não é ela que cria
+Se observarmos a Figura 1 na Seção 1.3, podemos ver que a classe `Cliente` depende da `SimpleFactory`, que depende do `TipoAbstrato`. 
+Assim, podemos dizer que `Cliente` depende indiretamente do `TipoAbstrato` (no sentido de que não é ela que cria
 objetos de tal tipo). Então, podemos esquecer a `SimpleFactory` por um momento e visualizar esta dependência como no diagrama a seguir.
 
-.Dependência indireta da ClasseCliente com o TipoAbstrato
+.Dependência indireta da Classe Cliente com o TipoAbstrato
 image::simple-factory-dip.png[]
 
-Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi invertida. A `ClasseCliente` deixou de depender de tipos concretos e passou a depender de um tipo abstrato.
+Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi invertida. A classe `Cliente` deixou de depender de tipos concretos e passou a depender de um tipo abstrato.
 
 === Exemplos
 
 Podemos utilizar a Simple Factory para definir qual estratégia de leitura de arquivo de retorno de boleto bancário
 será utilizada. Assim, não teremos que manualmente decidir qual estratégia instanciar cada vez que
 precisarmos ler arquivos de retorno. 
-Baseado no projeto link:../template-method/retorno-boleto-template-funcional[retorno-boleto-template-funcional], vamos implementar a Simple Factory.
+Baseado no projeto link:../../comportamentais/template-method/retorno-boleto-template-funcional[retorno-boleto-template-funcional], vamos implementar a Simple Factory.
 
 Implemente o projeto seguindo a modelagem abaixo:
 
@@ -136,15 +136,15 @@ Veja a documentação no link acima para detalhes do projeto.
 
 === Detalhes de Implementação
 
-A forma mais fácil de implementar a Simple Factory, como apresentado na Figura 1, é definir o método `createObject` na classe `SimpleFactory` como estático. 
+A forma mais fácil de implementar a Simple Factory, como apresentado na Figura 1, é definir o método `newObject` na classe `SimpleFactory` como estático. 
 Assim, não é preciso instanciar uma fábrica para depois criar objetos, basta chamar o método diretamente da classe
-fazendo `SimpleFactory.createObject()`. Isto torna o uso da fábrica mais fácil.
+fazendo `SimpleFactory.newObject()`. Isto torna o uso da fábrica mais fácil.
 Se a fábrica não armazena nenhum atributo, pode não haver uma razão específica para exigir que ela seja instanciada
 para podermos chamar seus métodos. É apenas preciso ter em mente que ao declarar o método como estático,
 ele não poderá ser modificado em possíveis sub-classes. Se não pretende fazer override do método, não há problema.
 
-O método `createObject` também pode receber parâmetros para definir qual e/ou como um objeto será criado.
-O nome do método também deve ser definido adequadamente, como `createPizza()`, `createProduto()`, etc.
+O método `newObject` também pode receber parâmetros para definir qual e/ou como um objeto será criado.
+O nome do método também deve ser definido adequadamente, como `newPizza()`, `newProduto()`, etc.
 
 == Padrões Relacionados
 
@@ -160,7 +160,7 @@ com a região geográfica definida para o sistema (`Locale`).
 O método `getInstance()` então é responsável por definir qual subclasse de `Calendar`
 será usada para instanciar um calendário.
 
-Ele utiliza o método auxiliar `createCalendar` para isto. Note que, como falado
+Ele utiliza o método auxiliar `createCalendar` para isto. Como falado
 anteriormente, neste caso o método possui parâmetros para definir como criar o objeto.
 Note que dentro do método ele define diferentes tipos de calendário, como gregorianos (o nosso), japonês e budista.
 

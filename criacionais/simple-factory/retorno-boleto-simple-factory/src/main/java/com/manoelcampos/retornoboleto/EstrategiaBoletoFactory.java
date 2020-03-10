@@ -7,7 +7,7 @@ import java.util.function.Function;
  * para encapsular a lógica de criação das estratégias
  * de leitura de arquivo de retorno de boleto bancário.
  *
- * <p>Observe que a classe e o método {@link #createStrategy(String)}
+ * <p>Observe que a classe e o método {@link #newStrategy(String)}
  * foram definidos com visibilidade package
  * pois, neste caso, não quero que a classe seja utilizada
  * fora do pacote.
@@ -34,7 +34,7 @@ class EstrategiaBoletoFactory {
      *                    cujo nome do banco deve estar dentro do nome do arquivo.
      * @return
      */
-    static Function<String[], Boleto> createStrategy(String nomeArquivo){
+    static Function<String[], Boleto> newStrategy(String nomeArquivo){
         Function<String[], Boleto> estrategia;
         if(nomeArquivo.contains("banco-brasil")){
             /**

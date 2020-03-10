@@ -15,7 +15,7 @@ import java.util.function.Function;
 public class ProcessarBoletos {
     public void processar(String nomeArquivo){
         Function<String[], Boleto> processarLinhaArquivo =
-                EstrategiaBoletoFactory.createStrategy(nomeArquivo);
+                EstrategiaBoletoFactory.newStrategy(nomeArquivo);
 
         try {
             BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));

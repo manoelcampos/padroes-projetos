@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  * para encapsular a lógica de criação das estratégias
  * de leitura de arquivo de retorno de boleto bancário.
  *
- * <p>Observe que a classe e o método {@link #createStrategy(String)}
+ * <p>Observe que a classe e o método {@link #newStrategy(String)}
  * foram definidos com visibilidade package
  * pois, neste caso, não quero que a classe seja utilizada
  * fora do pacote.
@@ -52,7 +52,7 @@ class EstrategiaBoletoFactory {
      *                       cujo nome do banco deve estar dentro do nome do arquivo.
      * @return
      */
-    static LeituraRetorno createStrategy(final String caminhoArquivo){
+    static LeituraRetorno newStrategy(final String caminhoArquivo){
         final String nomeBanco = getNomeBanco(caminhoArquivo);
         final String nomePacote = LeituraRetorno.class.getPackage().getName();
         final String nomeClasseEstrategia = nomePacote +".LeituraRetorno" + nomeBanco;
@@ -64,7 +64,7 @@ class EstrategiaBoletoFactory {
             * com o arquivo informado.*/
             Class classeEstrategia = Class.forName(nomeClasseEstrategia);
 
-            //Cria uma instância desta classe descoberta dinamicamente.
+            //Cria uma instância da classe descoberta dinamicamente.
             return (LeituraRetorno)classeEstrategia.newInstance();
         } catch (ClassNotFoundException e) {
             throw new UnsupportedOperationException(
