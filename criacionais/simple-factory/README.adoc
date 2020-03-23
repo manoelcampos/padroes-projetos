@@ -33,10 +33,10 @@ a Simple Factory para encapsular a criação destes objetos. Com isto, evitamos 
 vários locais do projeto. 
 Esta lógica normalmente é definida por um bloco de `if()` que define as condições para a criação dos objetos.
 
-Adicionalmente, considere que temos um tipo abstrato/super-tipo (classe abstrata ou interface) e vários sub-tipos (sub-classes) que podem ser instanciados.
-Se utilizarmos `new` para instanciar um determinado sub-tipo em diferentes locais do sistema e precisarmos
-substituir estas instâncias por um sub-tipo diferente, teríamos que fazer isso manualmente alterando 
-os vários locais no código. Utilizando a Simple Factory, a crição de objetos de um determinado super-tipo
+Adicionalmente, considere que temos um tipo abstrato/super-tipo (classe abstrata ou interface) e várias sub-classes que podem ser instanciados.
+Se utilizarmos `new` para instanciar uma determinada sub-classe em diferentes locais do sistema e precisarmos
+substituir estas instâncias por uma sub-classe diferente, teríamos que fazer isso manualmente alterando 
+os vários locais no código. Utilizando a Simple Factory, a criação de objetos de uma determinada sub-classe
 fica encapsulada e centralizada em um método da Simple Factory.
 
 === Modelagem
@@ -57,16 +57,6 @@ Assim, podemos ter várias classes clientes.
 
 NOTE: O termo "cliente", amplamente utilizado quando falamos de padrões de projeto e POO, representa uma classe que usa os serviços de outra classe, como uma pessoa que usa os serviços de uma empresa.
 
-Por exemplo, em um sistema de uma loja poderíamos uma classe que cria novos
-produtos para serem inseridos no estoque. Tal classe seria cliente da Factory.
-Para simplificar, imagine que você tem uma página web que é responsável por fazer
-o cadastro de um produto. Tal página então utiliza a fábrica para criar um objeto
-produto a partir dos dados preenchidos na página.
-
-NOTE: Na prática, uma página web não deve estar preocupada em instanciar objetos de negócio como produtos. 
-Ela deve conter apenas a interface gráfica (front-end) com os campos e regras de validação de dados.
-Mas isso é assunto para o padrão MVC.
-
 O `TipoAbstrato` é um super tipo representado por uma **interface** ou **classe abstrata**. 
 Como ele é abstrato, a Factory criará objetos de algum dos sub-tipos disponíveis,
 de acordo com uma possível lógica que você definir.
@@ -80,8 +70,8 @@ se precisarmos trocar qual o tipo de objeto a ser instanciado, temos que apenas 
 Os locais onde ele estava sendo usado não sofrem nenhuma alteração.
 
 A outra versão do método que possui parâmetros (cujo quantidade e tipos depende do seu problema)
-normalmente vai permitir, ao desenvolvedor que for usar a Facotry, informar qual objeto
-a ser criado e possíveis dados a serem usados para criar tal objeto, sem especificar
+normalmente vai permitir, ao desenvolvedor que for usar a Factory, informar qual objeto
+a ser criado e possíveis dados a serem usados para criá-lo, sem especificar
 qual classe será instanciada. Adicionalmente, se existir uma determinada lógica necessária
 para criar qualquer dos tipos de objeto possíveis, tal lógica ficará encapsulada
 dentro destes métodos `newObject`. Qualquer alteração neste lógica precisará ser feita
@@ -97,21 +87,21 @@ Com o https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principl
 
 ==== Programar para uma "interface" não uma implementação
 
-https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação] (GoF) indica que devemos declaramos variáveis com tipos abstratos (`TipoAbstrato`) e usar tipos concretos apenas na instanciação (`SubTipo1` ... `SubTipoN`).
+https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação] (GoF) indica que devemos declar variáveis com tipos abstratos (`TipoAbstrato`) e usar tipos concretos apenas na instanciação (`SubTipo1` ... `SubTipoN`).
 
-==== Dependency Inversion Principle
+==== Dependency Inversion Principle (DIP)
 
 Ao aplicar o https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)], a classe cliente que utiliza a factory não depende mais de tipos concretos, mas sim de tipos abstratos (interfaces ou classes abstratas).
 Se *não* utilizássemos a Simple Factory, a classe cliente seria responsável pela lógica de criação dos objetos,
 dependendo de cada um dos objetos que pode criar, como mostra o diagrama a seguir.
 
-.Dependências com a não utilização da Simple Factory
+.Dependências com a NÃO utilização da Simple Factory
 image::no-simple-factory.png[]
 
 Se observarmos a Figura 1 na Seção 1.3, podemos ver que a classe `Cliente` depende da `SimpleFactory`, que depende do `TipoAbstrato`. 
 Como `Cliente` usará objetos do `TipoAbstrato`, ele depende de tal tipo. Então, podemos esquecer a `SimpleFactory` por um momento e visualizar esta dependência como no diagrama a seguir.
 
-.Dependência da Classe Cliente com o TipoAbstrato
+.Dependência com a utilização da Simple Factory: classe Cliente depende de TipoAbstrato
 image::simple-factory-dip.png[]
 
 Comparando a Figura 2 com a 3, podemos ver que a relação de dependência foi invertida. A classe `Cliente` deixou de depender de tipos concretos e passou a depender de um tipo abstrato.
