@@ -47,6 +47,13 @@ Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https:/
 - Simple Factory permite encapsular a criação de objetos em uma classe que representa uma fábrica.
 - Ela não é de fato um padrão de projeto, podendo ser definida como um modelo para a criação de objetos.
 
+[transition=fade]
+== !
+
+"Menção honroza" ao Simple Factory image:honor.png[text=http://www.free-icons-download.net, link=http://www.free-icons-download.net/medal-of-honor-icons-30279/, width="60px"]
+
+image::https://images-na.ssl-images-amazon.com/images/I/51-UxkpndnL._SX367_BO1,204,203,200_.jpg[size=contain]
+
 [transition=zoom]
 == Aplicabilidade
 
