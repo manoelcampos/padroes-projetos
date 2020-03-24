@@ -6,6 +6,7 @@
 :allow-uri-read:
 :imagesdir: ../../images
 :stylesheet: ../../adoc-golo.css
+:customcss: ../../slides-base.css
 :numbered:
 :toc: left
 :toc-title: Sumário
@@ -134,11 +135,11 @@ image::patterns/criacionais/no-simple-factory.png[width="50%"]
 [transition=fade]
 == !
 
-.Usando a Simple Factory
+.Usando a Simple Factory (classe SimpleFactory omitida)
 image::patterns/criacionais/simple-factory-dip.png[width="50%"]
 
 == Comparando as duas modelagens
 
 !===
-| image:patterns/criacionais/no-simple-factory.png[] | image:patterns/criacionais/simple-factory-dip.png[]
+| Sem a factory image:patterns/criacionais/no-simple-factory.png[] | Com a factory (classe SimpleFactory omitida) image:patterns/criacionais/simple-factory-dip.png[]
 !===

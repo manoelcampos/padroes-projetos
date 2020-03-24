@@ -1,0 +1,10 @@
+section, section h1, section h2, section h3, section h4, section h5, section h6, section ul li, 
+#dark, #dark h1, #dark h2 {
+  color: #ff0; 
+  text-shadow: -4px -4px 12px #000000;
+}
+
+.reveal section img {
+  border: 0px;
+  background-color: transparent;
+}
