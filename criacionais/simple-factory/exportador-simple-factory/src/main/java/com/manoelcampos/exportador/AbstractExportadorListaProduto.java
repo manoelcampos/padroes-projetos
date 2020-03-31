@@ -21,7 +21,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
         final StringBuilder sb = new StringBuilder();
         sb.append(abrirTabela());
 
-        gerarColunasLinha(sb, TITULOS_COLUNAS);
+        sb.append(gerarColunasLinha(TITULOS_COLUNAS));
         sb.append(fecharLinhaTitulos());
         gerarLinhasProdutos(sb, listaProdutos);
 
@@ -44,25 +44,27 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
                                   produto.getMarca(),
                                   produto.getModelo(),
                                   String.valueOf(produto.getEstoque()));
-            gerarColunasLinha(sb, valoresCamposProduto);
+            sb.append(gerarColunasLinha(valoresCamposProduto));
         }
     }
 
     /**
      * Gera o texto representando uma única linha de uma tabela (em um formato definido pelas subclasses).
      *
-     * @param sb {@link StringBuilder} onde o texto gerado será adicionado
      * @param valores valores a serem exibidos nas colunas, que podem ser:
      *                (i) os títulos das colunas (caso esteja sendo gerada a linha de cabeçalho da tabela) ou
      *                (ii) os valores de uma linha da tabela (caso esteja sendo gerado uma linha de conteúdo da tabela).
      *                Neste último caso, tal parâmetro deve conter os valores dos atributos de um objeto da lista de produtos.
+     * @return uma String representando a linha gerada com os valores
      */
-    private void gerarColunasLinha(StringBuilder sb, List<String> valores) {
+    protected String gerarColunasLinha(List<String> valores) {
+        StringBuilder sb = new StringBuilder();
         sb.append(abrirLinha());
         for (String valor : valores) {
             sb.append(abrirColuna(valor))
               .append(fecharColuna());
         }
         sb.append(fecharLinha());
+        return sb.toString();
     }
 }
