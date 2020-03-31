@@ -11,10 +11,6 @@ import java.util.List;
  * @author Manoel Campos da Silva Filho
  */
 public abstract class AbstractExportadorListaProduto implements ExportadorListaProduto {
-    /**
-     * Lista de produtos a serem exportados para um formato define pelas subclasses.
-     */
-    private List<Produto> listaProdutos;
 
     /**
      * Colunas a serem exibidas na tabela gerada no processo de exportação.
@@ -23,13 +19,12 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
 
     @Override
     public final String exportar(List<Produto> listaProdutos) {
-        this.listaProdutos = listaProdutos;
         final StringBuilder sb = new StringBuilder();
         sb.append(abrirTabela());
 
         gerarColunasLinha(sb, TITULOS_COLUNAS);
         sb.append(fecharLinhaTitulos());
-        gerarLinhasProdutos(sb);
+        gerarLinhasProdutos(listaProdutos, sb);
 
         sb.append(fecharTabela());
         return sb.toString();
@@ -37,11 +32,12 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
 
     /**
      * Gera o texto representando todas as linhas de uma tabela (em um formato definido pelas subclasses)
-     * contendo os dados dos produtos na {@link #listaProdutos}.
+     * contendo os dados dos produtos na lista de produtos.
      *
+     * @param listaProdutos
      * @param sb {@link StringBuilder} onde o texto gerado será adicionado
      */
-    private void gerarLinhasProdutos(StringBuilder sb) {
+    private void gerarLinhasProdutos(List<Produto> listaProdutos, StringBuilder sb) {
         for (Produto produto : listaProdutos) {
             List<String> valoresCamposProduto =
                     Arrays.asList(String.valueOf(produto.getId()),
@@ -60,7 +56,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
      * @param valores valores a serem exibidos nas colunas, que podem ser:
      *                (i) os títulos das colunas (caso esteja sendo gerada a linha de cabeçalho da tabela) ou
      *                (ii) os valores de uma linha da tabela (caso esteja sendo gerado uma linha de conteúdo da tabela).
-     *                Neste último caso, tal parâmetro deve conter os valores dos atributos de um objeto da {@link #listaProdutos}.
+     *                Neste último caso, tal parâmetro deve conter os valores dos atributos de um objeto da lista de produtos.
      */
     private void gerarColunasLinha(StringBuilder sb, List<String> valores) {
         sb.append(abrirLinha());
