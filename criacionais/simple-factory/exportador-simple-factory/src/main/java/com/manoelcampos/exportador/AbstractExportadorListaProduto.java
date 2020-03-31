@@ -1,6 +1,5 @@
 package com.manoelcampos.exportador;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
 
         gerarColunasLinha(sb, TITULOS_COLUNAS);
         sb.append(fecharLinhaTitulos());
-        gerarLinhasProdutos(listaProdutos, sb);
+        gerarLinhasProdutos(sb, listaProdutos);
 
         sb.append(fecharTabela());
         return sb.toString();
@@ -34,10 +33,10 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
      * Gera o texto representando todas as linhas de uma tabela (em um formato definido pelas subclasses)
      * contendo os dados dos produtos na lista de produtos.
      *
-     * @param listaProdutos
      * @param sb {@link StringBuilder} onde o texto gerado será adicionado
+     * @param listaProdutos
      */
-    private void gerarLinhasProdutos(List<Produto> listaProdutos, StringBuilder sb) {
+    private void gerarLinhasProdutos(StringBuilder sb, List<Produto> listaProdutos) {
         for (Produto produto : listaProdutos) {
             List<String> valoresCamposProduto =
                     Arrays.asList(String.valueOf(produto.getId()),

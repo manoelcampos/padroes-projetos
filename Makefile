@@ -1,3 +1,3 @@
 install:
 	@#Instala ferramentas necessárias
-	brew install gem asciidoctor asciidoctor-pdf asciidoctor-revealjs
+	sudo gem install asciidoctor asciidoctor-pdf asciidoctor-revealjs
