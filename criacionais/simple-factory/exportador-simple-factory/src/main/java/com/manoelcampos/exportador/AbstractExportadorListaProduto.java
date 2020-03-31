@@ -43,12 +43,12 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
      */
     private void gerarLinhasProdutos(StringBuilder sb) {
         for (Produto produto : listaProdutos) {
-            List<String> valoresCamposProduto = new ArrayList<>();
-            valoresCamposProduto.add(String.valueOf(produto.getId()));
-            valoresCamposProduto.add(produto.getDescricao());
-            valoresCamposProduto.add(produto.getMarca());
-            valoresCamposProduto.add(produto.getModelo());
-            valoresCamposProduto.add(String.valueOf(produto.getEstoque()));
+            List<String> valoresCamposProduto =
+                    Arrays.asList(String.valueOf(produto.getId()),
+                                  produto.getDescricao(),
+                                  produto.getMarca(),
+                                  produto.getModelo(),
+                                  String.valueOf(produto.getEstoque()));
             gerarColunasLinha(sb, valoresCamposProduto);
         }
     }
