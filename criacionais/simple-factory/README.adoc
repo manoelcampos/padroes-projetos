@@ -14,14 +14,7 @@ endif::[]
 
 = Padrões de Projetos Criacionais
 
-ifdef::env-github[]
-IMPORTANT: https://youtu.be/LwsC1rk6irM[Vídeo aula disponível aqui.]
-endif::[]
-
-ifndef::env-github[]
-.Introdução ao Padrão Simple Factory
-video::LwsC1rk6irM[youtube, width="640", height="480"]
-endif::[]
+IMPORTANT: https://www.youtube.com/playlist?list=PLyo0RUAM69UtO8Jjq71qgvRxcI2pTrB2m[Vídeo-aulas disponíveis aqui.]
 
 
 == Simple Factory (Fábrica Simples)
