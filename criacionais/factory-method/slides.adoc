@@ -44,12 +44,12 @@ Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https:/
 [transition=fade]
 == Definição
 
-Fornece uma interface para criar um objeto, mas permite às subclasses decidirem qual tipo de objeto instanciar. [UCPP]
+📘Fornece uma interface para criar um objeto, mas permite às subclasses decidirem qual tipo de objeto instanciar . [UCPP]
 
 image:ucpp.jpg[size=contain]
 
 [transition=fade]
-== Mas antes de entendermos o padrão...
+== Mas antes de entendermos o padrão 🤔...
 
 [transition=fade]
 == !
@@ -62,95 +62,78 @@ image::patterns/criacionais/exportador-simple-factory.png[background, size=conta
 - https://github.com/manoelcampos/padroes-projetos/blob/master/criacionais/simple-factory/exportador-simple-factory[O exportador de produtos]
 
 [transition=fade]
-== Um pequeno imprevisto...
-
-- https://github.com/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-problematico[O exportador problemático]
-
-[transition=zoom]
-== Aplicabilidade
+== Mas podemos ter problemas...
 
 [%step]
-Operador `new` utilizado para instanciar objetos em muitas linguagens.
-
-image:patterns/criacionais/escultor.gif[title=https://www.pnggif.com, link=https://www.pnggif.com/animation/work-gif-270105]
+- Não segue o https://en.wikipedia.org/wiki/Single-responsibility_principle[Single-Responsitility Principle (SRP)] nem https://en.wikipedia.org/wiki/Interface_segregation_principle[Interface Segregation Principle (ISP)] 🤦 image:patterns/criacionais/interface-exportador-lista-produtos.png[]
 
 [transition=fade]
-== Motivação
+== Então como resolver? 🤯
 
-Declaração e instanciação
-[source,java]
-----
-TipoAbstrato variavel = new TipoConcreto()
-----
+[%step]
+- Seguindo o ISP...
+- e consequentemente o SRP
+- A modelagem a seguir ainda **NÃO** implementa o padrão Factory Method
 
-[transition=fade, background-opacity=0.4]
-== Motivação
+[transition=fade]
+== !
 
-E se existir uma lógica que define qual tipo concreto será utilizado em um determinado momento? 
+image::patterns/criacionais/no-factory-method-exportador.png[background, size=contain]
 
-image::woman-thinking.jpg[background, title=https://www.versterkdeopvoeding.nl/category/algemeen/]
+
+[transition=fade]
+== Antes tínhamos um problema, agora criamos outro 
+
+https://github.com/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-problematico[O exportador problemático 😭]
 
 [transition=zoom]
+== Como resolver de vez? 😡
+
+[transition=zoom]
+== Utilizando o padrão Factory Method
+
+[transition=zoofadem]
 == Aplicabilidade
 
 [%step]
-- Factory Method para encapsular a criação destes objetos. 
-- Evitamos duplicar esta lógica em vários locais do projeto. 
+- uma classe precisa utilizar um tipo de objeto, mas ela não tem como decidir qual tipo concreto utilizar, pois tal lógica é definida por subclasses;
+- cada subclasse tem uma lógica diferente para a criação dos objetos, juntar estas lógicas na superclasse tornaria o código extenso e confuso;
 
-[transition=fade, background-opacity=0.3]
-== Aplicabilidade
-
-Tal lógica é normalmente representada por um bloco de `if()` que define as condições para a criação dos objetos.
-
-image::hadouken_if.jpg[background, title=https://www.reddit.com, link=https://www.reddit.com/r/ProgrammerHumor/comments/27yykv/indent_hadouken/]
-
-[transition=fade, background-opacity=0.2]
+[transition=fade]
 == Aplicabilidade
 
 [%step]
-- Considere que temos várias subclasses que podem ser instanciadas.
-- Ao usar `new`, substituir estas instâncias por uma outra sub-classe pode ser trabalhoso. 
-- Factory Method: a criação de objetos de um super-tipo fica encapsulada e centralizada.
+- novas subclasses puderem ser introduzidas a qualquer momento com diferentes lógicas;
+- você não conhece quais são todos os tipos concretos de objetos que podem ser criados;
+- é necessário criar objetos por meio de **composição**, cada objeto instanciado é um **todo** composto por diferentes **partes**, tais partes devem ser escolhidas de acordo com o todo.
 
-image::subclass-superclass.png[background, size=contain]
+[transition=zoom]
+== Modelagem do Factory Method
 
 == !
 
-.Modelagem
-image::patterns/criacionais/simple-factory.png[]
+image::patterns/criacionais/factory-method-exportador.png[background, size=contain]
 
 [transition=zoom, background-opacity=0.4]
 == Princípios utilizados
 
 [%step]
+- https://en.wikipedia.org/wiki/Single-responsibility_principle[Single-Responsitility Principle (SRP)]
 - https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]
 - https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação (GoF)]: `TipoAbstrato variavel;`
-
-image::recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
-
-[transition=fade, background-opacity=0.4]
-== Princípios utilizados
-
-[%step]
 - https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)]
-- cliente da Factory não depende mais de tipos concretos
 
 image::recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
+
 
 [transition=fade]
 == !
 
-.Dependências com a NÃO utilização da Factory Method
+.Dependências com a NÃO utilização de uma fábrica
 image::patterns/criacionais/no-simple-factory.png[width="50%"]
 
 [transition=fade]
 == !
 
-.Usando a Factory Method (classe SimpleFactory omitida)
+.Usando uma fábrica
 image::patterns/criacionais/simple-factory-dip.png[width="50%"]
-
-== Comparando as duas modelagens
-
-!===
-| Sem a factory image:patterns/criacionais/no-simple-factory.png[] | Com a factory (classe SimpleFactory omitida) image:patterns/criacionais/simple-factory-dip.png[]
-!===
