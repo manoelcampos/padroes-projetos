@@ -22,7 +22,13 @@ Define uma interface para criar um objeto, mas permite às subclasses decidirem 
 
 === Aplicabilidade
 
+Podemos utilizar o padrão quando:
 
+- uma classe precisa utilizar um tipo de objeto, mas ela não tem como decidir qual tipo concreto utilizar, pois tal lógica é definida por subclasses;
+- cada subclasse tem uma lógica diferente para a criação dos objetos, juntar estas lógicas na superclasse tornaria o código extenso e confuso;
+- novas subclasses puderem ser introduzidas a qualquer momento com diferentes lógicas;
+- você não conhece quais são todos os tipos concretos de objetos que podem ser criados;
+- é necessário criar objetos por meio de **composição**, cada objeto instanciado é um **todo** composto por diferentes **partes**, tais partes devem ser escolhidas de acordo com o todo.
 
 === Modelagem
 
@@ -31,26 +37,43 @@ image::factory-method.png[]
 
 `TipoAbstrato` é uma interface ou classe abstrata/super classe que representa o tipo dos objetos que a fábrica pode criar.
 As classes `TipoConcreto1` até `TipoConcretoN` representam os tipos concretos que podem ser instanciados de fato pela fábrica.
-`Criador` representa a implementação base da fábrica. Ela pode ter quaisquer métodos que forem necessários,
+`CriadorAbstrato` representa a implementação base da fábrica. Ela pode ter quaisquer métodos que forem necessários,
 incluindo um método abstrato `newObject()` que deverá ser implementados pelos criadores concretos.
 
-A classe `Criador` normalmente terá um método que chamará o `newObject()` para usar o objeto criado.
+A classe `CriadorAbstrato` normalmente terá um método que chamará o `newObject()` para usar o objeto criado.
 Neste exemplo, tal método é o `useObject()`, mas em uma implementação real, o método deve ter um nome de acordo 
 com o problema sendo resolvido.
 
 Diferente da Simple Factory:
 
-- a lógica que define qual objeto será instanciado não é centralizada em uma classe, mas sim nas subclasses de `Criador`;
-- logo, o método `newObject()` é abstrato, pois as subclasses de `Criador` é que o implementarão.
+- a lógica que define qual objeto será instanciado não é centralizada em uma classe, mas sim nas subclasses de `CriadorAbstrato`;
+- logo, o método `newObject()` é abstrato, pois as subclasses de `CriadorAbstrato` é que o implementarão.
 - tal método não deve ser estático se ele for usado por outros métodos da classe (como é o caso deste modelo);
 
-Cada subclasse de `Criador` é que definirá a lógica para a instanciação do objeto representado por `TipoAbstrato`.
+Cada subclasse de `CriadorAbstrato` é que definirá a lógica para a instanciação do objeto representado por `TipoAbstrato`.
 Para a Simple Factory não existem subclasses.
 
 Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
 
 === Princípios utilizados
 
+==== Single-Responsitility Principle
+
+Com o https://en.wikipedia.org/wiki/Single-responsibility_principle[Single-Responsitility Principle (SRP)], a classe `CriadorAbstrato` de fato não cria os objetos, apenas define um método que as filhas devem implementar para isto.
+Ela apenas usará os objetos criados. Cada subclasse terá a responsabilidade de criar tais objetos.
+
+==== Open-Closed Principle
+
+Com o https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], separamos as partes que mudam, i.e. a lógica de criação de objetos, de dentro da classe que utiliza tais objetos. Isto torna a classe que utiliza a factory "aberta para extensão e fechada para modificação".
+
+==== Programar para uma "interface" não uma implementação
+
+https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação] (GoF) indica que devemos declar variáveis com tipos abstratos (`TipoAbstrato`) e usar tipos concretos apenas na instanciação (`SubTipo1` ... `SubTipoN`).
+
+==== Dependency Inversion Principle (DIP)
+
+Ao aplicar o https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)], a classe `CriadorAbstrato` não depende de tipos concretos, mas sim de tipos abstratos (interfaces ou classes abstratas).
+Ela não precisa saber quais são os tipos concretos existentes.
 
 === Exemplos
 

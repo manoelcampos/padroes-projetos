@@ -1,0 +1,145 @@
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+:revealjs_slideNumber: true
+:source-highlighter: highlightjs
+:icons: font
+:allow-uri-read:
+:imagesdir: ../../images
+:stylesheet: ../../adoc-golo.css
+:customcss: ../../slides-base.css
+:numbered:
+:toc: left
+:toc-title: Sumário
+:toclevels: 5
+
+ifdef::env-github[]
+//Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:chapter-label:
+:listing-caption: Listagem
+:figure-caption: Figura
+
+//Transição para todos os slides // none/fade/slide/convex/concave/zoom
+//:revealjs_transition: 'zoom'
+
+//https://github.com/hakimel/reveal.js#theming
+:revealjs_theme: league
+
+= Padrões de Projetos: Factory Method
+
+Prof. Manoel Campos https://about.me/manoelcampos
+
+[transition=zoom]
+== Definição
+
+Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
+
+[transition=fade]
+== Definição
+
+[%step]
+- Factory Method permite encapsular a criação de objetos em uma classe que representa uma fábrica.
+- Ela não é de fato um padrão de projeto, podendo ser definida como um modelo para a criação de objetos.
+
+[transition=fade]
+== !
+
+"Menção honroza" ao Factory Method image:honor.png[text=http://www.free-icons-download.net, link=http://www.free-icons-download.net/medal-of-honor-icons-30279/, width="60px"]
+
+image::https://images-na.ssl-images-amazon.com/images/I/51-UxkpndnL._SX367_BO1,204,203,200_.jpg[size=contain]
+
+[transition=zoom]
+== Aplicabilidade
+
+[%step]
+Operador `new` utilizado para instanciar objetos em muitas linguagens.
+
+image:patterns/criacionais/escultor.gif[title=https://www.pnggif.com, link=https://www.pnggif.com/animation/work-gif-270105]
+
+[transition=fade]
+== Motivação
+
+Declaração e instanciação
+[source,java]
+----
+TipoAbstrato variavel = new TipoConcreto()
+----
+
+[transition=fade, background-opacity=0.4]
+== Motivação
+
+E se existir uma lógica que define qual tipo concreto será utilizado em um determinado momento? 
+
+image::woman-thinking.jpg[background, title=https://www.versterkdeopvoeding.nl/category/algemeen/]
+
+[transition=zoom]
+== Aplicabilidade
+
+[%step]
+- Factory Method para encapsular a criação destes objetos. 
+- Evitamos duplicar esta lógica em vários locais do projeto. 
+
+[transition=fade, background-opacity=0.3]
+== Aplicabilidade
+
+Tal lógica é normalmente representada por um bloco de `if()` que define as condições para a criação dos objetos.
+
+image::hadouken_if.jpg[background, title=https://www.reddit.com, link=https://www.reddit.com/r/ProgrammerHumor/comments/27yykv/indent_hadouken/]
+
+[transition=fade, background-opacity=0.2]
+== Aplicabilidade
+
+[%step]
+- Considere que temos várias subclasses que podem ser instanciadas.
+- Ao usar `new`, substituir estas instâncias por uma outra sub-classe pode ser trabalhoso. 
+- Factory Method: a criação de objetos de um super-tipo fica encapsulada e centralizada.
+
+image::subclass-superclass.png[background, size=contain]
+
+== !
+
+.Modelagem
+image::patterns/criacionais/simple-factory.png[]
+
+[transition=zoom, background-opacity=0.4]
+== Princípios utilizados
+
+[%step]
+- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]
+- https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação (GoF)]: `TipoAbstrato variavel;`
+
+image::recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
+
+[transition=fade, background-opacity=0.4]
+== Princípios utilizados
+
+[%step]
+- https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)]
+- cliente da Factory não depende mais de tipos concretos
+
+image::recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
+
+[transition=fade]
+== !
+
+.Dependências com a NÃO utilização da Factory Method
+image::patterns/criacionais/no-simple-factory.png[width="50%"]
+
+[transition=fade]
+== !
+
+.Usando a Factory Method (classe SimpleFactory omitida)
+image::patterns/criacionais/simple-factory-dip.png[width="50%"]
+
+== Comparando as duas modelagens
+
+!===
+| Sem a factory image:patterns/criacionais/no-simple-factory.png[] | Com a factory (classe SimpleFactory omitida) image:patterns/criacionais/simple-factory-dip.png[]
+!===
