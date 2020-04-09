@@ -37,23 +37,34 @@ endif::[]
 Prof. Manoel Campos https://about.me/manoelcampos
 
 [transition=zoom]
-== Definição
+== Categoria
 
 Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
 
 [transition=fade]
 == Definição
 
-[%step]
-- Factory Method permite encapsular a criação de objetos em uma classe que representa uma fábrica.
-- Ela não é de fato um padrão de projeto, podendo ser definida como um modelo para a criação de objetos.
+Fornece uma interface para criar um objeto, mas permite às subclasses decidirem qual tipo de objeto instanciar. [UCPP]
+
+image:ucpp.jpg[size=contain]
+
+[transition=fade]
+== Mas antes de entendermos o padrão...
 
 [transition=fade]
 == !
 
-"Menção honroza" ao Factory Method image:honor.png[text=http://www.free-icons-download.net, link=http://www.free-icons-download.net/medal-of-honor-icons-30279/, width="60px"]
+image::patterns/criacionais/exportador-simple-factory.png[background, size=contain]
 
-image::https://images-na.ssl-images-amazon.com/images/I/51-UxkpndnL._SX367_BO1,204,203,200_.jpg[size=contain]
+[transition=fade]
+== Vamos rever a aplicação em funcionamento
+
+- https://github.com/manoelcampos/padroes-projetos/blob/master/criacionais/simple-factory/exportador-simple-factory[O exportador de produtos]
+
+[transition=fade]
+== Um pequeno imprevisto...
+
+- https://github.com/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-problematico[O exportador problemático]
 
 [transition=zoom]
 == Aplicabilidade

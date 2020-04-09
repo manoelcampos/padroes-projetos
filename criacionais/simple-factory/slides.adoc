@@ -37,7 +37,7 @@ endif::[]
 Prof. Manoel Campos https://about.me/manoelcampos
 
 [transition=zoom]
-== Definição
+== Categoria
 
 Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
 
@@ -53,7 +53,7 @@ Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https:/
 
 "Menção honroza" ao Simple Factory image:honor.png[text=http://www.free-icons-download.net, link=http://www.free-icons-download.net/medal-of-honor-icons-30279/, width="60px"]
 
-image::https://images-na.ssl-images-amazon.com/images/I/51-UxkpndnL._SX367_BO1,204,203,200_.jpg[size=contain]
+image::ucpp.jpg[size=contain]
 
 [transition=zoom]
 == Aplicabilidade

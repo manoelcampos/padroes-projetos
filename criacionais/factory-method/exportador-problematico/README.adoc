@@ -1,3 +1,4 @@
+:imagesdir: ../../../images/patterns/criacionais
 :source-highlighter: highlightjs
 
 = Exportação de lista de objetos em diferentes formatos (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-problematico[zip])
@@ -13,3 +14,7 @@ do usuário.
 
 A classe `Principal` atualmente já está gerando tabelas de usuários com esta coluna "Sobrenome".
 Altere o código da classe e tente descobrir qual problema pode acarretar.
+
+
+.Exportador de dados que NÃO usa o padrão Factory Method
+image::no-factory-method-exportador.png[]
