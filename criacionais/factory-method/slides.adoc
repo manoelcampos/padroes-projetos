@@ -44,7 +44,7 @@ Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https:/
 [transition=fade]
 == Definição
 
-📘Fornece uma interface para criar um objeto, mas permite às subclasses decidirem qual tipo de objeto instanciar . [UCPP]
+include::README.adoc[tag=definicao]
 
 image:ucpp.jpg[size=contain]
 
@@ -96,16 +96,13 @@ https://github.com/manoelcampos/padroes-projetos/tree/master/criacionais/factory
 == Aplicabilidade
 
 [%step]
-- uma classe precisa utilizar um tipo de objeto, mas ela não tem como decidir qual tipo concreto utilizar, pois tal lógica é definida por subclasses;
-- cada subclasse tem uma lógica diferente para a criação dos objetos, juntar estas lógicas na superclasse tornaria o código extenso e confuso;
+include::README.adoc[tag=aplicabilidade1]
 
 [transition=fade]
 == Aplicabilidade
 
 [%step]
-- novas subclasses puderem ser introduzidas a qualquer momento com diferentes lógicas;
-- você não conhece quais são todos os tipos concretos de objetos que podem ser criados;
-- é necessário criar objetos por meio de **composição**, cada objeto instanciado é um **todo** composto por diferentes **partes**, tais partes devem ser escolhidas de acordo com o todo.
+include::README.adoc[tag=aplicabilidade2]
 
 [transition=zoom]
 == Modelagem do Factory Method
@@ -137,3 +134,8 @@ image::patterns/criacionais/no-simple-factory.png[width="50%"]
 
 .Usando uma fábrica
 image::patterns/criacionais/simple-factory-dip.png[width="50%"]
+
+[transition=fade]
+== Material e Projetos no GitHub
+
+https://git.io/JvpgW
