@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Executa a aplicação para exibir os resultados.
+ * Executa a aplicação Exportador Simple Factory.
  * @author Manoel Campos da Silva Filho
  */
 public class Principal {

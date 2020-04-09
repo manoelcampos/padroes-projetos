@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * Execução da aplicação Exportador Problemático.
  * @author Manoel Campos da Silva Filho
  */
 public class Principal {
