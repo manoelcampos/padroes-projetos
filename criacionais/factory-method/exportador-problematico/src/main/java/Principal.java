@@ -2,8 +2,6 @@ import com.manoelcampos.exportador.*;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Execução da aplicação Exportador Problemático.
@@ -31,7 +29,7 @@ public class Principal {
     private void exportarUsuarios() {
         //Usa o método getInstance() para instanciar um exportador padrão (neste caso, que gera HTML)
         final ExportadorLista<Usuario> exportadorPadrao = ExportadorLista.newInstance(USUARIOS);
-        Coluna<Usuario> colunaHtml = new ColunaHtml<>(this::getSobrenomeUsuario, "Sobrenome");
+        Coluna<Usuario> colunaHtml = new ColunaHtml<>(Usuario::getSobrenome, "Sobrenome");
         exportadorPadrao.addColuna(colunaHtml);
 
         System.out.println("Lista de Usuários em HTML----------------------------------------------------------\n");
@@ -39,26 +37,11 @@ public class Principal {
 
         //Usa a outra versão do getInstance() para instanciar um exportador específico para o formato Markdown (md)
         final ExportadorLista<Usuario> exportadorMarkdown = ExportadorLista.newInstance(USUARIOS, "md");
-        Coluna<Usuario> colunaMd = new ColunaHtml<>(this::getSobrenomeUsuario, "Sobrenome");
+        Coluna<Usuario> colunaMd = new ColunaHtml<>(Usuario::getSobrenome, "Sobrenome");
         exportadorMarkdown.addColuna(colunaMd);
 
         System.out.println("Lista de Usuários em Markdown------------------------------------------------------\n");
         System.out.println(exportadorMarkdown.exportar());
-    }
-
-    /**
-     * Usa "Expressões Regulares" para extrair o sobrenome do usuário,
-     * considerando que a classe usuário não possui um método para isso
-     * e que não podemos alterar tal classe.
-     * Por exemplo, digamos que não temos acesso ao código fonte dela.
-     *
-     * @param usuario usuário para obter o sobrenome
-     * @return sobrenome do usuário ou vazio se não existir
-     */
-    private String getSobrenomeUsuario(Usuario usuario){
-        Pattern regexPattern = Pattern.compile(".+?\\s(.*)");
-        Matcher matcher = regexPattern.matcher(usuario.getNome());
-        return matcher.matches() ? matcher.group(1) : "";
     }
 
     private void exportarProdutos() {

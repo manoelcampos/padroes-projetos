@@ -1,5 +1,8 @@
 package com.manoelcampos.exportador;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author Manoel Campos da Silva Filho
  */
@@ -51,5 +54,17 @@ public class Usuario {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    /**
+     * Obtém o sobrenome do usuário.
+     * Usa "Expressões Regulares" para extrair o sobrenome de dentro do atributo {@link #nome}.
+     *
+     * @return sobrenome do usuário ou vazio se não existir
+     */
+    public String getSobrenome(){
+        Pattern regexPattern = Pattern.compile(".+?\\s(.*)");
+        Matcher matcher = regexPattern.matcher(nome);
+        return matcher.matches() ? matcher.group(1) : "";
     }
 }
