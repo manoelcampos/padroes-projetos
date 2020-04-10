@@ -38,8 +38,7 @@ public class Principal {
         System.out.println(exportadorPadrao.exportar());
 
         //Usa a outra versão do getInstance() para instanciar um exportador específico para o formato Markdown (md)
-        final ExportadorLista<Usuario> exportadorMarkdown =
-                ExportadorLista.newInstance(USUARIOS, "md");
+        final ExportadorLista<Usuario> exportadorMarkdown = ExportadorLista.newInstance(USUARIOS, "md");
         Coluna<Usuario> colunaMd = new ColunaHtml<>(this::getSobrenomeUsuario, "Sobrenome");
         exportadorMarkdown.addColuna(colunaMd);
 
