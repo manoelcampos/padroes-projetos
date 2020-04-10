@@ -32,7 +32,9 @@ endif::[]
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 
-= Padrões de Projetos: Simple Factory
+= Padrões de Projetos: Simple Factory 
+
+image:patterns/simple-factory-logo.png[size=contain, title="https://pixabay.com"]
 
 Prof. Manoel Campos https://about.me/manoelcampos
 
