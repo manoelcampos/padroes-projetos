@@ -95,6 +95,8 @@ https://github.com/manoelcampos/padroes-projetos/tree/master/criacionais/factory
 [transition=zoofadem]
 == Aplicabilidade
 
+Quando:
+
 [%step]
 include::README.adoc[tag=aplicabilidade1]
 

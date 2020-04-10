@@ -28,11 +28,11 @@ Podemos utilizar o padrão quando:
 
 // tag::aplicabilidade1[]
 - uma classe precisa utilizar um tipo de objeto, mas ela não tem como decidir qual tipo concreto utilizar, pois tal lógica é definida por subclasses;
-- cada subclasse tem uma lógica diferente para a criação dos objetos, juntar estas lógicas na superclasse tornaria o código extenso e confuso;
+- cada subclasse tem uma lógica diferente para a criação dos objetos (juntar estas lógicas na superclasse tornaria o código extenso e confuso);
 // end::aplicabilidade1[]
 // tag::aplicabilidade2[]
 - novas subclasses puderem ser introduzidas a qualquer momento com diferentes lógicas;
-- você não conhece quais são todos os tipos concretos de objetos que podem ser criados;
+- você não conhece todos os tipos concretos de objetos que podem ser criados;
 - é necessário criar objetos por meio de **composição**, cada objeto instanciado é um **todo** composto por diferentes **partes**, tais partes devem ser escolhidas de acordo com o todo.
 // end::aplicabilidade2[]
 
