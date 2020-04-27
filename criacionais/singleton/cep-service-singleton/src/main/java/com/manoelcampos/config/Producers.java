@@ -41,11 +41,17 @@ import javax.enterprise.inject.Alternative;
 public class Producers {
     private final static Logger LOGGER = Logger.getLogger(Producers.class.getSimpleName());
 
+    /**
+     * Apesar de existir a anotação {@link javax.inject.Singleton},
+     * é recomendável o uso de {@link ApplicationScoped}.
+     * <a href="https://docs.jboss.org/weld/reference/latest/en-US/html/scopescontexts.html">Mais detalhes aqui</a>.
+     * @return uma instância de {@link CepService}
+     */
     @Produces
     @ApplicationScoped
     private CepService getCepService(){
         final CepService cepService = new ViaCepService();
         LOGGER.info("Serviço de busca de CEP instanciado pela fábrica: " + cepService.getClass().getName());
         return cepService;
-    };
+    }
 }
