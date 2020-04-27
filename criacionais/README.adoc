@@ -15,6 +15,6 @@ endif::[]
 
 - link:simple-factory[Simple Factory (Fábrica Simples)]
 - link:factory-method[Factory Method (Método Fábrica)]
-- link:https://github.com/manoelcampos/vraptor-cep-service[Fábrica de Objetos em Java com o framework CDI (Context and Dependency Injection)]
+- link:cep-service[Fábrica de Objetos em Java com o framework CDI (Context and Dependency Injection)]
 - link:singleton[Singleton]
 - link:builder[Builder (Construtor)]
