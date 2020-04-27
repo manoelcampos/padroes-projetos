@@ -8,3 +8,13 @@ section, section h1, section h2, section h3, section h4, section h5, section h6,
   border: 0px;
   background-color: transparent;
 }
+
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td, 
+table tr th, table tr td { 
+  font-size: 22px !important;
+}
+
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  text-transform: none;
+}
