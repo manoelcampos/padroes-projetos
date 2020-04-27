@@ -43,7 +43,7 @@ em http://localhost:8080.
 Observe que não há um caminho adicional com o nome da aplicação no final da URL,
 pois a aplicação executa na raiz do servidor.
 
-## Detalhes dos Projetos
+== Detalhes dos Projetos
 
 Estamos utilizando o framework CDI da plataforma Java para injeção de dependências,
 neste caso para injetar implementações do serviço de busca de CEP.
@@ -54,31 +54,45 @@ qual a classe concreta que será utilizada para isto.
 No caso dos serviços de busca de CEP, temos a interface `CepService` e as classes
 concretas `ViaCepService` e `PostmonService`. Do modo tradicional, podemos declarar um objeto de forma abstrata como `CepService`, mas no momento de instanciar temos que dizer exatamente qual classe concreta será usada, como:
 
-```java
+[source, java]
+----
 //Declaração usando tipo abstrato (a interface CepService)
 CepService service;
 ...
 ...
 //Instanciação usando tipo concreto (a subclasse ViaCepService)
 service = new ViaCepService();
-```
+----
 
 Com o CDI, podemos injetar instâncias de uma classe que implementa `CepService` apenas anotando a variável com `@Inject`, como:
 
-```java
+[source, java]
+----
 /*Declaração usando tipo abstrato (a interface CepService).
 Com a anotação @Inject, um objeto de uma classe concreta 
 será instanciado automaticamente quando necessário.*/
 @Inject
 CepService service;
-```
+----
 
 Observe que não temos mais a linha que instancia o objeto. Qual dos dois serviços (`ViaCepService` ou `PostmonService`) será definido de forma centralizada utilizando o CDI. Assim, se precisarmos trocar uma implementação por outra, não temos que sair alterando em todos os locais onde declaramos variáveis do tipo `CepService`.
 
 O CDI funciona por padrão em qualquer projeto web que utilize um servidor de aplicação
 como Payara, GlassFish, WildFly e outros, sem exigir esforços de configuração.
 
-## Código Fonte
+== Código Fonte
 
 Existem duas versões deste projeto disponíveis em link:cep-service-default[cep-service-default] e link:cep-service-producer[cep-service-producer]. 
 Veja a documentação deles para mais detalhes.
+
+== Referências
+
+- Documentação do WELD: Implementação de Referência do CDI
+    * https://docs.jboss.org/weld/reference/latest/en-US/html/intro.html#_what_is_a_bean[What is a bean (documentação do WELD)]
+    * https://docs.jboss.org/weld/reference/latest/en-US/html/scopescontexts.html[Scopes and contexts]
+    * https://weld.cdi-spec.org/news/2016/10/25/tip3-performance/[Boost performance of Weld (CDI) apps]
+
+- Documentação Oficial da Oracle (apesar de ser pra Java 7, continua válida)
+    * https://docs.oracle.com/javaee/7/tutorial/cdi-basic008.htm[The Java EE 6 Tutorial: Using Scopes]
+    * https://docs.oracle.com/javaee/7/tutorial/cdi-basic004.htm[About CDI Managed Beans]
+- http://cdi-spec.org[Site oficial da especificação CDI]
