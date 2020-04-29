@@ -2,6 +2,7 @@
 ~$*
 *.mp4
 target/
+cep-service/
 
 #IntelliJ Files
 *.iml
