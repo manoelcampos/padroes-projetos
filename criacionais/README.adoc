@@ -15,6 +15,6 @@ endif::[]
 
 - link:simple-factory[Simple Factory (Fábrica Simples)]
 - link:factory-method[Factory Method (Método Fábrica)]
-- link:cep-service[Fábrica de Objetos em Java com o framework CDI (Context and Dependency Injection)]
+- https://github.com/manoelcampos/quarkus-cep-services[Cep Service: consumo de serviços de CEP utilizando injeção de dependências com framework CDI]
 - link:singleton[Singleton]
 - link:builder[Builder (Construtor)]
