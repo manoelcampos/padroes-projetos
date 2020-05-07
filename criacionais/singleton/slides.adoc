@@ -1,0 +1,116 @@
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+:revealjs_slideNumber: true
+:source-highlighter: highlightjs
+:icons: font
+:allow-uri-read:
+:imagesdir: ../../images
+:stylesheet: ../../adoc-golo.css
+:customcss: ../../slides-base.css
+:numbered:
+:toc: left
+:toc-title: Sumário
+:toclevels: 5
+
+ifdef::env-github[]
+//Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:chapter-label:
+:listing-caption: Listagem
+:figure-caption: Figura
+
+//Transição para todos os slides // none/fade/slide/convex/concave/zoom
+//:revealjs_transition: 'zoom'
+
+//https://github.com/hakimel/reveal.js#theming
+:revealjs_theme: league
+
+= Padrões de Projetos: Singleton
+
+Prof. Manoel Campos https://about.me/manoelcampos
+
+image::patterns/criacionais/lonely-2378396_1280.jpg[title=https://www.needpix.com, link=https://www.needpix.com]
+
+[transition=zoom]
+== Categoria
+
+Padrão de projeto criacional image:ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
+
+[transition=fade]
+== Definição
+
+include::README.adoc[tag=definicao]
+
+image:ucpp.jpg[size=contain]
+
+[transition=zoofadem]
+== Aplicabilidade
+
+[%step]
+include::README.adoc[tag=aplicabilidade]
+
+[transition=zoom]
+== Modelagem do Singleton
+
+image:patterns/criacionais/singleton.png[]
+
+== !
+
+image:patterns/criacionais/singleton.png[]
+
+[%step]
+- Aplicado a uma única classe por vez.
+- A classe Singleton será a que aplicarmos o padrão.
+- Armazenar instância única em um atributo estático e privado: `instance`. 
+
+== !
+
+image:patterns/criacionais/singleton.png[]
+
+[%step]
+- O atributo tem o tipo da própria classe.
+- `getInstance()`: estático, retorna a instância armazenada no atributo `instance`
+- Construtor privado.
+
+[transition=zoom, background-opacity=0.4]
+== Princípios utilizados
+
+[%step]
+- *Single*-Responsitility Principle (https://en.wikipedia.org/wiki/Single-responsibility_principle[SRP])?
+
+image::recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
+
+[transition=fade]
+== Exemplos de uso do Singleton
+
+[%step]
+- Classe para impressora fiscal em aplicação de PDV (Ponto de Venda)
+- Arquivo de configuração a ser utilizado por todo o sistema
+
+[transition=fade]
+== Exemplos de uso do Singleton
+
+[%step]
+- Hibernate `SessionFactory`
+- Pesado
+- Carrega as configurações (parse de XML) de acesso ao BD 
+- Cria sessões (conexões BD)
+- Inicializa o Connection Pool
+
+[transition=fade]
+== Exemplos de uso do Singleton
+
+[quote, Minter and Linwood 2006]
+https://books.google.com.br/books?id=0d12xElRjysC&printsec=frontcover["The SessionFactory is a heavyweight object, and there would normally be a single instance per application."]
+
+[transition=fade]
+== Material e Projetos no GitHub
+
+https://git.io/JvpgW

@@ -19,7 +19,7 @@ endif::[]
 === Definição
 
 // tag::definicao[]
-📘Fornece uma interface para criar um objeto, mas permite às subclasses decidirem qual tipo de objeto instanciar. [UCPP]
+📘"Fornece uma interface para criar um objeto, mas permite às subclasses decidirem qual tipo de objeto instanciar." [UCPP]
 // end::definicao[]
 
 === Aplicabilidade

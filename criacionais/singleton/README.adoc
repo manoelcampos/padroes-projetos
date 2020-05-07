@@ -21,11 +21,20 @@ image:lonely-2378396_1280.jpg[]
 
 === Definição
 
-"Garante que uma classe tenha penas uma instância e fornece um ponto global de acesso a ela" [UCPP]
-
+// tag::definicao[]
+📘"Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela" [UCPP]
+// end::definicao[]
 
 === Aplicabilidade
 
+Este é um padrão aplicado em casos excepcionais.
+
+// tag::aplicabilidade[]
+- Quando precisa-se garantir que uma classe tenha uma única instância durante toda a execução da app;
+- o objeto a ser criado possui dados únicos a serem compartilhados por todos os usuários da app;
+- tal objeto exige muitos recursos (como memória) ou tem alto custo de instanciação;
+- representa um dispositivo físico pro qual não faz sentido ter duas instância dentro da mesma app (como uma impresora).
+// end::aplicabilidade[]
 
 === Modelagem
 
@@ -42,7 +51,7 @@ Assim, não teremos de fato uma classe chamada Singleton,
 mas qualquer outro nome relacionado ao sistema que estamos desenvolvendo.
 
 O que faz com que a classe tenha apenas uma única instância, é armazenar tal instância
-em um atributo estático dentro da própria classe. Normalmente tal atributo é chamado
+em um atributo estático e privado dentro da própria classe. Normalmente tal atributo é chamado
 simplesmente de `instance`. O tipo dele será a própria classe onde ele está sendo declarado.
 Se tivermos uma classe Singleton `ImpressoraFiscal`, ela terá um atributo `ImpressoraFiscal instance`.
 
@@ -59,6 +68,10 @@ como usar o construtor fora da classe.
 Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Este é uma exemplo prático que implementa o padrão Singleton para classe que simula a comunicação com uma impressora fiscal.
 
 === Princípios utilizados
+
+Você poderia imaginar que Singleton adere ao *Single*-Responsitility Principle (https://en.wikipedia.org/wiki/Single-responsibility_principle[SRP]), mas ele não garante que a classe terá uma única responsabilidade, ele garente que a classe terá uma única instância. Um padrão pode propiciar o SRP, no entanto está mais nas mãos do desenvolvedor garantir um princípio que do padrão.
+
+Pelo fato do padrão ser tão simples que sua modelagem é uma única classe, ele não adere a nenhum princípio específico, mas apenas resolve um problema recorrente em desenvolvimento de software.
 
 === Exemplos
 
