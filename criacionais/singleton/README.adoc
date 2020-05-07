@@ -16,7 +16,6 @@ endif::[]
 
 == Singleton
 
-.Imagem: https://www.needpix.com
 image:lonely-2378396_1280.jpg[]
 
 === Definição
