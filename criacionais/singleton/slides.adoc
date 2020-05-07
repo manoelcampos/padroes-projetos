@@ -66,9 +66,9 @@ image:patterns/criacionais/singleton.png[]
 image:patterns/criacionais/singleton.png[]
 
 [%step]
-- Aplicado a uma única classe por vez.
+- Aplicado a uma classe por vez.
 - A classe Singleton será a que aplicarmos o padrão.
-- Armazenar instância única em um atributo estático e privado: `instance`. 
+- Armazena instância única em um atributo estático e privado: `instance`. 
 
 == !
 
@@ -91,18 +91,18 @@ image::recommendations.jpg[background, size=contain, text=https://www.smart-ener
 == Exemplos de uso do Singleton
 
 [%step]
-- Classe para impressora fiscal em aplicação de PDV (Ponto de Venda)
-- Arquivo de configuração a ser utilizado por todo o sistema
+- Classe para impressora fiscal em aplicação de PDV (Ponto de Venda).
+- Arquivo de configuração a ser utilizado por todo o sistema.
 
 [transition=fade]
 == Exemplos de uso do Singleton
 
 [%step]
-- Hibernate `SessionFactory`
-- Pesado
-- Carrega as configurações (parse de XML) de acesso ao BD 
-- Cria sessões (conexões BD)
-- Inicializa o Connection Pool
+- Hibernate `SessionFactory`:
+- pesado
+- carrega as configurações (parse de XML) de acesso ao BD 
+- cria sessões (conexões BD)
+- https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/session-configuration.html#configuration-hibernatejdbc[inicializa o Connection Pool]
 
 [transition=fade]
 == Exemplos de uso do Singleton
