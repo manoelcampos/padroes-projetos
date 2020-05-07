@@ -1,8 +1,7 @@
 :source-highlighter: highlightjs
 
-= Exportação de lista de objetos em diferentes formatos (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/arquivo-configuracoes-singleton[zip])
+= Arquivo de Configuração usando Singleton (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/arquivo-configuracoes-singleton[zip])
 
-Este é um projeto que implementa a exportação de dados de uma lista de produtos para formatos como HTML e Markdown (extensão .md).
-Ela é uma versão introdutória bastante limitada, pois só trabalha com lista de produtos.
-Para exportar uma lista de outro tipo de objeto, seria necessário implementar novas classes,
-não sendo uma solução viável.
+Este projeto implementa uma classe `Config.java` para representar parâmetros de configuração do sistema.
+Como tais parâmetros podem ser acessados a partir de qualquer parte do sistema e precisam ser armazenados 
+em um objeto único, foi aplicado o padrão Singleton em tal classe.
