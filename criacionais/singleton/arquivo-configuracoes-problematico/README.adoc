@@ -1,8 +1,0 @@
-:source-highlighter: highlightjs
-
-= Arquivo de Configuração Problemático (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/arquivo-configuracoes-problematico[zip])
-
-Este projeto implementa uma classe `Config.java` para representar parâmetros de configuração do sistema.
-Tais parâmetros podem ser acessados a partir de qualquer parte do sistema e precisam ser armazenados 
-em um objeto único. Mas como o padrão Singleton *NÃO* foi aplicado em tal classe,
-teremos problemas de ver diferentes versões de configuração em partes distintas do sistema.
