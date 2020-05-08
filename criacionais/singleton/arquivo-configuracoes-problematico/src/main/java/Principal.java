@@ -8,10 +8,12 @@ import java.util.Scanner;
  * de um sistema por meio de um arquivo config.properties.
  * As configurações são gerenciadas pela classe {@link Config}.
  *
- * <p>Neste exemplo, podemos perceber que, ao acessar a opção 2 do menu principal
- * para exibir os relatórios, se entrarmos na sub-opção de configurações lá,
- * ao alterar uma configuração como o formato dos relatórios,
- * ao voltar para a tela anterior, tal configuração não é atualizada,
+ * <p>Para reproduzir o problema:
+ *
+ * - Escolha a opção 1-Relatórios do menu principal
+ * - Escolha a sub-opção 4-Configurações
+ * - Altere uma configuração como o Formato dos Relatórios
+ * - Ao voltar para a tela anterior, tal configuração não é atualizada,
  * mesmo que tenhamos salvo as alterações no arquivo de configurações
  * antes de sair da respectiva tela.</p>
  *

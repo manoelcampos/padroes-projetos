@@ -11,7 +11,7 @@ import java.util.Scanner;
  * os problemas apresentados no projeto "arquivo-configuracoes-problematico".
  * Veja a classe {@link Config} para mais detalhes.</p>
  *
- * <p>Observe que ao acessar a opção 2 no menu principal para exibir os relatórios,
+ * <p>Observe que ao acessar a opção 1 no menu principal para exibir os relatórios,
  * se a sub-opção 4 for escolhida para alterar uma configuração como "Formato Padrão dos Relatórios",
  * ao voltar para a "tela" de relatórios, você já verá que tal configuração foi atualizada.</p>
  *

@@ -4,4 +4,4 @@
 
 Este projeto implementa uma classe `Config.java` para representar parâmetros de configuração do sistema.
 Como tais parâmetros podem ser acessados a partir de qualquer parte do sistema e precisam ser armazenados 
-em um objeto único, foi aplicado o padrão Singleton em tal classe.
+em um objeto único, foi aplicado o padrão *Singleton* em tal classe.
