@@ -75,32 +75,16 @@ Pelo fato do padrão ser tão simples que sua modelagem é uma única classe, el
 === Exemplos
 
 Um sistema pode ter um conjunto de configurações que o usuário pode alterar.
-Tais configurações podem ser salvas em diferentes locais, como em um banco de dados ou em arquivo.
-Em arquivo é a maneira mais simples de fazer isso e em Java podemos criar arquivos com a extensão `.properties` para salvar tais configurações do sistema.
+Considere que as configurações do sistema podem ser acessadas e alteradas em diversos locais. Neste caso, o mais apropriado é criar uma classe, chamada por exemplo de `Config`, que encapsula o gerenciamento de tais configurações. Se instanciarmos objetos da classe `Config` em diferentes locais e alterarmos as configurações, podemos ver os valores atualizados em determinados locais, enquanto aparecem desatualizados em outros. Isto pode trazer problemas para o sistema.
 
-Tal arquivo tem o formato abaixo:
-
-[source,properties]
-----
-configuracao1 = valor
-configuracao2 = valor
-configuracaoN = valor
-----
-
-Utilizando a classe `java.util.Properties`, podemos facilmente ler e gravar dados em
-um arquivo de tal tipo. Considere que as configurações do sistema podem ser acessadas e alteradas em diversos locais. Neste caso, o mais apropriado é criar uma classe, chamada por exemplo de `Config`, que encapsula o gerenciamento de tais configurações. Se instanciarmos objetos da classe `Config` em diferentes locais e alterarmos as configurações, podemos ver os valores atualizados em determinados locais, enquanto aparecer desatualizados em outros. Isto pode trazer problemas para o sistema.
-
-Neste caso, podemos aplicar o padrão Singleton à classe `Config` para permitir que uma única instância dela seja criada para todo o sistema. Mesmo que tenhamos diversas variáveis `Config` espalhadas pelo sistema, todas apontarão para o mesmo único objeto criado. Assim, ao alterar uma configuração por meio de qualquer dessas variáveis, estaremos alterando o mesmo objeto. Logo, teremos acesso aos mesmos dados, independetemente de qual variável utilizarmos.
+Neste caso, podemos aplicar o padrão Singleton à classe `Config` para permitir que uma única instância dela seja criada para todo o sistema. Mesmo que tenhamos diversas variáveis `Config` espalhadas pelo sistema, todas apontarão para um único objeto criado. Assim, ao alterar uma configuração por meio de qualquer dessas variáveis, estaremos alterando o mesmo objeto. Logo, teremos acesso aos mesmos dados, independetemente de qual variável utilizarmos.
 
 A figura abaixo apresenta a modelagem para a classe `Config` implementado o padrão Singleton.
 
 .Modelagem de uma classe que implementa o padrão Singleton para gerenciamento de configurações de um sistema
 image::singleton-config.png[]
 
-Observe que os getters e setters representam configurações existentes no arquivo `config.properties`.
-Estas são configurações definidas aleatoriamente apenas para exemplo.
-
-O projeto link:arquivo-configuracoes-singleton[arquivo-configuracoes-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/arquivo-configuracoes-singleton[zip]) fornece uma implementação do padrão Singleton.
+O projeto link:openjfx-config-singleton[openjfx-config-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/openjfx-config-singleton[zip]) fornece a estrutura de uma aplicação desktop http://openjfx.io[OpenJFX (JavaFX)] que deve servir de base para a implementação do padrão Singleton.
 
 === Detalhes de Implementação
 
@@ -124,7 +108,7 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 == Aplicando o Padrão Singleton por meio do framework CDI
 
-Anteriormente foi apresentado um projeto link:https://github.com/manoelcampos/vraptor-cep-service[cep-service] que utiliza o framework de injeção de dependência CDI para permitir encapsular e centralizar a instanciação de implementações de serviços de busca de endereço a partir do CEP.
+Anteriormente foi apresentado um projeto link:https://github.com/manoelcampos/quarkus-cep-services[cep-service] que utiliza o framework de injeção de dependência CDI para permitir encapsular e centralizar a instanciação de implementações de serviços de busca de endereço a partir do CEP.
 
 No link fornecido são mostradas duas versões do projeto:
 
@@ -133,8 +117,8 @@ No link fornecido são mostradas duas versões do projeto:
   enviando consultas para um serviço, depois para outro.
 
 Qualquer uma das versões depende das necessidades do seu projeto.
-O projeto link:cep-service-singleton[cep-service-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/cep-service-singleton[zip]) disponibilizado aqui é como a primeira versão mencionada, mas ele aplica o padrão Singleton por meio do framework CDI para que tenhamos uma única instância do serviço de CEP em toda a aplicação, independetemente de quantos usuários estiverem conectados a ela. Isto faz sentido pois as classes que implementam os serviços de CEP não armazenam nenhum atributo, logo, podemos usar uma única instância para toda a aplicação, consequentemente economizando memória.
+O projeto link:cep-service-singleton[cep-service-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/cep-service-singleton[zip]) disponibilizado aqui é como a primeira versão mencionada. No entanto, ele aplica o padrão Singleton por meio do framework CDI para que tenhamos uma única instância do serviço de CEP em toda a aplicação, independetemente de quantos usuários estiverem conectados a ela. Isto faz sentido pois as classes que implementam os serviços de CEP não armazenam nenhum atributo, logo, podemos usar uma instância única para toda a aplicação, consequentemente economizando memória.
 
 == Exercícios
 
-Implementar o padrão Singleton utilizando o framework CDI do Java para o projeto link:../cep-service/cep-service-producer[cep-service-producer].
+Implementar o padrão Singleton utilizando o framework CDI do Java para o projeto link:https://github.com/manoelcampos/quarkus-cep-services/tree/master/cep-service-default[cep-service-default].
