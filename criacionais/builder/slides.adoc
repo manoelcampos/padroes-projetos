@@ -1,0 +1,131 @@
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+:revealjs_slideNumber: true
+:source-highlighter: highlightjs
+:icons: font
+:allow-uri-read:
+:imagesdir: ../../images/patterns/criacionais/
+:stylesheet: ../../adoc-golo.css
+:customcss: ../../slides-base.css
+:numbered:
+:toc: left
+:toc-title: Sumário
+:toclevels: 5
+
+ifdef::env-github[]
+//Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:chapter-label:
+:listing-caption: Listagem
+:figure-caption: Figura
+
+//Transição para todos os slides // none/fade/slide/convex/concave/zoom
+//:revealjs_transition: 'zoom'
+
+//https://github.com/hakimel/reveal.js#theming
+:revealjs_theme: league
+
+= Builder Design Pattern
+
+image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.com]
+
+Prof. Manoel Campos +
+https://about.me/manoelcampos
+
+[transition=zoom]
+== Categoria
+
+Padrão de projeto criacional image:../../ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
+
+[transition=fade]
+== Definição
+
+include::README.adoc[tag=definicao]
+
+image::../../ucpp.jpg[size=contain]
+
+[transition=fade]
+== Distinção do Termo
+
+image:../../dictionary.png[]
+
+[%step]
+- Builder = Construtor
+- porém Builder != Método Construtor
+- Builder exige um Método Construtor
+
+[transition=zoofadem]
+== Aplicabilidade
+
+[%step]
+include::README.adoc[tag=aplicabilidade]
+
+[transition=zoom]
+== Modelagem do Builder
+
+== !
+
+image:modelagem-builder.png[width=50%]
+
+[%step]
+- Builder foi representada como _Inner Class_
+- `MinhaClasse` é extensa? Builder separado!
+
+[transition=zoom, background-opacity=0.4]
+== Princípios utilizados
+
+[%step]
+include::README.adoc[tag=principios]
+
+[transition=fade]
+== Exemplo de Uso
+
+== !
+
+image::builder-paciente.png[width=45%]
+
+== Detalhes de Implementação
+
+[%step]
+include::README.adoc[tag=implementacao]
+
+== Problemas do Builder
+
+[%step]
+- Duplicação absurda de código
+- Novos atributos? Precisa atualizar a Builder!
+- Viola o princípio _Don't Repeat Yourself (DRY)_
+
+== Solução: Geração automática de Builder
+
+[%step]
+- IDEs como IntelliJ e NetBeans https://youtu.be/vjVRDnra8-I
+- Bibliotecas que geram Builder: http://immutables.github.io/factory.html[Immutables]
+- Plugins para IDEs: http://lombok.org/features/Builder[Lombok]
+
+== Onde o padrão é usado no JDK
+
+== JCF no JDK 9+
+[%step]
+- `List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings")`
+- `List<Integer> listaPares = List.of(2, 4, 6);`
+- `Map<String, Integer> mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
+
+== Falando de JDK, pula pro JDK 10
+
+[%step]
+- `var listaNomes = List.of("Minha", "Lista", "de", "Strings")`
+- `var listaPares = List.of(2, 4, 6);`
+- `var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
+
+[transition=fade]
+== Material e Projetos no GitHub
+
+https://bit.ly/2zOwSar
