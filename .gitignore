@@ -19,3 +19,6 @@ provas
 *.html
 
 node_modules/
+
+#macOS Files
+.DS_Store
