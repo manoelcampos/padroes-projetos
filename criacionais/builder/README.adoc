@@ -14,7 +14,7 @@ endif::[]
 
 = Padrões de Projetos Criacionais
 
-image::builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.com]
+image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.com, width=75%]
 
 == Builder (Construtor)
 
@@ -36,7 +36,7 @@ Apesar dos dois terem a mesma finalidade, construir, ou seja, instanciar um obje
 O padrão é utilizado quando um determinado objeto é complexo de ser criado, quando:
 
 // tag::aplicabilidade[]
-- a instanciação exige muitos parâmetros no construtor (normalmente bem mais que 3);
+- a instanciação exige muitos parâmetros no construtor (normalmente bem mais que 3): Clean Code
 - há dependência entre atributos: se for definido valor pra _"x"_, precisa definir pra _"y"_ também;
 - existem atributos obrigatórios e outros opcionais;
 - regras de validação envolvem atributos em conjunto (pra validar atributo _"x"_ é preciso verificar _"y"_ também); etc.
@@ -69,10 +69,10 @@ O código fonte do projeto está disponível link:paciente-builder[aqui] (link:h
 === Detalhes de Implementação
 
 // tag::implementacao[]
-- Métodos na classe Builder: sem prefixo, with, of ou set
+- Métodos na classe Builder: sem prefixo, `with`, `set` ou `of`
 - set é o padrão de IDEs como IntelliJ e NetBeans
-- Nome do método builder: create(), createObject(), newObject(), build()
-- Construtor package ou private
+- Nome do método builder: `create()`, `createNomeObjeto()`, `newNomeObjeto()`, `build()`
+- Construtor _package_ ou _private_
 // end::implementacao[]
 
 === Geração automática de classes Builder
