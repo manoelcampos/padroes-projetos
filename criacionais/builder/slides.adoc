@@ -4,7 +4,7 @@
 :source-highlighter: highlightjs
 :icons: font
 :allow-uri-read:
-:imagesdir: ../../images/patterns/criacionais/
+:imagesdir: ../../images/patterns/criacionais
 :stylesheet: ../../adoc-golo.css
 :customcss: ../../slides-base.css
 :numbered:
@@ -47,9 +47,15 @@ Padrão de projeto criacional image:../../ice-cream-sandwich-machine.gif[title=h
 [transition=fade]
 == Definição
 
-include::README.adoc[tag=definicao]
+include::README.adoc[tag=definicao1]
 
-image::../../ucpp.jpg[size=contain]
+image::../../design-patterns-gof.jpg[width=25%]
+
+== Definição
+
+include::README.adoc[tag=definicao2]
+
+image::../../ucpp.jpg[]
 
 [transition=fade]
 == Distinção do Termo
@@ -61,11 +67,25 @@ image:../../dictionary.png[]
 - porém Builder != Método Construtor
 - Builder exige um Método Construtor
 
-[transition=zoofadem]
 == Aplicabilidade
 
 [%step]
-include::README.adoc[tag=aplicabilidade]
+include::README.adoc[tag=aplicabilidade1]
+
+== Aplicabilidade
+
+[%step]
+include::README.adoc[tag=aplicabilidade2]
+
+== Aplicabilidade
+
+include::README.adoc[tag=aplicabilidade3]
+
+== Aplicabilidade
+
+[%step]
+include::README.adoc[tag=aplicabilidade4]
+
 
 [transition=zoom]
 == Modelagem do Builder
@@ -76,7 +96,7 @@ image:modelagem-builder.png[width=50%]
 
 [%step]
 - Builder foi representada como _Inner Class_
-- `MinhaClasse` é extensa? Builder separado!
+- `ClasseComplexa` é extensa? Builder separado!
 
 [transition=zoom, background-opacity=0.4]
 == Princípios utilizados
@@ -89,41 +109,132 @@ include::README.adoc[tag=principios]
 
 == !
 
-image::builder-paciente.png[width=45%]
+image::builder-produto.png[background, size=contain]
 
 == Detalhes de Implementação
 
 [%step]
 include::README.adoc[tag=implementacao]
 
-== Problemas do Builder
+[transition=zoom]
+== Problemas / Desvantagens
 
 [%step]
-- Duplicação absurda de código
-- Novos atributos? Precisa atualizar a Builder!
-- Viola o princípio _Don't Repeat Yourself (DRY)_
+include::README.adoc[tag=desvantagens]
 
-== Solução: Geração automática de Builder
+== Soluções para Alguns dos Problemas
 
 [%step]
-- IDEs como IntelliJ e NetBeans https://youtu.be/vjVRDnra8-I
-- Bibliotecas que geram Builder: http://immutables.github.io/factory.html[Immutables]
-- Plugins para IDEs: http://lombok.org/features/Builder[Lombok]
+- IDEs como IntelliJ e NetBeans
+- Bibliotecas que geram classes Builder: Immutables - http://immutables.github.io
+
+== Immutables - Dependência
+
+[source, xml]
+----
+<!-- http://immutables.github.io/factory.html -->
+<dependency>
+  <groupId>org.immutables</groupId>
+  <artifactId>value</artifactId>
+  <version>2.8.2</version>
+  <scope>provided</scope>
+</dependency>
+<dependency>
+  <groupId>org.immutables</groupId>
+  <artifactId>builder</artifactId>
+  <version>2.8.2</version>
+  <scope>provided</scope>
+</dependency>
+----
+
+== !
+[source, java]
+----
+public class Produto {
+    // Atributos da Classe, getters e setters
+
+    @Builder.Constructor
+    Produto(long id, String titulo, String descricao, String marca, String modelo, int estoque, double preco, LocalDate dataCadatro, LocalDate dataUltimaAtualizacao, String urlFoto, String categoria, Vendedor vendedor, double peso, double altura, double largura, double profundidade) {
+        // Código do Construtor
+    }
+
+    public static void main(String[] args) {
+        Produto produto =
+                new ProdutoBuilder()
+                        .titulo("SmartTV LCD")
+                        .categoria("Eletrônicos")
+                        .estoque(100)
+                        .preco(1280)
+                        .urlFoto("/smart-tv.png")
+                        .build();
+    }
+}
+----
+
+== Lombok
+
+[%step]
+- Altera as classes compiladas: https://projectlombok.org/features/Builder
+
+== !
+
+[source, java]
+----
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
+public class Produto {
+    // Atributos da Classe
+
+    public static void main(String[] args) {
+        Produto produto =
+            Produto.builder()
+                   .titulo("SmartTV LCD")
+                   .categoria("Eletrônicos")
+                   .estoque(100)
+                   .preco(1280)
+                   .urlFoto("/smart-tv.png")
+                   .build();
+    }
+}
+----
 
 == Onde o padrão é usado no JDK
 
 == JCF no JDK 9+
-[%step]
-- `List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings")`
-- `List<Integer> listaPares = List.of(2, 4, 6);`
-- `Map<String, Integer> mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
+[source, java]
+----
+List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings");
+----
+
+== JCF no JDK 9+
+[source, java]
+----
+List<Integer> listaPares = List.of(2, 4, 6, 8, 10);
+----
+
+== JCF no JDK 9+
+
+[source, java]
+----
+Map<String, Integer> mapaHabitantesCidade = 
+                        Map.of("Palmas", 217000, "Gurupi", 84000);
+----
 
 == Falando de JDK, pula pro JDK 10
 
-[%step]
-- `var listaNomes = List.of("Minha", "Lista", "de", "Strings")`
-- `var listaPares = List.of(2, 4, 6);`
-- `var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
+
+== !
+[source, java]
+----
+var listaNomes = List.of("Minha", "Lista", "de", "Strings");
+var listaPares = List.of(2, 4, 6);
+var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);
+----
 
 [transition=fade]
 == Material e Projetos no GitHub

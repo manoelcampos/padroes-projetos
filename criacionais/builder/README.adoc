@@ -20,65 +20,90 @@ image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.
 
 === Definição
 
-// tag::definicao[]
+// tag::definicao1[]
 "Separa a construção de um objeto complexo da sua representação, de modo que o mesmo processo de construção possa criar diferentes representações." (GoF)
-// end::definicao[]
+// end::definicao1[]
 
-Em outras palavras, separa o código utilizado para a instanciação de objetos complexos do código da classe de tal objeto. As representações são as instâncias da classe: os objetos.
+Em outras palavras, separa o código utilizado para a instanciação de objetos complexos do código da classe de tal objeto. As representações são as instâncias da classe.
+
+Outra definição diz que 
+// tag::definicao2[]
+"O padrão Builder encapsula a construção de um objeto, permitindo que ele seja construído em passos." (UCPP)
+// end::definicao2[]
 
 === Distinção do Termo
 
-O padrão Builder significa construtor, mas não confundí-lo com um método construtor existente em classes.
-Apesar dos dois terem a mesma finalidade, construir, ou seja, instanciar um objeto, são mecanismos diferentes utilizados para isso. Um Builder exige o uso de um método construtor. Ele não consegue instanciar um objeto por si só.
+O padrão Builder significa construtor, mas não confunda com um método construtor existente em classes.
+Apesar dos dois terem a mesma finalidade – construir, instanciar um objeto – são mecanismos diferentes utilizados para isso. Um Builder exige o uso de um método construtor. Ele não consegue instanciar um objeto por si só.
 
 === Aplicabilidade
 
-O padrão é utilizado quando um determinado objeto é complexo de ser criado, quando:
+O padrão pode ser usado pra instanciar um objeto complexo quando:
 
-// tag::aplicabilidade[]
-- a instanciação exige muitos parâmetros no construtor (normalmente bem mais que 3): Clean Code
-- há dependência entre atributos: se for definido valor pra _"x"_, precisa definir pra _"y"_ também;
-- existem atributos obrigatórios e outros opcionais;
-- regras de validação envolvem atributos em conjunto (pra validar atributo _"x"_ é preciso verificar _"y"_ também); etc.
-// end::aplicabilidade[]
+// tag::aplicabilidade1[]
+- A instanciação exige muitos parâmetros no construtor (normalmente bem mais que 3) image:construtor-excesso-params.png[] 
+- ... poucos parâmetros: preceito do Clean Code, favorece Programação Funcional.
+// end::aplicabilidade1[]
+// tag::aplicabilidade2[]
+- A chamada vira uma linha infinita: image:construtor-excesso-params-chamada1.png[]
+- E pode ser pior ainda em questões de legibilidade: image:construtor-excesso-params-chamada2.png[]
+// end::aplicabilidade2[]
+// tag::aplicabilidade3[]
+- Poderíamos criar construtores sobrecarregados, mas a classe pode crescer muito e desviar o foco image:construtor-sobrecarregado.png[]
+// end::aplicabilidade3[]
+// tag::aplicabilidade4[]
+- Há dependência entre atributos: se for definido valor pra _"x"_, precisa definir pra _"y"_.
+- Existem atributos obrigatórios e outros opcionais.
+- Regras de validação envolvem atributos em conjunto (pra validar _"x"_ é preciso verificar _"y"_ também), etc.
+// end::aplicabilidade4[]
+
 
 Normalmente o primeiro item já pode ser o suficiente para aplicarmos o padrão Builder a uma classe.
 
 === Modelagem
 
-.Modelagem do Padrão Builder para uma classe fictícia "MinhaClasse"
+.Modelagem do Padrão Builder para uma classe fictícia "ClasseComplexa"
 image::modelagem-builder.png[]
 
-No diagrama, a classe Builder foi representada como uma _Inner Class_: uma classe declarada dentro de outra. Se o código da `MinhaClasse` for extenso, incluir o Builder como uma _Inner Class_ vai tornar o arquivo mais extenso ainda. Nestes casos, o ideal é criar a Builder em um arquivo separado.
+No diagrama, a classe Builder foi representada como uma _Inner Class_: uma classe declarada dentro de outra. Se o código da `ClasseComplexa` for extenso, incluir a Builder como uma _Inner Class_ vai tornar o arquivo mais extenso ainda. Nestes casos, o ideal é criar a Builder em um arquivo separado.
 
 === Princípios utilizados
 
 // tag::principios[]
 - https://en.wikipedia.org/wiki/Separation_of_concerns[Separation of Concerns (SoC)] - Separação de Preocupações: separa as regras de negócio da classe do processo de instanciação da mesma.
+- Alta Coesão
+- https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)[General Responsibility Assignment Software Patterns] (GRASP)
 // end::principios[]
 
 === Exemplo de Uso
 
-A figura abaixo apresenta a modelagem do padrão Builder para a classe `Paciente`.
+A figura abaixo apresenta a modelagem do padrão Builder para a classe `Produto`.
 
-.Modelagem do padrão Builder para uma classe Paciente
-image::builder-paciente.png[]
-
-O código fonte do projeto está disponível link:paciente-builder[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder[zip]).
+.Modelagem do padrão Builder para uma classe Produto
+image::builder-produto.png[]
 
 === Detalhes de Implementação
 
 // tag::implementacao[]
-- Métodos na classe Builder: sem prefixo, `with`, `set` ou `of`
+- Métodos na classe Builder: sem prefixo, `with` ou `set`
 - set é o padrão de IDEs como IntelliJ e NetBeans
-- Nome do método builder: `create()`, `createNomeObjeto()`, `newNomeObjeto()`, `build()`
+- Nome do método builder: `create()`, `createNomeObjeto()`, `newNomeObjeto()`, `build()` ou `of`
 - Construtor _package_ ou _private_
 // end::implementacao[]
 
-=== Geração automática de classes Builder
+=== Problemas / Desvantagens
 
-Como podem ver no projeto disponibilizado anteriormente,
-implementar o padrão Builder é algo cansativo.
+// tag::desvantagens[]
+- Duplicação absurda de código
+- Viola o princípio _Don't Repeat Yourself (DRY)_
+- Novos atributos? Precisa atualizar a Builder!
+- Exige a criação de um objeto Builder para poder instanciar os objetos desejados
+- Dificulta a injeção de dependências
+// end::desvantagens[]
+
+=== Soluções para Alguns dos Problemas
+
+Implementar o padrão Builder é algo cansativo.
 A quantidade de código duplicado é absurda, pois todos
 os atributos existentes na classe de modelo terá que existir
 na classe Builder, assim como todos os setters.
@@ -86,13 +111,15 @@ Ao adicionar novos atributos, a classe Builder tem que ser atualizada.
 Pra piorar, temos que repetir todo este processo para cada classe
 que desejarmos aplicar o padrão.
 
-Quando você implementa o padrão como mostrado, você inclusive estará violando o princípio _Don't Repeat Yourself (DRY)_: Não Repita Você mesmo. Estamos repetindo a declaração dos atributos e setters ao criar um Builder.
+Quando você implementa o padrão como mostrado, você inclusive estará violando o princípio _Don't Repeat Yourself (DRY)_: Não Repita Você mesmo. Estamos repetindo a declaração dos atributos e setters ao criar uma Builder.
 
-Para evitar tais inconvenientes, podemos utilizar IDEs como o IntelliJ e NetBeans para gerar tais Builders automaticamente. https://youtu.be/vjVRDnra8-I[Este vídeo] mostra como isso pode ser feito. Apesar disso, sempre que incluirmos novos atributos na nossa classe, precisaremos excluir o Builder e solicitar a criação novamente.
+Para evitar tais inconvenientes, podemos utilizar IDEs como o IntelliJ e NetBeans para gerar tais Builders automaticamente. https://youtu.be/vjVRDnra8-I[Este vídeo] mostra como isso pode ser feito. Neste caso, ao incluir um novo atributo, o mais fácil é excluir a builder e usar o IDE pra criá-la novamente.
 
-Alternativamente, podemos usar uma biblioteca que gera um Builder quando percisarmos, se encarregando de atualizar automaticamente o Builder sempre que atualizarmos a classe de negócio que ele constrói. Uma biblioteca excelente para isto é a http://immutables.github.io/factory.html[Immutables], que dentre vários recursos, gera Builders por meio de uma simples anotação.
+Alternativamente, podemos usar uma biblioteca que gera uma Builder quando percisarmos, se encarregando de atualizar automaticamente a Builder sempre que atualizarmos a classe de negócio que ele constrói. Uma biblioteca excelente para isto é a http://immutables.github.io/factory.html[Immutables], que dentre vários recursos, gera Builders por meio de uma simples anotação.
 
-O projeto link:paciente-builder-automatico[paciente-builder-automatico] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder-automatico[zip]) adiciona tal biblioteca no arquivo `pom.xml` e inclui a anotação `@Builder.Constructor` no construtor da classe `Paciente` e pronto: "automagicamente" a classe `PacienteBuilder` é criada/atualizada quando compilamos o projeto.
+Basta adicionar tal biblioteca no arquivo `pom.xml` e inclui a anotação `@Builder.Constructor` no construtor da classe desejada, como `Produto` e pronto: "automagicamente" a classe `ProdutoBuilder` é criada/atualizada quando compilamos o projeto.
+
+Veja um projeto de exemplo que cria uma builder para uma classe `Paciente` link:paciente-builder-automatico[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder-automatico[zip])
 
 == Padrões Relacionados
 
@@ -103,12 +130,12 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 == Onde o padrão é usado no JDK
 
 Em vários lugares nas versões mais atuais do JDK.
-O uso mais notável são os métodos `of()` na Java Collections Framework (JCF)
-a partir do JDK 9, que permitem criar listas e mapas de forma simples e direta,
+O uso mais notável é na Java Collections Framework (JCF)
+a partir do JDK 9, por meio dos métodos `of()` que permitem criar listas e mapas de forma simples e direta,
 como os exemplos abaixo:
 
-- `List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings")`
-- `List<Integer> listaPares = List.of(2, 4, 6);`
+- `List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings");`
+- `List<Integer> listaPares = List.of(2, 4, 6, 8, 10);`
 - `Map<String, Integer> mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
 
 E já que estamos falando de JDK, a partir do JDK 10 é possível simplificar ainda mais:
@@ -120,22 +147,28 @@ E já que estamos falando de JDK, a partir do JDK 10 é possível simplificar ai
 == Exercícios
 
 Implemente uma classe `Produto` utilizando apenas um construtor sem parâmetros
-e que tenha os seguintes atributos:
+e que tenha os seguintes atributos. Os atributos marcados com * são obrigatórios:
 
 - id: long
-- descricao: String
+- *titulo: String
+- *descricao: String
 - marca: String
 - modelo: String
-- estoque: int
-- preco: double
-- dataCadastro: LocalDate
-- dataUltimaAtualizacao: LocalDate
+- estoque: int (valor padrão zero)
+- *preco: double (deve ser maior que zero)
+- *dataCadastro: LocalDate (não pode ser menor que a data atual)
+- *dataUltimaAtualizacao: LocalDate (não pode ser menor que a data atual)
 - urlFoto: String
+- *categoria: String
+- *vendedor: Vendedor
+- peso: double
+- altura: double
+- largura: double
+- profundidade: double
 
-Todos os atributos são obrigatórios e devem ser atribuídos por meio dos setters.
-No entanto, a marca só pode ser atribuída se o modelo também for e vice-versa.
+O modelo só pode ser atribuído se a marca também for.
 Há como resolver isso da forma como a implementação foi sugerida acima?
 
 Resolva o problema aplicando o padrão Builder, realizando as alterações necessárias na classe `Produto`.
 
-NOTE: Em uma aplicação mais realista, existiriam classes específicas como `Marca` e `Modelo`, sendo que um `Modelo` estaria vinculado a uma `Marca`. Assim, na classe `Produto` teríamos apenas um atributo `Modelo`. Se este for setado, ele deveria estar vinculado a uma `Marca`. Mas este é apenas um exemplo didático simples, focando apenas na aplicação do Builder.
+NOTE: Em uma aplicação mais realista, existiriam classes específicas como `Marca`, `Modelo`, `Categoria` e outras. Um `Modelo` estaria vinculado a uma `Marca`. Assim, na classe `Produto` teríamos apenas um atributo `Modelo`. Se este for setado, ele deveria estar vinculado a uma `Marca`. Mas este é apenas um exemplo didático simples, focando apenas na aplicação do Builder.

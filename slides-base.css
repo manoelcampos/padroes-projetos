@@ -14,6 +14,13 @@ table tr th, table tr td {
   font-size: 22px !important;
 }
 
+.reveal pre code {
+  max-height: 90%;
+  max-width: 105%;
+  width: 105% !important;
+  padding: 5px;
+}
+
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
   text-transform: none;
