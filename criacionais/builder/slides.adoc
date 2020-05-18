@@ -13,7 +13,7 @@
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 :safe: unsafe
-:customcss: https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/slides-base.css
+:customcss: https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/adoc-golo.css
 
 :numbered:
 :toc: left

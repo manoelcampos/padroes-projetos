@@ -1,4 +1,9 @@
-@import url(https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/adoc-golo.css);
+/* 
+O import não tá funcionando com o reveal.js.
+O conteúdo foi copiado para adoc-golo.css.
+
+@import url(https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/adoc-golo.css); 
+*/
 
 section, section h1, section h2, section h3, section h4, section h5, section h6, section ul li, 
 #dark, #dark h1, #dark h2 {

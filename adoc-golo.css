@@ -640,3 +640,33 @@ body { background: url('../images/golo/body-bg.png?1364899918') #fdfaf7 repeat; 
 table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; }
 
 #footer { background-color: #23160c; }
+
+/* Personalizações */
+
+section, section h1, section h2, section h3, section h4, section h5, section h6, section ul li, 
+#dark, #dark h1, #dark h2 {
+  color: #ff0; 
+  text-shadow: -4px -4px 12px #000000;
+}
+
+.reveal section img {
+  border: 0px;
+  background-color: transparent;
+}
+
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td, 
+table tr th, table tr td { 
+  font-size: 22px !important;
+}
+
+.reveal pre code {
+  max-height: 90%;
+  max-width: 105%;
+  width: 105% !important;
+  padding: 5px;
+}
+
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  text-transform: none;
+}
