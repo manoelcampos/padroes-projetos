@@ -1,6 +1,5 @@
 :revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
-//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
-//:revealjsdir: ../../../reveal.js-3.9.2
+//:revealjsdir: reveal.js-3.9.2
 //Não exibir notas para usuários
 :revealjs_showNotes: false
 
@@ -14,6 +13,7 @@
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 :customcss: slides-base.css
+:revealjs_plugins: slides-plugins.js
 
 :numbered:
 :toc: left
