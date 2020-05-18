@@ -11,12 +11,9 @@
 :imagesdir: images/
 
 :safe: unsafe
-
-//Builtin Themes
 //https://github.com/hakimel/reveal.js#theming
-//:revealjs_theme: league
-
-:customcss: https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/slides-base.css
+:revealjs_theme: league
+:customcss: slides-base.css
 
 :numbered:
 :toc: left
