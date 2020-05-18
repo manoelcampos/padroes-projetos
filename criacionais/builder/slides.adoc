@@ -1,12 +1,20 @@
 :revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
 //:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+//:revealjsdir: ../../../reveal.js-3.9.2
+//Não exibir notas para usuários
+:revealjs_showNotes: false
+
 :revealjs_slideNumber: true
 :source-highlighter: highlightjs
 :icons: font
 :allow-uri-read:
-:imagesdir: ../../images/patterns/criacionais
-:stylesheet: ../../adoc-golo.css
-:customcss: ../../slides-base.css
+:imagesdir: images/
+
+//https://github.com/hakimel/reveal.js#theming
+:revealjs_theme: league
+:safe: unsafe
+:customcss: https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/slides-base.css
+
 :numbered:
 :toc: left
 :toc-title: Sumário
@@ -14,12 +22,12 @@
 
 ifdef::env-github[]
 //Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
-
 :caution-caption: :fire:
 :important-caption: :exclamation:
 :note-caption: :paperclip:
 :tip-caption: :bulb:
 :warning-caption: :warning:
+elsedef::[]
 endif::[]
 
 :chapter-label:
@@ -28,9 +36,6 @@ endif::[]
 
 //Transição para todos os slides // none/fade/slide/convex/concave/zoom
 //:revealjs_transition: 'zoom'
-
-//https://github.com/hakimel/reveal.js#theming
-:revealjs_theme: league
 
 = Builder Design Pattern
 
@@ -42,25 +47,31 @@ https://about.me/manoelcampos
 [transition=zoom]
 == Categoria
 
-Padrão de projeto criacional image:../../ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
+Padrão de projeto criacional image:https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/images/ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
+
+[.notes]
+--
+* tell anecdote
+* make a point
+--
 
 [transition=fade]
 == Definição
 
 include::README.adoc[tag=definicao1]
 
-image::../../design-patterns-gof.jpg[width=25%]
+image::https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/images/design-patterns-gof.jpg[width=25%]
 
 == Definição
 
 include::README.adoc[tag=definicao2]
 
-image::../../ucpp.jpg[]
+image::https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/images/ucpp.jpg[]
 
 [transition=fade]
 == Distinção do Termo
 
-image:../../dictionary.png[]
+image:dictionary.png[]
 
 [%step]
 - Builder = Construtor
@@ -85,7 +96,6 @@ include::README.adoc[tag=aplicabilidade3]
 
 [%step]
 include::README.adoc[tag=aplicabilidade4]
-
 
 [transition=zoom]
 == Modelagem do Builder
