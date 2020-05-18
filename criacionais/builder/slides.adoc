@@ -13,7 +13,6 @@
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 :customcss: slides-base.css
-:revealjs_plugins: slides-plugins.js
 
 :numbered:
 :toc: left
