@@ -20,5 +20,9 @@ provas
 
 node_modules/
 
+#Diretório do reveal.js.
+#Pode ser acessado a partir de uma URL.
+reveal.js-*
+
 #macOS Files
 .DS_Store
