@@ -1,4 +1,4 @@
-:imagesdir: ../../images/patterns/criacionais
+:imagesdir: images/
 :source-highlighter: highlightjs
 :numbered:
 :unsafe:
