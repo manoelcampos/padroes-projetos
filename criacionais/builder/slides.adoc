@@ -48,12 +48,6 @@ https://about.me/manoelcampos
 
 Padrão de projeto criacional image:https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/images/ice-cream-sandwich-machine.gif[title=https://twistedsifter.com, link=https://twistedsifter.com/category/angifs/page/6/]
 
-[.notes]
---
-* tell anecdote
-* make a point
---
-
 [transition=fade]
 == Definição
 

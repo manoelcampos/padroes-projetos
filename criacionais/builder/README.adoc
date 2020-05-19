@@ -14,7 +14,7 @@ endif::[]
 
 = Padrões de Projetos Criacionais
 
-image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.com, width=75%]
+image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.com]
 
 == Builder (Construtor)
 
