@@ -19903,13 +19903,30 @@
 															"height": 13,
 															"text": "+profundidade(profundidade: double): Builder",
 															"horizontalAlignment": 0
+														},
+														{
+															"_type": "UMLOperationView",
+															"_id": "AAAAAAFyKUk+qtugkUY=",
+															"_parent": {
+																"$ref": "AAAAAAFyI6TE1fmAEFM="
+															},
+															"model": {
+																"$ref": "AAAAAAFyKUk+f9uduXI="
+															},
+															"font": "Arial;13;0",
+															"left": 69,
+															"top": 688,
+															"width": 388.39404296875,
+															"height": 13,
+															"text": "+build(): Produto",
+															"horizontalAlignment": 0
 														}
 													],
 													"font": "Arial;13;0",
 													"left": 64,
 													"top": 443,
 													"width": 398.39404296875,
-													"height": 248
+													"height": 263
 												},
 												{
 													"_type": "UMLReceptionCompartmentView",
@@ -19949,7 +19966,7 @@
 											"left": 64,
 											"top": 408,
 											"width": 398.39404296875,
-											"height": 283,
+											"height": 298,
 											"autoResize": true,
 											"nameCompartment": {
 												"$ref": "AAAAAAFyI6TE1Pl6+MM="
@@ -20023,7 +20040,7 @@
 												"$ref": "AAAAAAFyI6k3cf0Sins="
 											},
 											"lineStyle": 1,
-											"points": "495:538;462:539"
+											"points": "495:540;462:543"
 										},
 										{
 											"_type": "UMLContainmentView",
@@ -20534,6 +20551,27 @@
 															},
 															"type": {
 																"$ref": "AAAAAAFyI6SnYfl0iB4="
+															},
+															"direction": "return"
+														}
+													]
+												},
+												{
+													"_type": "UMLOperation",
+													"_id": "AAAAAAFyKUk+f9uduXI=",
+													"_parent": {
+														"$ref": "AAAAAAFyI6SnYfl0iB4="
+													},
+													"name": "build",
+													"parameters": [
+														{
+															"_type": "UMLParameter",
+															"_id": "AAAAAAFyKUlTSNukW9Y=",
+															"_parent": {
+																"$ref": "AAAAAAFyKUk+f9uduXI="
+															},
+															"type": {
+																"$ref": "AAAAAAFyI6SJU/lKYtQ="
 															},
 															"direction": "return"
 														}
