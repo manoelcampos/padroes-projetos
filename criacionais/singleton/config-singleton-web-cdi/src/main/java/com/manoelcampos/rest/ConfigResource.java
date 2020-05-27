@@ -40,4 +40,8 @@ public class ConfigResource {
         return config;
     }
 
+    @PUT
+    public void updateConfig(Config newConfig) {
+        config = newConfig;
+    }
 }

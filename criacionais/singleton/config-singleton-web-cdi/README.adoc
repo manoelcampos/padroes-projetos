@@ -72,3 +72,4 @@ Desta forma, tal objeto será único para todos os usuários da aplicação.
 
 - https://quarkus.io/guides/config[Microprofile Config no Quarkus]
 - https://quarkus.io/guides/openapi-swaggerui[Documentação de APIs REST com Swagger (OpenAPI) no Quarkus]
+- http://weld.cdi-spec.org/documentation/#13[Diferenças entre anotações @Singleton e @ApplicationScoped do CDI]
