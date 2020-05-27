@@ -39,10 +39,41 @@ Para isto, acesse as preferências do NetBeans, depois a aba Java >> Maven e inf
 
 == Executar o Projeto
 
-Você pode iniciar o servidor com sua aplicação de diferentes maneiras:
+Você pode iniciar o servidor com sua aplicação de diferentes maneiras.
 
-- Usando o script mvnw incluído durante a criação do projeto: `./mvnw compile quarkus:dev`. O comando deve ser executado na raiz do projeto que rodar.
-- Ou simplesmente clicando no botão Play em IDEs como o NetBeans, pois foi incluído o plugin maven exec para executar o comando acima mais facilmente.
+IMPORTANT: Nos dois métodos apresentados abaixo, se você estiver usando Windows,
+deve trocar `mvnw` por `mvnw.cmd`.
+
+=== Usando o script mvnw
+
+O script `mvnw` é incluído durante a criação do projeto, assim, basta executar o comando abaixo na raiz do projeto:
+
+```bash
+./mvnw compile quarkus:dev
+```
+
+== Usando o maven-exec-plugin
+
+Você pode clicar no botão Play em IDEs como o NetBeans, pois foi incluído o plugin maven-exec para executar o comando acima mais facilmente.
+Caso você esteja criando o projeto do zero, o plugin maven-exec não será incluído
+e você deve incluí-lo dentro da tag `<plugins>` no arquivo pom.xml, como
+mostrado abaixo:
+
+```xml
+<plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>exec-maven-plugin</artifactId>
+  <version>1.6.0</version>
+  <configuration>
+    <executable>./mvnw</executable>
+    <arguments>
+      <argument>clean</argument>
+      <argument>compile</argument>
+      <argument>quarkus:dev</argument>
+    </arguments>
+  </configuration>
+</plugin>
+```
 
 ==== Atualizando o projeto sem reiniciar o servidor
 
