@@ -2,6 +2,7 @@
 :source-highlighter: highlightjs
 :numbered:
 :unsafe:
+:icons: font
 
 ifdef::env-github[]
 :outfilesuffix: .adoc
