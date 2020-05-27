@@ -32,7 +32,7 @@ endif::[]
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 
-= Padrões de Projetos: Singleton
+= Padrão de Projeto Singleton
 
 Prof. Manoel Campos https://about.me/manoelcampos
 
