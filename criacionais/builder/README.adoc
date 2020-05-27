@@ -21,7 +21,7 @@ image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.
 === Definição
 
 // tag::definicao1[]
-"Separa a construção de um objeto complexo da sua representação, de modo que o mesmo processo de construção possa criar diferentes representações." (GoF)
+📘"Separa a construção de um objeto complexo da sua representação, de modo que o mesmo processo de construção possa criar diferentes representações." (GoF)
 // end::definicao1[]
 
 Em outras palavras, separa o código utilizado para a instanciação de objetos complexos do código da classe de tal objeto. As representações são as instâncias da classe.

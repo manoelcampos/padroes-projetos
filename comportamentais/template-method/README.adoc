@@ -18,7 +18,7 @@ endif::[]
 
 === Definição
 
-"O padrão Template Method define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos para as subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>.
+📘"O padrão Template Method define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos para as subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>.
 
 === Aplicabilidade
 

@@ -21,7 +21,7 @@ https://youtu.be/45I9jX5uO9A[image:adapter-tomada.jpg[]]
 
 === Definição
 
-"O padrão adapter converte a interface de uma classe em outra interface que os clientes esperam. O adaptador permite que classes anteriormente incompatíveis possam trabalhar em conjunto". <<UCPP>>
+📘"O padrão adapter converte a interface de uma classe em outra interface que os clientes esperam. O adaptador permite que classes anteriormente incompatíveis possam trabalhar em conjunto". <<UCPP>>
 
 === Aplicabilidade
 

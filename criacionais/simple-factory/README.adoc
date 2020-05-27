@@ -21,7 +21,7 @@ IMPORTANT: https://www.youtube.com/playlist?list=PLyo0RUAM69UtO8Jjq71qgvRxcI2pTr
 
 === Definição
 
-Simple Factory permite encapsular a criação de objetos em uma classe que representa uma fábrica.
+📘Simple Factory permite encapsular a criação de objetos em uma classe que representa uma fábrica.
 Ela não é de fato um padrão de projeto, podendo ser definida como um modelo para a criação de objetos.
 
 === Aplicabilidade

@@ -18,7 +18,7 @@ endif::[]
 
 === Definição
 
-"O padrão Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. A estratégia deixa o algoritmo variar independentemente dos clientes que o utilizam" <<UCPP>>.
+📘"O padrão Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. A estratégia deixa o algoritmo variar independentemente dos clientes que o utilizam" <<UCPP>>.
 
 Em outras palavras, a partir de um conjunto de algoritmos, permite que classes possam trocar tais algoritmos por uma outra implementação, até mesmo em tempo de execução.
 
