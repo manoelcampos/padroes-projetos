@@ -16,7 +16,6 @@ _site
 
 aulas/
 provas
-*.html
 
 node_modules/
 
