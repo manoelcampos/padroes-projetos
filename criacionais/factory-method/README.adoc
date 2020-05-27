@@ -128,3 +128,8 @@ E já que estamos falando de JDK, a partir do JDK 10 é possível simplificar ai
 - `var listaNomes = List.of("Minha", "Lista", "de", "Strings")`
 - `var listaPares = List.of(2, 4, 6);`
 - `var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
+
+=== Mais detalhes:
+
+- https://docs.oracle.com/javase/9/docs/api/java/util/List.html[java.util.List]
+- https://docs.oracle.com/javase/9/docs/api/java/util/Map.html[java.util.Map]
