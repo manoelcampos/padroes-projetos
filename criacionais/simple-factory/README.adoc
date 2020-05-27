@@ -17,7 +17,6 @@ endif::[]
 
 IMPORTANT: https://www.youtube.com/playlist?list=PLyo0RUAM69UtO8Jjq71qgvRxcI2pTrB2m[Vídeo-aulas disponíveis aqui.]
 
-
 == Simple Factory (Fábrica Simples)
 
 === Definição
