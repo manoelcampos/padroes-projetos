@@ -18,7 +18,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Manoel Campos da Silva Filho
  */
-@Path("/Config")
+@Path("/config")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ConfigResource {
