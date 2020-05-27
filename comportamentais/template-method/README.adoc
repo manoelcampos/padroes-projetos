@@ -149,7 +149,7 @@ No entanto, como as partes do algoritmo que alteram foram isoladas nas operaçõ
 
 Padrões que possuem similaridades ou podem ser usados em conjunto:
 
-- Strategy
+- link:../strategy[Strategy]
 - Command
 
 == Onde o padrão é usado no JDK

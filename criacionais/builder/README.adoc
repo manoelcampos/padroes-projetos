@@ -125,7 +125,7 @@ Veja um projeto de exemplo que cria uma builder para uma classe `Paciente` link:
 
 Padrões que possuem similaridades ou podem ser usados em conjunto:
 
-- Factory Method
+- link:../factory-method[Factory Method]
 
 == Exercícios
 

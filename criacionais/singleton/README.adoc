@@ -99,7 +99,7 @@ conforme pode ser observado na Figura 1 acima.
 
 Padrões que possuem similaridades ou podem ser usados em conjunto:
 
-- Factory Method
+- link:../factory-method[Factory Method]
 
 == Onde o padrão é usado no JDK
 

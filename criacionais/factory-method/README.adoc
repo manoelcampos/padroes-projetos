@@ -109,8 +109,8 @@ image::no-factory-method-exportador.png[]
 
 Padrões que possuem similaridades ou podem ser usados em conjunto:
 
-- Simple Factory
-- Template Method
+- link:../simple-factory[Simple Factory]
+- link:../../comportamentais/template-method[Template Method]
 
 == Onde o padrão é usado no JDK
 

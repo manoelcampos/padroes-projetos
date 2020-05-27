@@ -142,7 +142,7 @@ O nome do método também deve ser definido adequadamente, como `newPizza()`, `n
 
 Padrões que possuem similaridades ou podem ser usados em conjunto:
 
-- Template Method
+- link:../../comportamentais/template-method[Template Method]
 
 == Onde o padrão é usado no JDK
 

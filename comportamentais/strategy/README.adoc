@@ -206,7 +206,7 @@ NOTE: Em linguagens distintas, a forma de implementar o padrão Strategy usando 
 
 Padrões que possuem similaridades ou podem ser usados em conjunto:
 
-- Template Method
+- link:../template-method[Template Method]
 
 == Onde o padrão é usado no JDK
 
