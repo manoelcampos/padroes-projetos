@@ -127,23 +127,6 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 - Factory Method
 
-== Onde o padrão é usado no JDK
-
-Em vários lugares nas versões mais atuais do JDK.
-O uso mais notável é na Java Collections Framework (JCF)
-a partir do JDK 9, por meio dos métodos `of()` que permitem criar listas e mapas de forma simples e direta,
-como os exemplos abaixo:
-
-- `List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings");`
-- `List<Integer> listaPares = List.of(2, 4, 6, 8, 10);`
-- `Map<String, Integer> mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
-
-E já que estamos falando de JDK, a partir do JDK 10 é possível simplificar ainda mais:
-
-- `var listaNomes = List.of("Minha", "Lista", "de", "Strings")`
-- `var listaPares = List.of(2, 4, 6);`
-- `var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);`
-
 == Exercícios
 
 Implemente uma classe `Produto` utilizando apenas um construtor sem parâmetros
