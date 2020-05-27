@@ -5,9 +5,5 @@
             <packagings>
                 <packaging>war</packaging>
             </packagings>
-            <goals>
-                <goal>jetty:run</goal>
-                
-            </goals>
         </action>
     </actions>

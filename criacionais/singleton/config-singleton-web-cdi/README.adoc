@@ -1,0 +1,74 @@
+:imagesdir: images
+:numbered:
+:icons: font
+
+ifdef::env-github[]
+//Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Objeto de Configuração Singleton com CDI no Quarkus (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/config-singleton-web-cdi[zip])
+
+Este projeto usa o framework de injeção de dependência CDI para implementar um objeto de configuração Singleton por meio de uma simples anotação `@ApplicationScoped`. Este é um projeto web desenvolvido com o framework http://quarkus.io[Quarkus]. CDI e Quarkus já foram tratados em detalhes no projeto link:https://github.com/manoelcampos/quarkus-cep-services[cep-service].
+
+== Requisitos
+
+== Requisitos
+
+- JDK 8 ou 11
+- Maven 3.6.3 ou superior
+
+Mesmo as versões mais atuais do NetBeans vêm com versões antigas do Maven que não irá funcionar.
+
+O maven pode ser instalado, por exemplo em distribuições Linux baseadas em Debian, com:
+
+[source,bash]
+----
+sudo apt-get install maven
+----
+
+No Windows, pode-se baixar um arquivo `apache-maven-x.x.x-bin.zip` em https://maven.apache.org/download.cgi. Você também pode configurar o https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux] e assim poderá baixar aplicações usando o mesmo comando Linux acima.
+
+No NetBeans então é possível indicar que deseja-se utilizar uma versão do Maven instalada no sistema, no lugar de usar a que vem com o NetBeans. 
+Para isto, acesse as preferências do NetBeans, depois a aba Java >> Maven e informe o caminho do comando "mvn" no campo "Maven Home".
+
+== Executar o Projeto
+
+Você pode iniciar o servidor com sua aplicação de diferentes maneiras:
+
+- Usando o script mvnw incluído durante a criação do projeto: `./mvnw compile quarkus:dev`. O comando deve ser executado na raiz do projeto que rodar.
+- Ou simplesmente clicando no botão Play em IDEs como o NetBeans, pois foi incluído o plugin maven exec para executar o comando acima mais facilmente.
+
+==== Atualizando o projeto sem reiniciar o servidor
+
+Bem, atualizar o projeto no servidor em execução e ver as alterações que você fez na sua aplicação é realmente complicado com o Quarkus: você precisa apenas salvar o projeto e boom: normalmente em menos de 1 segundo a aplicação estará rodando com as novas alterações 😱🚀😁.
+
+Não é à toa que o slogan do Quarkus é "Supersonic Subatomic Java".
+
+==== Acessando a aplicação
+
+Se você estiver habituado a usar servidores como o GlassFish no NetBeans,
+sabe que ao clicar no botão Play, o projeto é compilado e executado,
+abrindo o navegador automaticamente.
+Usando o Quarkus isso não ocorrerá.
+Você deve abrir o navegador você mesmo. Neste caso, a aplicação estará disponível
+em http://localhost:8080.
+Observe que não há um caminho adicional com o nome da aplicação no final da URL,
+pois a aplicação executa na raiz do servidor.
+
+== Detalhes dos Projetos
+
+Estamos utilizando o framework CDI da plataforma Java para injeção de dependências,
+neste caso para injetar um instância única (Singleton) de um objeto
+de configuração, usando a anotação `@ApplicationScoped`.
+Desta forma, tal objeto será único para todos os usuários da aplicação.
+
+== Referências
+
+- https://quarkus.io/guides/config[Microprofile Config no Quarkus]
+- https://quarkus.io/guides/openapi-swaggerui[Documentação de APIs REST com Swagger (OpenAPI) no Quarkus]

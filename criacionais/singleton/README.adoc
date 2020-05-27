@@ -24,7 +24,7 @@ image:lonely-2378396_1280.jpg[]
 === Definição
 
 // tag::definicao[]
-📘"Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela" [UCPP]
+📘"Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela." [UCPP]
 // end::definicao[]
 
 === Aplicabilidade
@@ -111,17 +111,6 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 == Aplicando o Padrão Singleton por meio do framework CDI
 
-Anteriormente foi apresentado um projeto link:https://github.com/manoelcampos/quarkus-cep-services[cep-service] que utiliza o framework de injeção de dependência CDI para permitir encapsular e centralizar a instanciação de implementações de serviços de busca de endereço a partir do CEP.
+Anteriormente foi apresentado o projeto link:openjfx-config-singleton[openjfx-config-singleton] que implementa um objeto de configuração Singleton para evitar que as configurações do sistema apareçam atualizadas em um lugar, enquanto estão desatualizadas em outro por conta da criação de múltiplos objetos de configuração. Este é um projeto Desktop utilizando JavaFX, onde foi feita a implementação manual do padrão Singleton.
 
-No link fornecido são mostradas duas versões do projeto:
-
-- uma onde definimos no código qual serviço de CEP será usado;
-- outra que utiliza dois serviços de CEP diferentes de forma alternada,
-  enviando consultas para um serviço, depois para outro.
-
-Qualquer uma das versões depende das necessidades do seu projeto.
-O projeto link:cep-service-singleton[cep-service-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/cep-service-singleton[zip]) disponibilizado aqui é como a primeira versão mencionada. No entanto, ele aplica o padrão Singleton por meio do framework CDI para que tenhamos uma única instância do serviço de CEP em toda a aplicação, independetemente de quantos usuários estiverem conectados a ela. Isto faz sentido pois as classes que implementam os serviços de CEP não armazenam nenhum atributo, logo, podemos usar uma instância única para toda a aplicação, consequentemente economizando memória.
-
-== Exercícios
-
-Implementar o padrão Singleton utilizando o framework CDI do Java para o projeto link:https://github.com/manoelcampos/quarkus-cep-services/tree/master/cep-service-default[cep-service-default].
+O projeto link:config-singleton-web-cdi[config-singleton-web-cdi] usa o framework de injeção de dependência CDI para implementar um Singleton por meio de uma simples anotação `@ApplicationScoped`. Este é um projeto web desenvolvido com o framework http://quarkus.io[Quarkus]. CDI e Quarkus já foram tratados em detalhes no projeto link:https://github.com/manoelcampos/quarkus-cep-services[cep-service].
