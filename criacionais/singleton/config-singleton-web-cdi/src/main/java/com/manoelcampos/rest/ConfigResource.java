@@ -42,6 +42,13 @@ public class ConfigResource {
 
     @PUT
     public void updateConfig(Config newConfig) {
-        config = newConfig;
+        /**
+         * Como o objeto config tem seu ciclo de vida controlado
+         * pelo CDI e este parâmetro newConfig não tem,
+         * não podemos simplismenter atribuir o último ao primeiro.
+         * Precisamos copiar os valores dos atributos de um para o outro.
+         */
+        config.setFormatoRelatorios(newConfig.getFormatoRelatorios());
+        config.setTipoGraficos(newConfig.getTipoGraficos());
     }
 }
