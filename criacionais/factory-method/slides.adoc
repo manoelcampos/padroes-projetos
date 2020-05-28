@@ -137,6 +137,38 @@ image::patterns/criacionais/no-simple-factory.png[width="50%"]
 .Usando uma fábrica
 image::patterns/criacionais/simple-factory-dip.png[width="50%"]
 
+== Onde o padrão é usado no JDK
+
+== JCF no JDK 9+
+[source, java]
+----
+List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings");
+----
+
+== JCF no JDK 9+
+[source, java]
+----
+List<Integer> listaPares = List.of(2, 4, 6, 8, 10);
+----
+
+== JCF no JDK 9+
+
+[source, java]
+----
+Map<String, Integer> mapaHabitantesCidade = 
+                        Map.of("Palmas", 217000, "Gurupi", 84000);
+----
+
+== Falando de JDK, pula pro JDK 10
+
+== !
+[source, java]
+----
+var listaNomes = List.of("Minha", "Lista", "de", "Strings");
+var listaPares = List.of(2, 4, 6);
+var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);
+----
+
 [transition=fade]
 == Material e Projetos no GitHub
 
