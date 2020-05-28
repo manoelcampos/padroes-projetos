@@ -18,8 +18,6 @@ Este projeto usa o framework de injeção de dependência CDI para implementar u
 
 == Requisitos
 
-== Requisitos
-
 - JDK 8 ou 11
 - Maven 3.6.3 ou superior
 
@@ -37,6 +35,8 @@ No Windows, pode-se baixar um arquivo `apache-maven-x.x.x-bin.zip` em https://ma
 No NetBeans então é possível indicar que deseja-se utilizar uma versão do Maven instalada no sistema, no lugar de usar a que vem com o NetBeans. 
 Para isto, acesse as preferências do NetBeans, depois a aba Java >> Maven e informe o caminho do comando "mvn" no campo "Maven Home".
 
+pass:[<a name="executar"></a>]
+
 == Executar o Projeto
 
 Você pode iniciar o servidor com sua aplicação de diferentes maneiras.
@@ -51,8 +51,6 @@ O script `mvnw` é incluído durante a criação do projeto, assim, basta execut
 ```bash
 ./mvnw compile quarkus:dev
 ```
-
-pass:[<a name="maven-exec-plugin" />]
 
 == Usando o maven-exec-plugin
 
