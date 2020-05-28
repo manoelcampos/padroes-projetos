@@ -52,6 +52,8 @@ O script `mvnw` é incluído durante a criação do projeto, assim, basta execut
 ./mvnw compile quarkus:dev
 ```
 
+pass:[<a name="maven-exec-plugin" />]
+
 == Usando o maven-exec-plugin
 
 Você pode clicar no botão Play em IDEs como o NetBeans, pois foi incluído o plugin maven-exec para executar o comando acima mais facilmente.
