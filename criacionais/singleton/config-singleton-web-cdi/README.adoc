@@ -41,18 +41,13 @@ pass:[<a name="executar"></a>]
 
 Você pode iniciar o servidor com sua aplicação de diferentes maneiras.
 
-IMPORTANT: Nos dois métodos apresentados abaixo, se você estiver usando Windows,
-deve trocar `mvnw` por `mvnw.cmd`.
-
-=== Usando o script mvnw
-
-O script `mvnw` é incluído durante a criação do projeto, assim, basta executar o comando abaixo na raiz do projeto:
+=== Usando Maven pela linha de comando
 
 ```bash
-./mvnw compile quarkus:dev
+mvn compile quarkus:dev
 ```
 
-== Usando o maven-exec-plugin
+=== Usando o maven-exec-plugin
 
 Você pode clicar no botão Play em IDEs como o NetBeans, pois foi incluído o plugin maven-exec para executar o comando acima mais facilmente.
 Caso você esteja criando o projeto do zero, o plugin maven-exec não será incluído
@@ -65,7 +60,7 @@ mostrado abaixo:
   <artifactId>exec-maven-plugin</artifactId>
   <version>1.6.0</version>
   <configuration>
-    <executable>./mvnw</executable>
+    <executable>mvn</executable>
     <arguments>
       <argument>clean</argument>
       <argument>compile</argument>
