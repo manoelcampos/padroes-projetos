@@ -67,7 +67,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
         <configuration>
-          <executable>./mvnw</executable>
+          <executable>mvn</executable>
           <arguments>
             <argument>clean</argument>
             <argument>compile</argument>
