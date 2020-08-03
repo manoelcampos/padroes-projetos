@@ -67,10 +67,13 @@ image::adapter-analogia-tomada.png[]
 image::adapter-analogia-varios.png[]
 
 
-
 === Exemplos
 
-- Geração de números verdadeiramente aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr
+Geração de números aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr.
+Tais serviços geram números verdadeiramente aleatórios usando, por exemplo, dados meteorológicos.
+No entanto, cada serviço implementa uma API diferente, com parâmetros e tipos de retorno distintos.
+Para trocar um serviço por outro em uma aplicação, é preciso alterar o código
+da aplicação por causa das diferenças na API.
 
 == Padrões Relacionados
 
@@ -78,7 +81,12 @@ image::adapter-analogia-varios.png[]
 
 == Onde o padrão é usado no JDK e outras bibliotecas
 
-O adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apache Log4J JUL Adapter] permite utilizar a biblioteca https://logging.apache.org/log4j/[Apache Log4J] com o mesmo código exigido pela biblioteca JUL (java.util.logging) do JDK. Assim, se seu projeto estava usando a biblioteca JUL e deseja trocar pela Log4J, basta utilizar tal Adapter e assim não precisará alterar o código existente.
+Bibliotecas para geração de logs em aplicações são é exemplo onde o Adapter e outros padrões são usados.
+Você pode nunca ter usado uma biblioteca destas em Java ou qualquer linguagem, mas pode ter certeza que
+precisará. Log é um recurso essencial em qualquer aplicação rodando em produção.
+
+A java.util.logging (JUL) é um dos casos onde uma biblioteca fornecida pelo JDK possui recursos limitados e outras surgiram justamente para resolver tais problemas, como a https://logging.apache.org/log4j/[Apache Log4J]. Existem algumas outras bibliotecas de log para Java, mas incompatíveis entre si. 
+Por esta causa, o adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apache Log4J JUL Adapter] permite utilizar a Log4J no lugar da JUL, sem precisar alterar o código da aplicação.
 
 == Exercícios
 
