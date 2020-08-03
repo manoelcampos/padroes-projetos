@@ -55,7 +55,7 @@ Um projeto de exemplo para o diagrama apresentado está disponível link:modelag
 - https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], pois separa as partes que mudam (os comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
 - https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. 
 - https://en.wikipedia.org/wiki/Liskov_substitution_principle[Liskov Substitution Principle (LSP)] pois podemos substituir um comportamento por qualquer implementação dele, de forma transparente, até mesmo em tempo de execução, sem que sejam necessárias alterações no código interno da classe que utiliza tais comportamentos.
-- https://en.wikipedia.org/wiki/Interface_segregation_principle[Interface Segregation Principle (ISP)], pois estamos definindo diferentes interfaces com multiplas implementações específicas, no lugar juntar estas diferentes implementações apenas nas classes que utilizam tais comportamentos.
+- https://en.wikipedia.org/wiki/Interface_segregation_principle[Interface Segregation Principle (ISP)], pois estamos definindo diferentes interfaces: uma para cada comportamento que pode ser implementado.
 
 === Exemplos
 
