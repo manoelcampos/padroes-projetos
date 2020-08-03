@@ -50,6 +50,11 @@ Observe que, por exemplo, um método como `metodo1()` na classe `AbcAdapter` vai
 
 Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
 
+Você pode entender melhor o diagrama da Figura 1 fazendo uma analogia com o adaptador de tomada como a Figura 2 abaixo.
+
+.Analogia da Modelagem do Padrão Adapter com um Adaptador de Tomada
+image::adapter-analogia-tomada.png[]
+
 === Princípios utilizados
 
 -
