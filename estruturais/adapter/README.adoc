@@ -57,7 +57,16 @@ image::adapter-analogia-tomada.png[]
 
 === Princípios utilizados
 
--
+- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois cada adaptador criado possui uma responsabilidade única: tornar uma classe a ser adaptada compatível com a interface alvo.
+- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], pois se uma nova classe precisar ser adaptada, basta criar um novo adaptador implementando a interface alvo. Não precisamos alterar nenhum código existente.
+- https://en.wikipedia.org/wiki/Liskov_substitution_principle[Liskov Substitution Principle (LSP)] pois em qualquer lugar que a interface alvo puder ser usada, podemos usar um adaptador pra qualquer uma das classes adaptadas. A Figura 3 mostra como o princípio se aplica.
+- https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)]: ao usar somente a interface alvo para declarar variáveis e não as classes adaptadas, passamos a depender de uma abstração e não de implementações. Com isto, os relacionamentos de dependência são invertidos: no lugar de o cliente depender de cada uma das implementações, ele depende apenas do tipo abstrato (a interface alvo). O cliente nem precisa saber da existência das classes concretas. Reveja a Figura 1 para entender o relacionamento de dependência.
+- https://tuhrig.de/programming-to-an-interface/[Programar para uma interface não uma implementação] (GoF): como o código cliente vai depender apenas da interface alvo, estaremos "programando para uma interface, não uma implementação".
+
+.Princípio LSP com o padrão Adapter: se tivermos um adaptador para cada um dos diferentes tipos de plug, podemos usar qualquer um deles com uma tomada específica.
+image::adapter-analogia-varios.png[]
+
+
 
 === Exemplos
 
