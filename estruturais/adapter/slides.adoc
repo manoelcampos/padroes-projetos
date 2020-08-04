@@ -1,0 +1,131 @@
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+:revealjs_slideNumber: true
+:source-highlighter: highlightjs
+:icons: font
+:allow-uri-read:
+:imagesdir: ../../images
+:stylesheet: ../../adoc-golo.css
+:customcss: ../../slides-base.css
+:numbered:
+:toc: left
+:toc-title: Sumário
+:toclevels: 5
+
+ifdef::env-github[]
+//Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:chapter-label:
+:listing-caption: Listagem
+:figure-caption: Figura
+
+//Transição para todos os slides // none/fade/slide/convex/concave/zoom
+//:revealjs_transition: 'zoom'
+
+//https://github.com/hakimel/reveal.js#theming
+:revealjs_theme: league
+
+= Padrão de Projetos Adapter 
+
+image::patterns/estruturais/adapter-tomada.png[]
+
+Prof. Manoel Campos https://about.me/manoelcampos
+
+[transition=zoom]
+== Categoria
+
+Padrão de projeto estrutural image:building-structure.jpg[]
+
+[transition=fade]
+== Definição
+
+include::README.adoc[tag=definicao]
+
+image:ucpp.jpg[size=contain]
+
+[transition=zoofadem]
+== Aplicabilidade
+
+Quando:
+
+[%step]
+- utiliza-se um determinado serviço web, framework ou biblioteca (componente) onde existem implementações incompatíveis destes e deseja-se ser capaz de trocar um componente por outro;
+- integração de componentes existentes com sistemas de outras empresas. Exemplos incluem sistemas de pagamento como https://m.pagseguro.uol.com.br/v2/guia-de-integracao/api-de-notificacoes.html?_rnt=dd#v2-item-servico-de-notificacoes[PagSeguro] e PayPal.
+
+
+[transition=zoom]
+== Modelagem do Adapter
+
+== !
+
+image::patterns/estruturais/adapter.png[background, size=contain]
+
+[transition=zoom]
+== Analogia com um Adaptador de Tomada
+
+== !
+
+image::patterns/estruturais/adapter-analogia-tomada.png[]
+
+[transition=zoom, background-opacity=0.4]
+== Princípios utilizados
+
+[%step]
+- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)]
+- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]
+- https://en.wikipedia.org/wiki/Liskov_substitution_principle[Liskov Substitution Principle (LSP)]
+- https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)]
+- https://tuhrig.de/programming-to-an-interface/[Programar para uma interface não uma implementação] (GoF)
+
+image::recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
+
+[transition=zoom]
+== Princípio LSP com o padrão Adapter: se tivermos um adaptador para cada um dos diferentes tipos de plug, podemos usar qualquer um deles com uma tomada específica.
+
+== !
+
+image::patterns/estruturais/adapter-analogia-varios.png[]
+
+[transition=zoom]
+== Porque não adere ao ISP?
+
+== !
+
+image::patterns/estruturais/adapter.png[background, size=contain]
+
+[transition=zoom]
+== Exemplo
+
+- Geração de números aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr.
+
+== Onde o padrão é usado no JDK
+
+- Geração de logs é exemplo onde o Adapter e outros padrões (como o Facade) são usados.
+
+=== Pensando em interfaces como adaptadores
+
+[%step]
+- Em um classe que implementa múltiplas interfaces, podemos imaginá-la como sendo um adaptador para todas estas interfaces. 
+- Java Collections Framework (JCF) - classes como ArrayList e LinkedList funcionam como adaptadores para a interface List. 
+- Internamente, estas classes podem ter métodos com nomes e assinaturas diferentes
+- ArrayList utiliza `elementData(index)` para acessar um elemento. LinkedList utiliza-se `node(index).item`.
+
+=== Pensando em interfaces como adaptadores
+
+[%step]
+- O método `public E get(int index)` de `List` padroniza o acesso aos elementos.
+- ArrayList e LinkedList implementam múltiplas interfaces: List -> Collection -> Iterable. 
+- Tal hierarquia nos permite usar um ArrayList como se fosse um objeto List, Collection ou Iterable.
+
+[transition=fade]
+== Material e Projetos no GitHub
+
+- https://git.io/JJKLy
+- Exercícios em Java na página do link acima.
