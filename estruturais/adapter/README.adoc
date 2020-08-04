@@ -18,17 +18,21 @@ endif::[]
 == Adapter (Adaptador)
 
 .https://youtu.be/45I9jX5uO9A
-https://youtu.be/45I9jX5uO9A[image:adapter-tomada.jpg[]]
+https://youtu.be/45I9jX5uO9A[image:adapter-tomada.png[]]
 
 === Definição
 
+// tag::definicao[]
 📘"O padrão adapter converte a interface de uma classe em outra interface que os clientes esperam. O adaptador permite que classes anteriormente incompatíveis possam trabalhar em conjunto". <<UCPP>>
+// end::definicao[]
 
 === Aplicabilidade
 
-Um dos casos onde o adapter é amplamente aplicado é quando utiliza-se um determinado serviço web ou biblioteca onde existem diferentes implementações destes, cada uma funcionando de uma forma diferente. Logo, o código necessário para usar um(a) determinado(a) serviço/biblioteca/framework seria diferente de outro. Normalmente vão existir vários métodos com nomes e parâmetros diferentes (assinaturas). Assim, trocar tal serviço/biblioteca/framework por outro(a) pode ser um trabalho complexo. 
+Um dos casos onde o adapter é amplamente aplicado é quando utiliza-se um determinado serviço web, framework ou biblioteca (que chamaremos de componente) onde existem diferentes implementações destes, cada uma funcionando de uma forma diferente. Logo, o código necessário para usar um determinado componente seria diferente de outro. Normalmente vão existir vários métodos com nomes e parâmetros diferentes (assinaturas). Assim, trocar tal componente por outro pode ser um trabalho complexo. 
 
-Um adapter neste caso pode fornecer uma interface padrão a ser utilizada publicamente, encapsulando as diferenças entre um(a) serviço/biblioteca/framework e outro(a).
+Um adapter neste caso pode fornecer uma interface padrão a ser utilizada publicamente, encapsulando as diferenças entre as diferentes implementações dos componentes e permitindo a substituição de um componente por outro.
+
+Você também pode precisar fornecer um componente existente para ser utilizado por uma outra empresa, mas seu componente tem uma interface pública diferente do que tal empresa exige. Isto ocorre por exemplo, em sistemas de pagamento online disponibilizados por diversas empresas. Para que o seu sistema seja notificado se um pagamento foi confirmado, ele precisa fornecer um serviço com uma determinada interface. Assim, o sistema de pagamento interage com tal interface para notificar o seu sistema da confirmação do pagamento de um cliente. Alguns exemplos incluem o serviço do https://m.pagseguro.uol.com.br/v2/guia-de-integracao/api-de-notificacoes.html?_rnt=dd#v2-item-servico-de-notificacoes[PagSeguro] e PayPal.
 
 === Modelagem do Padrão
 
@@ -66,7 +70,6 @@ image::adapter-analogia-tomada.png[]
 .Princípio LSP com o padrão Adapter: se tivermos um adaptador para cada um dos diferentes tipos de plug, podemos usar qualquer um deles com uma tomada específica.
 image::adapter-analogia-varios.png[]
 
-
 === Exemplos
 
 Geração de números aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr.
@@ -81,7 +84,7 @@ da aplicação por causa das diferenças na API.
 
 == Onde o padrão é usado no JDK e outras bibliotecas
 
-Bibliotecas para geração de logs em aplicações são é exemplo onde o Adapter e outros padrões são usados.
+Bibliotecas para geração de logs em aplicações são um exemplo onde o Adapter e outros padrões (como o Facade) são usados.
 Você pode nunca ter usado uma biblioteca destas em Java ou qualquer linguagem, mas pode ter certeza que
 precisará. Log é um recurso essencial em qualquer aplicação rodando em produção.
 
@@ -137,10 +140,10 @@ que apenas usa recursos da biblioteca https://github.com/FasterXML/jackson[Jacks
 
 Em um classe que implementa múltiplas interfaces, podemos pensar na classe como sendo um adaptador para todas estas interfaces. Apesar de nem sempre o padrão Adapter está sendo de fato implementado nestes casos, ao pensar assim, podemos ter alguns benefícios.
 
-Na Java Collections Framework (JCF), classes como ArrayList e LinkedList funcionam como adaptadores para a interface List, pois alguns métodos têm assinaturas diferente uns dos outros. 
-Na classe ArrayList, utiliza-se `elementData(index)` para acessar um elemento 
+Na Java Collections Framework (JCF), classes como ArrayList e LinkedList funcionam como adaptadores para a interface List. Assim, no lugar de declarar os tipos concretos, usamos a interface List no lugar. Assim, em qualquer lugar que for exigido uma List, podemos passar um "adaptador" como ArrayList ou LinkedList. Internamente, estas classes podem ter métodos com nomes e assinaturas diferentes, mas como elas implementam os métodos de List, as diferenças internas são encapsuladas.
+Por exemplo, na classe ArrayList utiliza-se `elementData(index)` para acessar um elemento 
 em uma determinada posição. Na classe LinkedList utiliza-se `node(index).item`.
-Mesmo as duas classes tendo sido implementadas em conjunto, elas representam estruturas
+Mesmo as duas classes fazerem parte da mesma framework (a JCF), elas representam estruturas
 de dados muito diferentes. Para tornar seu uso uniforme para nós desenvolvedores, 
 os métodos citados não são públicos. Temos o `public E get(int index)` em tais classes,
 que é herdado da interface `List`. Tal método padroniza o acesso aos elementos.
