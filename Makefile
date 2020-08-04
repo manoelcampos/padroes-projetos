@@ -1,3 +1,6 @@
 install:
 	@#Instala ferramentas necessárias
-	gem install asciidoctor asciidoctor-pdf asciidoctor-revealjs
+	brew install asciidoctor 
+	#É preciso adicionar $HOME/.gem/ruby/VERSAO/bin ao path
+	gem install asciidoctor-pdf asciidoctor-revealjs --user-install
+
