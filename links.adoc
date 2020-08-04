@@ -15,3 +15,8 @@
 - https://elmland.blog/2018/09/07/cdi-simple-factory-pattern-annotationliteral/[CDI Simple Factory]
 - https://dzone.com/articles/cdi-and-the-produces-annotation-for-factory[CDI Factory with @Produces]
 - http://www.thedevpiece.com/cdi-polymorphism-and-the-factory-pattern/[CDI, Polymorphism and The Factory Pattern]
+
+
+== Geral
+
+- https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries
