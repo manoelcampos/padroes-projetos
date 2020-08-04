@@ -82,7 +82,7 @@ da aplicação por causa das diferenças na API.
 
 - Decorator
 
-== Onde o padrão é usado no JDK e outras bibliotecas
+== Onde o padrão é usado no JDK e outros lugares
 
 No JDK, apesar de não estar explítico pelo nome, temos adapters implementados como métodos. Exemplos incluem: 
 
