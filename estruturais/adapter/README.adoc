@@ -59,6 +59,17 @@ Você pode entender melhor o diagrama da Figura 1 fazendo uma analogia com o ada
 .Analogia da Modelagem do Padrão Adapter com um Adaptador de Tomada
 image::adapter-analogia-tomada.png[]
 
+=== Exemplos Práticos
+
+.Modelagem fictícia de adaptadores para sistemas de pagamento online
+image::sistemas-pagamento-adapters.png[]
+
+A geração de números aleatórios utilizando serviços web como http://random.org e http://random.irb.hr também é outro exemplo onde adapters podem ser criados.
+Tais serviços geram números verdadeiramente aleatórios usando, por exemplo, dados meteorológicos.
+No entanto, cada serviço implementa uma API diferente, com parâmetros e tipos de retorno distintos.
+Para trocar um serviço por outro em uma aplicação, é preciso alterar o código
+da aplicação por causa das diferenças na API.
+
 === Princípios utilizados
 
 - https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois cada adaptador criado possui uma responsabilidade única: tornar uma classe a ser adaptada compatível com a interface alvo.
@@ -69,14 +80,6 @@ image::adapter-analogia-tomada.png[]
 
 .Princípio LSP com o padrão Adapter: se tivermos um adaptador para cada um dos diferentes tipos de plug, podemos usar qualquer um deles com uma tomada específica.
 image::adapter-analogia-varios.png[]
-
-=== Exemplos
-
-Geração de números aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr.
-Tais serviços geram números verdadeiramente aleatórios usando, por exemplo, dados meteorológicos.
-No entanto, cada serviço implementa uma API diferente, com parâmetros e tipos de retorno distintos.
-Para trocar um serviço por outro em uma aplicação, é preciso alterar o código
-da aplicação por causa das diferenças na API.
 
 == Padrões Relacionados
 

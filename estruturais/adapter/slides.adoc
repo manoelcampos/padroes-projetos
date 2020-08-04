@@ -74,6 +74,18 @@ image::patterns/estruturais/adapter.png[background, size=contain]
 
 image::patterns/estruturais/adapter-analogia-tomada.png[]
 
+[transition=zoom]
+== Exemplo: Modelagem fictícia de adaptadores para sistemas de pagamento online
+
+== !
+image::patterns/estruturais/sistemas-pagamento-adapters.png[]
+
+[transition=zoom]
+== Geração de números verdadeiramente aleatórios
+
+-  Implementação de adapters para serviços web como http://random.org e http://random.irb.hr
+
+
 [transition=zoom, background-opacity=0.4]
 == Princípios utilizados
 
@@ -94,20 +106,26 @@ image::recommendations.jpg[background, size=contain, text=https://www.smart-ener
 image::patterns/estruturais/adapter-analogia-varios.png[]
 
 [transition=zoom]
-== Porque não adere ao ISP?
+== Porque não adere ao Interface Segregation Principle (ISP)? Vamos rever a modelagem...
 
 == !
 
 image::patterns/estruturais/adapter.png[background, size=contain]
 
-[transition=zoom]
-== Exemplo
-
-- Geração de números aleatórios utilizando serviços web como o http://random.org e http://random.irb.hr.
-
 == Onde o padrão é usado no JDK
 
+Adapters não explíticos implementados como métodos: 
+
+[%step]
+- `java.util.Arrays#asList()`: retorna uma nova instância de um adaptador de array para List.
+- `java.util.Collections#list()`: returna uma nova instância de um adaptador de coleção (conjuntos: Set, filas: Queue, etc), para List.
+- https://docs.oracle.com/javase/8/javafx/api/javafx/beans/property/adapter/package-summary.html[um pacote inteiro de adapters para apps Desktop com JavaFX]
+
+== Onde o padrão é usado em outros lugares
+
+[%step]
 - Geração de logs é exemplo onde o Adapter e outros padrões (como o Facade) são usados.
+- https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apache Log4J JUL Adapter]: usar https://logging.apache.org/log4j/[Apache Log4J] como um adaptador para java.util.logging (JUL).
 
 === Pensando em interfaces como adaptadores
 
