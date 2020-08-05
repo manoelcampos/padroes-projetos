@@ -17,8 +17,11 @@ endif::[]
 
 == Adapter (Adaptador)
 
+IMPORTANT: https://youtu.be/G4Objgc6zxM[Vídeo-aula sobre o padrão.]
+
 .https://youtu.be/45I9jX5uO9A
 https://youtu.be/45I9jX5uO9A[image:adapter-tomada.png[]]
+
 
 === Definição
 

@@ -15,6 +15,8 @@ endif::[]
 
 = Padrões de Projetos Criacionais
 
+IMPORTANT: https://www.youtube.com/watch?v=6I5rGX3k_J4&list=PLyo0RUAM69UtO8Jjq71qgvRxcI2pTrB2m&index=8&t=0s[Vídeo-aula sobre o padrão.]
+
 == Factory Method (Método Fábrica)
 
 === Definição

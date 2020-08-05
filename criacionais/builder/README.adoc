@@ -15,6 +15,8 @@ endif::[]
 
 = Padrões de Projetos Criacionais
 
+IMPORTANT: https://www.youtube.com/watch?v=l-ouMkReapo&list=PLyo0RUAM69UtO8Jjq71qgvRxcI2pTrB2m&index=11[Vídeo-aula sobre o padrão.]
+
 image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.com]
 
 == Builder (Construtor)
