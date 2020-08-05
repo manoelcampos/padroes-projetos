@@ -85,25 +85,27 @@ image::patterns/estruturais/sistemas-pagamento-adapters.png[]
 
 -  Implementação de adapters para serviços web como http://random.org e http://random.irb.hr
 
-
 [transition=zoom, background-opacity=0.4]
 == Princípios utilizados
 
 [%step]
 - https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)]
 - https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]
-- https://en.wikipedia.org/wiki/Liskov_substitution_principle[Liskov Substitution Principle (LSP)]
+
+[transition=zoom]
+== !
+
+Liskov Substitution Principle (LSP) image:patterns/estruturais/adapter-analogia-varios.png[]
+
+[background-opacity=0.4]
+== Princípios utilizados
+
+[%step]
 - https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)]
 - https://tuhrig.de/programming-to-an-interface/[Programar para uma interface não uma implementação] (GoF)
 
 image::recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
 
-[transition=zoom]
-== Princípio LSP com o padrão Adapter: se tivermos um adaptador para cada um dos diferentes tipos de plug, podemos usar qualquer um deles com uma tomada específica.
-
-== !
-
-image::patterns/estruturais/adapter-analogia-varios.png[]
 
 [transition=zoom]
 == Porque não adere ao Interface Segregation Principle (ISP)? Vamos rever a modelagem...
@@ -114,12 +116,11 @@ image::patterns/estruturais/adapter.png[background, size=contain]
 
 == Onde o padrão é usado no JDK
 
-Adapters não explíticos implementados como métodos: 
+Adapters não explícitos implementados como métodos: 
 
 [%step]
 - `java.util.Arrays#asList()`: retorna uma nova instância de um adaptador de array para List.
 - `java.util.Collections#list()`: returna uma nova instância de um adaptador de coleção (conjuntos: Set, filas: Queue, etc), para List.
-- https://docs.oracle.com/javase/8/javafx/api/javafx/beans/property/adapter/package-summary.html[um pacote inteiro de adapters para apps Desktop com JavaFX]
 
 == Onde o padrão é usado em outros lugares
 
