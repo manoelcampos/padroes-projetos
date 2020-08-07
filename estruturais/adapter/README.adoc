@@ -178,4 +178,4 @@ Pense em como podemos criar 3 diferentes versões deste método para:
 2. impedir que a lista seja modificada (por exemplo, pela remoção de elementos)
 3. imprimir qualquer tipo de coleção (ArrayList, LinkedList, HashSet, TreeSet, etc)
 
-TIP: Analise a árvore hierarquica dos tipos mencionados e quais métodos públicos eles fornecem para resolver os 3 problemas mencionados. Você começar analisando a hierarquia da classe https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html[ArrayList em sua documentação].
+TIP: Analise a árvore hierarquica dos tipos mencionados e quais métodos públicos eles fornecem para resolver os 3 problemas acima. Você começar analisando a hierarquia da classe https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html[ArrayList em sua documentação].
