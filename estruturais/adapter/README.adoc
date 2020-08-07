@@ -107,11 +107,7 @@ Por esta causa, o adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul
 
 === Cotações de Empresas da Bolsa de Valores
 
-A partir do projeto base link:cotacao-bolsa-valores[cotacao-bolsa-valores], 
-que realiza a cotação de ações de empresas da bolsa de valores, implemente as classes
-Adapter para padronizar a interface de acesso a tais serviços.
-
-No projeto disponibilizado, a classe `Principal` é na nossa classe `Cliente` (como apresentado na Figura 1): é ela quem usa os adaptadores. Analisando o novo código da classe principal, que outro padrão poderíamos aplicar em seguida?
+Veja o projeto base e informações em link:cotacao-bolsa-valores[cotacao-bolsa-valores].
 
 === Adaptando a aplicação de consulta de CEP (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter[zip])
 
