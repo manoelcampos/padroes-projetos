@@ -1,0 +1,24 @@
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+:icons: font
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Projeto Base que obtem a cotação de empresas da bolsa de valores
+
+O projeto utiliza 3 serviços diferentes: Yahoo Finance, AlphaVantage e Quandl.
+São utilizas bibliotecas existentes para fazer acesso a estes serviços
+e o código disponibilizado mostra como usar cada uma destas bibliotecas.
+
+Mas como observará, a forma de utilizar cada uma é totalmente diferente da outra.
+A partir deste código, altere o projeto criando 3 adaptadores: um pra cada uma
+das bibiliotecas dos serviços mencionados.
+Com isto, será possível trocar um serviço pelo outro sem alterar o código do projeto.
