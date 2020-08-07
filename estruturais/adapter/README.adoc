@@ -109,9 +109,9 @@ Por esta causa, o adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul
 
 Veja o projeto base e informações em link:cotacao-bolsa-valores[cotacao-bolsa-valores].
 
-=== Adaptando a aplicação de consulta de CEP (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter[zip])
+=== Adaptando a aplicação de consulta de CEP (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/quarkus-cep-services/tree/master/cep-service-producer[zip])
 
-Voltando ao link:../../criacionais/cep-service/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
+Voltando ao https://github.com/manoelcampos/quarkus-cep-services/tree/master/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
 
 Como o problema aqui é referente ao formato dos dados, precisamos apena adapter os dados para um formato comum.
 Assim, a implementação não precisa seguir a modelagem apresentada na Figura 1 acima.
