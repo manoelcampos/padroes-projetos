@@ -2,6 +2,7 @@
 :numbered:
 :unsafe:
 :icons: font
+:imagesdir: ../images/
 
 ifdef::env-github[]
 :outfilesuffix: .adoc
@@ -14,6 +15,8 @@ endif::[]
 
 = Padrões de Projetos Estruturais
 
-image::../images/building-structure.jpg[width=300]
+image::building-structure.jpg[width=300]
 
 - link:adapter[Adapter]
+
+ifndef::env-github[image:back.png[alt=Voltar, link=../]]

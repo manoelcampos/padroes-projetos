@@ -2,6 +2,7 @@
 :numbered:
 :unsafe:
 :icons: font
+:imagesdir: ../images/
 
 ifdef::env-github[]
 :outfilesuffix: .adoc
@@ -14,7 +15,9 @@ endif::[]
 
 = Padrões de Projetos Comportamentais
 
-image::../images/behaviour.gif[width=300]
+image::behaviour.gif[width=300]
 
 - link:strategy[Strategy]
 - link:template-method[Template Method]
+
+ifndef::env-github[image:back.png[alt=Voltar, link=../]]
