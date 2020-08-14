@@ -14,6 +14,8 @@ endif::[]
 
 = Padrões de Projetos Criacionais
 
+image::../images/ice-cream-sandwich-machine.gif[width=300]
+
 - link:simple-factory[Simple Factory (Fábrica Simples)]
 - link:factory-method[Factory Method (Método Fábrica)]
 - https://github.com/manoelcampos/quarkus-cep-services[Cep Service: consumo de serviços de CEP utilizando injeção de dependências com framework CDI]

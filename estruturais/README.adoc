@@ -14,4 +14,6 @@ endif::[]
 
 = Padrões de Projetos Estruturais
 
+image::../images/building-structure.jpg[width=300]
+
 - link:adapter[Adapter]

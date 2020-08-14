@@ -14,5 +14,7 @@ endif::[]
 
 = Padrões de Projetos Comportamentais
 
+image::../images/behaviour.gif[width=300]
+
 - link:strategy[Strategy]
 - link:template-method[Template Method]
