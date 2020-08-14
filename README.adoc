@@ -19,6 +19,8 @@ Os diagramas dos diferentes padrões estão todos disponíveis no arquivo link:d
 Utilize o http://staruml.io[StarUML 3+] para abrir o arquivo.
 endif::[]
 
+Uma apresentação sobre como chegamos aos padrões de projetos e a importância deles pode ser link:padroes-projetos.pptx[acessada aqui].
+
 == Categorias de Padrões
 
 - link:comportamentais[Padrões Comportamentais]
@@ -27,7 +29,8 @@ endif::[]
 
 == Exercícios
 
-Acesse o link:exercicios[link aqui].
+Na página de cada padrão normalmente há alguns exercícios,
+mas uma lista adicional está link:exercicios[disponível aqui].
 
 == Material Complementar
 
