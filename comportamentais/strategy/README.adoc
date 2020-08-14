@@ -128,9 +128,9 @@ No entanto, tal implementação tem algumas características que podem ser um pr
 
 image:no-strategy-class-diagram.png[]
 
-=== Como não implementar uma solução para um problema
+=== Como **NÃO** implementar uma solução para um problema
 
-Uma solução sem utilizar o padrão Strategy normalmente é implementada por meio de uma única classe, a qual chamaremos de `NaoEstrategista`. Não será mostrado nem ao menos um diagrama, pois a solução seria composta de fato apenas por esta classe. Ela então teria métodos como `T executarComportamentoA()`. Todas as implementações deste "Comportamento A" seriam incluídas no método citado.
+Se o padrão não for aplicado nem a solução com herança acima, uma outra solução normalmente é implementada por meio de uma única classe. Não será mostrado nem mesmo um diagrama, pois a solução seria composta de fato apenas por uma classe. Ela então teria métodos como `T executarComportamentoA()`. Todas as implementações deste "Comportamento A" seriam incluídas no método citado.
 
 Para o exemplo do retorno de boletos bancários, isto significa que tal método seria algo como:
 
@@ -147,7 +147,8 @@ public void processar(String nomeArquivo){
 ----
 
 Tal código é extremamente mais simples, tem uma única classe e tudo é feito em um único método.
-Apesar de parecer muito melhor por simplificar as coisas e dar a impressão que estamos usando o princípio https://pt.wikipedia.org/wiki/Princípio_KISS[KISS], não chamaria esta solução de simples, mas simplista e ingênua. Soluções simplistas normalmente vão lhe trazer dores de cabeça para manutenção do software.
+Apesar de parecer muito melhor por simplificar as coisas e dar a impressão que estamos usando o princípio https://pt.wikipedia.org/wiki/Princípio_KISS[KISS], não chamaria esta solução de simples, mas simplista e ingênua. **Soluções simplistas normalmente vão lhe trazer dores de cabeça para manutenção do software**.
+Por isto, esta "solução" *é totalmente não recomendada*.
 
 Considerando que podemos ter diferentes formatos de arquivos para bancos distintos e que precisamos processar arquivos de vários bancos, esta solução apresenta alguns problemas. O método `processar`:
 
