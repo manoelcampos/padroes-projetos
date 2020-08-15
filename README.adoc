@@ -34,4 +34,4 @@ mas uma lista adicional está link:exercicios[disponível aqui].
 
 == Material Complementar
 
-Uma lista de materais complementares está disponível na https://github.com/manoelcampos/padroes-projetos/wiki[Wiki].
+Links para materais complementares estão disponíveis na https://github.com/manoelcampos/padroes-projetos/wiki[Wiki].
