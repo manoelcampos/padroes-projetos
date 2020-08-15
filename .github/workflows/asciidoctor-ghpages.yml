@@ -21,4 +21,6 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: asciidoctor-ghpages
-      uses: manoelcampos/asciidoctor-ghpages-action@v1.0.0
+      uses: manoelcampos/asciidoctor-ghpages-action@v1.1.0
+      with:
+        asciidoctor_params: -d book 
