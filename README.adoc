@@ -7,7 +7,7 @@
 
 = Padrões de Projeto em Java
 
-ifdef::env-github[image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghpages/badge.svg[GitHub Pages]]
+ifdef::env-github[image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghpages/badge.svg[GitHub Pages,link=http://manoelcampos.com/padroes-projetos/]]
 
 ifdef::env-github[]
 :outfilesuffix: .adoc
