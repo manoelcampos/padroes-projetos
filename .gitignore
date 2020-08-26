@@ -26,3 +26,6 @@ slides.html
 
 #macOS Files
 .DS_Store
+
+#Moodle Backup
+*.mbz
