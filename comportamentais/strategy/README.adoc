@@ -128,7 +128,7 @@ No entanto, tal implementação tem algumas características que podem ser um pr
 
 image:no-strategy-class-diagram.png[]
 
-=== Como **NÃO** implementar uma solução para um problema
+== Como **NÃO** implementar uma solução para um problema
 
 Se o padrão não for aplicado nem a solução com herança acima, uma outra solução normalmente é implementada por meio de uma única classe. Não será mostrado nem mesmo um diagrama, pois a solução seria composta de fato apenas por uma classe. Ela então teria métodos como `T executarComportamentoA()`. Todas as implementações deste "Comportamento A" seriam incluídas no método citado.
 
@@ -161,7 +161,7 @@ Por exemplo, se em um lugar do sistema você precisa processar os arquivos e inc
 O problema surge quando você precisar incluir um novo banco e tiver que incluir um novo _if_ em cada um desses locais.
 Você pode simplesmente esquecer de adicionar tal _if_ em todos os locais necessários e o recurso funcionar em parte do sistema e em outras partes não.
 
-=== Modelagem do Padrão utilizando Programação Funcional
+== Modelagem do Padrão utilizando Programação Funcional
 
 Observando o diagrama base para a implementação do padrão Strategy, pode-se perceber que são criadas muitas classes e interfaces. As classes implementando essas interfaces não possuem atributos e têm apenas um único método que representa a implementação da estratégia em si.
 
@@ -243,7 +243,7 @@ Quais os problemas que tal implementação traria?
 === Ordenação de Listas
 
 Ordenar uma lista de estudantes utilizando programação funcional no Java 8+.
-O projeto disponível link:ordenar-lista-base[aqui] ((link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/ordenar-lista-base[zip])) pode ser usado como base, pois ele gera uma lista de estudantes aleatoriamente.
+O projeto disponível link:ordenar-lista-base[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/strategy/ordenar-lista-base[zip]) pode ser usado como base, pois ele gera uma lista de estudantes aleatoriamente.
 
 === Diferenças da implementação puramente OO vs funcional
 
