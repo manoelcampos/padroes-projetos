@@ -46,6 +46,8 @@ Um projeto de exemplo para o diagrama apresentado está disponível link:modelag
 
 === Exemplos
 
+pass:[<a name="boleto"></a>]
+
 ==== Leitura de Retorno de Boletos
 
 Anteriormente aplicamos o padrão link:../strategy[Strategy] para implementar a leitura de retorno de boletos bancários.
@@ -54,6 +56,8 @@ muita duplicação de código. Neste caso, podemos adicionalmente aplicar o padr
 para o algoritmo de leitura de arquivos de retorno, isolando as partes que alteram em métodos nas subclasses.
 
 O código fonte do projeto convencional para leitura de arquivos de retorno está disponível link:retorno-boleto-template[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/template-method/retorno-boleto-template[zip]). Tente primeiro fazer sua implementação a partir da leitura do diagrama, para depois analisar o código disponibilizado.
+
+pass:[<a name="functional"></a>]
 
 === Modelagem utilizando Programação Funcional
 
