@@ -117,6 +117,8 @@ Para resolver isso, podemos criar uma classe que tenha uma implementação vazia
 Se a classe estrategista é obrigada a ter um determinado comportamento,
 para evitar `NullPointerException`, podemos não incluir um construtor sem parâmetros e inclui um que exija uma implementação de estratégia a ser usada.
 
+pass:[<a name="no-strategy"></a>]
+
 == Modelagem convencional sem o padrão Strategy
 
 A modelagem convencional de diferentes comportamentos sem a aplicação do padrão Strategy requer o uso de herança para os diferentes comportamentos e é visualmente mais simples.
@@ -160,6 +162,8 @@ O problema da violação do OCP é o mais problemático aqui. O uso de _if's_ (o
 Por exemplo, se em um lugar do sistema você precisa processar os arquivos e incluir os dados em um banco de dados e em outro você precisa processar e gerar PDFs com comprovantes de pagamentos ou enviar emails de notificação, em cada um desses locais você precisará deste bloco de _if's_.
 O problema surge quando você precisar incluir um novo banco e tiver que incluir um novo _if_ em cada um desses locais.
 Você pode simplesmente esquecer de adicionar tal _if_ em todos os locais necessários e o recurso funcionar em parte do sistema e em outras partes não.
+
+pass:[<a name="functional"></a>]
 
 == Modelagem do Padrão utilizando Programação Funcional
 
