@@ -69,7 +69,7 @@ Um aplicação na empresa recebedora dos boletos deve ler tais arquivos para ext
 e normalmente gravar em um banco de dados. Existem diferentes formatos para tais arquivos
 e cada banco pode utilizar um formato diferente. Atualmente existem inúmeros projetos em diferentes linguagens para fazer a leitura de tais arquivos, /retorno-boletophp[como este]. Vamos implementar um solução simplificada aqui apenas para efeitos didáticos.
 
-NOTE: Apesar de atualmente termos formatos de arquivos mais utilizados como JSON e XML, formatos como o mencionado ainda são bastante utilizados, principalmente no meio acadêmico, por serem simplista. Um outro exemplo de tais formatos são os arquivos https://pt.wikipedia.org/wiki/Comma-separated_values[CSV]. Mas em aplicações Web e mobile, o mais comum é o uso de JSON e XML.
+NOTE: Apesar de atualmente termos formatos de arquivos mais utilizados como JSON e XML, formatos como o mencionado ainda são bastante utilizados, principalmente no meio acadêmico, por serem simples. Um outro exemplo de tais formatos são os arquivos https://pt.wikipedia.org/wiki/Comma-separated_values[CSV]. Mas em aplicações Web e mobile, o mais comum é o uso de JSON e XML.
 
 Para este exemplo, vamos considerar que o Banco do Brasil usa um tipo de arquivo onde cada linha com as informações sobre o pagamento de um boleto contém os seguintes campos, separados por ponto-e-vírgula:
 
