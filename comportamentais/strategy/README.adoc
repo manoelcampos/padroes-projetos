@@ -64,9 +64,9 @@ Um projeto de exemplo para o diagrama apresentado está disponível link:modelag
 
 === Exemplos
 
-==== Leitura de arquivos de retorno de boletos bancários.
-
 pass:[<a name="boleto"></a>]
+
+==== Leitura de arquivos de retorno de boletos bancários.
 
 Arquivos de retorno são enviados pelos bancos às empresas, fornecendo uma lista de boletos
 pagos por clientes, para que tais empresas possam registrar o pagamento desses boletos
