@@ -71,8 +71,8 @@ image::../../images/recommendations.jpg[background, size=contain, text=https://w
 
 [%step]
 - Favorecer composição no lugar de herança
-- Baixa acoplamento
-- Programar para uma "interface" não uma implementação] (GoF)
+- Baixo acoplamento
+- Programar para uma "interface" não uma implementação (GoF)
 
 == !
 
