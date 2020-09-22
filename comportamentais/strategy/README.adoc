@@ -19,7 +19,9 @@ endif::[]
 
 === Definição
 
+// tag::definicao[]
 📘"O padrão Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. A estratégia deixa o algoritmo variar independentemente dos clientes que o utilizam" <<UCPP>>.
+// end::definicao[]
 
 Em outras palavras, a partir de um conjunto de algoritmos, permite que classes possam trocar tais algoritmos por uma outra implementação, até mesmo em tempo de execução.
 
@@ -27,9 +29,11 @@ Em outras palavras, a partir de um conjunto de algoritmos, permite que classes p
 
 Pode ser aplicado quando:
 
+// tag::aplicabilidade[]
 - o comportamento de um método (implementação de um algoritmo) precisa ser diferente em classes distintas e/ou mudar em tempo de execução;
 - determinadas classes devem ter um comportamento específico (método) e outras não;
 - não deseja-se que uma alteração em uma super classe afete sub classes.
+// end::aplicabilidade[]
 
 === Modelagem do Padrão
 
@@ -43,7 +47,7 @@ Perceba que a relação entre a `Estrategista` e os comportamentos não é heran
 O comportamento em si é definido por um método na interface. No exemplo, o método é `executarComportamentoA()` para o `ComportamentoA`. O nome do método é o desenvolvedor quem define, normalmente sendo um nome que faça sentido para o sistema.
 A assinatura do método também é livre. Neste exemplo o método não recebe parâmetros e retorna um tipo genérico `T`. O tipo do retorno vai depender das suas necessidades. Veja os exemplos concretos na seção a seguir.
 
-Podem existir diferentes classes filhas desta `Estrategista`. Cada classe filha podem ter comportamentos diferentes umas das outras.
+Podem existir diferentes classes filhas desta `Estrategista`, cada uma fazendo uso diferente do resultado de um determinado comportamento. 
 Com o padrão Strategy, o comportamento de qualquer classe (mãe ou filha) pode mudar em tempo de execução, de acordo com os requisitos do sistema.
 
 Um projeto de exemplo para o diagrama apresentado está disponível link:modelagem[aqui]. Ele deve ser alterado para incluir as mudanças necessárias para o problema específico que você estiver resolvendo com o padrão.
@@ -52,10 +56,11 @@ Um projeto de exemplo para o diagrama apresentado está disponível link:modelag
 
 - https://en.wikipedia.org/wiki/Composition_over_inheritance[Favorecer composição no lugar de herança].
 - https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" não uma implementação] (GoF): declaramos variáveis com tipos abstratos (uma interface de comportamento) e usamos tipos concretos (uma classe que implementa um comportamento) apenas na instanciação.
+- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. Adicionalmente, cada classe de comportamento é responsável por implementar um único comportamento. Se temos vários comportamentos, devemos ter várias classes.
 - https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], pois separa as partes que mudam (os comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
-- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. 
 - https://en.wikipedia.org/wiki/Liskov_substitution_principle[Liskov Substitution Principle (LSP)] pois podemos substituir um comportamento por qualquer implementação dele, de forma transparente, até mesmo em tempo de execução, sem que sejam necessárias alterações no código interno da classe que utiliza tais comportamentos.
 - https://en.wikipedia.org/wiki/Interface_segregation_principle[Interface Segregation Principle (ISP)], pois estamos definindo diferentes interfaces: uma para cada comportamento que pode ser implementado.
+
 
 === Exemplos
 
@@ -73,27 +78,31 @@ NOTE: Apesar de atualmente termos formatos de arquivos mais utilizados como JSON
 
 Para este exemplo, vamos considerar que o Banco do Brasil usa um tipo de arquivo onde cada linha com as informações sobre o pagamento de um boleto contém os seguintes campos, separados por ponto-e-vírgula:
 
+// tag::campos-boleto1[]
 1. id do boleto com 10 dígitos
-1. código do banco onde o boleto foi pago, com 3 dígitos
-1. data vencimento no formato dd/mm/yyyy
-1. data pagamento no formato dd/mm/yyyy
-1. CPF do cliente com 11 dígitos (sem . e -)
-1. valor do boleto no formato decimal 10.2
-1. multa por atraso no formato decimal 10.2
-1. juros no formato no formato decimal 10.2
+2. código do banco onde o boleto foi pago (3 dígitos)
+3. data vencimento (dd/mm/yyyy)
+4. data pagamento (dd/mm/yyyy)
+5. CPF do cliente (sem . e -)
+6. valor do boleto (decimal 10.2)
+7. multa por atraso (decimal 10.2)
+8. juros no formato (decimal 10.2)
+// end::campos-boleto1[]
 
 Mas digamos que você também precisa receber arquivos do Bradesco que possui o seguinte formato:
 
 1. id do boleto com 10 dígitos
-1. código do banco onde o boleto foi pago, com 3 dígitos
-1. *agência onde o boleto foi pago, com 6 dígitos
-1. *conta do cliente para possível extorno de pagamento, com 9 dígitos
-1. data vencimento no formato dd/mm/yyyy
-1. *data/hora pagamento no formato dd/mm/yyyy hh:nn:ss
-1. *CPF do cliente com 11 dígitos (com . e -)
-1. valor do boleto no formato decimal 10.2
-1. multa por atraso no formato decimal 10.2
-1. juros no formato no formato decimal 10.2
+2. cód banco onde o boleto foi pago (3 dígitos)
+// tag::campos-boleto2[]
+3. *agência onde o boleto foi pago (6 dígitos)
+4. *conta do cliente para possível estorno de pagamento (9 dígitos)
+5. data vencimento (dd/mm/yyyy)
+6. *data/hora pagamento (dd/mm/yyyy hh:nn:ss)
+7. *CPF do cliente (com . e -)
+8. valor do boleto (decimal 10.2)
+9. multa por atraso (decimal 10.2)
+10. juros no formato (decimal 10.2)
+// end::campos-boleto2[]
 
 *__Campos adicionais ou diferentes do formato anterior.__
 
