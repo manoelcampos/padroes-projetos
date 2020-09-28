@@ -126,11 +126,11 @@ Se a classe não precisar de uma implementação de tal comportamento, o atribut
 Para resolver isso, podemos criar uma classe que tenha uma implementação vazia para o comportamento, ou seja, que não faz nada. Isto normalmente pode ser implementado pelo padrão Null Object que veremos posteriormente.
 
 Se a classe estrategista é obrigada a ter um determinado comportamento,
-para evitar `NullPointerException`, podemos não incluir um construtor sem parâmetros e inclui um que exija uma implementação de estratégia a ser usada.
+para evitar `NullPointerException`, podemos não incluir um construtor sem parâmetros e incluir um que exija uma implementação de estratégia a ser usada.
 
 pass:[<a name="no-strategy"></a>]
 
-== Modelagem convencional sem o padrão Strategy
+== Modelagem Convencional sem o padrão Strategy 🤔
 
 A modelagem convencional de diferentes comportamentos sem a aplicação do padrão Strategy requer o uso de herança para os diferentes comportamentos e é visualmente mais simples.
 No entanto, tal implementação tem algumas características que podem ser um problema (ou não), dependendo dos requisitos do seu sistema, por não permitir:
@@ -141,12 +141,13 @@ No entanto, tal implementação tem algumas características que podem ser um pr
 
 image:no-strategy-class-diagram.png[]
 
-== Como **NÃO** implementar uma solução para um problema
+== Como **NÃO** implementar uma solução para um problema 😳
 
 Se o padrão não for aplicado nem a solução com herança acima, uma outra solução normalmente é implementada por meio de uma única classe. Não será mostrado nem mesmo um diagrama, pois a solução seria composta de fato apenas por uma classe. Ela então teria métodos como `T executarComportamentoA()`. Todas as implementações deste "Comportamento A" seriam incluídas no método citado.
 
 Para o exemplo do retorno de boletos bancários, isto significa que tal método seria algo como:
 
+// tag::como-nao-implementar[]
 [source,java]
 ----
 public void processar(String nomeArquivo){
@@ -158,6 +159,7 @@ public void processar(String nomeArquivo){
     }
 }
 ----
+// end::como-nao-implementar[]
 
 Tal código é extremamente mais simples, tem uma única classe e tudo é feito em um único método.
 Apesar de parecer muito melhor por simplificar as coisas e dar a impressão que estamos usando o princípio https://pt.wikipedia.org/wiki/Princípio_KISS[KISS], não chamaria esta solução de simples, mas simplista e ingênua. **Soluções simplistas normalmente vão lhe trazer dores de cabeça para manutenção do software**.

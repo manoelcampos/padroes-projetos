@@ -99,9 +99,11 @@ image::images/solid-ugonna-thelma.png[width=40%]
 - Interface Segregation Principle (ISP)
 
 [transition=zoom]
-== Exemplo
+== !
 
-- Leitura de arquivos de retorno de boletos bancários.
+- Exemplo: Leitura de arquivos de retorno de boletos bancários.
+
+image::images/boleto-iugu-lp.png[background]
 
 == !
 
@@ -112,14 +114,47 @@ include::README.adoc[tag=campos-boleto1]
 [start=3]
 include::README.adoc[tag=campos-boleto2]
 
+[transition=zoom]
+== !
+
+Aplicação do Strategy pro Retorno Boleto 
+
+image::images/strategy-icon.png[width=16%]
+
+image::images/boleto-iugu-lp.png[background]
+
+== Modelagem Conceitual do Strategy
+
+image:../../images/patterns/strategy/strategy-base-class-diagram.png[size=contain]
 
 [transition=zoom]
-== Diagrama Retorno Boleto Strategy
+== Diagrama Retorno Boleto 💵 Strategy 
 
 == !
 
-image:../../images/patterns/strategy/retorno-boleto-class-diagram.png[background, size=contain]
+image::../../images/patterns/strategy/retorno-boleto-class-diagram.png[background, size=contain]
 
+[transition=zoom]
+== !
+
+Modelagem Convencional sem o padrão Strategy 🤔
+
+image::../../images/patterns/strategy/no-strategy-class-diagram.png[background, size=contain]
+
+[transition=zoom]
+== Modelagem sem o padrão não permite
+
+image::../../images/patterns/strategy/no-strategy-class-diagram.png[width=50%]
+
+[%step]
+- alterar um comportamento em tempo de execução;
+- compartilhar implementações entre classes filhas;
+- combinar comportamentos em um só.
+
+[transition=zoom]
+== Como **NÃO** implementar uma solução 😳
+
+include::README.adoc[tag=como-nao-implementar]
 
 [transition=fade]
 == Referências
