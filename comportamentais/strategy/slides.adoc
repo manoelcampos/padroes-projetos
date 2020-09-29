@@ -156,11 +156,21 @@ image::../../images/patterns/strategy/no-strategy-class-diagram.png[width=50%]
 
 include::README.adoc[tag=como-nao-implementar]
 
-[transition=fade]
-== Referências
+[transition=zoom]
+== !
 
-- “Padrões de Projeto: Soluções reutilizáveis de software orientado a objetos”. Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides [GoF].
-- “Use a Cabeça! Padrões de Projetos”. Eric Freeman & Elisabeth Freeman [UCPP].
+Modelagem anterior sem o padrão: utilizando herança
+
+image::../../images/patterns/strategy/no-strategy-class-diagram.png[background, size=contain]
+
+[transition=fade]
+== !
+
+Referências
+
+- “Padrões de Projeto: Soluções reutilizáveis de software orientado a objetos”. 2006 [GoF].
+- “Use a Cabeça! Padrões de Projetos”, 2008 [UCPP].
 - “Agile software development principles, patterns, and practices”, Robert Martin, 2011. [ASDPPP]
 - https://medium.com/@brunobandev/os-princ%C3%ADpios-s-o-l-i-d-em-imagens-1b5233479c21[Os princípios S.O.L.I.D em imagens]
 - https://doi.org/10.1145/197320.197383[Liskov, B H. A behavioral notion of subtyping (1994).]
+- https://books.google.com.br/books?id=GXWkDwAAQBAJ&printsec=frontcover[Código Limpo: Habilidades Práticas do Agile Software], Robert Martin, 2019.
