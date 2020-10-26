@@ -113,8 +113,8 @@ public class Boleto {
 
         str += ag + String.format(
                 " Venc: %s Pag: %s Valor: %10.2f",
-                ProcessadorBoletos.FORMATO_DATA.format(dataVencimento),
-                ProcessadorBoletos.FORMATO_DATA_HORA.format(dataPagamento), valor);
+                LeituraRetorno.FORMATO_DATA.format(dataVencimento),
+                LeituraRetorno.FORMATO_DATA_HORA.format(dataPagamento), valor);
         if(multa > 0){
             str += String.format(" Multa: %10.2f", multa);
         }
