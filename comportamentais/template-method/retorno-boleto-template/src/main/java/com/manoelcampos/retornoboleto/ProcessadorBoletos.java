@@ -11,10 +11,10 @@ import java.util.List;
 /**
  * @author Manoel Campos da Silva Filho
  */
-public class ProcessarBoletos {
+public class ProcessadorBoletos {
     private LeituraRetorno leituraRetorno;
 
-    public ProcessarBoletos(LeituraRetorno leituraRetorno){
+    public ProcessadorBoletos(LeituraRetorno leituraRetorno){
         this.leituraRetorno = leituraRetorno;
     }
 

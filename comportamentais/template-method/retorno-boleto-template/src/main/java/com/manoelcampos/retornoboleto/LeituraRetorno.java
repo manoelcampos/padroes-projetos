@@ -23,7 +23,7 @@ import java.time.format.DateTimeFormatter;
  * que é responsável por processar uma única linha do arquivo por vez</p>
  *
  * @author Manoel Campos da Silva Filho
- * @see ProcessarBoletos
+ * @see ProcessadorBoletos
  */
 public interface LeituraRetorno {
     DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
