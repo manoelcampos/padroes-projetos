@@ -20,7 +20,7 @@ public class ProcessarBoletos {
         this.processarLinhaArquivo = processarLinhaArquivo;
     }
 
-    public void processar(String nomeArquivo){
+    public List<Boleto> processar(String nomeArquivo){
         try {
             BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
             String line;
@@ -31,6 +31,8 @@ public class ProcessarBoletos {
                 boletos.add(boleto);
                 System.out.println(boleto);
             }
+            
+            return boletos;
         }catch(IOException ex){
             throw new UncheckedIOException(ex);
         }
