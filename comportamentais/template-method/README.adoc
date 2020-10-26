@@ -59,6 +59,21 @@ O código fonte do projeto convencional para leitura de arquivos de retorno est�
 
 pass:[<a name="functional"></a>]
 
+=== Strategy + Template Method
+
+Você pode ter percebido que a modelagem do Template Method usa herança,
+indo contra a recomendação de https://en.wikipedia.org/wiki/Composition_over_inheritance[Favorecer Composição no lugar de Herança]. E se analisarmos tudo que foi abordado no padrão link:../strategy/[Strategy], composição traz flexibilidade.
+
+Então, se precisarmos trocar a implementação do algoritmo específico de leitura de arquivos de retorno
+de um banco por outro, podemos aplicar o padrão Strategy em conjunto com o Template Method.
+Mas neste caso, o algoritmo a ser trocado é apenas uma parte específica
+de todo o algoritmo de processamento de tais arquivos.
+Isto porque, a parte de leitura do arquivo não muda, apenas
+como os dados são extraídos de cada linha obtida que sim.
+
+Então, o projeto link:retorno-boleto-template-and-strategy[retorno-boleto-template-and-strategy] mostra uma implementação 
+puramente OO que une os dois padrões.
+
 === Modelagem utilizando Programação Funcional
 
 A modelagem do padrão utilizando programação funcional é extremamente simples.
