@@ -7,18 +7,18 @@ import java.time.LocalDate;
  */
 public class LeituraRetornoBancoBrasil implements LeituraRetorno {
     @Override
-    public Boleto processarLinhaArquivo(String[] vetor) {
+    public Boleto processarLinhaArquivo(String[] linhaArquivo) {
         Boleto boleto = new Boleto();
-        boleto.setId(Integer.parseInt(vetor[0]));
-        boleto.setCodBanco(vetor[1]);
+        boleto.setId(Integer.parseInt(linhaArquivo[0]));
+        boleto.setCodBanco(linhaArquivo[1]);
 
-        boleto.setDataVencimento(LocalDate.parse(vetor[2], FORMATO_DATA));
-        boleto.setDataPagamento(LocalDate.parse(vetor[3], FORMATO_DATA).atTime(0, 0, 0));
+        boleto.setDataVencimento(LocalDate.parse(linhaArquivo[2], FORMATO_DATA));
+        boleto.setDataPagamento(LocalDate.parse(linhaArquivo[3], FORMATO_DATA).atTime(0, 0, 0));
 
-        boleto.setCpfCliente(vetor[4]);
-        boleto.setValor(Double.parseDouble(vetor[5]));
-        boleto.setMulta(Double.parseDouble(vetor[6]));
-        boleto.setJuros(Double.parseDouble(vetor[7]));
+        boleto.setCpfCliente(linhaArquivo[4]);
+        boleto.setValor(Double.parseDouble(linhaArquivo[5]));
+        boleto.setMulta(Double.parseDouble(linhaArquivo[6]));
+        boleto.setJuros(Double.parseDouble(linhaArquivo[7]));
         return boleto;
     }
 }

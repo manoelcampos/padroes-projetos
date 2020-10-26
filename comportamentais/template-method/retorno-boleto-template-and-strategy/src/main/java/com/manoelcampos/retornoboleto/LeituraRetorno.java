@@ -32,9 +32,9 @@ public interface LeituraRetorno {
     /**
      * Recebe um vetor com os dados lidos de uma linha de um arquivo
      * de retorno de boleto
-     * @param vetor vetor contendo os dados de uma linha lida do arquivo,
-     *              onde cada posição representa uma coluna do boleto
+     * @param linhaArquivo vetor contendo os dados de uma linha lida do arquivo,
+     *                     onde cada posição representa uma coluna do boleto
      * @return um objeto {@link Boleto} com os dados processados da linha do arquivo
      */
-    Boleto processarLinhaArquivo(String[] vetor);
+    Boleto processarLinhaArquivo(String[] linhaArquivo);
 }
