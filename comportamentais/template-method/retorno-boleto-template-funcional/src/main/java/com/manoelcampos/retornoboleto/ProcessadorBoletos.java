@@ -15,14 +15,16 @@ import java.util.function.Function;
 //tag::class-start[] 
 public class ProcessadorBoletos {
     private Function<String[], Boleto> processarLinhaArquivo;
-
-    public ProcessadorBoletos(Function<String[], Boleto> processarLinhaArquivo){
+    
+    public ProcessadorBoletos(
+            Function<String[], Boleto> processarLinhaArquivo){
         this.processarLinhaArquivo = processarLinhaArquivo;
     }
 
     public List<Boleto> processar(String nomeArquivo){
         try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
+            BufferedReader reader = 
+                Files.newBufferedReader(Paths.get(nomeArquivo));
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while ((line = reader.readLine()) != null) {
@@ -31,7 +33,6 @@ public class ProcessadorBoletos {
                 boletos.add(boleto);
                 System.out.println(boleto);
             }
-            
             return boletos;
         }catch(IOException ex){
             throw new UncheckedIOException(ex);

@@ -18,7 +18,6 @@
 :proj-boleto-template-strategy: retorno-boleto-template-and-strategy/src/main/java/com/manoelcampos/retornoboleto/
 :proj-boleto-funcional: retorno-boleto-template-funcional/src/main/java/com/manoelcampos/retornoboleto/
 
-
 ifdef::env-github[]
 //Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
 
@@ -66,9 +65,14 @@ include::README.adoc[tag=aplicabilidade]
 [transition=zoom]
 == Modelagem do Template Method
 
-== !
+=== !
 
 image::images/template-method-base.png[background, size=contain]
+
+[transition=zoom]
+== Mas consigo fazer isso apenas com herança e sobrescrita de método 🤨
+
+include::README.adoc[tag=method-override]
 
 [transition=zoom, background-opacity=0.4]
 == Princípios utilizados
@@ -88,7 +92,7 @@ image::images/boleto-iugu-lp.png[background]
 
 == Problema da versão com Strategy
 
-== !
+=== !
 
 [source,java,linenums]
 ----
@@ -183,7 +187,9 @@ String nomeArquivo = "caminho-arquivo-retorno-boleto-banco-brasil.csv";
 processador.processar(nomeArquivo);
 ----
 
-== Modelagem do Template Method com Programação Funcional em Java 8+
+== Modelagem do Template Method com Programação Funcional em Java 8+ 
+
+só isso? 😯
 
 image::images/template-method-funcional.png[]
 
