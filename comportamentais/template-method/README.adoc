@@ -110,7 +110,7 @@ Caso as subclasses precisem apenas estender o `method()` da superclasse (adicion
 podemos definir uma implementação base na superclasse e apenas estender o método nas subclasses.
 Isto poderia ser implementado em uma subclasse simplesmente com o código abaixo:
 
-[source,java]
+[source,java,linenums]
 ----
 public SubClasse1 extends ClasseAbstrata {
     @Override
@@ -128,7 +128,7 @@ public SubClasse1 extends ClasseAbstrata {
 Neste caso, estamos estendendo o método apenas executando algumas operações depois da chamada do método na superclasse.
 Poderíamos também executar tais operações antes e/ou depois, de acordo com as necessidades, como:
 
-[source,java]
+[source,java,linenums]
 ----
 public SubClasse1 extends ClasseAbstrata {
     @Override
