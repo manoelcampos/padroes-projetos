@@ -23,14 +23,14 @@ for (int i = 0; i < totalCampos; i++) {
 }
 ```
 
-
 == AVISO
 
-Apesar desta facilitade, o código é muito mais complicado e confuso para quem não entende de Reflection.
+Apesar desta facilitade, o código é muito mais complicado e confuso para quem não entende de __Reflection__.
 O código do projeto anterior é claro e direto.
-A versão aqui apresentada serve apenas como curiosidade. Em uma aplicação real, esta implementação não é nada aconselhável, pois é mais complexa e a execução usando Reflection é mais lenta.
-Reflection é bastante usado em Java, mas quando não há uma maneira mais simples de resolver um problema.
+A versão aqui apresentada serve apenas como curiosidade. Em uma aplicação real, esta implementação não é nada aconselhável, pois é mais complexa e a execução usando __Reflection__ é mais lenta.
+__Reflection__ é bastante usado em Java, mas quando não há uma maneira mais simples de resolver um problema.
 
 Em linguagens dinâmicas como JavaScript, conseguiríamos usar um `for` para esta tarefa naturalmente, sem precisar recorrer a recursos avançados da linguagem e nem tornar o código mais complexo.
 
-Então, este projeto serve apenas para mostrar alguns recursos avançados da linguagem Java.
+Então, o projeto serve apenas para mostrar alguns recursos avançados da linguagem Java,
+sendo um ótimo material de estudos.

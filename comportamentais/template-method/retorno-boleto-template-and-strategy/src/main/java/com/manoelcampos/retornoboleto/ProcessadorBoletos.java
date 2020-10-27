@@ -11,12 +11,14 @@ import java.util.List;
 /**
  * @author Manoel Campos da Silva Filho
  */
+// tag::class-start[]
 public class ProcessadorBoletos {
     private LeituraRetorno leituraRetorno;
 
     public ProcessadorBoletos(LeituraRetorno leituraRetorno){
         this.leituraRetorno = leituraRetorno;
     }
+    // end::class-start[]
 
     /**
      * Processa um arquivo de retorno de boleto bancário
@@ -27,16 +29,18 @@ public class ProcessadorBoletos {
      *
      * @param nomeArquivo Nome do arquivo a ser processado
      */
+    // tag::class-end[]
     public final List<Boleto> processar(String nomeArquivo){
         try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
+            BufferedReader reader = 
+                Files.newBufferedReader(Paths.get(nomeArquivo));
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while ((line = reader.readLine()) != null) {
                 String[] vetor = line.split(";");
                 Boleto boleto = leituraRetorno.processarLinhaArquivo(vetor);
                 boletos.add(boleto);
-                //System.out.println(boleto);
+                System.out.println(boleto);
             }
 
             return boletos;
@@ -45,3 +49,4 @@ public class ProcessadorBoletos {
         }
     }
 }
+// end::class-end[]

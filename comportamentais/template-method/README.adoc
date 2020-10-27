@@ -19,14 +19,18 @@ endif::[]
 
 === Definição
 
-📘"O padrão Template Method define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos para as subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>.
+// tag::definicao[]
+📘"Define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos pras subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>
+// end::definicao[]
 
 === Aplicabilidade
 
 Pode ser aplicado quando:
 
+// tag::aplicabilidade[]
 - um método (algoritmo) possuir determinados passos definidos mas outros não; a implementação destes outros passos variar de uma subclasse para outra.
 - você começar a implementar um método em diversas subclasses e verificar que existem partes comuns (código duplicado) e outras partes que mudam de uma subclasse para outra.
+// end::aplicabilidade[]
 
 === Modelagem do Padrão
 
@@ -41,14 +45,12 @@ Um projeto de exemplo para o diagrama apresentado está disponível link:modelag
 
 === Princípios utilizados
 
-- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)], pois separa as partes que mudam (os comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
-- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)] pois a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. 
+- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]: separa as partes que mudam (as operações primitivas/comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
+- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)]: a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. 
 
-=== Exemplos
+=== Exemplo: Leitura de Retorno de Boletos
 
 pass:[<a name="boleto"></a>]
-
-==== Leitura de Retorno de Boletos
 
 Anteriormente aplicamos o padrão link:../strategy[Strategy] para implementar a leitura de retorno de boletos bancários.
 Como pudemos perceber, o código do método que lê arquivos do Banco do Brasil é muito parecido com o do Bradesco, havendo

@@ -51,7 +51,9 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Manoel Campos da Silva Filho
  */
+//tag::class-start[] 
 public final class LeituraRetorno {
+//end::class-start[]     
     public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public static final DateTimeFormatter FORMATO_DATA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
@@ -59,18 +61,21 @@ public final class LeituraRetorno {
      * Construtor privado para evitar instanciar a classe,
      * pois ela não tem atributos e todos os métodos são estáticos.
      */
+    //tag::method-start[]  
     private LeituraRetorno(){
-        //Não faz nada intencioalmente, pois a classe não deve ser instanciada.
+        /*Não faz nada intencioalmente: a classe não deve ser instanciada.*/
     }
 
     public static Boleto processarLinhaBancoBrasil(String[] vetor) {
         Boleto boleto = new Boleto();
         boleto.setId(Integer.parseInt(vetor[0]));
         boleto.setCodBanco(vetor[1]);
+        //end::method-start[]  
 
-        boleto.setDataVencimento(LocalDate.parse(vetor[2], LeituraRetorno.FORMATO_DATA));
-        boleto.setDataPagamento(LocalDate.parse(vetor[3], LeituraRetorno.FORMATO_DATA).atTime(0, 0, 0));
+        boleto.setDataVencimento(LocalDate.parse(vetor[2], FORMATO_DATA));
+        boleto.setDataPagamento(LocalDate.parse(vetor[3], FORMATO_DATA).atTime(0, 0, 0));
 
+        //tag::method-end[]  
         boleto.setCpfCliente(vetor[4]);
         boleto.setValor(Double.parseDouble(vetor[5]));
         boleto.setMulta(Double.parseDouble(vetor[6]));
@@ -78,3 +83,4 @@ public final class LeituraRetorno {
         return boleto;
     }
 }
+//end::method-end[]  

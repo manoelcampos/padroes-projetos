@@ -38406,7 +38406,7 @@
 															"visible": false,
 															"font": "Arial;13;0",
 															"left": -314,
-															"top": 148,
+															"top": 68,
 															"height": 13
 														},
 														{
@@ -38417,7 +38417,7 @@
 															},
 															"font": "Arial;13;3",
 															"left": 237,
-															"top": 207,
+															"top": 167,
 															"width": 296.8291015625,
 															"height": 13,
 															"text": "ProcessadorBoletos"
@@ -38431,7 +38431,7 @@
 															"visible": false,
 															"font": "Arial;13;0",
 															"left": -314,
-															"top": 148,
+															"top": 68,
 															"width": 175.56982421875,
 															"height": 13,
 															"text": "(from template-method-boleto)"
@@ -38445,14 +38445,14 @@
 															"visible": false,
 															"font": "Arial;13;0",
 															"left": -314,
-															"top": 148,
+															"top": 68,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
 													],
 													"font": "Arial;13;0",
 													"left": 232,
-													"top": 200,
+													"top": 160,
 													"width": 306.8291015625,
 													"height": 25,
 													"stereotypeLabel": {
@@ -38479,7 +38479,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 232,
-													"top": 225,
+													"top": 185,
 													"width": 306.8291015625,
 													"height": 10
 												},
@@ -38504,7 +38504,7 @@
 															},
 															"font": "Arial;13;0",
 															"left": 237,
-															"top": 240,
+															"top": 200,
 															"width": 296.8291015625,
 															"height": 13,
 															"text": "+processar(nomeArquivo: String): List<Boleto>",
@@ -38521,7 +38521,7 @@
 															},
 															"font": "Arial;13;2",
 															"left": 237,
-															"top": 255,
+															"top": 215,
 															"width": 296.8291015625,
 															"height": 13,
 															"text": "#processarLinhaArquivo(linhaArquivo: String[]): Boleto",
@@ -38530,7 +38530,7 @@
 													],
 													"font": "Arial;13;0",
 													"left": 232,
-													"top": 235,
+													"top": 195,
 													"width": 306.8291015625,
 													"height": 38
 												},
@@ -38546,7 +38546,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -157,
-													"top": 74,
+													"top": 34,
 													"width": 10,
 													"height": 10
 												},
@@ -38562,7 +38562,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -157,
-													"top": 74,
+													"top": 34,
 													"width": 10,
 													"height": 10
 												}
@@ -38570,7 +38570,7 @@
 											"font": "Arial;13;0",
 											"containerChangeable": true,
 											"left": 232,
-											"top": 200,
+											"top": 160,
 											"width": 306.8291015625,
 											"height": 73,
 											"autoResize": true,
@@ -39075,8 +39075,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 273,
-													"top": 310,
+													"left": 280,
+													"top": 292,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -39096,8 +39096,8 @@
 													},
 													"visible": null,
 													"font": "Arial;13;0",
-													"left": 263,
-													"top": 299,
+													"left": 269,
+													"top": 282,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -39117,8 +39117,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 294,
-													"top": 333,
+													"left": 303,
+													"top": 311,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -39136,7 +39136,7 @@
 												"$ref": "AAAAAAF1ZRsTQYFELco="
 											},
 											"lineStyle": 1,
-											"points": "224:383;344:273",
+											"points": "218:383;351:233",
 											"showVisibility": true,
 											"nameLabel": {
 												"$ref": "AAAAAAF1ZUVajYG+Cnc="
@@ -39169,8 +39169,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 451,
-													"top": 331,
+													"left": 458,
+													"top": 310,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -39190,8 +39190,8 @@
 													},
 													"visible": null,
 													"font": "Arial;13;0",
-													"left": 440,
-													"top": 341,
+													"left": 446,
+													"top": 319,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -39211,8 +39211,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 474,
-													"top": 312,
+													"left": 483,
+													"top": 293,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -39230,7 +39230,7 @@
 												"$ref": "AAAAAAF1ZRsc94F0vlA="
 											},
 											"lineStyle": 1,
-											"points": "511:383;416:273",
+											"points": "516:383;410:233",
 											"showVisibility": true,
 											"nameLabel": {
 												"$ref": "AAAAAAF1ZUVtLoHP2BU="
@@ -39536,7 +39536,7 @@
 															},
 															"visible": false,
 															"font": "Arial;13;0",
-															"left": -536,
+															"left": -568,
 															"top": -2,
 															"height": 13
 														},
@@ -39547,9 +39547,9 @@
 																"$ref": "AAAAAAF1ZVOozYJ3OEU="
 															},
 															"font": "Arial;13;3",
-															"left": 213,
+															"left": 197,
 															"top": 167,
-															"width": 252.3447265625,
+															"width": 307.4677734375,
 															"height": 13,
 															"text": "ProcessadorBoletos"
 														},
@@ -39561,7 +39561,7 @@
 															},
 															"visible": false,
 															"font": "Arial;13;0",
-															"left": -536,
+															"left": -568,
 															"top": -2,
 															"width": 226.1416015625,
 															"height": 13,
@@ -39575,16 +39575,16 @@
 															},
 															"visible": false,
 															"font": "Arial;13;0",
-															"left": -536,
+															"left": -568,
 															"top": -2,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 208,
+													"left": 192,
 													"top": 160,
-													"width": 262.3447265625,
+													"width": 317.4677734375,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1ZVOozYJ4Wyw="
@@ -39619,18 +39619,18 @@
 																"$ref": "AAAAAAF1ZVwE/4NozFY="
 															},
 															"font": "Arial;13;0",
-															"left": 213,
+															"left": 197,
 															"top": 190,
-															"width": 252.3447265625,
+															"width": 307.4677734375,
 															"height": 13,
 															"text": "-leituraRetorno: LeituraRetorno",
 															"horizontalAlignment": 0
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 208,
+													"left": 192,
 													"top": 185,
-													"width": 262.3447265625,
+													"width": 317.4677734375,
 													"height": 23
 												},
 												{
@@ -39645,6 +39645,23 @@
 													"subViews": [
 														{
 															"_type": "UMLOperationView",
+															"_id": "AAAAAAF1alGKqvl8P5A=",
+															"_parent": {
+																"$ref": "AAAAAAF1ZVOozYJ9DCc="
+															},
+															"model": {
+																"$ref": "AAAAAAF1alGKbfl5K5E="
+															},
+															"font": "Arial;13;0",
+															"left": 197,
+															"top": 213,
+															"width": 307.4677734375,
+															"height": 13,
+															"text": "+ProcessadorBoletos(leituraRetorno: LeituraRetorno)",
+															"horizontalAlignment": 0
+														},
+														{
+															"_type": "UMLOperationView",
 															"_id": "AAAAAAF1ZVOo7oKcs3I=",
 															"_parent": {
 																"$ref": "AAAAAAF1ZVOozYJ9DCc="
@@ -39653,9 +39670,9 @@
 																"$ref": "AAAAAAF1ZVOREoI1ngY="
 															},
 															"font": "Arial;13;0",
-															"left": 213,
-															"top": 213,
-															"width": 252.3447265625,
+															"left": 197,
+															"top": 228,
+															"width": 307.4677734375,
 															"height": 13,
 															"text": "+processar(nomeArquivo: String): List<Boleto>",
 															"horizontalAlignment": 0
@@ -39671,7 +39688,7 @@
 															},
 															"visible": false,
 															"font": "Arial;13;2",
-															"left": 229,
+															"left": 197,
 															"top": 300,
 															"width": 312.888671875,
 															"height": 13,
@@ -39680,10 +39697,10 @@
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 208,
+													"left": 192,
 													"top": 208,
-													"width": 262.3447265625,
-													"height": 23
+													"width": 317.4677734375,
+													"height": 38
 												},
 												{
 													"_type": "UMLReceptionCompartmentView",
@@ -39696,7 +39713,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -268,
+													"left": -284,
 													"top": -1,
 													"width": 10,
 													"height": 10
@@ -39712,7 +39729,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -268,
+													"left": -284,
 													"top": -1,
 													"width": 10,
 													"height": 10
@@ -39720,10 +39737,10 @@
 											],
 											"font": "Arial;13;0",
 											"containerChangeable": true,
-											"left": 208,
+											"left": 192,
 											"top": 160,
-											"width": 262.3447265625,
-											"height": 71,
+											"width": 317.4677734375,
+											"height": 86,
 											"autoResize": true,
 											"nameCompartment": {
 												"$ref": "AAAAAAF1ZVOozYJ3OEU="
@@ -39782,7 +39799,7 @@
 															"font": "Arial;13;1",
 															"left": 37,
 															"top": 415,
-															"width": 296.04833984375,
+															"width": 312.888671875,
 															"height": 13,
 															"text": "LeituraRetornoBancoBrasil"
 														},
@@ -39817,7 +39834,7 @@
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": 408,
-													"width": 306.04833984375,
+													"width": 322.888671875,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1ZVOtJ4Kl5IM="
@@ -39844,7 +39861,7 @@
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": 433,
-													"width": 306.04833984375,
+													"width": 322.888671875,
 													"height": 10
 												},
 												{
@@ -39869,7 +39886,7 @@
 															"font": "Arial;13;0",
 															"left": 37,
 															"top": 448,
-															"width": 296.04833984375,
+															"width": 312.888671875,
 															"height": 13,
 															"text": "#processarLinhaArquivo(linhaArquivo: String[]): Boleto",
 															"horizontalAlignment": 0
@@ -39878,7 +39895,7 @@
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": 443,
-													"width": 306.04833984375,
+													"width": 322.888671875,
 													"height": 23
 												},
 												{
@@ -39918,7 +39935,7 @@
 											"containerChangeable": true,
 											"left": 32,
 											"top": 408,
-											"width": 306.04833984375,
+											"width": 322.888671875,
 											"height": 58,
 											"autoResize": true,
 											"nameCompartment": {
@@ -39978,7 +39995,7 @@
 															"font": "Arial;13;1",
 															"left": 381,
 															"top": 415,
-															"width": 296.04833984375,
+															"width": 312.888671875,
 															"height": 13,
 															"text": "LeituraRetornoBradesco"
 														},
@@ -40013,7 +40030,7 @@
 													"font": "Arial;13;0",
 													"left": 376,
 													"top": 408,
-													"width": 306.04833984375,
+													"width": 322.888671875,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1ZVOzQoLVcSw="
@@ -40040,7 +40057,7 @@
 													"font": "Arial;13;0",
 													"left": 376,
 													"top": 433,
-													"width": 306.04833984375,
+													"width": 322.888671875,
 													"height": 10
 												},
 												{
@@ -40065,7 +40082,7 @@
 															"font": "Arial;13;0",
 															"left": 381,
 															"top": 448,
-															"width": 296.04833984375,
+															"width": 312.888671875,
 															"height": 13,
 															"text": "#processarLinhaArquivo(linhaArquivo: String[]): Boleto",
 															"horizontalAlignment": 0
@@ -40074,7 +40091,7 @@
 													"font": "Arial;13;0",
 													"left": 376,
 													"top": 443,
-													"width": 306.04833984375,
+													"width": 322.888671875,
 													"height": 23
 												},
 												{
@@ -40114,7 +40131,7 @@
 											"containerChangeable": true,
 											"left": 376,
 											"top": 408,
-											"width": 306.04833984375,
+											"width": 322.888671875,
 											"height": 58,
 											"autoResize": true,
 											"nameCompartment": {
@@ -40265,7 +40282,7 @@
 															"top": 331,
 															"width": 348.6640625,
 															"height": 13,
-															"text": "+processarLinhaArquivo(linhaArquivo: String): List<Boleto>",
+															"text": "+processarLinhaArquivo(linhaArquivo: String[]): List<Boleto>",
 															"horizontalAlignment": 0
 														}
 													],
@@ -40341,9 +40358,9 @@
 											"font": "Arial;13;0",
 											"left": 152,
 											"top": 16,
-											"width": 377,
+											"width": 409,
 											"height": 113,
-											"text": "public final List<Boleto> processar(String nomeArquivo){\n    while((linhaArq = reader.readLine()) != null){\n        boleto = leituraRetorno.processarLinhaArquivo(linhaArq);\n        boletos.add(boleto);\n    }\n}"
+											"text": "public final List<Boleto> processar(String nomeArquivo){\n    while((linhaArquivo = reader.readLine()) != null){\n        boleto = leituraRetorno.processarLinhaArquivo(linhaArquivo);\n        boletos.add(boleto);\n    }\n}"
 										},
 										{
 											"_type": "UMLNoteLinkView",
@@ -40359,7 +40376,7 @@
 												"$ref": "AAAAAAF1ZWByF4N/6TE="
 											},
 											"lineStyle": 1,
-											"points": "339:129;339:159"
+											"points": "353:129;352:159"
 										},
 										{
 											"_type": "UMLInterfaceRealizationView",
@@ -40443,7 +40460,7 @@
 												"$ref": "AAAAAAF1ZVOtJ4KjWnY="
 											},
 											"lineStyle": 1,
-											"points": "224:407;303:349",
+											"points": "230:407;306:349",
 											"showVisibility": true,
 											"nameLabel": {
 												"$ref": "AAAAAAF1ZWW3bYPLEkI="
@@ -40537,7 +40554,7 @@
 												"$ref": "AAAAAAF1ZVOzQoLTt3Q="
 											},
 											"lineStyle": 1,
-											"points": "483:407;394:349",
+											"points": "489:407;396:349",
 											"showVisibility": true,
 											"nameLabel": {
 												"$ref": "AAAAAAF1ZWXEMYPcxsg="
@@ -40570,8 +40587,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 327,
-													"top": 254,
+													"left": 332,
+													"top": 259,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -40591,8 +40608,8 @@
 													},
 													"visible": null,
 													"font": "Arial;13;0",
-													"left": 312,
-													"top": 255,
+													"left": 317,
+													"top": 258,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -40612,8 +40629,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 356,
-													"top": 251,
+													"left": 361,
+													"top": 260,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -40633,8 +40650,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 327,
-													"top": 256,
+													"left": 332,
+													"top": 254,
 													"height": 13,
 													"alpha": 0.5235987755982988,
 													"distance": 30,
@@ -40654,8 +40671,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 313,
-													"top": 254,
+													"left": 319,
+													"top": 252,
 													"height": 13,
 													"alpha": 0.7853981633974483,
 													"distance": 40,
@@ -40675,8 +40692,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 354,
-													"top": 258,
+													"left": 360,
+													"top": 259,
 													"height": 13,
 													"alpha": -0.5235987755982988,
 													"distance": 25,
@@ -40696,8 +40713,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 326,
-													"top": 251,
+													"left": 332,
+													"top": 265,
 													"height": 13,
 													"alpha": -0.5235987755982988,
 													"distance": 30,
@@ -40716,8 +40733,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 313,
-													"top": 255,
+													"left": 319,
+													"top": 267,
 													"height": 13,
 													"alpha": -0.7853981633974483,
 													"distance": 40,
@@ -40736,8 +40753,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 354,
-													"top": 245,
+													"left": 359,
+													"top": 261,
 													"height": 13,
 													"alpha": 0.5235987755982988,
 													"distance": 25,
@@ -40782,7 +40799,7 @@
 												"$ref": "AAAAAAF1ZVZ0noMWFBU="
 											},
 											"lineStyle": 1,
-											"points": "344:287;340:231",
+											"points": "347:287;348:246",
 											"showVisibility": true,
 											"nameLabel": {
 												"$ref": "AAAAAAF1ZWYcLYP5zGQ="
@@ -40842,6 +40859,27 @@
 										}
 									],
 									"operations": [
+										{
+											"_type": "UMLOperation",
+											"_id": "AAAAAAF1alGKbfl5K5E=",
+											"_parent": {
+												"$ref": "AAAAAAF1ZVOREoI0u7o="
+											},
+											"name": "ProcessadorBoletos",
+											"parameters": [
+												{
+													"_type": "UMLParameter",
+													"_id": "AAAAAAF1alHZUfnaxdE=",
+													"_parent": {
+														"$ref": "AAAAAAF1alGKbfl5K5E="
+													},
+													"name": "leituraRetorno",
+													"type": {
+														"$ref": "AAAAAAF1ZVZsRYMKdiU="
+													}
+												}
+											]
+										},
 										{
 											"_type": "UMLOperation",
 											"_id": "AAAAAAF1ZVOREoI1ngY=",
@@ -41136,7 +41174,7 @@
 														"$ref": "AAAAAAF1ZVZsRYMMyqA="
 													},
 													"name": "linhaArquivo",
-													"type": "String"
+													"type": "String[]"
 												},
 												{
 													"_type": "UMLParameter",
@@ -44107,7 +44145,7 @@
 															"font": "Arial;13;3",
 															"left": 173,
 															"top": 199,
-															"width": 408.63037109375,
+															"width": 377.6220703125,
 															"height": 13,
 															"text": "ProcessadorBoletos"
 														},
@@ -44142,7 +44180,7 @@
 													"font": "Arial;13;0",
 													"left": 168,
 													"top": 192,
-													"width": 418.63037109375,
+													"width": 387.6220703125,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1Ziy15AhiyIg="
@@ -44179,7 +44217,7 @@
 															"font": "Arial;13;0",
 															"left": 173,
 															"top": 222,
-															"width": 408.63037109375,
+															"width": 377.6220703125,
 															"height": 13,
 															"text": "-processarLinhaArquivo: Function<String[], Boleto>",
 															"horizontalAlignment": 0
@@ -44188,7 +44226,7 @@
 													"font": "Arial;13;0",
 													"left": 168,
 													"top": 217,
-													"width": 418.63037109375,
+													"width": 387.6220703125,
 													"height": 23
 												},
 												{
@@ -44213,7 +44251,7 @@
 															"font": "Arial;13;0",
 															"left": 173,
 															"top": 245,
-															"width": 408.63037109375,
+															"width": 377.6220703125,
 															"height": 13,
 															"text": "+processar(nomeArquivo: String): List<Boleto>",
 															"horizontalAlignment": 0
@@ -44230,7 +44268,7 @@
 															"font": "Arial;13;0",
 															"left": 173,
 															"top": 260,
-															"width": 408.63037109375,
+															"width": 377.6220703125,
 															"height": 13,
 															"text": "+ProcessarBoletos(processarLinhaArquivo: Function<String[], Boleto>)",
 															"horizontalAlignment": 0
@@ -44239,7 +44277,7 @@
 													"font": "Arial;13;0",
 													"left": 168,
 													"top": 240,
-													"width": 418.63037109375,
+													"width": 387.6220703125,
 													"height": 38
 												},
 												{
@@ -44279,7 +44317,7 @@
 											"containerChangeable": true,
 											"left": 168,
 											"top": 192,
-											"width": 418.63037109375,
+											"width": 387.6220703125,
 											"height": 86,
 											"autoResize": true,
 											"nameCompartment": {
@@ -44544,7 +44582,7 @@
 												"$ref": "AAAAAAF1ZjEtEAjlkiA="
 											},
 											"lineStyle": 1,
-											"points": "374:145;375:191"
+											"points": "368:145;364:191"
 										},
 										{
 											"_type": "UMLDependencyView",
@@ -44567,8 +44605,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 391,
-													"top": 299,
+													"left": 385,
+													"top": 297,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -44588,8 +44626,8 @@
 													},
 													"visible": null,
 													"font": "Arial;13;0",
-													"left": 406,
-													"top": 298,
+													"left": 400,
+													"top": 295,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -44609,8 +44647,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 362,
-													"top": 300,
+													"left": 356,
+													"top": 302,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -44628,7 +44666,7 @@
 												"$ref": "AAAAAAF1Ziy15AhggWE="
 											},
 											"lineStyle": 1,
-											"points": "377:278;378:335",
+											"points": "367:278;375:335",
 											"showVisibility": true,
 											"nameLabel": {
 												"$ref": "AAAAAAF1ZjMeUwkBCp0="

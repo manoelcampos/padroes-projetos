@@ -12,11 +12,11 @@ import java.util.function.Function;
 /**
  * @author Manoel Campos da Silva Filho
  */
-public class ProcessarBoletos {
-
+//tag::class-start[] 
+public class ProcessadorBoletos {
     private Function<String[], Boleto> processarLinhaArquivo;
 
-    public ProcessarBoletos(Function<String[], Boleto> processarLinhaArquivo){
+    public ProcessadorBoletos(Function<String[], Boleto> processarLinhaArquivo){
         this.processarLinhaArquivo = processarLinhaArquivo;
     }
 
@@ -37,8 +37,12 @@ public class ProcessarBoletos {
             throw new UncheckedIOException(ex);
         }
     }
+    //end::class-start[] 
 
     public void setProcessarLinhaArquivo(Function<String[], Boleto> processarLinhaArquivo) {
         this.processarLinhaArquivo = processarLinhaArquivo;
     }
+    
+    //tag::class-end[] 
 }
+//end::class-end[] 

@@ -1,5 +1,5 @@
 import com.manoelcampos.retornoboleto.LeituraRetorno;
-import com.manoelcampos.retornoboleto.ProcessarBoletos;
+import com.manoelcampos.retornoboleto.ProcessadorBoletos;
 
 /**
  * Executa a aplicação para ler um arquivo de
@@ -8,8 +8,8 @@ import com.manoelcampos.retornoboleto.ProcessarBoletos;
  */
 public class Principal {
     public static void main(String[] args) {
-        ProcessarBoletos processador =
-                new ProcessarBoletos(LeituraRetorno::processarLinhaBancoBrasil);
+        ProcessadorBoletos processador =
+                new ProcessadorBoletos(LeituraRetorno::processarLinhaBancoBrasil);
 
         String nomeArquivo =
                 Principal.class.getResource("banco-brasil-1.csv").getPath();

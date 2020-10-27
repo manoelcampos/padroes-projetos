@@ -17,9 +17,9 @@ table tr th, table tr td {
 }
 
 .reveal pre code {
-  max-height: 90%;
-  max-width: 105%;
-  width: 105% !important;
+  max-height: 100%;
+  max-width: 120%;
+  width: 120% !important;
   padding: 5px;
 }
 

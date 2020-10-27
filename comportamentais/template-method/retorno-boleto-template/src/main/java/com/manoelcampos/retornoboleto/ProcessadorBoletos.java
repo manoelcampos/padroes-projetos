@@ -14,7 +14,10 @@ import java.util.List;
  * para a leitura de arquivos de retorno de boletos bancários.
  * @author Manoel Campos da Silva Filho
  */
+// tag::class-start[]
 public abstract class ProcessadorBoletos {
+// end::class-start[]
+
     public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public static final DateTimeFormatter FORMATO_DATA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
@@ -31,9 +34,11 @@ public abstract class ProcessadorBoletos {
      *
      * @param nomeArquivo Nome do arquivo a ser processado
      */
+    // tag::template-method[]
     public final List<Boleto> processar(String nomeArquivo){
         try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
+            BufferedReader reader = 
+                Files.newBufferedReader(Paths.get(nomeArquivo));
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while ((line = reader.readLine()) != null) {
@@ -49,6 +54,8 @@ public abstract class ProcessadorBoletos {
         }
     }
 
+    // end::template-method[]
+
     /**
      * Recebe um vetor com os dados lidos de uma linha de um arquivo
      * de retorno de boleto
@@ -56,5 +63,10 @@ public abstract class ProcessadorBoletos {
      *              onde cada posição representa uma coluna do boleto
      * @return um objeto {@link Boleto} com os dados processados da linha do arquivo
      */
+    // tag::primitive-operation[]
     protected abstract Boleto processarLinhaArquivo(String[] linhaArquivo);
+    // end::primitive-operation[]
+
+// tag::class-end[]
 }
+// end::class-end[]

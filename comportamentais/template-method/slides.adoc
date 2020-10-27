@@ -1,6 +1,8 @@
 :revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
 //:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
 :revealjs_slideNumber: true
+:revealjs_navigationMode: linear
+
 :source-highlighter: highlightjs
 :icons: font
 :allow-uri-read:
@@ -10,7 +12,12 @@
 :toc: left
 :toc-title: Sumário
 :toclevels: 5
-:imagesdir: images/
+
+:proj-boleto-template: retorno-boleto-template/src/main/java/com/manoelcampos/retornoboleto/
+:proj-boleto-strategy: ../strategy/retorno-boleto/src/main/java/com/manoelcampos/retornoboleto/LeituraRetornoBancoBrasil.java
+:proj-boleto-template-strategy: retorno-boleto-template-and-strategy/src/main/java/com/manoelcampos/retornoboleto/
+:proj-boleto-funcional: retorno-boleto-template-funcional/src/main/java/com/manoelcampos/retornoboleto/
+
 
 ifdef::env-github[]
 //Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
@@ -32,7 +39,7 @@ endif::[]
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 
-= Padrão de Projetos Template Method image:template.png[link=https://www.flaticon.com/authors/monkik]
+= Padrão de Projetos Template Method image:images/template-large.png[link=https://www.flaticon.com/authors/monkik]: Quase tudo que precisa saber 🙌🏼
 
 Prof. Manoel Campos https://about.me/manoelcampos
 
@@ -51,127 +58,184 @@ image:../../images/ucpp.jpg[size=contain]
 [transition=zoofadem]
 == Aplicabilidade
 
+Pode ser aplicado quando:
+
 [%step]
 include::README.adoc[tag=aplicabilidade]
 
 [transition=zoom]
-== Modelagem do Strategy
-
-image::images/diagram.png[background, size=contain]
+== Modelagem do Template Method
 
 == !
 
-image::../../images/patterns/strategy/strategy-base-class-diagram.png[background, size=contain]
+image::images/template-method-base.png[background, size=contain]
 
 [transition=zoom, background-opacity=0.4]
 == Princípios utilizados
 
 image::../../images/recommendations.jpg[background, size=contain, text=https://www.smart-energy.com, link=https://www.smart-energy.com/industry-sectors/smart-energy/five-key-recommendations-for-the-sustainable-energy-sector-growth-in-mena/]
 
-== Princípios utilizados
-
 [%step]
-- Favorecer composição no lugar de herança
-- Baixo acoplamento
-- Programar para uma "interface" não uma implementação (GoF)
-
-== !
-
-image::images/solid-ugonna-thelma.png[background]
-
-
-== !
-
-image::images/solid-ugonna-thelma.png[width=40%]
-
-[%step]
-- **S**_ingle Responsitiliby Principle_ (SRP)
-- **O**_pen/Closed Principle_ (OCP)
-- **L**_iskov Substitution Principle_ (LSP)
-- **I**_nterface Segregation Principle_ (ISP)
-- **D**_ependency Inversion Principle_ (DIP)
-
-== Princípios SOLID utilizados
-
-[%step]
-- Single Responsibility Principle (SRP)
-- Open/Closed Principle (OCP)
-- Liskov Substitution Principle (LSP)
-- Interface Segregation Principle (ISP)
+- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]
+- https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)]
 
 [transition=zoom]
 == !
 
-- Exemplo: Leitura de arquivos de retorno de boletos bancários.
+- **Exemplo**: Leitura de arquivos de retorno de boletos bancários, de novo 😅.
 
 image::images/boleto-iugu-lp.png[background]
 
-== !
-
-include::README.adoc[tag=campos-boleto1]
+== Problema da versão com Strategy
 
 == !
 
-[start=3]
-include::README.adoc[tag=campos-boleto2]
+[source,java,linenums]
+----
+include::{proj-boleto-strategy}[tag=class-start]
+                /* Omitidos campos por simplificação */
+include::{proj-boleto-strategy}[tag=class-end]
+----
 
-[transition=zoom]
-== !
+== Modelagem do Retorno Boleto com Template Method
 
-Aplicação do Strategy pro Retorno Boleto 
+image::images/template-method-boleto.png[background, size=contain]
 
-image::images/strategy-icon.png[width=16%]
+== Implementação do Retorno Boleto com Template Method
 
-image::images/boleto-iugu-lp.png[background]
+=== Super classe com o método Template
 
-== Modelagem Conceitual do Strategy
+[source,java,linenums]
+----
+include::{proj-boleto-template}/ProcessadorBoletos.java[tag=class-start]
+include::{proj-boleto-template}/ProcessadorBoletos.java[tag=template-method]
+include::{proj-boleto-template}/ProcessadorBoletos.java[tag=primitive-operation]
+include::{proj-boleto-template}/ProcessadorBoletos.java[tag=class-end]
+----
 
-image:../../images/patterns/strategy/strategy-base-class-diagram.png[size=contain]
+=== Sub classe com operações primitivas (1 operação neste caso)
 
-[transition=zoom]
-== Diagrama Retorno Boleto 💵 Strategy 
+[source,java,linenums]
+----
+include::{proj-boleto-template}/LeituraRetornoBancoBrasil.java[tag=class-start]
+include::{proj-boleto-template}/LeituraRetornoBancoBrasil.java[tag=primitive-operation-start]
+        /* Omitidos campos por simplificação */
+include::{proj-boleto-template}/LeituraRetornoBancoBrasil.java[tag=primitive-operation-end]
+include::{proj-boleto-template}/LeituraRetornoBancoBrasil.java[tag=class-end]
+----
 
-== !
+=== Usando a implementação do BB image:images/bb.png[]
 
-image::../../images/patterns/strategy/retorno-boleto-class-diagram.png[background, size=contain]
+[source,java,linenums]
+----
+ProcessadorBoletos processador = new LeituraRetornoBancoBrasil();
+String nomeArquivo = "caminho-arquivo-retorno-boleto-banco-brasil.csv";
+processador.processar(nomeArquivo);
+----
 
-[transition=zoom]
-== !
-
-Modelagem Convencional sem o padrão Strategy 🤔
-
-image::../../images/patterns/strategy/no-strategy-class-diagram.png[background, size=contain]
-
-[transition=zoom]
-== Modelagem sem o padrão não permite
-
-image::../../images/patterns/strategy/no-strategy-class-diagram.png[width=50%]
+[transition=fade]
+== Comparação com o Strategy
 
 [%step]
-- alterar um comportamento em tempo de execução;
-- compartilhar implementações entre classes filhas;
-- combinar comportamentos em um só.
-
-[transition=zoom]
-== Como **NÃO** implementar uma solução 😳
-
-include::README.adoc[tag=como-nao-implementar]
-
-[transition=zoom]
-== !
-
-Modelagem anterior sem o padrão: utilizando herança
-
-image::../../images/patterns/strategy/no-strategy-class-diagram.png[background, size=contain]
+- Strategy https://en.wikipedia.org/wiki/Composition_over_inheritance[favorece composição no lugar de herança] 👍
+- Template Method usa apenas herança: perda da flexibilidade e dinamismo do Strategy 😒
+- Mas removeu a duplicação do código e dividiu mais ainda as responsabilidades 🙌🏼
 
 [transition=fade]
 == !
 
-Referências
+**QUE TAL JUNTAR O PODER DOS PADRÕES?**
+
+**Strategy + Template Method**
+
+image::images/power-union.jpg[background, size=contain, link="http://iberapa.com/sustainability/"]
+
+=== !
+
+image::images/template-method-strategy-boleto.png[background, size=contain]
+
+=== Implementação do Retorno Boleto com Strategy + Template Method
+
+=== !
+
+[source,java,linenums]
+----
+include::{proj-boleto-template-strategy}/ProcessadorBoletos.java[tag=class-start]
+include::{proj-boleto-template-strategy}/ProcessadorBoletos.java[tag=class-end]
+----
+
+=== !
+
+[source,java,linenums]
+----
+include::{proj-boleto-template-strategy}/LeituraRetornoBancoBrasil.java[tag=class-start]
+        /* Omitidos campos por simplificação */
+include::{proj-boleto-template-strategy}/LeituraRetornoBancoBrasil.java[tag=class-end]
+----
+
+=== Usando a nova implementação com Strategy + Template Method
+
+[source,java,linenums]
+----
+ProcessadorBoletos processador = 
+        new ProcessadorBoletos(new LeituraRetornoBancoBrasil());
+String nomeArquivo = "caminho-arquivo-retorno-boleto-banco-brasil.csv";
+processador.processar(nomeArquivo);
+----
+
+== Modelagem do Template Method com Programação Funcional em Java 8+
+
+image::images/template-method-funcional.png[]
+
+== Retorno Boleto com Template Method e Programação Funcional em Java 8+
+
+=== !
+
+image::images/template-method-boleto-funcional.png[background, size=contain]
+
+=== Implementação do Retorno Boleto com Template Method e Programação Funcional em Java 8+
+
+=== !
+
+[source,java,linenums]
+----
+include::{proj-boleto-funcional}/ProcessadorBoletos.java[tag=class-start]
+include::{proj-boleto-funcional}/ProcessadorBoletos.java[tag=class-end]
+----
+
+=== !
+
+[source,java,linenums]
+----
+include::{proj-boleto-funcional}/LeituraRetorno.java[tag=class-start]
+include::{proj-boleto-funcional}/LeituraRetorno.java[tag=method-start]
+        /* Omitidos campos por simplificação */
+include::{proj-boleto-funcional}/LeituraRetorno.java[tag=method-end]
+----
+
+=== Usando a implementação Funcional
+
+[source,java,linenums]
+----
+ProcessadorBoletos processador =
+        new ProcessadorBoletos(LeituraRetorno::processarLinhaBancoBrasil);
+String nomeArquivo = "caminho-arquivo-retorno-boleto-banco-brasil.csv";
+processador.processar(nomeArquivo);
+----
+
+== O que houve com o Strategy na implementação Funcional? 
+
+(revendo a modelagem)
+
+=== !
+
+image::images/template-method-boleto-funcional.png[background, size=contain]
+
+== !
+
+**Referências**
 
 - “Padrões de Projeto: Soluções reutilizáveis de software orientado a objetos”. 2006 [GoF].
 - “Use a Cabeça! Padrões de Projetos”, 2008 [UCPP].
 - “Agile software development principles, patterns, and practices”, Robert Martin, 2011. [ASDPPP]
-- https://medium.com/@brunobandev/os-princ%C3%ADpios-s-o-l-i-d-em-imagens-1b5233479c21[Os princípios S.O.L.I.D em imagens]
-- https://doi.org/10.1145/197320.197383[Liskov, B H. A behavioral notion of subtyping (1994).]
-- https://books.google.com.br/books?id=GXWkDwAAQBAJ&printsec=frontcover[Código Limpo: Habilidades Práticas do Agile Software], Robert Martin, 2019.
+- http://refactoring.guru (agora também em Português)
