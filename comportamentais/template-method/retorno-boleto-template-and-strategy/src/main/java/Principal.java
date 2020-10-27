@@ -12,13 +12,10 @@ import com.manoelcampos.retornoboleto.ProcessadorBoletos;
  *
  * @author Manoel Campos da Silva Filho
  */
-//tag::class[] 
 public class Principal {
     public static void main(String[] args) {
-        ProcessadorBoletos processador = 
-            new ProcessadorBoletos(new LeituraRetornoBancoBrasil());
+        ProcessadorBoletos processador = new ProcessadorBoletos(new LeituraRetornoBancoBrasil());
         String nomeArquivo = Principal.class.getResource("banco-brasil-1.csv").getPath();
         processador.processar(nomeArquivo);
     }
 }
-//end::class[] 
