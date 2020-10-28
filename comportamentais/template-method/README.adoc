@@ -75,8 +75,7 @@ de todo o algoritmo de processamento de tais arquivos.
 Isto porque, a parte de leitura do arquivo não muda, apenas
 como os dados são extraídos de cada linha obtida que sim.
 
-O projeto link:retorno-boleto-template-and-strategy[retorno-boleto-template-and-strategy] mostra uma implementação 
-puramente OO que une os dois padrões.
+// O projeto link:retorno-boleto-template-and-strategy[retorno-boleto-template-and-strategy] mostra uma implementação puramente OO que une os dois padrões. (projeto apenas no repo local)
 
 === Modelagem utilizando Programação Funcional
 
