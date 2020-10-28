@@ -38,7 +38,7 @@ endif::[]
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 
-= Padrão de Projetos Template Method image:images/template-large.png[link=https://www.flaticon.com/authors/monkik]: Quase tudo que precisa saber 🙌🏼
+= Padrão de Projetos Template Method image:images/template-large.png[link=https://www.flaticon.com/authors/monkik]: Quase tudo que precisa saber (com exemplos em Java 8+) 🙌🏼
 
 Prof. Manoel Campos https://about.me/manoelcampos
 

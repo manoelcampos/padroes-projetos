@@ -8,20 +8,20 @@ import java.time.LocalDate;
  //tag::class-start[]
 public class LeituraRetornoBancoBrasil implements LeituraRetorno {
     @Override
-    public Boleto processarLinhaArquivo(String[] linhaArquivo) {
+    public Boleto processarLinhaArquivo(String[] vetorLinhaArq) {
         Boleto boleto = new Boleto();
-        boleto.setId(Integer.parseInt(linhaArquivo[0]));
-        boleto.setCodBanco(linhaArquivo[1]);
+        boleto.setId(Integer.parseInt(vetorLinhaArq[0]));
+        boleto.setCodBanco(vetorLinhaArq[1]);
         //end::class-start[]
 
-        boleto.setDataVencimento(LocalDate.parse(linhaArquivo[2], FORMATO_DATA));
-        boleto.setDataPagamento(LocalDate.parse(linhaArquivo[3], FORMATO_DATA).atTime(0, 0, 0));
+        boleto.setDataVencimento(LocalDate.parse(vetorLinhaArq[2], FORMATO_DATA));
+        boleto.setDataPagamento(LocalDate.parse(vetorLinhaArq[3], FORMATO_DATA).atTime(0, 0, 0));
 
         //tag::class-end[]
-        boleto.setCpfCliente(linhaArquivo[4]);
-        boleto.setValor(Double.parseDouble(linhaArquivo[5]));
-        boleto.setMulta(Double.parseDouble(linhaArquivo[6]));
-        boleto.setJuros(Double.parseDouble(linhaArquivo[7]));
+        boleto.setCpfCliente(vetorLinhaArq[4]);
+        boleto.setValor(Double.parseDouble(vetorLinhaArq[5]));
+        boleto.setMulta(Double.parseDouble(vetorLinhaArq[6]));
+        boleto.setJuros(Double.parseDouble(vetorLinhaArq[7]));
         return boleto;
     }
 }
