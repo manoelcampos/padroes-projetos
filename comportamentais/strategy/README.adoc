@@ -180,6 +180,12 @@ pass:[<a name="functional"></a>]
 
 == Modelagem do Padrão utilizando Programação Funcional
 
+[NOTE]
+==== 
+- https://docs.google.com/presentation/d/e/2PACX-1vTJE9Dt23OdsfZda7mBuinRpy8BldyKlxfVbXalwZb2L4BFqVkkpb8SWBdIeWBhdfbl3RLOTv8J60Nd/pub?start=false&loop=false&delayms=3000[Apresentação e vídeo de introdução à programação funcional.]
+- https://youtu.be/hsRbUGTV2ok[Vídeo da implementação com programação funcional.]
+====
+
 Observando o diagrama base para a implementação do padrão Strategy, pode-se perceber que são criadas muitas classes e interfaces. As classes implementando essas interfaces não possuem atributos e têm apenas um único método que representa a implementação da estratégia em si.
 
 Graças à Programação Funcional em diversas linguagens como Java 8+, JavaScript, Phython e outras, podemos simplificar este diagrama, e consequentemente a implementação, como mostra a figura a seguir.
