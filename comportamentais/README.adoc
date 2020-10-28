@@ -17,6 +17,8 @@ endif::[]
 
 image::behaviour.gif[width=300]
 
+NOTE: https://www.youtube.com/watch?v=as8N4o2u0Lg&list=PLyo0RUAM69Us0FrSJYr2E_w-6bNlQY5GN[Playlist de Padrões Comportamentais no YouTube]
+
 - link:strategy[Strategy]
 - link:template-method[Template Method]
 
