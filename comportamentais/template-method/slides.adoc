@@ -9,9 +9,6 @@
 :stylesheet: ../../adoc-golo.css
 :customcss: ../../slides-base.css
 :numbered:
-:toc: left
-:toc-title: Sumário
-:toclevels: 5
 
 :proj-boleto-template: retorno-boleto-template/src/main/java/com/manoelcampos/retornoboleto/
 :proj-boleto-strategy: ../strategy/retorno-boleto/src/main/java/com/manoelcampos/retornoboleto/LeituraRetornoBancoBrasil.java
