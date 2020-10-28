@@ -17,6 +17,8 @@ endif::[]
 
 == Template Method (Método Modelo) image:template.png[link=https://www.flaticon.com/authors/monkik]
 
+NOTE: https://youtu.be/rg8_0f6bWWo[Vídeo de apresentação do padrão.]
+
 === Definição
 
 // tag::definicao[]
