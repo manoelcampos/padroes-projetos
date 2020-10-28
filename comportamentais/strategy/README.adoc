@@ -17,6 +17,8 @@ endif::[]
 
 == Strategy (Estratégia)
 
+NOTE: https://youtu.be/uQltGzH3Hms[Vídeo de apresentação do padrão]
+
 === Definição
 
 // tag::definicao[]
