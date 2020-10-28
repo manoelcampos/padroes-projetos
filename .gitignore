@@ -29,3 +29,6 @@ slides.html
 
 #Moodle Backup
 *.mbz
+
+#Projetos Privados (apenas no repo local)
+retorno-boleto-template-and-strategy/
