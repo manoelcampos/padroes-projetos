@@ -1,0 +1,39 @@
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+:revealjs_slideNumber: true
+:source-highlighter: highlightjs
+:icons: font
+:allow-uri-read:
+:stylesheet: ../../adoc-golo.css
+:customcss: ../../slides-base.css
+:numbered:
+:toc: left
+:toc-title: Sumário
+:toclevels: 5
+
+ifdef::env-github[]
+//Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:chapter-label:
+:listing-caption: Listagem
+:figure-caption: Figura
+
+//Transição para todos os slides // none/fade/slide/convex/concave/zoom
+//:revealjs_transition: 'zoom'
+
+//https://github.com/hakimel/reveal.js#theming
+:revealjs_theme: league
+
+// = Padrão Strategy com Programação Funcional no Java 8 image:images/strategy-icon.png[width=16%]
+
+= Strategy Funcional: https://docs.google.com/presentation/d/e/2PACX-1vRzqcUXSv7IRqhFo0zPmeS8OY17NG4LplA6ZNRQ6lTI02IYteX5t2EJTsmP_24xsYPBONE6WvarLWYH/pub?start=false&loop=false&delayms=3000[Link pro Google Slides (converter para adoc posteriormente)]
+
+
+
