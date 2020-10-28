@@ -20,7 +20,7 @@ endif::[]
 === Definição
 
 // tag::definicao[]
-📘"Define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos pras subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>
+📘"Especifica o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos pras subclasses. Permite que as subclasses alterem certos passos do algoritmo sem alterar a estrutura dele." <<UCPP>>
 // end::definicao[]
 
 === Aplicabilidade
@@ -45,7 +45,7 @@ Um projeto de exemplo para o diagrama apresentado está disponível link:modelag
 
 === Princípios utilizados
 
-- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]: separa as partes que mudam (as operações primitivas/comportamentos) de dentro da classe que utiliza eles. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
+- https://en.wikipedia.org/wiki/Open–closed_principle[Open/Closed Principle (OCP)]: separa as partes que mudam (as operações primitivas/comportamentos) de dentro da classe que as utiliza. Isto torna a classe "aberta para extensão e fechada para modificação" (em relação aos comportamentos).
 - https://en.wikipedia.org/wiki/Single_responsibility_principle[Single Responsibility Principle (SRP)]: a classe que usa os comportamentos não tem a responsabilidade de implementar estes comportamentos. 
 
 === Exemplo: Leitura de Retorno de Boletos
