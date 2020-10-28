@@ -106,7 +106,7 @@ image::images/template-method-boleto.png[background, size=contain]
 
 == Implementação do Retorno Boleto com Template Method
 
-=== Super classe com o método Template
+=== Super classe
 
 [source,java,linenums]
 ----
@@ -116,7 +116,7 @@ include::{proj-boleto-template}/ProcessadorBoletos.java[tag=primitive-operation]
 include::{proj-boleto-template}/ProcessadorBoletos.java[tag=class-end]
 ----
 
-=== Sub classe com operações primitivas (1 operação neste caso)
+=== Sub classe
 
 [source,java,linenums]
 ----
