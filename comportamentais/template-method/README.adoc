@@ -91,7 +91,7 @@ indicando que eles armazenam a implementação de uma função. É a mesma lógi
 
 O código fonte do projeto funcional para leitura de arquivos de retorno está disponível link:retorno-boleto-template-funcional[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/comportamentais/template-method/retorno-boleto-template-funcional[zip]).
 
-== Modelagem convencional Sem o padrão Template Method
+== Modelagem convencional **SEM** o padrão Template Method
 
 Uma modelagem convencional que não utiliza o Template Method é normalmente modelada como apresentado no diagrama a seguir.
 
