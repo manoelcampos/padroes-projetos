@@ -180,6 +180,6 @@ O código fonte do projeto está disponível link:exportador-simple-factory[aqui
 === Tornando a exportação de dados genérica
 
 O projeto anterior permite exportar apenas uma lista de produtos. Se precisarmos exportar outros dados como clientes ou vendas, teremos que criar um novo conjunto de classes para cada tipo de objeto que queremos exportar. Isto é bastante trabalhoso e repetitivo.
-Neste projeto vamos usar reflection com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
+Neste projeto vamos usar __Reflection__, um recurso avançado da linguagem Java, com o Simple Factory para conseguir exportar qualquer dado em qualquer formato implementado.
 
 O código fonte do projeto está disponível link:exportador-simple-factory-reflection[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/exportador-simple-factory-reflection[zip]), mas tente primeiro implementar antes de ver o projeto.
