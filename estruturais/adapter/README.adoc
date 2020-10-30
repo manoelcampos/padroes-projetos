@@ -100,7 +100,7 @@ Bibliotecas para geração de logs em aplicações são um exemplo onde o Adapte
 Você pode nunca ter usado uma biblioteca destas em Java ou qualquer linguagem, mas pode ter certeza que
 precisará. Log é um recurso essencial em qualquer aplicação rodando em produção.
 
-A java.util.logging (JUL) é um dos casos onde uma biblioteca fornecida pelo JDK possui recursos limitados e outras surgiram justamente para resolver tais problemas, como a https://logging.apache.org/log4j/[Apache Log4J]. Existem algumas outras bibliotecas de log para Java, mas incompatíveis entre si. 
+A https://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html[java.util.logging (JUL)] é um dos casos onde uma biblioteca fornecida pelo JDK possui recursos limitados e outras surgiram justamente para resolver tais problemas, como a https://logging.apache.org/log4j/[Apache Log4J]. Existem algumas outras bibliotecas de log para Java, mas incompatíveis entre si. 
 Por esta causa, o adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apache Log4J JUL Adapter] permite utilizar a Log4J no lugar da JUL, sem precisar alterar o código da aplicação.
 
 == Exercícios
