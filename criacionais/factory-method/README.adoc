@@ -99,7 +99,7 @@ O código fonte do projeto está disponível link:exportador-factory-method-refl
 
 xxxxxxxxxxxx
 
-== Problemas da NÃO utilização do padrão
+== Problemas da **NÃO** utilização do padrão
 
 Veja o projeto link:exportador-problematico[exportador-problematico] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-problematico[zip]).
 Ele é uma implementação do exportador de dados sem utilizar o padrão Factory Method,
