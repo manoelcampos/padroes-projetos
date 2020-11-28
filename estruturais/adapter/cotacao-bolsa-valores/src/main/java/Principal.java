@@ -1,19 +1,17 @@
-import com.jimmoores.quandl.DataSetRequest;
-import com.jimmoores.quandl.Row;
-import com.jimmoores.quandl.TabularResult;
+//Quandl
+import com.jimmoores.quandl.*;
 import com.jimmoores.quandl.classic.ClassicQuandlSession;
-import io.github.mainstringargs.yahooFinance.YahooFinanceData;
-import io.github.mainstringargs.yahooFinance.YahooFinanceModules;
-import io.github.mainstringargs.yahooFinance.YahooFinanceRequest;
-import io.github.mainstringargs.yahooFinance.YahooFinanceUrlBuilder;
+
+//YahooFinance
+import io.github.mainstringargs.yahooFinance.*;
 import io.github.mainstringargs.yahooFinance.domain.FinancialData;
-import org.patriques.AlphaVantageConnector;
-import org.patriques.BatchStockQuotes;
+
+//AlphaVantage
+import org.patriques.*;
 import org.patriques.output.AlphaVantageException;
 import org.patriques.output.quote.BatchStockQuotesResponse;
 import org.patriques.output.quote.data.StockQuote;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -43,7 +41,7 @@ public class Principal {
      * Acessa a cotação de uma determinada empresa utilizando o serviço do <a href="https://finance.yahoo.com">Yahoo Finance</a>
      * por meio da biblioteca <a href="https://github.com/mainstringargs/yahoo-finance-scraper">Yahoo Finance Scrapper</a>.
      * @param codigoEmpresa
-     * @see http://meumobi.github.io/stocks%20apis/2016/03/13/get-realtime-stock-quotes-yahoo-finance-api.html
+     * @see <a href="http://meumobi.github.io/stocks%20apis/2016/03/13/get-realtime-stock-quotes-yahoo-finance-api.html">Get realtime stock quotes yahoo finance API</a>
      */
     private static void cotacaoUsandoYahooFinance(String codigoEmpresa) {
         System.out.printf("Cotação da Empresa %s obtida pelo serviço Yahoo Finance: https://finance.yahoo.com%n", codigoEmpresa);
