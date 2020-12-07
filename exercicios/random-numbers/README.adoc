@@ -11,7 +11,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Adaptando Geradores de Números Aleatórios (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/exercicios/random-numbers[zip])
+= Geradores de Números Aleatórios (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/exercicios/random-numbers[zip])
 
 Em qualquer linguagem de programação existem geradores de números pseudo-aleatórios. Estes geradores são chamados assim pois os números não são de fato aleatórios, uma vez que é utilizada uma equação para calcular cada número gerado. Em Java, a classe `Random` do pacote `java.util` é uma das formas utilizadas para gerar tais números. No entanto, existem diferentes implementações destes geradores, cada uma com finalidades específicas ou diferentes níveis de qualidades em relação à aleatoriedade dos números gerados. 
 
