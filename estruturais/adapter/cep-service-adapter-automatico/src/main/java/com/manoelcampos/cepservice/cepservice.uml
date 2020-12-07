@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="77.0" y="100.0">com.manoelcampos.cepservice.AbstractCepService</node>
+    <node x="212.0" y="356.0">com.manoelcampos.cepservice.PostmonService</node>
+    <node x="77.0" y="0.0">com.manoelcampos.cepservice.CepService</node>
+    <node x="0.0" y="356.0">com.manoelcampos.cepservice.ViaCepService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.manoelcampos.cepservice.ViaCepService" target="com.manoelcampos.cepservice.AbstractCepService">
+      <point x="0.0" y="-48.0" />
+      <point x="96.0" y="331.0" />
+      <point x="139.5" y="331.0" />
+      <point x="-62.5" y="103.0" />
+    </edge>
+    <edge source="com.manoelcampos.cepservice.PostmonService" target="com.manoelcampos.cepservice.AbstractCepService">
+      <point x="0.0" y="-48.0" />
+      <point x="308.0" y="331.0" />
+      <point x="264.5" y="331.0" />
+      <point x="62.5" y="103.0" />
+    </edge>
+    <edge source="com.manoelcampos.cepservice.AbstractCepService" target="com.manoelcampos.cepservice.CepService">
+      <point x="0.0" y="-103.0" />
+      <point x="0.0" y="25.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="441.0" y="82.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

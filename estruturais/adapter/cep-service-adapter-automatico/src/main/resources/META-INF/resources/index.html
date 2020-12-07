@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Serviço de Busca de Endereço pelo CEP usando injeção de dependência</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+      <form id="formulario" method="post">
+        <p>
+            <label for="cep">Digite um CEP para buscar o endereço: </label>
+            <input type="number" id="cep" value="77021090" maxlength="8" size="25" />
+        </p>
+        <button type="submit" id="enviar">Enviar</button>
+
+        <p>
+          <div id="msg"></div>
+        </p>
+
+          <p>Consulte diretamente a API em <a href="/api/endereco/77021090">/api/endereco/77021090</a></p>
+      </form>
+
+      <script>
+        const consultarCep = async () => {
+          $("#msg").html("");
+          $("#enviar").attr("disabled", true);
+          try{
+              const cep = $("#cep").val();
+              const response = await fetch("/api/endereco/" + cep);
+              if(!response.ok)
+                  throw new Error(response.status + " " + response.statusText);
+
+              const endereco = await response.text();
+              $("#msg").html(endereco);
+              console.log(endereco);
+          }catch(erro){
+              $("#msg").html(erro);
+              console.log(erro);
+          } finally {
+              $("#enviar").attr("disabled", false);
+          }
+        };
+
+        const inicializar = () => {
+            $("#formulario").submit(() => {
+              consultarCep();
+              return false;
+            });
+        };
+
+        //Quando a página carregar completamente, chama a função inicializar
+        $(inicializar);
+      </script>
+  </body>
+</html>

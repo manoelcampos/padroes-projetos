@@ -1,0 +1,34 @@
+*.alias.*
+~$*
+*.mp4
+target/
+cep-service/
+
+#IntelliJ Files
+*.iml
+*.ipr
+*.iws
+.idea
+
+#GitHub Pages Jekyll Plugin
+_site
+.bundle
+
+aulas/
+provas
+
+node_modules/
+
+#Diretório do reveal.js.
+#Pode ser acessado a partir de uma URL.
+reveal.js-*
+slides.html
+
+#macOS Files
+.DS_Store
+
+#Moodle Backup
+*.mbz
+
+#Projetos Privados (apenas no repo local)
+retorno-boleto-template-and-strategy/

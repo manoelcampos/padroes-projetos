@@ -1,0 +1,29 @@
+@import url(https://raw.githubusercontent.com/manoelcampos/padroes-projetos/master/adoc-golo.css);
+
+section, section h1, section h2, section h3, section h4, section h5, section h6, section ul li, 
+#dark, #dark h1, #dark h2 {
+  color: #ff0; 
+  text-shadow: -4px -4px 12px #000000;
+}
+
+.reveal section img {
+  border: 0px !important;
+  background-color: transparent;
+}
+
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td, 
+table tr th, table tr td { 
+  font-size: 22px !important;
+}
+
+.reveal pre code {
+  max-height: 100%;
+  max-width: 120%;
+  width: 120% !important;
+  padding: 5px;
+}
+
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  text-transform: none;
+}

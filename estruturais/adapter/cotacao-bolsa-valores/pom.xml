@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.manoelcampos</groupId>
+    <artifactId>cotacao-bolsa-valores</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- Acessa o serviço Yahoo Finance para obter cotação de moedas e dados de empresas da bolsa de valores.
+        https://finance.yahoo.com
+        https://github.com/mainstringargs/yahoo-finance-scraper
+        -->
+        <dependency>
+            <groupId>io.github.mainstringargs</groupId>
+            <artifactId>yahoo-finance-scraper</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <!-- Acessa o serviço AlphaVantage para obter cotação de moedas e dados de empresas da bolsa de valores.
+        https://www.alphavantage.co
+        https://github.com/mainstringargs/alpha-vantage-scraper
+        -->
+        <dependency>
+            <groupId>io.github.mainstringargs</groupId>
+            <artifactId>alpha-vantage-scraper</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <!-- Acessa o serviço Quandl para obter cotação de moedas e dados de empresas da bolsa de valores.
+        https://www.quandl.com
+        http://quandl4j.org
+        -->
+        <dependency>
+            <groupId>com.jimmoores</groupId>
+            <artifactId>quandl-core</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+    </dependencies>
+</project>

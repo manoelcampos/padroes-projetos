@@ -1,0 +1,19 @@
+{
+  "name": "modelagem-strategy-pattern",
+  "version": "1.0.0",
+  "description": "Mostra como implementar o padrão Strategy em JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "strategy",
+    "design pattern",
+    "modelagem"
+  ],
+  "author": "Manoel Campos",
+  "license": "MIT",
+  "dependencies": {
+    "line-reader": "^0.4.0"
+  }
+}

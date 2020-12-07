@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="151.5" y="585.0">com.manoelcampos.modelo.Paciente.Builder</node>
+    <node x="0.0" y="0.0">com.manoelcampos.modelo.Paciente</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.manoelcampos.modelo.Paciente.Builder" target="com.manoelcampos.modelo.Paciente">
+      <point x="0.0" y="-135.0" />
+      <point x="0.0" y="267.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="379.0" y="280.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

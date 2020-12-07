@@ -1,0 +1,158 @@
+0:00:05.300,0:00:07.280
+Bem, vamos iniciar
+
+0:00:07.280,0:00:10.220
+Bem vindos a esta seção de Padrões de Projeto à Luz de Expressões Lambda
+
+0:00:10.220,0:00:12.240
+Meu nome é Venkat Subrumaniam
+
+0:00:12.280,0:00:14.280
+Vamos falar sobre padrões de projeto
+
+0:00:14.440,0:00:18.440
+Mas vamos falar como lambdas mudam os padrões e como os usamos
+
+0:00:18.720,0:00:24.120
+ Eu gostaria de iniciar dizendo que eu realmente odeio padrões de projeto
+
+0:00:24.300,0:00:26.160
+Isto foi bastante motivador, não foi?
+
+0:00:26.480,0:00:28.740
+Eu digo porque realmente odeio padrões
+
+0:00:28.840,0:00:32.280
+Nós com frequência tentamos usar os padrões muito rapidamente
+
+0:00:32.280,0:00:34.120
+Se você pensar sobre isto
+
+0:00:34.180,0:00:37.160
+Como nós realmente descobrimos qual padrão usar?
+
+0:00:37.400,0:00:39.660
+Eu diria, se você pensar sobre isso
+
+0:00:39.760,0:00:41.860
+Todos podemos concordar que vovó faz a melhor torta
+
+0:00:41.860,0:00:44.820
+Você tem falado sobre a torta da sua vó para amigos
+
+0:00:44.820,0:00:48.540
+e seus amigos dizem: "Se a torta da sua vó é tão boa, porque você não faz?"
+
+0:00:48.540,0:00:50.200
+Então você liga para sua avó e diz: "vovó, "
+
+0:00:50.200,0:00:52.600
+ "...eu tenho falado sobre sua torta o tempo todo"
+
+0:00:52.600,0:00:54.660
+"..., eu gostaria da receita, eu quero fazê-la para meus amigos"
+
+0:00:54.880,0:00:57.480
+Então sua avó lhe dá a receita da torta
+
+0:00:57.480,0:00:58.800
+e você copia
+
+0:00:58.800,0:01:00.640
+Enquanto você copia vovó diz...
+
+0:01:00.680,0:01:03.480
+"adicione duas colheres de açúcar"
+
+0:01:03.520,0:01:06.520
+e você diz "espere aí, colher de mesa ou de chá?"
+
+0:01:06.520,0:01:08.140
+Você pergunta todos estes detalhes
+
+0:01:08.140,0:01:10.860
+E uma vez que perguntou tudo, o que você faz?
+
+0:01:10.860,0:01:14.640
+Você diz: "Vovó, deixe-me revisar tudo. Quais são as melhores práticas?"
+
+0:01:14.960,0:01:16.960
+Bem, depois disso você faz a torta.
+
+0:01:16.960,0:01:18.560
+E como ela saiu?
+
+0:01:19.520,0:01:20.980
+Um desastre, não foi?
+
+0:01:21.120,0:01:23.860
+A última vez que tentei, eu perdi a colher dentro da torta.
+
+0:01:24.140,0:01:25.900
+A questão é: simplesmente não funcionou.
+
+0:01:25.900,0:01:29.760
+Então você finalmente encontra a vovó e diz "Vovó, foi um desastre" e vovó diz...
+
+0:01:29.900,0:01:32.080
+"Vamos fazer torta juntos"
+
+0:01:32.080,0:01:35.220
+E você está assistindo vovó fazendo torta enquanto ela lhe conta histórias
+
+0:01:35.460,0:01:37.880
+E quando vovó quer adicionar açúcar o que ela faz?
+
+0:01:37.960,0:01:42.820
+Vovó pega duas colheres de açúcar, mede precisamente e adiciona? Certo?
+
+0:01:43.100,0:01:48.340
+Não! Vovó enquanto está conversando, joga um pouco de açúcar
+
+0:01:48.340,0:01:49.880
+E você diz: "- Espere, o que foi aquilo?"
+
+0:01:49.880,0:01:50.560
+"- Açúcar!?"
+
+0:01:50.560,0:01:51.860
+"- Quanto você pôs?"
+
+0:01:51.860,0:01:52.740
+"- Suficiente!?"
+
+0:01:53.180,0:01:57.420
+É quando você percebe que vovó nunca segue a receita  que ela lhe deu.
+
+0:01:57.540,0:02:00.480
+Bem, os caras que escreveram o livro de Padrões de Projeto
+
+0:02:00.480,0:02:03.120
+São as vovó e vovôs da indústria
+
+0:02:03.300,0:02:07.300
+A pior coisa que eles já fizeram na vida foi escrever o maldito livro
+
+0:02:07.660,0:02:11.500
+E agora todo mundo pensa, certo? "Nós podemos de fato fazer isso"
+
+0:02:11.540,0:02:14.000
+e "Uau! Eu posso usar padrões também"
+
+0:02:14.100,0:02:18.980
+De fato leva-se anos de experiência e erros para aprender a usar padrões
+
+0:02:19.200,0:02:25.360
+Tendo dito isso, se nós decidimos usar um padrão, eu frequentemente uso um padrão como uma forma de comunicação
+
+0:02:25.360,0:02:27.400
+e não como uma ferramenta de projeto.
+
+0:02:27.580,0:02:31.980
+E pode ser muito fácil de comunicar e dizer "Eu estou usando este Factory Method" aqui,
+
+0:02:31.980,0:02:33.920
+"eu estou usando o Abstract Factory aqui" (....),
+
+0:02:34.140,0:02:36.300
+um "Decorator aqui" pode ser uma ferramenta de comunicação legal
