@@ -7,6 +7,14 @@
 
 = Padrões de Projeto em Java
 
+ifdef::env-github[]
+[IMPORTANT]
+====
+- Se você não pretende fazer alterações neste repositório e contribuir de volta para o projeto, não faça fork. Se fizer, sempre que o projeto for atualizado, você vai ficar com uma cópia absoleta. Se você que apenas baixar para navegar ou fazer alterações localmente, faça um clone no botão `Code` acima.
+- Se você quer apenas salvar o projeto para consulta posterior, use o botão `Star` ⭐️ acima. Isto ainda ajuda a divulgar o material.
+====
+endif::[]
+
 ifdef::env-github[image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghpages/badge.svg[GitHub Pages,link=http://manoelcampos.com/padroes-projetos/]]
 
 ifdef::env-github[]
