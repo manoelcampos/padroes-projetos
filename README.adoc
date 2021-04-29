@@ -19,7 +19,7 @@ endif::[]
 ifdef::env-github[]
 [IMPORTANT]
 ====
-- Se você não pretende fazer alterações neste repositório e contribuir de volta para o projeto, não faça fork. Se fizer, sempre que o projeto for atualizado, você vai ficar com uma cópia absoleta. Se você que apenas baixar para navegar ou fazer alterações localmente, faça um clone no botão `Code` acima.
+- Se você não pretende fazer alterações neste repositório, não faça fork. Se fizer, sempre que o projeto for atualizado, sua cópia vai ficar absoleta. Se você quer apenas baixar para navegar localmente, faça um clone no botão `Code` acima.
 - Se você quer apenas salvar o projeto para consulta posterior, use o botão `Star` ⭐️ acima. Isto ainda ajuda a divulgar o material.
 ====
 endif::[]
