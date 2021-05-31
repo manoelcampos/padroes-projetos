@@ -9,11 +9,10 @@ import io.github.mainstringargs.yahooFinance.domain.FinancialData;
 //AlphaVantage
 import org.patriques.*;
 import org.patriques.output.AlphaVantageException;
-import org.patriques.output.quote.BatchStockQuotesResponse;
+import org.patriques.output.quote.StockQuotesResponse;
 import org.patriques.output.quote.data.StockQuote;
 
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 /**
  * Classe principal que mostra como obter a cotação de empresas da bolsa de valores
@@ -79,13 +78,13 @@ public class Principal {
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
 
         //Permite obter a cotação (quotes) de ações (stocks).
-        BatchStockQuotes stockQuotes = new BatchStockQuotes(apiConnector);
+        StockQuotes stockQuotes = new StockQuotes(apiConnector);
 
         try {
-            BatchStockQuotesResponse response = stockQuotes.quote(codigoEmpresa);
-            List<StockQuote> stockQuoteList = response.getStockQuotes();
+            StockQuotesResponse response = stockQuotes.quote(codigoEmpresa);
+            StockQuote stock = response.getStockQuote();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            stockQuoteList.forEach(stock -> System.out.printf("Data: %s Preço: %s%n", formatter.format(stock.getTimestamp()), stock.getPrice()));
+            System.out.printf("Data: %s Preço: %s%n", formatter.format(stock.getLatestTradingDay()), stock.getPrice());
         } catch (AlphaVantageException e) {
             System.out.println("Erro ao solicitar cotação da empresa " + codigoEmpresa + ": " + e.getMessage());
         }
