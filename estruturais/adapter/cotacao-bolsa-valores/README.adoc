@@ -15,12 +15,12 @@ endif::[]
 = Projeto Base que obtem a cotação de empresas da bolsa de valores (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cotacao-bolsa-valores[zip])
 
 O projeto utiliza 3 serviços diferentes (Yahoo Finance, AlphaVantage e Quandl) para obter a cotação de empresas da bolsa de valores.
-São utilizas bibliotecas existentes para fazer acesso a estes serviços
+São utilizadas bibliotecas existentes para fazer acesso a estes serviços
 e o código disponibilizado mostra como usar cada uma destas bibliotecas.
 
 Mas como observará, a forma de utilizar cada uma é totalmente diferente da outra.
 A partir deste código, altere o projeto criando 3 adaptadores: um pra cada uma
-das bibiliotecas dos serviços mencionados.
+das bibliotecas dos serviços mencionados.
 Com isto, será possível trocar um serviço pelo outro sem alterar o código do projeto.
 
 Adicionalmente, você perceberá que o código das empresas tem formato diferente em cada serviço.
