@@ -7,10 +7,10 @@ import io.github.mainstringargs.yahooFinance.*;
 import io.github.mainstringargs.yahooFinance.domain.FinancialData;
 
 //AlphaVantage
-import org.patriques.*;
-import org.patriques.output.AlphaVantageException;
-import org.patriques.output.quote.StockQuotesResponse;
-import org.patriques.output.quote.data.StockQuote;
+import io.github.mainstringargs.*;
+import io.github.mainstringargs.output.AlphaVantageException;
+import io.github.mainstringargs.output.quote.StockQuotesResponse;
+import io.github.mainstringargs.output.quote.data.StockQuote;
 
 import java.time.format.DateTimeFormatter;
 

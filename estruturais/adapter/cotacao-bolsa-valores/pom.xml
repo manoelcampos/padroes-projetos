@@ -43,7 +43,7 @@
         <dependency>
             <groupId>io.github.mainstringargs</groupId>
             <artifactId>alpha-vantage-scraper</artifactId>
-            <version>1.4.0</version>
+            <version>1.5.0</version>
         </dependency>
 
         <!-- Acessa o serviço Quandl para obter cotação de moedas e dados de empresas da bolsa de valores.
