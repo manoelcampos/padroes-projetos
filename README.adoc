@@ -14,7 +14,7 @@ endif::[]
 
 // :toc: left
 
-= Padrões de Projeto em Java
+= Padrões de Projeto em Java ifdef::env-github[image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghpages/badge.svg[GitHub Pages,link=http://manoelcampos.com/padroes-projetos/]]
 
 ifdef::env-github[]
 [IMPORTANT]
@@ -23,8 +23,6 @@ ifdef::env-github[]
 - Se você quer apenas salvar o projeto para consulta posterior, use o botão `Star` ⭐️ acima. Isto ainda ajuda a divulgar o material.
 ====
 endif::[]
-
-ifdef::env-github[image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghpages/badge.svg[GitHub Pages,link=http://manoelcampos.com/padroes-projetos/]]
 
 ifdef::env-github[]
 :outfilesuffix: .adoc
