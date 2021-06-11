@@ -16,9 +16,10 @@ endif::[]
 
 = Padrões de Projeto em Java 
 
-ifdef::env-github[image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghpages/badge.svg[GitHub Pages,link=http://manoelcampos.com/padroes-projetos/]]
-
 ifdef::env-github[]
+
+image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghpages/badge.svg[GitHub Pages,link=http://manoelcampos.com/padroes-projetos/]
+
 [IMPORTANT]
 ====
 - Se você não pretende fazer alterações neste repositório, não faça fork. Se fizer, sempre que o projeto for atualizado, sua cópia vai ficar absoleta. Se você quer apenas baixar para navegar localmente, faça um clone no botão `Code` acima.
