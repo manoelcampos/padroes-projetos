@@ -23,6 +23,19 @@ import java.time.format.DateTimeFormatter;
  * Ou seja, a forma de usar cada uma das bibliotecas é diferente.
  * Por isso, é preciso criar um adapter para padronizar a utilização das bibliotecas
  * e permitir trocar uma pela outra sem alterar o código do projeto.
+ *
+ * <p>
+ * Observe que os métodos {@link #cotacaoUsandoYahooFinance(String)},
+ * {@link #cotacaoUsandoAlphaVantage(String)} e
+ * {@link #cotacaoUsandoQuandl(String)} não estão retornando nada, pois
+ * isto é apenas um exemplo.
+ * Se formos usar esta implementação em uma aplicação com interface gráfica (e não console),
+ * o usuário não vai ver os prints inseridos.
+ * Por isso neste caso, os método pra serem úteis para qualquer tipo de app (web, mobile, desktop, console, etc),
+ * precisam retornar algum dado. Se tivermos uma app web, por exemplo, podemos então pegar estes dados e exibir
+ * em uma página HTML.
+ * Como você irá remodelar o código para aplicar o projeto, você precisa fazer estas alterações.
+ * </p>
  * @author Manoel Campos da Silva Filho
  */
 public class Principal {
