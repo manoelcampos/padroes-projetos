@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Classe principal que mostra como obter a cotação de empresas da bolsa de valores
  * utilizando 3 serviços diferentes: Yahoo Finance, AlphaVantage e Quandl.
- * Os métodos implementados tem todo o código para utilizar as bibliotecas
+ * Os métodos implementados tem o código para utilizar as bibliotecas
  * que implementam o acesso a tais serviços.
  * Mas como podem ver, o código dos 3 métodos é totalmente diferente um do outro.
  * Ou seja, a forma de usar cada uma das bibliotecas é diferente.
@@ -52,7 +52,7 @@ public class Principal {
 
         FinancialData financials = financeData.getFinancialData();
         if (financials != null) {
-            System.out.printf("Data: Preço: %s %s%n", financials.getFinancialCurrency(), financials.getCurrentPrice().getRaw());
+            System.out.printf("Preço: %s %s%n", financials.getFinancialCurrency(), financials.getCurrentPrice().getRaw());
         }
 
         System.out.println(builder.getURL());
