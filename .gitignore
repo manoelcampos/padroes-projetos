@@ -15,14 +15,22 @@ _site
 .bundle
 
 aulas/
+resumos/
+provas/
+# Symlink
 provas
+
+# Planilhas de notas
+*.xls*
+*.ods
 
 node_modules/
 
 #Diretório do reveal.js.
 #Pode ser acessado a partir de uma URL.
 reveal.js-*
-slides.html
+*.html
+*.pdf
 
 #macOS Files
 .DS_Store
