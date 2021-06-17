@@ -3,14 +3,16 @@ import com.jimmoores.quandl.*;
 import com.jimmoores.quandl.classic.ClassicQuandlSession;
 
 //YahooFinance
+import io.github.mainstringargs.alphavantagescraper.AlphaVantageConnector;
+import io.github.mainstringargs.alphavantagescraper.StockQuotes;
+import io.github.mainstringargs.alphavantagescraper.output.AlphaVantageException;
+import io.github.mainstringargs.alphavantagescraper.output.quote.StockQuotesResponse;
+import io.github.mainstringargs.alphavantagescraper.output.quote.data.StockQuote;
 import io.github.mainstringargs.yahooFinance.*;
 import io.github.mainstringargs.yahooFinance.domain.FinancialData;
 
 //AlphaVantage
 import io.github.mainstringargs.*;
-import io.github.mainstringargs.output.AlphaVantageException;
-import io.github.mainstringargs.output.quote.StockQuotesResponse;
-import io.github.mainstringargs.output.quote.data.StockQuote;
 
 import java.time.format.DateTimeFormatter;
 

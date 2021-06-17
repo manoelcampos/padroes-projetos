@@ -41,9 +41,9 @@
         https://github.com/mainstringargs/alpha-vantage-scraper
         -->
         <dependency>
-            <groupId>io.github.mainstringargs</groupId>
+            <groupId>io.github.mainstringargs.alphavantagescraper</groupId>
             <artifactId>alpha-vantage-scraper</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.1</version>
         </dependency>
 
         <!-- Acessa o serviço Quandl para obter cotação de moedas e dados de empresas da bolsa de valores.
