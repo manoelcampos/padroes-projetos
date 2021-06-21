@@ -1,0 +1,43 @@
+:source-highlighter: highlightjs
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Cálculo de Imposto de Renda
+
+Considere um sistema de recursos humanos que possui uma hierarquia de classes de Pessoa, PessoaFisica (PF) e PessoaJuridica (PJ), sendo a 1ª a superclasse das 2 últimas. 
+
+O cálculo do imposto de renda (IR) para PF é diferente para PJ. Por simplificação, vamos considerar que PFs pagam 11% de alíquota de IR, seguindo a fórmula:
+
+```
+IR (R$) = [(Salário bruto - dedução em R$ por dependente - R$ INSS) X alíquota IRPF] - (gastos saúde + gastos educação)
+```
+
+No caso de PJ existem diferentes cálculos. Vamos considerar apenas o cálculo para empresas que aderem ao regime tributário chamado "Lucro Real". Neste caso, elas pagam 15% sobre o lucro da companhia. Caso a empresa exceda R$ 20 mil por mês na cobrança de IR, ela também paga 10% sobre o valor que exceder.
+
+A PF física paga INSS. Por simplificação, vamos considerar que são 11% sobre o salário bruto (com a reforma da previdência, existe uma ampla faixa de alíquotas). 
+
+A PJ paga INSS para seus funcionários, mas não vamos considerar isto aqui. Considere a Contribuição Social sobre Lucro Líquido (CSLL) que, de forma simplificada, aqui consideraremos 9% do lucro.
+
+Adicionalmente, a PJ paga ICMS por produtos adquiridos. Vamos considerar que a alíquota é de 5%.
+
+Resumindo:
+
+- a PF paga IR + INSS
+- a PJ paga IR + CSLL + ICMS
+
+Precisamos de um método que calcule o valor em R$ de todos os impostos pagos por PFs e PJs. 
+
+== Responda
+
+1. Considerando que deve-se garantir que o cálculo inclua o valor do IR, que padrão de projeto pode ser aplicado para isto?
+Lembrando que não necessariamente o padrão precisa ser aplicado, pois podemos resolver de uma forma simples. Tudo depende do problema em questão. Considerando que existem diversas maneiras de calcular o IR para PJ e que precisaríamos trocar uma implementação pela outra de acordo com determinadas condições, isto justificaria a implementação de um padrão.
+
+Aqui, por simplificação, estamos implementando apenas uma forma de cálculo do IRPJ, mas nada impede de você continuar a implementação para as outras formas. Implemente o projeto e envie link para repositório no GitHub, onde o README deve conter as respostas.

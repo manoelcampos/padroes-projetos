@@ -11,7 +11,14 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Exercícios
+= Código base para resolver exercícios propostos de Padrões de Projetos
 
+Os projetos a seguir estão incompletos. Acesse a página de cada um e leia as informações
+disponibilizadas. Em seguida, implemente uma solução com padrões de projetos
+a partir do código inicial fornecido.
 
 - link:random-numbers[Geração de números aleatórios]
+- link:calculo-desconto[Cálculo de Desconto]
+- link:instanciar-produtos[Instanciando Produtos]
+- link:envio-mensagens[Envio de Mensagens por diferentes canais]
+- link:imposto-renda[Cálculo de Imposto de Renda para Pessoa Física e Jurídica]

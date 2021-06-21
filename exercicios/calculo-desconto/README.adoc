@@ -1,0 +1,27 @@
+:source-highlighter: highlightjs
+:unsafe:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Cálculo de Descontos
+
+Considere que temos um sistema de vendas onde diferentes formas de desconto podem ser implementadas de acordo com as promoções vigentes, como em datas comemorativas. O sistema deve permitir o cálculo do desconto sobre a venda das seguintes maneiras:
+
+- percentual de desconto definido (que pode vir de um banco de dados);
+- percentual de desconto progressivo: `valor da compra/25`, não podendo ultrapassar 20% (este são apenas valores arbitrários de exemplo);
+- desconto de 15% na data de aniversário do cliente;
+
+== Responda
+
+1. Qual padrão de projeto pode ser utilizado no desenvolvimento de uma solução? 
+2. Como poderíamos implementar estes tipos de desconto sem utilizar Padrões de Projetos? 
+3. Quais os problemas que tal implementação traria?
+4. Implemente o projeto e envie o link para repositório no GitHub, onde o README deve conter as respostas.
+
