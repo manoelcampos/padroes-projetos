@@ -11,7 +11,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Código base para resolver exercícios propostos de Padrões de Projetos
+= Código base para resolver exercícios propostos de Padrões de Projetos (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/exercicios[zip])
 
 Os projetos a seguir estão incompletos. Acesse a página de cada um e leia as informações
 disponibilizadas. Em seguida, implemente uma solução com padrões de projetos
