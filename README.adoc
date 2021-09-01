@@ -15,6 +15,7 @@ endif::[]
 // :toc: left
 
 = Padrões de Projeto em Java 
+Prof. Manoel Campos da Silva Filho <https://about.me/manoelcampos>
 
 ifdef::env-github[]
 

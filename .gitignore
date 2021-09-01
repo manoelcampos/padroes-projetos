@@ -18,7 +18,7 @@ aulas/
 resumos/
 provas/
 # Symlink
-provas
+prova*
 
 # Planilhas de notas
 *.xls*
@@ -40,3 +40,4 @@ reveal.js-*
 
 #Projetos Privados (apenas no repo local)
 retorno-boleto-template-and-strategy/
+*telegram.adoc
