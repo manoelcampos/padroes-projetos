@@ -90,7 +90,7 @@ image::builder-produto.png[]
 // tag::implementacao[]
 - Métodos na classe Builder: sem prefixo, `with` ou `set`
 - set é o padrão de IDEs como IntelliJ e NetBeans
-- Nome do método builder: `create()`, `createNomeObjeto()`, `newNomeObjeto()`, `build()` ou `of`
+- Nome do método builder: `create()`, `createNomeObjeto()`, `newNomeObjeto()` ou `build()`
 - Construtor _package_ ou _private_
 // end::implementacao[]
 
