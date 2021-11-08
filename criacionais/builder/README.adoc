@@ -134,8 +134,7 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 == Exercícios
 
-Implemente uma classe `Produto` utilizando apenas um construtor sem parâmetros
-e que tenha os seguintes atributos. Os atributos marcados com * são obrigatórios:
+Implemente uma classe `Produto` com os atributos abaixo. Utilize um construtor contendo apenas os parâmetros obrigatórios, marcados com asterisco:
 
 - id: long
 - *titulo: String
