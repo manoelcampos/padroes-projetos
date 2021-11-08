@@ -99,9 +99,9 @@ image::builder-produto.png[]
 // tag::desvantagens[]
 - *Duplicação absurda de código
 - *Viola o princípio _Don't Repeat Yourself (DRY)_
-- Novos atributos? Precisa atualizar a Builder!
-- Exige a criação de um objeto Builder para poder instanciar os objetos desejados
-- Dificulta a injeção de dependências
+- *Novos atributos? Precisa atualizar a Builder!
+- Exige a criação de um objeto Builder para poder instanciar os objetos desejados.
+- Dificulta a injeção de dependências pela falta de um construtor sem parâmetros na classe cujos objetos serão instanciados.
 // end::desvantagens[]
 
 NOTE: *Isto é um problema se a Builder for escrita manualmente.
