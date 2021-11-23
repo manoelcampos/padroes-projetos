@@ -3,6 +3,7 @@
 *.mp4
 target/
 cep-service/
+widenet-cep-service-api
 
 #IntelliJ Files
 *.iml
