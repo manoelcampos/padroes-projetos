@@ -14,6 +14,10 @@ public class Newsletter {
     private final List<Customer> customers;
     private WhatsApp whatsapp;
 
+    /**
+     * Instancia uma newsletter para envio de mensagens para uma determinada lista de clientes
+     * @param customers lista de clientes para enviar mensagens
+     */
     public Newsletter(final List<Customer> customers){
         this.customers = customers;
         this.whatsapp = new WhatsApp();

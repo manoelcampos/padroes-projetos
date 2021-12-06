@@ -5,6 +5,10 @@ import com.manoelcampos.message.Newsletter;
 
 import java.util.List;
 
+/**
+ * Executa a aplicação
+ * @author Manoel Campos da Silva Filho
+ */
 public class Principal {
     public static void main(String[] args) {
         final List<Customer> customers = List.of(
