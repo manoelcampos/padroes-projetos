@@ -4,5 +4,9 @@ package com.manoelcampos.mensagens;
  * Envia mensagens de email.
  * @author Manoel Campos da Silva Filho
  */
-public class Email {
+public class Email implements MessageService {
+    @Override
+    public void enviar() throws MessageSendException {
+        //TODO: Inclua um print para simular o envio da mensagem
+    }
 }
