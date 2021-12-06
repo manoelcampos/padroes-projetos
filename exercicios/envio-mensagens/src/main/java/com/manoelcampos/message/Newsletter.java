@@ -49,7 +49,7 @@ public class Newsletter {
     private String formatMsg(final Customer customer, final String msgTemplate) {
         return msgTemplate
             .replaceAll("#name", customer.getName())
-            .replaceAll("#email", customer.getName())
-            .replaceAll("#phone", customer.getName());
+            .replaceAll("#email", customer.getEmail())
+            .replaceAll("#phone", customer.getPhone());
     }
 }
