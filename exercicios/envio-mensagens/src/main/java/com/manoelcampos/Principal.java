@@ -1,7 +1,7 @@
 package com.manoelcampos;
 
 import com.manoelcampos.people.Customer;
-import com.manoelcampos.mensagens.Newsletter;
+import com.manoelcampos.message.Newsletter;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class Principal {
         );
 
         final Newsletter newsletter = new Newsletter(customers);
-        String msgTemplate = "Aproveite as promoções de natal #name.";
+        final String msgTemplate = "Aproveite as promoções de natal #name.";
         newsletter.send(msgTemplate);
     }
 }

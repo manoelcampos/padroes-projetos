@@ -1,4 +1,4 @@
-package com.manoelcampos.mensagens;
+package com.manoelcampos.message;
 
 /**
  * Envia mensagens pelo Short Message Service (SMS)
@@ -6,7 +6,7 @@ package com.manoelcampos.mensagens;
  */
 public class Sms implements MessageService {
     @Override
-    public void send(String destination, String msg) throws MessageSendException {
+    public void send(final String destination, final String msg) throws MessageSendException {
         //TODO: Inclua um print para simular o envio da mensagem
     }
 }

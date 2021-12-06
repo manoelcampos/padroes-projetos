@@ -1,4 +1,4 @@
-package com.manoelcampos.mensagens;
+package com.manoelcampos.message;
 
 import com.manoelcampos.people.Customer;
 
@@ -14,7 +14,7 @@ public class Newsletter {
     private final List<Customer> customers;
     private WhatsApp whatsapp;
 
-    public Newsletter(List<Customer> customers){
+    public Newsletter(final List<Customer> customers){
         this.customers = customers;
         this.whatsapp = new WhatsApp();
     }
@@ -27,8 +27,8 @@ public class Newsletter {
      * @param msgTemplate Um template de mensagem com marcações (placeholders)
      *        que serão substituídos por atributos do cliente de destino.
      */
-    public void send(String msgTemplate) {
-        for (Customer customer : customers) {
+    public void send(final String msgTemplate) {
+        for (final Customer customer : customers) {
             whatsapp.send(customer.getPhone(), formatMsg(customer, msgTemplate));
         }
     }
@@ -42,12 +42,10 @@ public class Newsletter {
      *        que serão substituídos por atributos do cliente de destino.
      * @return a mensagem com as marcações substituídas pelos atributos do cliente.
      */
-    private String formatMsg(Customer customer, String msgTemplate) {
+    private String formatMsg(final Customer customer, final String msgTemplate) {
         return msgTemplate
             .replaceAll("#name", customer.getName())
             .replaceAll("#email", customer.getName())
             .replaceAll("#phone", customer.getName());
     }
-
-
 }

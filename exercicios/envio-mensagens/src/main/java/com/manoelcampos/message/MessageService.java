@@ -1,4 +1,4 @@
-package com.manoelcampos.mensagens;
+package com.manoelcampos.message;
 
 /**
  * Interface para a implementação

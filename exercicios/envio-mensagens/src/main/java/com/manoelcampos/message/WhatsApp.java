@@ -1,4 +1,4 @@
-package com.manoelcampos.mensagens;
+package com.manoelcampos.message;
 
 /**
  * Envia mensagens pelo WhatsApp.
@@ -12,7 +12,7 @@ public class WhatsApp implements MessageService {
      * @throws MessageSendException {@inheritDoc}
      */
     @Override
-    public void send(String destination, String msg) throws MessageSendException {
+    public void send(final String destination, final String msg) throws MessageSendException {
         System.out.printf("Enviando msg WhatsApp para %s: %s%n", destination, msg);
     }
 }
