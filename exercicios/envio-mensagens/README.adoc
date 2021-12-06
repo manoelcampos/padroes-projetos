@@ -21,6 +21,10 @@ Considere você precisará:
 
 No entanto, você não quer ficar escrevendo `if()` em todos os locais onde precisa definir qual classe será instanciada para enviar mensagens e quer que o processo de decisão de qual classe instanciar (que define a forma de envio de mensagens) seja encapsulado.
 
+Faça as alterações necessárias no projeto atual e implemente um padrão para resolver os problemas mencionados.
+
+> O projeto requer JDK 11 ou superior.
+
 == Responda
 
 1. Qual padrão de projeto pode ser utilizado para resolver este problema? Implemente a solução (não precisa enviar mensagens de fato, apenas simular com prints).

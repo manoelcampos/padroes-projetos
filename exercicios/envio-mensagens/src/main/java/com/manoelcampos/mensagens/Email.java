@@ -6,7 +6,7 @@ package com.manoelcampos.mensagens;
  */
 public class Email implements MessageService {
     @Override
-    public void enviar() throws MessageSendException {
+    public void send(String destination, String msg) throws MessageSendException {
         //TODO: Inclua um print para simular o envio da mensagem
     }
 }
