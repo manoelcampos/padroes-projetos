@@ -3,6 +3,7 @@ package com.manoelcampos.retornoboleto;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -38,21 +39,21 @@ public class ProcessarBoletos {
      * da estratégia para leitura do arquivo de retorno de boleto
      * bancário para um banco específico (como Banco do Brasil, Bradesco, etc).
      */
-    private Function<String, List<Boleto>> leituraRetorno;
+    private Function<URI, List<Boleto>> leituraRetorno;
 
-    public ProcessarBoletos(Function<String, List<Boleto>> leituraRetorno){
-	 this.leituraRetorno = leituraRetorno;
+    public ProcessarBoletos(Function<URI, List<Boleto>> leituraRetorno){
+	    this.leituraRetorno = leituraRetorno;
     }
 
     /**
      * Implementação do comportamento (estratégia)
      * de leitura de arquivos de boleto do Banco do Brasil.
-     * @param nomeArquivo
+     * @param caminhoArquivo
      * @return
      */
-    public static List<Boleto> lerBancoBrasil(String nomeArquivo) {
+    public static List<Boleto> lerBancoBrasil(URI caminhoArquivo) {
         try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
+            BufferedReader reader = Files.newBufferedReader(Paths.get(caminhoArquivo));
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while((line = reader.readLine()) != null){
@@ -77,8 +78,8 @@ public class ProcessarBoletos {
         }
     }
 
-    public void processar(String nomeArquivo){
-        List<Boleto> boletos = leituraRetorno.apply(nomeArquivo);
+    public void processar(URI caminhoArquivo){
+        List<Boleto> boletos = leituraRetorno.apply(caminhoArquivo);
         for (Boleto boleto : boletos) {
             System.out.println(boleto);
         }

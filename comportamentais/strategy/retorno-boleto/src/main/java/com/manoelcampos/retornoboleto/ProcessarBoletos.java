@@ -1,5 +1,6 @@
 package com.manoelcampos.retornoboleto;
 
+import java.net.URI;
 import java.util.List;
 
 /**
@@ -29,12 +30,12 @@ public class ProcessarBoletos {
      * como gravar dados em um banco, enviar emails de notificação, etc.
      * Neste caso, por simplificação, estamos apenas imprimindo os dados no terminal.
      *
-     * @param nomeArquivo Nome do arquivo a ser lido
+     * @param caminhoArquivo Caminho (URI) do arquivo a ser lido
      */
-    public final void processar(String nomeArquivo){
+    public final void processar(URI caminhoArquivo){
         System.out.println("Boletos");
         System.out.println("----------------------------------------------------------------------------------");
-        List<Boleto> boletos = leituraRetorno.lerArquivo(nomeArquivo);
+        List<Boleto> boletos = leituraRetorno.lerArquivo(caminhoArquivo);
         for (Boleto boleto : boletos) {
             System.out.println(boleto);
         }

@@ -3,6 +3,7 @@ package com.manoelcampos.retornoboleto;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -19,10 +20,9 @@ import java.util.List;
 public class LeituraRetornoBancoBrasil implements LeituraRetorno {
 
     @Override
-    public List<Boleto> lerArquivo(String nomeArquivo) {
+    public List<Boleto> lerArquivo(URI caminhoArquivo) {
         try {
-            BufferedReader reader = 
-                Files.newBufferedReader(Paths.get(nomeArquivo));
+            BufferedReader reader = Files.newBufferedReader(Paths.get(caminhoArquivo));
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while((line = reader.readLine()) != null){

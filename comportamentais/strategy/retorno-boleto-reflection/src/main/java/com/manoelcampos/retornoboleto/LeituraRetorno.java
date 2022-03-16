@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.lang.reflect.Field;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -24,9 +25,9 @@ public interface LeituraRetorno {
     
     List<ProcessaCampoArquivo<?>> getProcessadoresCampos();    
     
-    default List<Boleto> lerArquivo(String nomeArquivo) {
+    default List<Boleto> lerArquivo(URI caminhoArquivo) {
         try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));
+            BufferedReader reader = Files.newBufferedReader(Paths.get(caminhoArquivo));
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while((line = reader.readLine()) != null){
