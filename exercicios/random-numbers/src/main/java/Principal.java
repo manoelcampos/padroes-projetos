@@ -28,7 +28,7 @@ public class Principal {
         final int TOTAL_NUMEROS = 4;
         for (int i = 0; i < TOTAL_NUMEROS; i++) {
             System.out.println("Número aleatório seguindo distribuição Normal usando biblioteca Apache Commons Math: " + normalRandom.sample(12));
-            System.out.println("Número aleatório seguindo distribuição Exponencial usando biblioteca Apache Commons Math: " + logNormalRandom.sample());
+            System.out.println("Número aleatório seguindo distribuição Log-Normal usando biblioteca Apache Commons Math: " + logNormalRandom.sample());
             System.out.println("Número aleatório seguindo distribuição Uniforme usando classe Random: " + random.nextDouble());
             System.out.println();
         }
