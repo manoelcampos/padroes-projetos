@@ -12,7 +12,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-// :toc: left
+:toc: left
 
 = Padrões de Projeto em Java 
 Prof. Manoel Campos da Silva Filho <https://about.me/manoelcampos>
