@@ -34,9 +34,9 @@ public class Principal {
         /**
          * Esta é a forma de instanciar um paciente usando um Builder.
          * Se algum atributo obrigatório (como CPF) for esquecido, ao chamar
-         * o método build(), ocorrerá uma exceção pois o builder
+         * o método build() ocorrerá uma exceção, pois tal método
          * vai chamar o construtor privado de {@link Paciente}, que recebe todos os parâmetros.
-         * Se algum deles for null or vazio, uma exceção será lançada.
+         * Se algum deles for null ou vazio, uma exceção será lançada.
          * Apesar de termos múltiplas linhas abaixo, isto é uma única instrução (temos apenas um ponto-e-vírgula).
          * Em tal instrução, estamos instanciar um builder para construir um paciente,
          * passando os valores dos atributos obrigatórios e desejados para o builder
