@@ -2,6 +2,8 @@ package com.manoelcampos.modelo;
 
 import org.immutables.builder.Builder;
 
+import java.util.Optional;
+
 /**
  * Classe que representa pacientes registrados no sistema.
  * A classe possui muitos atributos e vários deles são obrigatórios.
@@ -44,20 +46,24 @@ public class Paciente {
     private double altura;
 
     @Builder.Constructor
-    public Paciente(
-            long id, String nome, char sexo, String cpf, String rg,
-            String orgaoEmissorRg, String cidade, String uf, double peso, double altura)
+    Paciente(
+        //Parâmetros adicionados no construtor da Builder
+        @Builder.Parameter String nome, @Builder.Parameter char sexo, @Builder.Parameter String cpf,
+        //Parâmetros obrigatórios
+        String cidade, String uf, double peso, double altura,
+        //Parâmetros opcionais
+        Optional<String> rg, Optional<String> orgaoEmissorRg, Optional<Long> id)
     {
-        this.setId(id);
         this.setNome(nome);
         this.setSexo(sexo);
         this.setCpf(cpf);
-        this.setRg(rg);
-        this.setOrgaoEmissorRg(orgaoEmissorRg);
+        this.setRg(rg.orElse(""));
+        this.setOrgaoEmissorRg(orgaoEmissorRg.orElse(""));
         this.setCidade(cidade);
         this.setUf(uf);
         this.setPeso(peso);
         this.setAltura(altura);
+        this.setId(id.orElse(0L));
     }
 
     public long getId() {

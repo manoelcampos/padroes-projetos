@@ -44,12 +44,10 @@ public class Principal {
          * com os dados informados.
          */
         Paciente paciente =
-                new PacienteBuilder()
-                        .nome("Manoel")
-                        .sexo('F')
-                        .cpf("123.012.918-00")
+                new PacienteBuilder("Manoel", 'M', "123.012.918-00")
                         .cidade("Palmas").uf("TO")
                         .altura(1.7)
+                        .peso(80)
                         .build();
 
         System.out.println(paciente);
