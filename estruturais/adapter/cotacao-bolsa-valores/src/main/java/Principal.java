@@ -6,12 +6,9 @@ import com.jimmoores.quandl.classic.ClassicQuandlSession;
 import io.github.mainstringargs.alphavantagescraper.AlphaVantageConnector;
 import io.github.mainstringargs.alphavantagescraper.StockQuotes;
 import io.github.mainstringargs.alphavantagescraper.output.AlphaVantageException;
-import io.github.mainstringargs.alphavantagescraper.output.quote.StockQuotesResponse;
-import io.github.mainstringargs.alphavantagescraper.output.quote.data.StockQuote;
 
 //YahooFinance
 import io.github.mainstringargs.yahooFinance.*;
-import io.github.mainstringargs.yahooFinance.domain.FinancialData;
 
 import java.time.format.DateTimeFormatter;
 
@@ -73,7 +70,7 @@ public class Principal {
         System.out.println(builder.getURL());
         System.out.println("https://query1.finance.yahoo.com/v8/finance/chart/"+codigoEmpresa+"?period1=1546311600&period2=1556593200&interval=1d&includePrePost=False");
         */
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------");
     }
 
     /**
@@ -104,7 +101,7 @@ public class Principal {
         } catch (AlphaVantageException e) {
             System.err.println("Erro ao solicitar cotação da empresa " + codigoEmpresa + ": " + e.getMessage());
         }
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------");
     }
 
     /**
@@ -129,6 +126,6 @@ public class Principal {
             System.out.printf("Data: %s Preço: %s%n", date, row.getDouble("Close"));
             //System.out.println(result.toPrettyPrintedString());
         }
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------");
     }
 }
