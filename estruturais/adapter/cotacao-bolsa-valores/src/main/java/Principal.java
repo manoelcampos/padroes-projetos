@@ -2,17 +2,16 @@
 import com.jimmoores.quandl.*;
 import com.jimmoores.quandl.classic.ClassicQuandlSession;
 
-//YahooFinance
+//AlphaVantage
 import io.github.mainstringargs.alphavantagescraper.AlphaVantageConnector;
 import io.github.mainstringargs.alphavantagescraper.StockQuotes;
 import io.github.mainstringargs.alphavantagescraper.output.AlphaVantageException;
 import io.github.mainstringargs.alphavantagescraper.output.quote.StockQuotesResponse;
 import io.github.mainstringargs.alphavantagescraper.output.quote.data.StockQuote;
+
+//YahooFinance
 import io.github.mainstringargs.yahooFinance.*;
 import io.github.mainstringargs.yahooFinance.domain.FinancialData;
-
-//AlphaVantage
-import io.github.mainstringargs.*;
 
 import java.time.format.DateTimeFormatter;
 
@@ -58,20 +57,22 @@ public class Principal {
      * @see <a href="http://meumobi.github.io/stocks%20apis/2016/03/13/get-realtime-stock-quotes-yahoo-finance-api.html">Get realtime stock quotes yahoo finance API</a>
      */
     private static void cotacaoUsandoYahooFinance(String codigoEmpresa) {
-        System.out.printf("Cotação da Empresa %s obtida pelo serviço Yahoo Finance: https://finance.yahoo.com%n", codigoEmpresa);
-        YahooFinanceUrlBuilder builder =
+        System.out.printf("Cotação da Empresa %s pelo serviço Yahoo Finance: https://finance.yahoo.com%n", codigoEmpresa);
+        var builder =
                 new YahooFinanceUrlBuilder().modules(YahooFinanceModules.values()).symbol(codigoEmpresa);
 
-        YahooFinanceRequest request = new YahooFinanceRequest();
-        YahooFinanceData financeData = request.getFinanceData(request.invoke(builder));
+        var request = new YahooFinanceRequest();
+        var financeData = request.getFinanceData(request.invoke(builder));
 
-        FinancialData financials = financeData.getFinancialData();
-        if (financials != null) {
-            System.out.printf("Preço: %s %s%n", financials.getFinancialCurrency(), financials.getCurrentPrice().getRaw());
-        }
+        var financialData = financeData.getFinancialData();
+        if (financialData == null)
+            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codigoEmpresa);
+        else System.out.printf("Preço: %s %s%n", financialData.getFinancialCurrency(), financialData.getCurrentPrice().getRaw());
 
+        /*
         System.out.println(builder.getURL());
         System.out.println("https://query1.finance.yahoo.com/v8/finance/chart/"+codigoEmpresa+"?period1=1546311600&period2=1556593200&interval=1d&includePrePost=False");
+        */
         System.out.println("---------------------------------------------------------------------");
     }
 
@@ -81,7 +82,7 @@ public class Principal {
      * @param codigoEmpresa
      */
     private static void cotacaoUsandoAlphaVantage(String codigoEmpresa) {
-        System.out.printf("Cotação da Empresa %s obtida pelo serviço Alpha Vantage: http://www.alphavantage.co%n", codigoEmpresa);
+        System.out.printf("Cotação da Empresa %s pelo serviço Alpha Vantage: http://www.alphavantage.co%n", codigoEmpresa);
 
         /*
         Verifica se existe uma variável de ambiente para a chave da API do serviço Alpha Vantage.
@@ -90,18 +91,18 @@ public class Principal {
         final String s = System.getenv("ALPHAVANTAGE_APIKEY");
         final String apiKey = s == null ? "50M3AP1K3Y" : s;
         final int timeout = 3000;
-        AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
+        var apiConnector = new AlphaVantageConnector(apiKey, timeout);
 
         //Permite obter a cotação (quotes) de ações (stocks).
-        StockQuotes stockQuotes = new StockQuotes(apiConnector);
+        var stockQuotes = new StockQuotes(apiConnector);
 
         try {
-            StockQuotesResponse response = stockQuotes.quote(codigoEmpresa);
-            StockQuote stock = response.getStockQuote();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            System.out.printf("Data: %s Preço: %s%n", formatter.format(stock.getLatestTradingDay()), stock.getPrice());
+            var response = stockQuotes.quote(codigoEmpresa);
+            var stockQuote = response.getStockQuote();
+            var dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            System.out.printf("Data: %s Preço: %s%n", dateFormatter.format(stockQuote.getLatestTradingDay()), stockQuote.getPrice());
         } catch (AlphaVantageException e) {
-            System.out.println("Erro ao solicitar cotação da empresa " + codigoEmpresa + ": " + e.getMessage());
+            System.err.println("Erro ao solicitar cotação da empresa " + codigoEmpresa + ": " + e.getMessage());
         }
         System.out.println("---------------------------------------------------------------------");
     }
@@ -112,15 +113,17 @@ public class Principal {
      * @param codigoEmpresa
      */
     private static void cotacaoUsandoQuandl(String codigoEmpresa) {
-        System.out.printf("Cotação da Empresa %s obtida pelo serviço Quandl: http://quandl.com/%n", codigoEmpresa);
-        ClassicQuandlSession session = ClassicQuandlSession.create();
-        DataSetRequest request = DataSetRequest.Builder
+        System.out.printf("Cotação da Empresa %s pelo serviço Quandl: http://quandl.com/%n", codigoEmpresa);
+        var session = ClassicQuandlSession.create();
+        var request = DataSetRequest.Builder
                                         .of(codigoEmpresa)
                                         .withMaxRows(1)
                                         .build();
-        TabularResult result = session.getDataSet(request);
-        if(result.size() > 0) {
-            Row row = result.get(0);
+        var tabularResult = session.getDataSet(request);
+        if (tabularResult.size() == 0)
+            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codigoEmpresa);
+        else {
+            Row row = tabularResult.get(0);
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             String date = formatter.format(row.getLocalDate("Date"));
             System.out.printf("Data: %s Preço: %s%n", date, row.getDouble("Close"));
