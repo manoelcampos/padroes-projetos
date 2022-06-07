@@ -3,6 +3,8 @@ package com.manoelcampos.retornoboleto;
 import org.apache.commons.text.WordUtils;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -65,7 +67,8 @@ class EstrategiaBoletoFactory {
             Class classeEstrategia = Class.forName(nomeClasseEstrategia);
 
             //Cria uma instância da classe descoberta dinamicamente.
-            return (LeituraRetorno)classeEstrategia.newInstance();
+            Constructor constructor = classeEstrategia.getDeclaredConstructor();
+            return (LeituraRetorno) constructor.newInstance();
         } catch (ClassNotFoundException e) {
             throw new UnsupportedOperationException(
                 "Classe " + nomeClasseEstrategia + " não existe para processar arquivo " +
@@ -74,6 +77,10 @@ class EstrategiaBoletoFactory {
             throw new UnsupportedOperationException("Não há permissão para instanciar a estratégia para leitura do arquivo de retorno", e);
         } catch (InstantiationException e) {
             throw new UnsupportedOperationException("Erro ao instanciar a estratégia para leitura do arquivo de retorno", e);
+        } catch (NoSuchMethodException e) {
+            throw new UnsupportedOperationException("Não foi encontrado um construtor sem parâmetros para a classe " + nomeClasseEstrategia, e);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(String.format("O construtor da classe %s gerou uma exceção", nomeClasseEstrategia), e);
         }
     }
 

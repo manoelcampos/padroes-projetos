@@ -32,8 +32,8 @@ projeto de exemplo detalhada https://github.com/manoelcampos/sd-webservices/tree
 
 == Requisitos
 
-- JDK 8 ou 11
-- Maven 3.5.3 ou superior
+- JDK 11
+- Maven 3.8.1 ou superior
 
 == Executar o Projeto
 

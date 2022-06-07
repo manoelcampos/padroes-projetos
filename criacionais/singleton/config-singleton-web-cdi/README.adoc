@@ -18,8 +18,8 @@ Este projeto usa o framework de injeção de dependência CDI para implementar u
 
 == Requisitos
 
-- JDK 8 ou 11
-- Maven 3.6.3 ou superior
+- JDK 11
+- Maven 3.8.1 ou superior
 
 Mesmo as versões mais atuais do NetBeans vêm com versões antigas do Maven que não irá funcionar.
 
@@ -43,9 +43,10 @@ Você pode iniciar o servidor com sua aplicação de diferentes maneiras.
 
 === Usando Maven pela linha de comando
 
-```bash
+[source,bash]
+----
 mvn compile quarkus:dev
-```
+----
 
 === Usando o maven-exec-plugin
 
@@ -54,11 +55,12 @@ Caso você esteja criando o projeto do zero, o plugin maven-exec não será incl
 e você deve incluí-lo dentro da tag `<plugins>` no arquivo pom.xml, como
 mostrado abaixo:
 
-```xml
+[source,xml]
+----
 <plugin>
   <groupId>org.codehaus.mojo</groupId>
   <artifactId>exec-maven-plugin</artifactId>
-  <version>1.6.0</version>
+  <version>3.0.0</version>
   <configuration>
     <executable>mvn</executable>
     <arguments>
@@ -68,11 +70,11 @@ mostrado abaixo:
     </arguments>
   </configuration>
 </plugin>
-```
+----
 
 ==== Atualizando o projeto sem reiniciar o servidor
 
-Bem, atualizar o projeto no servidor em execução e ver as alterações que você fez na sua aplicação é realmente complicado com o Quarkus: você precisa apenas salvar o projeto e boom: normalmente em menos de 1 segundo a aplicação estará rodando com as novas alterações 😱🚀😁.
+Bem, atualizar o projeto no servidor em execução e ver as alterações que você fez na sua aplicação é realmente complicado com o Quarkus: você precisa apenas salvar o projeto e "boom 🤯": normalmente em menos de 1 segundo a aplicação estará rodando com as novas alterações 😱🚀😁.
 
 Não é à toa que o slogan do Quarkus é "Supersonic Subatomic Java".
 
