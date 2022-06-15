@@ -1,6 +1,5 @@
 package com.manoelcampos.retornoboleto;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.net.URI;
@@ -52,8 +51,7 @@ public class ProcessarBoletos {
      * @return
      */
     public static List<Boleto> lerBancoBrasil(URI caminhoArquivo) {
-        try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(caminhoArquivo));
+        try(var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))) {
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while((line = reader.readLine()) != null){

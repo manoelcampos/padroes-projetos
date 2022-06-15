@@ -1,6 +1,5 @@
 package com.manoelcampos.retornoboleto;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.lang.reflect.Field;
@@ -26,8 +25,7 @@ public interface LeituraRetorno {
     List<ProcessaCampoArquivo<?>> getProcessadoresCampos();    
     
     default List<Boleto> lerArquivo(URI caminhoArquivo) {
-        try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(caminhoArquivo));
+        try (var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))){
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while((line = reader.readLine()) != null){

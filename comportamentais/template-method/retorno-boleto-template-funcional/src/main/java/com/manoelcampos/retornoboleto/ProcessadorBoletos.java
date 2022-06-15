@@ -1,6 +1,5 @@
 package com.manoelcampos.retornoboleto;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
@@ -16,15 +15,12 @@ import java.util.function.Function;
 public class ProcessadorBoletos {
     private Function<String[], Boleto> processarLinhaArquivo;
     
-    public ProcessadorBoletos(
-            Function<String[], Boleto> processarLinhaArquivo){
+    public ProcessadorBoletos(Function<String[], Boleto> processarLinhaArquivo){
         this.processarLinhaArquivo = processarLinhaArquivo;
     }
 
     public List<Boleto> processar(String nomeArquivo){
-        try {
-            BufferedReader reader = 
-                Files.newBufferedReader(Paths.get(nomeArquivo));
+        try (var reader = Files.newBufferedReader(Paths.get(nomeArquivo))){
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while ((line = reader.readLine()) != null) {

@@ -21,8 +21,7 @@ public class LeituraRetornoBancoBrasil implements LeituraRetorno {
 
     @Override
     public List<Boleto> lerArquivo(URI caminhoArquivo) {
-        try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(caminhoArquivo));
+        try (var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))){
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while((line = reader.readLine()) != null){

@@ -36,9 +36,7 @@ public abstract class ProcessadorBoletos {
      */
     // tag::template-method[]
     public final List<Boleto> processar(String nomeArquivo){
-        try {
-            BufferedReader reader = 
-                Files.newBufferedReader(Paths.get(nomeArquivo));
+        try (var reader = Files.newBufferedReader(Paths.get(nomeArquivo))){
             String line;
             List<Boleto> boletos = new ArrayList<>();
             while ((line = reader.readLine()) != null) {
