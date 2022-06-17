@@ -138,7 +138,7 @@ Implemente uma classe `Produto` com os atributos abaixo. Utilize um construtor c
 
 - id: long
 - *titulo: String
-- *descricao: String
+- descricao: String
 - marca: String
 - modelo: String
 - estoque: int (valor padrão zero)
@@ -147,7 +147,6 @@ Implemente uma classe `Produto` com os atributos abaixo. Utilize um construtor c
 - *dataUltimaAtualizacao: LocalDate (não pode ser menor que a data atual)
 - urlFoto: String
 - *categoria: String
-- *vendedor: Vendedor
 - peso: double
 - altura: double
 - largura: double
