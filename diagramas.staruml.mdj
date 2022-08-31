@@ -39492,7 +39492,7 @@
 															"_parent": {
 																"$ref": "AAAAAAF1ZVOozYJ3OEU="
 															},
-															"font": "Arial;13;3",
+															"font": "Arial;13;1",
 															"left": 197,
 															"top": 167,
 															"width": 307.4677734375,
@@ -39745,7 +39745,7 @@
 															"font": "Arial;13;1",
 															"left": 37,
 															"top": 415,
-															"width": 322.283203125,
+															"width": 322.64501953125,
 															"height": 13,
 															"text": "LeituraRetornoBancoBrasil"
 														},
@@ -39780,7 +39780,7 @@
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": 408,
-													"width": 332.283203125,
+													"width": 332.64501953125,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1ZVOtJ4Kl5IM="
@@ -39807,7 +39807,7 @@
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": 433,
-													"width": 332.283203125,
+													"width": 332.64501953125,
 													"height": 10
 												},
 												{
@@ -39832,16 +39832,16 @@
 															"font": "Arial;13;0",
 															"left": 37,
 															"top": 448,
-															"width": 322.283203125,
+															"width": 322.64501953125,
 															"height": 13,
-															"text": "#processarLinhaArquivo(vetorLinhaArq: String[]): Boleto",
+															"text": "+processarLinhaArquivo(vetorLinhaArq: String[]): Boleto",
 															"horizontalAlignment": 0
 														}
 													],
 													"font": "Arial;13;0",
 													"left": 32,
 													"top": 443,
-													"width": 332.283203125,
+													"width": 332.64501953125,
 													"height": 23
 												},
 												{
@@ -39881,7 +39881,7 @@
 											"containerChangeable": true,
 											"left": 32,
 											"top": 408,
-											"width": 332.283203125,
+											"width": 332.64501953125,
 											"height": 58,
 											"autoResize": true,
 											"nameCompartment": {
@@ -39941,7 +39941,7 @@
 															"font": "Arial;13;1",
 															"left": 381,
 															"top": 415,
-															"width": 322.283203125,
+															"width": 322.64501953125,
 															"height": 13,
 															"text": "LeituraRetornoBradesco"
 														},
@@ -39976,7 +39976,7 @@
 													"font": "Arial;13;0",
 													"left": 376,
 													"top": 408,
-													"width": 332.283203125,
+													"width": 332.64501953125,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1ZVOzQoLVcSw="
@@ -40003,7 +40003,7 @@
 													"font": "Arial;13;0",
 													"left": 376,
 													"top": 433,
-													"width": 332.283203125,
+													"width": 332.64501953125,
 													"height": 10
 												},
 												{
@@ -40028,16 +40028,16 @@
 															"font": "Arial;13;0",
 															"left": 381,
 															"top": 448,
-															"width": 322.283203125,
+															"width": 322.64501953125,
 															"height": 13,
-															"text": "#processarLinhaArquivo(vetorLinhaArq: String[]): Boleto",
+															"text": "+processarLinhaArquivo(vetorLinhaArq: String[]): Boleto",
 															"horizontalAlignment": 0
 														}
 													],
 													"font": "Arial;13;0",
 													"left": 376,
 													"top": 443,
-													"width": 332.283203125,
+													"width": 332.64501953125,
 													"height": 23
 												},
 												{
@@ -40077,7 +40077,7 @@
 											"containerChangeable": true,
 											"left": 376,
 											"top": 408,
-											"width": 332.283203125,
+											"width": 332.64501953125,
 											"height": 58,
 											"autoResize": true,
 											"nameCompartment": {
@@ -40887,8 +40887,7 @@
 											],
 											"isAbstract": true
 										}
-									],
-									"isAbstract": true
+									]
 								},
 								{
 									"_type": "UMLClass",
@@ -40946,7 +40945,6 @@
 												"$ref": "AAAAAAF1ZVOZa4JL8VU="
 											},
 											"name": "processarLinhaArquivo",
-											"visibility": "protected",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -41028,7 +41026,6 @@
 												"$ref": "AAAAAAF1ZVOfkYJkahg="
 											},
 											"name": "processarLinhaArquivo",
-											"visibility": "protected",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -44091,7 +44088,7 @@
 															"font": "Arial;13;3",
 															"left": 173,
 															"top": 199,
-															"width": 377.6220703125,
+															"width": 408.63037109375,
 															"height": 13,
 															"text": "ProcessadorBoletos"
 														},
@@ -44126,7 +44123,7 @@
 													"font": "Arial;13;0",
 													"left": 168,
 													"top": 192,
-													"width": 387.6220703125,
+													"width": 418.63037109375,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1Ziy15AhiyIg="
@@ -44163,7 +44160,7 @@
 															"font": "Arial;13;0",
 															"left": 173,
 															"top": 222,
-															"width": 377.6220703125,
+															"width": 408.63037109375,
 															"height": 13,
 															"text": "-processarLinhaArquivo: Function<String[], Boleto>",
 															"horizontalAlignment": 0
@@ -44172,7 +44169,7 @@
 													"font": "Arial;13;0",
 													"left": 168,
 													"top": 217,
-													"width": 387.6220703125,
+													"width": 418.63037109375,
 													"height": 23
 												},
 												{
@@ -44197,7 +44194,7 @@
 															"font": "Arial;13;0",
 															"left": 173,
 															"top": 245,
-															"width": 377.6220703125,
+															"width": 408.63037109375,
 															"height": 13,
 															"text": "+processar(nomeArquivo: String): List<Boleto>",
 															"horizontalAlignment": 0
@@ -44214,7 +44211,7 @@
 															"font": "Arial;13;0",
 															"left": 173,
 															"top": 260,
-															"width": 377.6220703125,
+															"width": 408.63037109375,
 															"height": 13,
 															"text": "+ProcessarBoletos(processarLinhaArquivo: Function<String[], Boleto>)",
 															"horizontalAlignment": 0
@@ -44223,7 +44220,7 @@
 													"font": "Arial;13;0",
 													"left": 168,
 													"top": 240,
-													"width": 387.6220703125,
+													"width": 418.63037109375,
 													"height": 38
 												},
 												{
@@ -44263,7 +44260,7 @@
 											"containerChangeable": true,
 											"left": 168,
 											"top": 192,
-											"width": 387.6220703125,
+											"width": 418.63037109375,
 											"height": 86,
 											"autoResize": true,
 											"nameCompartment": {
@@ -44310,7 +44307,7 @@
 															},
 															"visible": false,
 															"font": "Arial;13;0",
-															"left": 221,
+															"left": 173,
 															"top": 365,
 															"width": 342.7294921875,
 															"height": 13,
@@ -44323,9 +44320,9 @@
 																"$ref": "AAAAAAF1Ziy5ywiRKVk="
 															},
 															"font": "Arial;13;1",
-															"left": 197,
+															"left": 173,
 															"top": 343,
-															"width": 366.7294921875,
+															"width": 407.19580078125,
 															"height": 13,
 															"text": "LeituraRetorno"
 														},
@@ -44337,7 +44334,7 @@
 															},
 															"visible": false,
 															"font": "Arial;13;0",
-															"left": -500,
+															"left": -548,
 															"top": 18,
 															"width": 231.93701171875,
 															"height": 13,
@@ -44351,16 +44348,16 @@
 															},
 															"visible": false,
 															"font": "Arial;13;0",
-															"left": -500,
+															"left": -548,
 															"top": 18,
 															"height": 13,
 															"horizontalAlignment": 1
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 192,
+													"left": 168,
 													"top": 336,
-													"width": 376.7294921875,
+													"width": 417.19580078125,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAF1Ziy5ywiSY+w="
@@ -44386,7 +44383,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -250,
+													"left": -274,
 													"top": 9,
 													"width": 10,
 													"height": 10
@@ -44411,12 +44408,12 @@
 																"$ref": "AAAAAAF1Ziyk4whRgb0="
 															},
 															"font": "Arial;13;0",
-															"left": 197,
+															"left": 173,
 															"top": 366,
-															"width": 366.7294921875,
+															"width": 407.19580078125,
 															"height": 13,
 															"underline": true,
-															"text": "+processarLinhaBancoBrasil(linhaArquivo: String): List<Boleto>",
+															"text": "+processarLinhaBancoBrasil(vetorLinhaArq[]: String): List<Boleto>",
 															"horizontalAlignment": 0
 														},
 														{
@@ -44429,19 +44426,19 @@
 																"$ref": "AAAAAAF1ZjK2rgjyjbg="
 															},
 															"font": "Arial;13;0",
-															"left": 197,
+															"left": 173,
 															"top": 381,
-															"width": 366.7294921875,
+															"width": 407.19580078125,
 															"height": 13,
 															"underline": true,
-															"text": "+processarLinhaBradesco(linhaArquivo: String): List<Boleto>",
+															"text": "+processarLinhaBradesco(vetorLinhaArq[]: String): List<Boleto>",
 															"horizontalAlignment": 0
 														}
 													],
 													"font": "Arial;13;0",
-													"left": 192,
+													"left": 168,
 													"top": 361,
-													"width": 376.7294921875,
+													"width": 417.19580078125,
 													"height": 38
 												},
 												{
@@ -44455,7 +44452,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -250,
+													"left": -274,
 													"top": 9,
 													"width": 10,
 													"height": 10
@@ -44471,7 +44468,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -250,
+													"left": -274,
 													"top": 9,
 													"width": 10,
 													"height": 10
@@ -44479,9 +44476,9 @@
 											],
 											"font": "Arial;13;0",
 											"containerChangeable": true,
-											"left": 192,
+											"left": 168,
 											"top": 336,
-											"width": 376.7294921875,
+											"width": 417.19580078125,
 											"height": 63,
 											"stereotypeDisplay": "none",
 											"nameCompartment": {
@@ -44528,7 +44525,7 @@
 												"$ref": "AAAAAAF1ZjEtEAjlkiA="
 											},
 											"lineStyle": 1,
-											"points": "368:145;364:191"
+											"points": "374:145;375:191"
 										},
 										{
 											"_type": "UMLDependencyView",
@@ -44551,8 +44548,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 385,
-													"top": 297,
+													"left": 390,
+													"top": 299,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 15,
@@ -44572,8 +44569,8 @@
 													},
 													"visible": null,
 													"font": "Arial;13;0",
-													"left": 400,
-													"top": 295,
+													"left": 405,
+													"top": 299,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 30,
@@ -44593,8 +44590,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 356,
-													"top": 302,
+													"left": 361,
+													"top": 300,
 													"height": 13,
 													"alpha": -1.5707963267948966,
 													"distance": 15,
@@ -44612,7 +44609,7 @@
 												"$ref": "AAAAAAF1Ziy15AhggWE="
 											},
 											"lineStyle": 1,
-											"points": "367:278;375:335",
+											"points": "376:278;376:335",
 											"showVisibility": true,
 											"nameLabel": {
 												"$ref": "AAAAAAF1ZjMeUwkBCp0="
@@ -44778,7 +44775,7 @@
 													"_parent": {
 														"$ref": "AAAAAAF1Ziyk4whRgb0="
 													},
-													"name": "linhaArquivo",
+													"name": "vetorLinhaArq[]",
 													"type": "String"
 												},
 												{
@@ -44807,7 +44804,7 @@
 													"_parent": {
 														"$ref": "AAAAAAF1ZjK2rgjyjbg="
 													},
-													"name": "linhaArquivo",
+													"name": "vetorLinhaArq[]",
 													"type": "String"
 												},
 												{
