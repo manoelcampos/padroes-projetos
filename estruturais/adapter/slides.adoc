@@ -32,11 +32,12 @@ endif::[]
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 
-= Padrão de Projetos Adapter image:patterns/estruturais/adapter-tomada.png[]: Exemplos Práticos em Java 
+= Padrão de Projetos Adapter image:patterns/estruturais/adapter-tomada.png[]
 
 
+Prof. Manoel Campos 
 
-Prof. Manoel Campos https://about.me/manoelcampos
+image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
 
 [transition=zoom]
 == Categoria

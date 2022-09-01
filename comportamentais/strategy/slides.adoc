@@ -33,7 +33,9 @@ endif::[]
 
 = Padrão de Projetos Strategy image:images/strategy-icon.png[width=16%]
 
-Prof. Manoel Campos https://about.me/manoelcampos
+Prof. Manoel Campos 
+
+image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
 
 [transition=zoom]
 == Categoria

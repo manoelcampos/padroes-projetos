@@ -32,11 +32,12 @@ endif::[]
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 
-= Padrão de Projeto Singleton
+= Padrão de Projeto Singleton 💁🏼‍♀️
 
-Prof. Manoel Campos https://about.me/manoelcampos
+Prof. Manoel Campos
 
-image::patterns/criacionais/lonely-2378396_1280.jpg[title=https://www.needpix.com, link=https://www.needpix.com]
+image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
+
 
 [transition=zoom]
 == Categoria

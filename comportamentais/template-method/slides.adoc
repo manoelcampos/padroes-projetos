@@ -35,11 +35,13 @@ endif::[]
 //https://github.com/hakimel/reveal.js#theming
 :revealjs_theme: league
 
-= Padrão de Projetos Template Method image:images/template-large.png[link=https://www.flaticon.com/authors/monkik]: Quase tudo que precisa saber 
+= Template Method image:images/template-large.png[link=https://www.flaticon.com/authors/monkik]
 
-(com exemplos em Java 8+) 🙌🏼
+Quase tudo que precisa saber 
 
-Prof. Manoel Campos https://about.me/manoelcampos
+Prof. Manoel Campos
+
+image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
 
 [transition=zoom]
 == Categoria

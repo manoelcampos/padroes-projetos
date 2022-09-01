@@ -36,12 +36,11 @@ endif::[]
 //Transição para todos os slides // none/fade/slide/convex/concave/zoom
 //:revealjs_transition: 'zoom'
 
-= Builder Design Pattern
+= Builder Design Pattern image:builder.png[title=Imagem clipartmax.com]
 
-image:builder.png[title=https://www.clipartmax.com, link=https://www.clipartmax.com]
+Prof. Manoel Campos 
 
-Prof. Manoel Campos +
-https://about.me/manoelcampos
+image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
 
 [transition=zoom]
 == Categoria

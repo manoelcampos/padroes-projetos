@@ -1,6 +1,6 @@
 slides:
 	@#Compila o README o formato de slides em HTML
-	asciidoctor-revealjs slides.adoc -o index.html && echo "Slides HTML gerados com sucesso"
+	asciidoctor-revealjs slides.adoc -o slides.html && echo "Slides HTML gerados com sucesso"
 
 clean:
 	@#Apaga os arquivos gerados pelos comandos acima
