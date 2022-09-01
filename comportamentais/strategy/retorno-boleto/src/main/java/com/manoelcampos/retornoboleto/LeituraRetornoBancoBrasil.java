@@ -18,15 +18,14 @@ import java.util.List;
  */
  // tag::class-start[]
 public class LeituraRetornoBancoBrasil implements LeituraRetorno {
-
     @Override
-    public List<Boleto> lerArquivo(URI caminhoArquivo) {
+    public List<Boleto> lerArquivo(final URI caminhoArquivo) {
         try (var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))){
             String line;
-            List<Boleto> boletos = new ArrayList<>();
+            final var listaBoletos = new ArrayList<Boleto>();
             while((line = reader.readLine()) != null){
-                String[] vetor = line.split(";");
-                Boleto boleto = new Boleto();
+                final String[] vetor = line.split(";");
+                final var boleto = new Boleto();
                 boleto.setId(Integer.parseInt(vetor[0]));
                 boleto.setCodBanco(vetor[1]);
                 // end::class-start[]
@@ -40,10 +39,10 @@ public class LeituraRetornoBancoBrasil implements LeituraRetorno {
                 boleto.setJuros(Double.parseDouble(vetor[7]));
 
                 // tag::class-end[]
-                boletos.add(boleto);
+                listaBoletos.add(boleto);
             }
 
-            return boletos;
+            return listaBoletos;
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }

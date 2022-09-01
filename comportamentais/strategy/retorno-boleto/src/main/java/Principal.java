@@ -19,7 +19,7 @@ public class Principal {
         /*No lugar de passar o caminho absoluto do arquivo a ser lido (que pode mudar e vai fazer
         * com que a aplicação não funcione em qualquer máquina, sem atualizar o caminho),
         * é usado o método getResource para obter o caminho de um arquivo na pasta resources.
-        * Assim, sem pre que sua aplicação java precisar ler um arquivo, o ideal é colocá-lo
+        * Assim, sem que sua aplicação java precisar ler um arquivo, o ideal é colocá-lo
         * dentro desta pasta e então usar a linha abaixo para obter o caminho correto do arquivo
         * na máquina atual.
         *
