@@ -14,15 +14,14 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
     /**
      * Colunas a serem exibidas na tabela gerada no processo de exportação.
      */
-    protected static final List<String> TITULOS_COLUNAS = Arrays.asList("ID", "Descrição", "Marca", "Modelo", "Estoque");
+    protected static final List<String> TITULOS_COLUNAS = List.of("ID", "Descrição", "Marca", "Modelo", "Estoque");
 
     @Override
     public final String exportar(List<Produto> listaProdutos) {
-        final StringBuilder sb = new StringBuilder();
-        sb.append(abrirTabela());
-
-        sb.append(gerarColunasLinha(TITULOS_COLUNAS));
-        sb.append(fecharLinhaTitulos());
+        final var sb = new StringBuilder();
+        sb.append(abrirTabela())
+          .append(gerarColunasLinha(TITULOS_COLUNAS))
+          .append(fecharLinhaTitulos());
         gerarLinhasProdutos(sb, listaProdutos);
 
         sb.append(fecharTabela());
@@ -39,11 +38,11 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
     private void gerarLinhasProdutos(StringBuilder sb, List<Produto> listaProdutos) {
         for (Produto produto : listaProdutos) {
             List<String> valoresCamposProduto =
-                    Arrays.asList(String.valueOf(produto.getId()),
-                                  produto.getDescricao(),
-                                  produto.getMarca(),
-                                  produto.getModelo(),
-                                  String.valueOf(produto.getEstoque()));
+                    List.of(String.valueOf(produto.getId()),
+                          produto.getDescricao(),
+                          produto.getMarca(),
+                          produto.getModelo(),
+                          String.valueOf(produto.getEstoque()));
             sb.append(gerarColunasLinha(valoresCamposProduto));
         }
     }
@@ -58,7 +57,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
      * @return uma String representando a linha gerada com os valores
      */
     protected String gerarColunasLinha(List<String> valores) {
-        StringBuilder sb = new StringBuilder();
+        final var sb = new StringBuilder();
         sb.append(abrirLinha());
         for (String valor : valores) {
             sb.append(abrirColuna(valor))
