@@ -35,7 +35,6 @@ class EstrategiaBoletoFactory {
      * @return
      */
     static Function<String[], Boleto> newStrategy(String nomeArquivo){
-        Function<String[], Boleto> estrategia;
         if(nomeArquivo.contains("banco-brasil")){
             /**
              * Obseve que como estamos usando programação funcional,
@@ -48,14 +47,14 @@ class EstrategiaBoletoFactory {
              * a referência de uma função e armazenando
              * em uma variável do tipo {@link Function}.
              */
-            estrategia = LeituraRetorno::processarLinhaBancoBrasil;
+            return LeituraRetorno::processarLinhaBancoBrasil;
         }
-        else if(nomeArquivo.contains("bradesco")){
-            estrategia = LeituraRetorno::processarLinhaBradesco;
-        }
-        else throw new UnsupportedOperationException("Banco não identificado ou não suportado para o arquivo " + nomeArquivo);
 
-        return estrategia;
+        if(nomeArquivo.contains("bradesco")){
+            return LeituraRetorno::processarLinhaBradesco;
+        }
+
+        throw new UnsupportedOperationException("Banco não identificado ou não suportado para o arquivo " + nomeArquivo);
     }
 }
 
