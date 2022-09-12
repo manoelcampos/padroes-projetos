@@ -43,14 +43,12 @@ public abstract class AbstractExportadorLista implements ExportadorLista {
         this.lista = lista;
         this.nomesCampos = gerarTitulosColunas();
 
-        final StringBuilder sb = new StringBuilder();
-        sb.append(abrirTabela());
-
-        gerarColunasLinha(sb, nomesCampos);
-        sb.append(fecharLinhaTitulos());
-        gerarLinhasObjetos(sb);
-
-        sb.append(fecharTabela());
+        final var sb = new StringBuilder();
+        sb.append(abrirTabela())
+          .append(gerarColunasLinha(nomesCampos))
+          .append(fecharLinhaTitulos())
+          .append(gerarLinhasObjetos())
+          .append(fecharTabela());
         return sb.toString();
     }
 
@@ -85,30 +83,36 @@ public abstract class AbstractExportadorLista implements ExportadorLista {
      * Gera o texto representando todas as linhas de uma tabela (em um formato definido pelas subclasses)
      * contendo os dados dos objetos na {@link #lista}.
      *
-     * @param sb {@link StringBuilder} onde o texto gerado será adicionado
+     * @return {@link StringBuilder} com o texto gerado
      */
-    private void gerarLinhasObjetos(StringBuilder sb) {
+    private StringBuilder gerarLinhasObjetos() {
+        final var sb = new StringBuilder();
         for (Object objeto : lista) {
-            gerarLinhaObjeto(sb, objeto);
+            sb.append(gerarLinhaObjeto(objeto));
         }
+
+        return sb;
     }
 
     /**
      * Gera o texto representando uma única linha de uma tabela (em um formato definido pelas subclasses)
      * contendo os dados de um objeto na {@link #lista}.
      *
-     * @param sb {@link StringBuilder} onde o texto gerado será adicionado
-     * @param valores valores a serem exibidos nas colunas, que pode ser
-     *                o título das colunas (caso esteja sendo gerada a linha de cabeçalho da tabela)
-     *                ou os valores de uma linha da tabela (caso esteja sendo gerado uma linha de conteúdo da tabela).
+     * @param objeto objeto contendo os valores a serem exibidos nas colunas da linha sendo gerada
+     * @return {@link StringBuilder} com o texto gerado
      */
-    private void gerarLinhaObjeto(StringBuilder sb, Object objeto) {
+    private StringBuilder gerarLinhaObjeto(Object objeto) {
+        final var sb = new StringBuilder();
         List<String> valoresCamposObjeto = new ArrayList<>();
+        //O loop apenas obtém o valor de cada atributo do objeto passado e gera uma lista com tais valores
         for (String campo : nomesCampos) {
             String valorCampo = getValorCampoObjeto(objeto, campo);
             valoresCamposObjeto.add(String.valueOf(String.valueOf(valorCampo)));
         }
-        gerarColunasLinha(sb, valoresCamposObjeto);
+
+        //Com a lista de valores dos atributos do objeto, geramos uma linha da tabela
+        sb.append(gerarColunasLinha(valoresCamposObjeto));
+        return sb;
     }
 
     /**
@@ -134,19 +138,21 @@ public abstract class AbstractExportadorLista implements ExportadorLista {
     /**
      * Gera o texto representando uma única linha de uma tabela (em um formato definido pelas subclasses).
      *
-     * @param sb {@link StringBuilder} onde o texto gerado será adicionado
      * @param valores valores a serem exibidos nas colunas, que podem ser:
      *                (i) os títulos das colunas (caso esteja sendo gerada a linha de cabeçalho da tabela) ou
      *                (ii) os valores de uma linha da tabela (caso esteja sendo gerado uma linha de conteúdo da tabela).
      *                Neste último caso, tal parâmetro deve conter os valores dos atributos de um objeto da {@link #lista}.
+     * @return {@link StringBuilder} contendo o texto gerado
      */
-    private void gerarColunasLinha(StringBuilder sb, List<String> valores) {
+    private StringBuilder gerarColunasLinha(List<String> valores) {
+        final var sb = new StringBuilder();
         sb.append(abrirLinha());
         for (String valor : valores) {
             sb.append(abrirColuna(valor))
               .append(fecharColuna());
         }
         sb.append(fecharLinha());
+        return sb;
     }
 
     @Override

@@ -10,13 +10,13 @@ import java.util.List;
  * @author Manoel Campos da Silva Filho
  */
 public class Principal {
-    private static final List<Usuario> USUARIOS = Arrays.asList(
+    private static final List<Usuario> USUARIOS = List.of(
             new Usuario("Manoel", "123.456.789-01", "Palmas"),
             new Usuario("Joana", "444.555.666-77", "Porto Nacional"),
             new Usuario("Lúcia", "999.888.777-66", "Palmas")
     );
 
-    private static final List<Produto> PRODUTOS = Arrays.asList(
+    private static final List<Produto> PRODUTOS = List.of(
             new Produto("TV", "LG", "132-A", 120),
             new Produto("Notebook", "Asus", "New age", 341),
             new Produto("Smartphone", "Samsung", "Galaxy S10", 214)
