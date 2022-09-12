@@ -73,15 +73,18 @@ public interface ExportadorListaProduto {
     /**
      * Cria uma instância de uma classe
      * que realiza a exportação de dados para um formato definido.
-     * @param extensaoArquivoExportacao extensão de arquivo que indica o formato para converter os dados,
+     * @param extensaoArqExportacao extensão de arquivo que indica o formato para converter os dados,
      *                                  como html, csv, md (markdown), etc.
      * @return
      */
-    static ExportadorListaProduto newInstance(String extensaoArquivoExportacao){
-        switch (extensaoArquivoExportacao){
-            case "html": return new ExportadorListaProdutoHtml();
-            case "md": return new ExportadorListaProdutoMarkdown();
-            default: throw new UnsupportedOperationException("Formato de arquivo não suportado: " + extensaoArquivoExportacao);
-        }
+    static ExportadorListaProduto newInstance(String extensaoArqExportacao){
+        /*Esta forma de escrever um switch é chamada de "Switch Expression",
+        * onde podemos fazer o switch retornar um valor e armazenar numa variável.
+        * Tal recurso foi introduzido definitivamente no JDK 14. */
+        return switch (extensaoArqExportacao) {
+            case "html" -> new ExportadorListaProdutoHtml();
+            case "md" -> new ExportadorListaProdutoMarkdown();
+            default -> throw new UnsupportedOperationException("Formato de arquivo não suportado: " + extensaoArqExportacao);
+        };
     }
 }
