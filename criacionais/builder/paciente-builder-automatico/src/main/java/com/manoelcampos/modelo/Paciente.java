@@ -79,7 +79,7 @@ public class Paciente {
     }
 
     public final void setNome(String nome) {
-        if(nome == null || nome.isEmpty()){
+        if(nome == null || nome.isBlank()){
             throw new IllegalArgumentException("Nome é obrigatório.");
         }
 
@@ -108,7 +108,7 @@ public class Paciente {
     }
 
     public final void setCpf(String cpf) {
-        if(cpf == null || cpf.isEmpty()){
+        if(cpf == null || cpf.isBlank()){
             throw new IllegalArgumentException("CPF é obrigatório.");
         }
 
@@ -136,7 +136,7 @@ public class Paciente {
     }
 
     public final void setCidade(String cidade) {
-        if(cidade == null || cidade.isEmpty()){
+        if(cidade == null || cidade.isBlank()){
             throw new IllegalArgumentException("Cidade é obrigatória.");
         }
 
@@ -148,7 +148,7 @@ public class Paciente {
     }
 
     public final void setUf(String uf) {
-        if(uf == null || uf.isEmpty()){
+        if(uf == null || uf.isBlank()){
             throw new IllegalArgumentException("UF é obrigatório.");
         }
 
