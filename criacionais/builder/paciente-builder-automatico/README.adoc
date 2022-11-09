@@ -1,0 +1,22 @@
+:imagesdir: ../../images/patterns/criacionais
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+:icons: font
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Paciente Builder Automático (https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder-automatico[zip])
+
+Mostra como usar a biblioteca http://immutables.github.io[Immutables] para gerar builders automáticos em tempo de compilação.
+A builder é gerada na pasta target/generated-sources, assim, não é incluída
+no código fonte do seu projeto (como no caso da geração pelo IDE).
+
+
