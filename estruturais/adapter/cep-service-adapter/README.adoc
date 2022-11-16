@@ -25,7 +25,7 @@ As classe filhas de `AbstractCepService` se encarregam de extrair corretamente t
 e armazenar em um novo objeto `Endereco`.
 Com isto, não tivemos que criar classes Adapter para os serviços de CEP implementados.
 
-Este é um projeto Java EE que utiliza o framework https://quarkus.io[Quarkus] que torna o desenvolvimento de backends en Java
+Este é um projeto que utiliza o framework https://quarkus.io[Quarkus] que torna o desenvolvimento de backends em Java
 extremamente produtivo e eficiente, além de embutir um servidor de aplicação leve, tornando trivial a implantação da aplicação.
 Para mais detalhes sobre o Quarkus, veja a página oficial acima e um
 projeto de exemplo detalhada https://github.com/manoelcampos/sd-webservices/tree/master/4.5-ws-rest-quarkus-framework[aqui].

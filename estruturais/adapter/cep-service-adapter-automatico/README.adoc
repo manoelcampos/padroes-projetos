@@ -10,11 +10,11 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Consumo de Serviços de CEP com VRaptor (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter-automatico[zip])
+= Consumo de Serviços de CEP com Quarkus (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cep-service-adapter-automatico[zip])
 
 Esta versão do projeto mostra que, em determinadas situações,
 não precisamos de fato implementar um padrão.
-A linguagens e ferramentas que utilizamos podem
+A linguagem e ferramentas que utilizamos podem
 já fornecer recursos que resolvem o problema,
 com o mínimo de esforço.
 
