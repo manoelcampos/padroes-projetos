@@ -40,11 +40,14 @@ public class Principal {
     public static void main(String[] args) {
         System.out.println();
 
-        //No Yahoo Finance, as empresas brasileiras terminam com ".sa"
-        cotacaoUsandoYahooFinance("MGLU3.SA"); //MGLU3 = Magazine Luiza
-
-        cotacaoUsandoAlphaVantage("INTC"); //INTC = Intel
-        cotacaoUsandoQuandl("WIKI/AAPL"); //AAPL = Apple
+        try {
+            //No Yahoo Finance, as empresas brasileiras terminam com ".sa"
+            cotacaoUsandoYahooFinance("MGLU3.SA"); //MGLU3 = Magazine Luiza
+            cotacaoUsandoAlphaVantage("INTC"); //INTC = Intel
+            cotacaoUsandoQuandl("WIKI/AAPL"); //AAPL = Apple
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     /**
@@ -65,11 +68,12 @@ public class Principal {
 
         var financialData = financeData.getFinancialData();
         if (financialData == null)
-            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codEmpresa);
-        else System.out.printf(
-                "Preço: %s %s%n",
-                financialData.getFinancialCurrency(),
-                financialData.getCurrentPrice().getRaw());
+            throw new RuntimeException("Não foi possível obter a cotação para a empresa " + codEmpresa);
+
+        System.out.printf(
+            "Preço: %s %s%n",
+            financialData.getFinancialCurrency(),
+            financialData.getCurrentPrice().getRaw());
 
         /*
         System.out.println(builder.getURL());
@@ -103,10 +107,10 @@ public class Principal {
             var stockQuote = response.getStockQuote();
             var dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             System.out.printf(
-                    "Data: %s Preço: %s%n",
-                    dateFormatter.format(stockQuote.getLatestTradingDay()), stockQuote.getPrice());
+                "Data: %s Preço: %s%n",
+                dateFormatter.format(stockQuote.getLatestTradingDay()), stockQuote.getPrice());
         } catch (AlphaVantageException e) {
-            System.err.println("Erro ao solicitar cotação da empresa " + codEmpresa + ": " + e.getMessage());
+            throw new RuntimeException("Erro ao solicitar cotação da empresa " + codEmpresa + ": " + e.getMessage(), e);
         }
         System.out.println("---------------------------------------------------------------------------------");
     }
@@ -125,14 +129,13 @@ public class Principal {
                                         .build();
         var tabularResult = session.getDataSet(request);
         if (tabularResult.size() == 0)
-            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codEmpresa);
-        else {
-            Row row = tabularResult.get(0);
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            String date = formatter.format(row.getLocalDate("Date"));
-            System.out.printf("Data: %s Preço: %s%n", date, row.getDouble("Close"));
-            //System.out.println(result.toPrettyPrintedString());
-        }
+            throw new RuntimeException("Não foi possível obter a cotação para a empresa " + codEmpresa);
+
+        Row row = tabularResult.get(0);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String date = formatter.format(row.getLocalDate("Date"));
+        System.out.printf("Data: %s Preço: %s%n", date, row.getDouble("Close"));
+        //System.out.println(result.toPrettyPrintedString());
         System.out.println("---------------------------------------------------------------------------------");
     }
 }
