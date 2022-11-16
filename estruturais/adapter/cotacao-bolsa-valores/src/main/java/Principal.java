@@ -50,25 +50,30 @@ public class Principal {
     /**
      * Acessa a cotação de uma determinada empresa utilizando o serviço do <a href="https://finance.yahoo.com">Yahoo Finance</a>
      * por meio da biblioteca <a href="https://github.com/mainstringargs/yahoo-finance-scraper">Yahoo Finance Scrapper</a>.
-     * @param codigoEmpresa
+     * @param codEmpresa
      * @see <a href="http://meumobi.github.io/stocks%20apis/2016/03/13/get-realtime-stock-quotes-yahoo-finance-api.html">Get realtime stock quotes yahoo finance API</a>
      */
-    private static void cotacaoUsandoYahooFinance(String codigoEmpresa) {
-        System.out.printf("Cotação da Empresa %s pelo serviço Yahoo Finance: https://finance.yahoo.com%n", codigoEmpresa);
+    private static void cotacaoUsandoYahooFinance(String codEmpresa) {
+        System.out.printf("Cotação da Empresa %s pelo Yahoo Finance: https://finance.yahoo.com%n", codEmpresa);
         var builder =
-                new YahooFinanceUrlBuilder().modules(YahooFinanceModules.values()).symbol(codigoEmpresa);
+                new YahooFinanceUrlBuilder()
+                        .modules(YahooFinanceModules.values())
+                        .symbol(codEmpresa);
 
         var request = new YahooFinanceRequest();
         var financeData = request.getFinanceData(request.invoke(builder));
 
         var financialData = financeData.getFinancialData();
         if (financialData == null)
-            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codigoEmpresa);
-        else System.out.printf("Preço: %s %s%n", financialData.getFinancialCurrency(), financialData.getCurrentPrice().getRaw());
+            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codEmpresa);
+        else System.out.printf(
+                "Preço: %s %s%n",
+                financialData.getFinancialCurrency(),
+                financialData.getCurrentPrice().getRaw());
 
         /*
         System.out.println(builder.getURL());
-        System.out.println("https://query1.finance.yahoo.com/v8/finance/chart/"+codigoEmpresa+"?period1=1546311600&period2=1556593200&interval=1d&includePrePost=False");
+        System.out.println("https://query1.finance.yahoo.com/v8/finance/chart/"+codEmpresa+"?period1=1546311600&period2=1556593200&interval=1d&includePrePost=False");
         */
         System.out.println("---------------------------------------------------------------------------------");
     }
@@ -76,10 +81,10 @@ public class Principal {
     /**
      * Acessa a cotação de uma determinada empresa utilizando o serviço do <a href="https://www.alphavantage.co">AlphaVantage</a>
      * por meio da biblioteca <a href="https://github.com/mainstringargs/alpha-vantage-scraper">AlphaVantage Scrapper</a>.
-     * @param codigoEmpresa
+     * @param codEmpresa
      */
-    private static void cotacaoUsandoAlphaVantage(String codigoEmpresa) {
-        System.out.printf("Cotação da Empresa %s pelo serviço Alpha Vantage: http://www.alphavantage.co%n", codigoEmpresa);
+    private static void cotacaoUsandoAlphaVantage(String codEmpresa) {
+        System.out.printf("Cotação da Empresa %s pelo Alpha Vantage: http://www.alphavantage.co%n", codEmpresa);
 
         /*
         Verifica se existe uma variável de ambiente para a chave da API do serviço Alpha Vantage.
@@ -94,12 +99,14 @@ public class Principal {
         var stockQuotes = new StockQuotes(apiConnector);
 
         try {
-            var response = stockQuotes.quote(codigoEmpresa);
+            var response = stockQuotes.quote(codEmpresa);
             var stockQuote = response.getStockQuote();
             var dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            System.out.printf("Data: %s Preço: %s%n", dateFormatter.format(stockQuote.getLatestTradingDay()), stockQuote.getPrice());
+            System.out.printf(
+                    "Data: %s Preço: %s%n",
+                    dateFormatter.format(stockQuote.getLatestTradingDay()), stockQuote.getPrice());
         } catch (AlphaVantageException e) {
-            System.err.println("Erro ao solicitar cotação da empresa " + codigoEmpresa + ": " + e.getMessage());
+            System.err.println("Erro ao solicitar cotação da empresa " + codEmpresa + ": " + e.getMessage());
         }
         System.out.println("---------------------------------------------------------------------------------");
     }
@@ -107,18 +114,18 @@ public class Principal {
     /**
      * Acessa a cotação de uma determinada empresa utilizando o serviço do <a href="https://www.quandl.com">Quandl</a>
      * por meio da biblioteca <a href="http://quandl4j.org">quandl4j</a>.
-     * @param codigoEmpresa
+     * @param codEmpresa
      */
-    private static void cotacaoUsandoQuandl(String codigoEmpresa) {
-        System.out.printf("Cotação da Empresa %s pelo serviço Quandl: http://quandl.com/%n", codigoEmpresa);
+    private static void cotacaoUsandoQuandl(String codEmpresa) {
+        System.out.printf("Cotação da Empresa %s pelo Quandl: http://quandl.com%n", codEmpresa);
         var session = ClassicQuandlSession.create();
         var request = DataSetRequest.Builder
-                                        .of(codigoEmpresa)
+                                        .of(codEmpresa)
                                         .withMaxRows(1)
                                         .build();
         var tabularResult = session.getDataSet(request);
         if (tabularResult.size() == 0)
-            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codigoEmpresa);
+            System.err.printf("Não foi possível obter a cotação para a empresa %s%n", codEmpresa);
         else {
             Row row = tabularResult.get(0);
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
