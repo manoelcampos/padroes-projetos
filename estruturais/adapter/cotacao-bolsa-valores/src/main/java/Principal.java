@@ -43,7 +43,7 @@ public class Principal {
         //No Yahoo Finance, as empresas brasileiras terminam com ".sa"
         cotacaoUsandoYahooFinance("MGLU3.SA"); //MGLU3 = Magazine Luiza
 
-        cotacaoUsandoAlphaVantage("INTL"); //INTL = Intel
+        cotacaoUsandoAlphaVantage("INTC"); //INTC = Intel
         cotacaoUsandoQuandl("WIKI/AAPL"); //AAPL = Apple
     }
 
