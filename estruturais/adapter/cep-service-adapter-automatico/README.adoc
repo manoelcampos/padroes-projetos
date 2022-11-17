@@ -58,3 +58,7 @@ Você deve abrir o navegador você mesmo. Neste caso, a aplicação estará disp
 em http://localhost:8080.
 Observe que não há um caminho adicional com o nome da aplicação no final da URL,
 pois a aplicação executa na raiz do servidor.
+
+==== Outros serviços para implementar
+
+- https://apicep.com - Exemplo: https://cdn.apicep.com/file/apicep/77021090.json
