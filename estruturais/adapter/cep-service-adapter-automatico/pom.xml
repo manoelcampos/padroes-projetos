@@ -32,10 +32,6 @@
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy-jsonb</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
       <artifactId>quarkus-undertow</artifactId>
       <version>${quarkus.platform.version}</version>
     </dependency>
