@@ -123,16 +123,17 @@ public class Principal {
     private static void cotacaoUsandoQuandl(String codEmpresa) {
         System.out.printf("Cotação da Empresa %s pelo Quandl: http://quandl.com%n", codEmpresa);
         var session = ClassicQuandlSession.create();
-        var request = DataSetRequest.Builder
-                                        .of(codEmpresa)
-                                        .withMaxRows(1)
-                                        .build();
+        var request = DataSetRequest
+                        .Builder
+                        .of(codEmpresa)
+                        .withMaxRows(1)
+                        .build();
         var tabularResult = session.getDataSet(request);
         if (tabularResult.size() == 0)
             throw new RuntimeException("Não foi possível obter a cotação para a empresa " + codEmpresa);
 
         Row row = tabularResult.get(0);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        var formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String date = formatter.format(row.getLocalDate("Date"));
         System.out.printf("Data: %s Preço: %s%n", date, row.getDouble("Close"));
         //System.out.println(result.toPrettyPrintedString());
