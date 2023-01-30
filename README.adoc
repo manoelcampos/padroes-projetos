@@ -40,7 +40,7 @@ NOTE: Os diagramas dos diferentes padrões estão todos disponíveis no arquivo 
 Utilize o http://staruml.io[StarUML 3+] para abrir o arquivo.
 endif::[]
 
-Uma apresentação sobre como chegamos aos padrões de projetos e a importância deles pode ser link:padroes-projetos.pptx[acessada aqui].
+Uma apresentação sobre como chegamos aos padrões de projetos e a importância deles pode ser https://docs.google.com/presentation/d/1zEIB-XPI8Icgb7sX8gCofHfMmaEB3D7eV-A_eiT90bc[acessada aqui].
 
 == Categorias de Padrões
 
