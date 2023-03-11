@@ -16,7 +16,10 @@ Considere que temos um sistema de vendas onde diferentes formas de desconto pode
 
 - percentual de desconto definido (que pode vir de um banco de dados);
 - percentual de desconto progressivo: `valor da compra/25`, não podendo ultrapassar 20% (este são apenas valores arbitrários de exemplo);
-- desconto de 15% na data de aniversário do cliente;
+- desconto de 15% na data de aniversário do cliente.
+
+O usuário é quem escolhe o tipo de desconto a ser aplicado, não o programa.
+O programa deve apenas permitir que seja mudado o algoritmo de cálculo do desconto.
 
 == Responda
 

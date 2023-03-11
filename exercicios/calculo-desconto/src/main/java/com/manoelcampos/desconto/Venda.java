@@ -8,38 +8,15 @@ import java.time.LocalDate;
  */
 public class Venda {
     private long id;
+    private Cliente cliente;
     private LocalDate data;
     private double valorTotal;
 
     public Venda() {/**/}
 
-    public Venda(long id, LocalDate data, double valorTotal) {
-        this.id = id;
+    public Venda(Client cliente, LocalDate data, double valorTotal) {
+        this.cliente = cliente;
         this.data = data;
-        this.valorTotal = valorTotal;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 }
