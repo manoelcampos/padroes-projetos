@@ -19,7 +19,7 @@ public class ProcessadorBoletos {
         this.processarLinhaArquivo = processarLinhaArquivo;
     }
 
-    public List<Boleto> processar(String nomeArquivo){
+    public final List<Boleto> processar(String nomeArquivo){
         try (var reader = Files.newBufferedReader(Paths.get(nomeArquivo))){
             String line;
             List<Boleto> boletos = new ArrayList<>();

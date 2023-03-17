@@ -1,3 +1,6 @@
+target/
+*.class
+
 logo-design-patterns*.jpg
 *.alias.*
 ~$*
