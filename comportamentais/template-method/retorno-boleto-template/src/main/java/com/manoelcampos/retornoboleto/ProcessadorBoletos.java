@@ -1,8 +1,8 @@
 package com.manoelcampos.retornoboleto;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
@@ -35,7 +35,7 @@ public abstract class ProcessadorBoletos {
      * @param nomeArquivo Nome do arquivo a ser processado
      */
     // tag::template-method[]
-    public final List<Boleto> processar(String nomeArquivo){
+    public final List<Boleto> processar(URI nomeArquivo){
         try (var reader = Files.newBufferedReader(Paths.get(nomeArquivo))){
             String line;
             List<Boleto> boletos = new ArrayList<>();

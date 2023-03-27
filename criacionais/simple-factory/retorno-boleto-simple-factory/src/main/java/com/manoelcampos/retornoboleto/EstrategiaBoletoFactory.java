@@ -1,5 +1,6 @@
 package com.manoelcampos.retornoboleto;
 
+import java.net.URI;
 import java.util.function.Function;
 
 /**
@@ -7,7 +8,7 @@ import java.util.function.Function;
  * para encapsular a lógica de criação das estratégias
  * de leitura de arquivo de retorno de boleto bancário.
  *
- * <p>Observe que a classe e o método {@link #newStrategy(String)}
+ * <p>Observe que a classe e o método {@link #newStrategy(URI)}
  * foram definidos com visibilidade package
  * pois, neste caso, não quero que a classe seja utilizada
  * fora do pacote.
@@ -34,8 +35,8 @@ class EstrategiaBoletoFactory {
      *                    cujo nome do banco deve estar dentro do nome do arquivo.
      * @return
      */
-    static Function<String[], Boleto> newStrategy(String nomeArquivo){
-        if(nomeArquivo.contains("banco-brasil")){
+    static Function<String[], Boleto> newStrategy(URI nomeArquivo){
+        if(nomeArquivo.toString().contains("banco-brasil")){
             /**
              * Obseve que como estamos usando programação funcional,
              * a estratégia de processamento do arquivo não é um objeto,
@@ -50,7 +51,7 @@ class EstrategiaBoletoFactory {
             return LeituraRetorno::processarLinhaBancoBrasil;
         }
 
-        if(nomeArquivo.contains("bradesco")){
+        if(nomeArquivo.toString().contains("bradesco")){
             return LeituraRetorno::processarLinhaBradesco;
         }
 

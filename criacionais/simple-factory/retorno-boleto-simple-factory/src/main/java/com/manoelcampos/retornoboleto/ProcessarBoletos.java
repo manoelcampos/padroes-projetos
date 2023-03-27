@@ -3,6 +3,7 @@ package com.manoelcampos.retornoboleto;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -13,9 +14,8 @@ import java.util.function.Function;
  * @author Manoel Campos da Silva Filho
  */
 public class ProcessarBoletos {
-    public void processar(String nomeArquivo){
-        Function<String[], Boleto> processarLinhaArquivo =
-                EstrategiaBoletoFactory.newStrategy(nomeArquivo);
+    public void processar(URI nomeArquivo){
+        Function<String[], Boleto> processarLinhaArquivo = EstrategiaBoletoFactory.newStrategy(nomeArquivo);
 
         try {
             BufferedReader reader = Files.newBufferedReader(Paths.get(nomeArquivo));

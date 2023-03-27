@@ -14,7 +14,7 @@ public class Principal {
         /*Instancia o objeto estrategista ProcessarBoletos,
         * indicando qual estratégia de leitura de boletos ele vai usar agora.
         * Neste caso, estamos iniciando com a leitura de boletos do Banco do Brasil.*/
-        ProcessarBoletos processar = new ProcessarBoletos(new LeituraRetornoBancoBrasil());
+        var processar = new ProcessarBoletos(new LeituraRetornoBancoBrasil());
 
         /*No lugar de passar o caminho absoluto do arquivo a ser lido (que pode mudar e vai fazer
         * com que a aplicação não funcione em qualquer máquina, sem atualizar o caminho),
@@ -27,7 +27,7 @@ public class Principal {
         * do caminho de um arquivo) não está dentro de nenhum pacote, o arquivo a ser lido
         * também não deve estar dentro de nenhum pacote (deve estar na raiz de resources).
         * Se a classe Principal (ou qualquer uma que usarmos abaixo) estiver em um pacote,
-        * o arquivo também precisará estar dentro do mesmo pacote dentro da pasta resources.*/
+        * o arquivo também precisará estar dentro do mesmo pacote na pasta resources.*/
         URI caminhoArquivo = Principal.class.getResource("banco-brasil-1.csv").toURI();
         System.out.println("Lendo arquivo " + caminhoArquivo + "\n");
 
