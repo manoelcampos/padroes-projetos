@@ -33,8 +33,13 @@ class ExportadorListaProdutoHtml extends AbstractExportadorListaProduto {
     }
 
     @Override
+    public String abrirLinhaTitulos() {
+        return "    <thead>\n";
+    }
+
+    @Override
     public String fecharLinhaTitulos() {
-        return "";
+        return "    </thead>\n";
     }
 
     @Override

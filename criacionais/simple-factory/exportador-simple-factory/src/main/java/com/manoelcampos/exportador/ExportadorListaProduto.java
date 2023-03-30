@@ -35,6 +35,12 @@ public interface ExportadorListaProduto {
     String fecharLinha();
 
     /**
+     * Retorna o código para abertura da linha de títulos de uma tabela em um formato de dados específico.
+     * @return
+     */
+    String abrirLinhaTitulos();
+
+    /**
      * Retorna o código para fechamento da linha de títulos de uma tabela em um formato de dados específico.
      * @return
      */

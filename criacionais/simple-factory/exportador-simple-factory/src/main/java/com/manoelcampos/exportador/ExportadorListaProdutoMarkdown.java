@@ -39,12 +39,16 @@ class ExportadorListaProdutoMarkdown extends AbstractExportadorListaProduto {
     }
 
     @Override
+    public String abrirLinhaTitulos() { return ""; }
+
+    @Override
     public String fecharLinhaTitulos() {
-        List<String> valores = new ArrayList<>();
+        final var listaValores = new ArrayList<String>();
         for (int i = 0; i < TITULOS_COLUNAS.size(); i++) {
-            valores.add("-----");
+            listaValores.add("-----");
         }
-        return gerarColunasLinha(valores);
+
+        return gerarColunasLinha(listaValores);
     }
 
     @Override

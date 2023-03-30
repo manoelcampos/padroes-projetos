@@ -1,7 +1,6 @@
 import com.manoelcampos.exportador.ExportadorListaProduto;
 import com.manoelcampos.exportador.Produto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,18 +9,18 @@ import java.util.List;
  */
 public class Principal {
     public static void main(String[] args) {
-        final List<Produto> produtos = List.of(
+        final var listaProdutos = List.of(
             new Produto("TV", "LG", "132-A", 120),
             new Produto("Notebook", "Asus", "New age", 341),
             new Produto("Smartphone", "Samsung", "Galaxy S10", 214)
         );
 
-        ExportadorListaProduto exportadorPadrao = ExportadorListaProduto.newInstance();
+        final var exportadorPadrao = ExportadorListaProduto.newInstance();
         System.out.println("Lista de Produtos em HTML\n");
-        System.out.println(exportadorPadrao.exportar(produtos));
+        System.out.println(exportadorPadrao.exportar(listaProdutos));
 
-        ExportadorListaProduto exportadorMarkdown = ExportadorListaProduto.newInstance("md");
+        final var exportadorMarkdown = ExportadorListaProduto.newInstance("md");
         System.out.println("Lista de Produtos em Markdown\n");
-        System.out.println(exportadorMarkdown.exportar(produtos));
+        System.out.println(exportadorMarkdown.exportar(listaProdutos));
     }
 }

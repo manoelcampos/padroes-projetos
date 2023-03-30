@@ -20,6 +20,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
     public final String exportar(List<Produto> listaProdutos) {
         final var sb = new StringBuilder();
         sb.append(abrirTabela())
+          .append(abrirLinhaTitulos())
           .append(gerarColunasLinha(TITULOS_COLUNAS))
           .append(fecharLinhaTitulos());
         gerarLinhasProdutos(sb, listaProdutos);
@@ -57,7 +58,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
      * @return uma String representando a linha gerada com os valores
      */
     protected String gerarColunasLinha(List<String> valores) {
-        final var sb = new StringBuilder();
+        final var sb = new StringBuilder("    ");
         sb.append(abrirLinha());
         for (String valor : valores) {
             sb.append(abrirColuna(valor))
