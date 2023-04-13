@@ -147,3 +147,40 @@ image::patterns/criacionais/simple-factory-dip.png[width="50%"]
 !===
 | Sem a factory image:patterns/criacionais/no-simple-factory.png[] | Com a factory (classe SimpleFactory omitida) image:patterns/criacionais/simple-factory-dip.png[]
 !===
+
+== Onde o padrão é usado no JDK
+
+A partir do JDK 9, as classes Collection introduziram os chamados
+"Factory Methods" Apesar do nome ser o de outro padrão que veremos
+à frente, tal padrão não é implementado aqui. O que temos é simplesmente
+uma Simple Fatory.
+
+== JCF no JDK 9+
+[source, java]
+----
+List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings");
+----
+
+== JCF no JDK 9+
+[source, java]
+----
+List<Integer> listaPares = List.of(2, 4, 6, 8, 10);
+----
+
+== JCF no JDK 9+
+
+[source, java]
+----
+Map<String, Integer> mapaHabitantesCidade = 
+                        Map.of("Palmas", 217000, "Gurupi", 84000);
+----
+
+== Falando de JDK, pula pro JDK 10
+
+== !
+[source, java]
+----
+var listaNomes = List.of("Minha", "Lista", "de", "Strings");
+var listaPares = List.of(2, 4, 6);
+var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);
+----

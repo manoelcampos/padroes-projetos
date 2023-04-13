@@ -146,6 +146,8 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 == Onde o padrão é usado no JDK
 
+=== Calendar
+
 A classe `Calendar` no JDK é abstrata, logo, não pode ser instanciada. 
 Existem diferentes tipos de calendário que podem ser instanciados, de acordo 
 com a região geográfica definida para o sistema (`Locale`).
@@ -155,6 +157,40 @@ será usada para instanciar um calendário.
 Ele utiliza o método auxiliar `createCalendar` para isto. Como falado
 anteriormente, neste caso o método possui parâmetros para definir como criar o objeto.
 Note que dentro do método ele define diferentes tipos de calendário, como gregorianos (o nosso), japonês e budista.
+
+=== JCF no JDK 9+
+
+A partir do JDK 9, as classes Collection introduziram os chamados
+"Factory Methods". Apesar do nome ser o de outro padrão que veremos
+à frente, tal padrão não é implementado aqui. O que temos é simplesmente
+uma Simple Fatory.
+
+A expressão *Factory Method* expressão é confusa pois pode se referir
+à:
+
+- um padrão com este mesmo nome (que não é o caso);
+- ou simplesmente a um *método fábrica* em uma classe/interface responsável por instanciar objetos.
+  Qualquer tipo de fábrica terá um método fábrica.
+
+[source, java]
+----
+List<String> listaNomes = List.of("Minha", "Lista", "de", "Strings");
+----
+
+[source, java]
+----
+Map<String, Integer> mapaHabitantesCidade = 
+                        Map.of("Palmas", 217000, "Gurupi", 84000);
+----
+
+=== Falando de JDK, pula pro JDK 10
+
+[source, java]
+----
+var listaNomes = List.of("Minha", "Lista", "de", "Strings");
+var listaPares = List.of(2, 4, 6);
+var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);
+----
 
 == Exercícios
 

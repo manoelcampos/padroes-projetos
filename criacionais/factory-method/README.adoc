@@ -84,6 +84,14 @@ https://tuhrig.de/programming-to-an-interface/[Programar para uma "interface" n�
 Ao aplicar o https://en.wikipedia.org/wiki/Dependency_inversion_principle[Dependency Inversion Principle (DIP)], a classe `CriadorAbstrato` não depende de tipos concretos, mas sim de tipos abstratos (interfaces ou classes abstratas).
 Ela não precisa saber quais são os tipos concretos existentes.
 
+=== Remodelando o projeto Exportador Produto com a Simple Factory
+
+Antes de implementarmos o padrão Factory Method, precisamos
+voltar ao projeto anterior, para fazer algumas alterações
+considerando um novo cenário.
+
+Os detalhes são fornecidos no projeto link:exportador-problematico[exportador-problematico].
+
 === Exemplos
 
 Podemos utilizar o Factory Method para encapsular a instanciação de colunas de uma tabela em formato específico,
