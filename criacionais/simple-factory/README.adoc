@@ -165,10 +165,9 @@ A partir do JDK 9, as classes Collection introduziram os chamados
 à frente, tal padrão não é implementado aqui. O que temos é simplesmente
 uma Simple Fatory.
 
-A expressão *Factory Method* expressão é confusa pois pode se referir
-à:
+A expressão *Factory Method* expressão é confusa pois pode se referir à:
 
-- um padrão com este mesmo nome (que não é o caso);
+- um padrão com este mesmo nome (não é o caso), que veremos a seguir;
 - ou simplesmente a um *método fábrica* em uma classe/interface responsável por instanciar objetos.
   Qualquer tipo de fábrica terá um método fábrica.
 
