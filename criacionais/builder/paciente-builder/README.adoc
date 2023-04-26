@@ -13,9 +13,12 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Paciente Builder Manual (https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder[zip])
+= Paciente Builder gerado por meio de um IDE (https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder[zip])
 
-Mostra como criar uma classe Builder para uma classe Paciente, sendo a Builder uma inner class.
-Como uma inner class, o código do arquivo Java pode ficar muito grande. 
+Mostra como criar uma classe Builder para uma classe Paciente, sendo a Builder uma __inner class__.
+Desta forma, o código do arquivo Java pode ficar muito grande. 
 Por isso, gerando a builder pelo IDE, é ideal que ela seja criada em um arquivo separado.
 
+Os IDEs não geram qualquer documentação para a builder e não deve-se incluí ou fazer qualquer
+alteração no código dela, pois se você fizer alterações na classe Paciente (classe da qual a builder
+cria objetos), você pode simplesmente apagar a Builder e usar seu IDE para gerar novamente.
