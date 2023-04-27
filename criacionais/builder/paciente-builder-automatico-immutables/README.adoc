@@ -13,7 +13,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Paciente Builder Automático (https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder-automatico[zip])
+= Paciente Builder Automático usando biblioteca Immutables (https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/builder/paciente-builder-automatico[zip])
 
 Mostra como usar a biblioteca http://immutables.github.io[Immutables] para gerar builders automáticos em tempo de compilação.
 A builder é gerada na pasta target/generated-sources, assim, não é incluída
