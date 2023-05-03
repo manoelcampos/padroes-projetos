@@ -1,0 +1,3 @@
+= Mostra como usar o padrão Singleton com Spring
+
+Projeto em Spring Boot que mostra como podemos usar objetos singleton de forma automática (usando apenas anotações) em um controller REST.
