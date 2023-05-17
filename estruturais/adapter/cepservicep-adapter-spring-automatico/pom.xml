@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.github.manoelcampos</groupId>
-	<artifactId>cepservicep-adapter-spring</artifactId>
+	<artifactId>cepservicep-adapter-spring-automatico</artifactId>
 	<version>1.0.0</version>
-	<name>cepservicep-adapter-spring</name>
+	<name>cepservicep-adapter-spring-automatico</name>
 	<description>Projeto de exemplo de criação de clientes de API REST de forma declarativa com Spring Cloud OpenFeign</description>
 	<properties>
 		<java.version>17</java.version>
