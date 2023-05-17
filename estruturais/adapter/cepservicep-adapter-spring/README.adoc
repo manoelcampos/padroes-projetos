@@ -1,0 +1,19 @@
+:source-highlighter: highlightjs
+:numbered:
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Adapters para Web APIs de CEPs com Spring  (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cepservicep-adapter-spring[zip])
+
+Mostra como criar manualmente adapters para APIs Web de consulta de endereço pelo CEP.
+
+=== Outros serviços para implementar
+
+- https://apicep.com - Exemplo: https://cdn.apicep.com/file/apicep/77021090.json
