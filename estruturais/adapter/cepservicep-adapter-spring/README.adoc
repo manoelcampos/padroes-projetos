@@ -1,0 +1,5 @@
+= Projeto de Exemplo de Cliente de API REST com SpringBoot e Spring Cloud OpenFeign (https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cepservice-adapter-spring[zip])
+
+A biblioteca https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/[Spring Cloud OpenFeign] permite desenvolver clientes de APIs REST apenas criando uma interface com anotações de controllers do Spring Web.
+
+A biblioteca então cria a implementação de tal interface para enviar requisições para o serviço REST que será consumido.
