@@ -16,4 +16,4 @@ Mostra como criar manualmente adapters para APIs Web de consulta de endereço pe
 
 === Outros serviços para implementar
 
-- https://apicep.com - Exemplo: https://cdn.apicep.com/file/apicep/77021090.json
+- https://apicep.com - Exemplo: https://cdn.apicep.com/file/apicep/77021-090.json
