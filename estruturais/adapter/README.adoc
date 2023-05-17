@@ -141,7 +141,7 @@ Endereco endereco = new Endereco();
 endereco.setLogradouro(object.getString("logradouro"));
 ----
 
-Alternativamente, veja o projeto link:cep-service-adapter-automatico[cep-service-adapter-automatico], 
+Alternativamente, veja o projeto link:cepservicep-adapter-spring-automatico[cepservicep-adapter-spring-automatico], 
 que apenas usa recursos da biblioteca https://github.com/FasterXML/jackson[Jackson] e assim não requer a implementação do padrão Adapter.
 
 === Pensando em interfaces como adaptadores
