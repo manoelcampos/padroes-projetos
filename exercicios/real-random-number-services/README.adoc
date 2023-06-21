@@ -41,7 +41,7 @@ serviços random.org e quantumnumbers, conforme indicado abaixo:
     * Acesse https://quantumnumbers.anu.edu.au e clique em "Sign up"
     * Efetue login, acesse https://quantumnumbers.anu.edu.au/api-key e clique em "View" para copiar a chave.
 
-
+Os valores das API Keys devem ser copiados para o arquivo .env.
 
 === Requisitos da Solução
 
