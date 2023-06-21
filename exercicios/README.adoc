@@ -21,4 +21,5 @@ a partir do código inicial fornecido.
 - link:instanciar-produtos[Instanciando Produtos]
 - link:envio-mensagens[Envio de Mensagens por diferentes canais]
 - link:imposto-renda[Cálculo de Imposto de Renda para Pessoa Física e Jurídica]
-- link:random-numbers[Geração de números aleatórios]
+- link:random-numbers[Bibliotecas para geração de números pseudo-aleatórios]
+- link:real-random-number-services[Serviços para geração de números realmente aleatórios]

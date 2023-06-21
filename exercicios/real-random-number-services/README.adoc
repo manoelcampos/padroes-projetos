@@ -1,0 +1,90 @@
+:sectnums:
+
+= Clientes para Serviços de Geração de Números Realmente Aleatórios
+
+== Problema
+
+Toda linguagem de programação possui recursos para geração de números pseudo aleatórios, como é o caso da classe Random e de bibliotecas externas para Java.
+
+No entanto, aplicações científicas ou mesmo sistemas de sorteio precisam de geradores realmente aleatórios. A classe SecureRandom em Java faz isso, mas ela não garante a aleatoriedade, pois isso depende de movimentos do mouse e do teclado realizados pelo usuário.
+
+Para gerar números realmente aleatórios, normalmente precisamos acessar um serviços que forneça tais números. Existem inúmeros serviços como o https://random.org[random.org] e https://quantumnumbers.anu.edu.au[ANU Quantum Numbers] que fornecem APIs web. Tais APIs permitem que você crie aplicações que solicitem uma determinada quantidade de números aleatórios.
+Estes dois serviços possuem bibliotecas cliente que permitem acessar tais APIs facilmente a partir de programas em Java, como é o caso da https://github.com/manoelcampos/random-org-java-client[random-org-java-client] e https://github.com/manoelcampos/anu-quantum-number-java-client[anu-quantum-number-java-client].
+
+No entanto, como você pode ver nos exemplos disponibilizados em cada uma das páginas apresentadas acima, cada API tem uma interface diferente e desta forma, as bibliotecas funcionam de formas distintas.
+Os exemplos estão dentro da classe que implementa o cliente para a API do serviço. Assim, você pode ver quais métodos cada API disponibiliza. Mas caso prefira, no topo dos repositórios das bibliotecas há um link para o JavaDoc online das bibliotecas.
+
+Não existe uma padronização na forma de uso, como em nomes de métodos e parâmetros.
+A maioria destes serviços cobram para serem usados em uma aplicação real. Os serviços apresentados fornecem uma conta gratuita que você terá limitações no total de números aleatórios que pode solicitar, ou até mesmo na quantidade de requisições que pode enviar para os serviços.
+
+Adicionalmente, um serviço pode ser mais fácil de usar do que outro, pode fornecer mais funcionalidades, ter melhor desempenho ou menos problemas de utilização. Por fim, para aplicações reais, o custo do serviço pode se tornar uma barreira.
+
+Com todas estas questões levantadas, depois de criar um projeto que utiliza algum desses serviços, podemos ter a necessidade de trocar o serviço por qualquer um dos motivos que acabaram de ser apresentados.
+
+Como não existe padronização nas APIs de tais serviços, a troca de um serviço por qualquer outro irá exigir alteração no código da sua aplicação.
+
+== Solução a ser Implementada
+
+A pasta atual possui um projeto base que já inclui as bibliotecas mencionadas como dependências no link:pom.xml[]. Implemente um _design pattern_ que garanta a padronização do uso das bibliotecas citadas, para que possamos trocar um serviço pelo outro sem termos que fazer inúmeras alterações no projeto.
+
+
+=== Compilar e Rodar o Projeto
+
+O projeto requer o JDK 17 para compilar e rodar.
+Para executar, é preciso fazer uma cópia do arquivo link:.env.example[] como `.env` e informar as chaves de API (API Keys) para os
+serviços https://random.org e https://quantumnumbers.anu.edu.au.
+
+
+=== Requisitos da Solução
+
+- Perceba que a classe https://github.com/manoelcampos/random-org-java-client/blob/master/src/main/java/com/manoelcampos/randomorg/RandomOrgClient.java[RandomOrgClient] já implementa uma interface bem organizada, documentada e fácil de usar. Assim, a biblioteca https://github.com/manoelcampos/anu-quantum-number-java-client[anu-quantum-number-java-client] **DEVE** utilizar tal interface para padronizar a forma de acesso ao serviço https://quantumnumbers.anu.edu.au (isto foi simplesmente uma decisão de projeto).
+- Não deve ser usada nenhuma biblioteca adicional, além das que já estão incluídas no pom.xml (com exceção do Lombok, mas não é necessário).
+- As classes e métodos criados precisam ter nomes o mais adequados possível.
+- Duplicação de código deve ser evitada, mesmo que seja uma única linha de código. Neste projeto, e como já visto em alguns casos em aula, isto pode gerar problemas. Nem mesmo o método `main` deve ter código duplicado. Se for alcançada a padronização desejada, não haverá motivos para duplicar código no `main`. Este é um sinal que você implementou o `design pattern` corretamente.
+
+=== Desafios a considerar
+
+Algumas funcionalidades da biblioteca https://github.com/manoelcampos/random-org-java-client[random-org-java-client] não existem na https://github.com/manoelcampos/anu-quantum-number-java-client[anu-quantum-number-java-client]. Porém elas podem ser facilmente implementadas como mostrado a seguir.
+
+==== Gerar números distintos (sem duplicados)
+
+Podemos obter os números gerados pelo "ANU Quantum Numbers" (que podem conter números duplicados) e remover as duplicações implementando um método como abaixo (onde `array` é o vetor de números retornado pelo serviço):
+
+[source, java]
+----
+/**
+ * Remove elementos duplicados de um vetor e retorna um novo vetor
+ *
+ * @param array vetor para remover duplicados
+ * @param n máximo de elementos a retornar
+ * @return novo vetor
+ */
+private int[] removeDuplicados(final int[] array, final int n) {
+    return Arrays.stream(array).distinct().limit(n).toArray();
+}
+----
+
+No entanto, se forem solicitados 10 números aleatórios ao serviço "ANU Quantum Numbers" e houver números duplicados, a função irá removê-los e não serão retornados 10 números ao usuário. **Tal problema precisa ser resolvido por você.**
+
+==== Gerar números dentro de uma determinada faixa
+
+O serviço "ANU Quantum Numbers" não deixa o usuário escolher a faixa de valores dos números aleatórios gerados. O valor mínimo é sempre zero e existem duas opções de valor máximo, dependendo da função que você chamar (255 ou 65535).
+Assim, você não escolhe o valor mínimo e o valor máximo só tem 2 opções.
+
+No entanto, podemos permitir que o usuário escolha livremente os valores mínimo e máximo, como é feito para a API do https://random.org[random.org], com o método abaixo:
+
+[source, java]
+----
+/**
+ * Altera os valores contidos em um vetor de números para que cada valor esteja
+ * dentro de uma faixa definida.
+ * @param array vetor com os números para alterar a faixa de cada valor
+ * @param minValue valor mínimo para cada número no vetor
+ * @param maxValue valor máximo para cada número no vetor
+ * @return o novo vetor com a mesma quantidade de elementos,
+ *         mas cada um alterado para ficar dentro da faixa [minValue .. maxValue]
+ */
+private int[] alteraFaixaValores(final int[] array, final int minValue, final int maxValue) {
+    return Arrays.stream(array).map(val -> (val + minValue) % maxValue).toArray();
+}
+----
