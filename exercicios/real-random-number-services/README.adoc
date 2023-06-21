@@ -32,7 +32,15 @@ A pasta atual possui um projeto base que já inclui as bibliotecas mencionadas c
 
 O projeto requer o JDK 17 para compilar e rodar.
 Para executar, é preciso fazer uma cópia do arquivo link:.env.example[] como `.env` e informar as chaves de API (API Keys) para os
-serviços https://random.org e https://quantumnumbers.anu.edu.au.
+serviços random.org e quantumnumbers, conforme indicado abaixo:
+
+- random.org
+    * Acesse https://accounts.random.org/create para criar uma conta
+    * Efetue login, acesse https://api.random.org/dashboard e clique na linha da tabela. Na página que abre, copia o campo "API Key".
+- quantumnumbers
+    * Acesse https://quantumnumbers.anu.edu.au e clique em "Sign up"
+    * Efetue login, acesse https://quantumnumbers.anu.edu.au/api-key e clique em "View" para copiar a chave.
+
 
 
 === Requisitos da Solução
