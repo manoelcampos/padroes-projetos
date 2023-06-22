@@ -35,11 +35,13 @@ Para executar, é preciso fazer uma cópia do arquivo link:.env.example[] como `
 serviços random.org e quantumnumbers, conforme indicado abaixo:
 
 - random.org
-    * Acesse https://accounts.random.org/create para criar uma conta
-    * Efetue login, acesse https://api.random.org/dashboard e clique na linha da tabela. Na página que abre, copia o campo "API Key".
+    * Acesse https://accounts.random.org/create para criar uma conta.
+    * Efetue login.
+    * Acesse https://api.random.org/dashboard e clique na linha da tabela. Na página que abre, copie o campo "API Key".
 - quantumnumbers
-    * Acesse https://quantumnumbers.anu.edu.au e clique em "Sign up"
-    * Efetue login, acesse https://quantumnumbers.anu.edu.au/api-key e clique em "View" para copiar a chave.
+    * Acesse https://quantumnumbers.anu.edu.au e clique em "Sign up".
+    * Efetue login.
+    * Acesse https://quantumnumbers.anu.edu.au/api-key e clique em "View" para copiar a chave.
 
 Os valores das API Keys devem ser copiados para o arquivo .env.
 
