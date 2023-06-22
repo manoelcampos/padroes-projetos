@@ -36,11 +36,11 @@ serviços random.org e quantumnumbers, conforme indicado abaixo:
 
 - random.org
     * Acesse https://accounts.random.org/create para criar uma conta.
-    * Efetue login.
+    * Efetue login em https://random.org.
     * Acesse https://api.random.org/dashboard e clique na linha da tabela. Na página que abre, copie o campo "API Key".
 - quantumnumbers
     * Acesse https://quantumnumbers.anu.edu.au e clique em "Sign up".
-    * Efetue login.
+    * Efetue login em https://quantumnumbers.anu.edu.au.
     * Acesse https://quantumnumbers.anu.edu.au/api-key e clique em "View" para copiar a chave.
 
 Os valores das API Keys devem ser copiados para o arquivo .env.
