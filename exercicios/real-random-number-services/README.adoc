@@ -48,7 +48,7 @@ Os valores das API Keys devem ser copiados para o arquivo .env.
 - Perceba que a classe https://github.com/manoelcampos/random-org-java-client/blob/master/src/main/java/com/manoelcampos/randomorg/RandomOrgClient.java[RandomOrgClient] já implementa uma interface bem organizada, documentada e fácil de usar. Assim, a biblioteca https://github.com/manoelcampos/anu-quantum-number-java-client[anu-quantum-number-java-client] **DEVE** utilizar tal interface para padronizar a forma de acesso ao serviço https://quantumnumbers.anu.edu.au (isto foi simplesmente uma decisão de projeto).
 - Não deve ser usada nenhuma biblioteca adicional, além das que já estão incluídas no pom.xml (com exceção do Lombok, mas não é necessário).
 - As classes e métodos criados precisam ter nomes o mais adequados possível.
-- Duplicação de código deve ser evitada, mesmo que seja uma única linha de código. Neste projeto, e como já visto em alguns casos em aula, isto pode gerar problemas. Nem mesmo o método `main` deve ter código duplicado. Se for alcançada a padronização desejada, não haverá motivos para duplicar código no `main`. Este é um sinal que você implementou o `design pattern` corretamente.
+- Duplicação de código deve ser evitada, mesmo que seja uma única linha de código. Neste projeto, e como já visto em alguns casos em aula, isto pode gerar problemas. Nem mesmo o método `main` deve ter código duplicado. Se for alcançada a padronização desejada, não haverá motivos para duplicação/redundância de código no `main`. Este é um sinal que você implementou o `design pattern` corretamente.
 
 === Desafios a considerar
 
