@@ -17,7 +17,8 @@ Considere um sistema de recursos humanos que possui uma hierarquia de classes de
 O cálculo do imposto de renda (IR) para PF é diferente para PJ. Por simplificação, vamos considerar que PFs pagam 11% de `alíquota de IRPF`, seguindo a fórmula:
 
 ```
-IR da PF (R$) = [(Salário bruto - dedução em R$ por dependente - R$ INSS) * alíquota IRPF] - (gastos saúde + gastos educação)
+IR Parcial = (Salário bruto - dedução em R$ por dependente - R$ INSS) * alíquota IRPF
+IR da PF (R$) = IR Parcial - (gastos saúde + gastos educação)
 ```
 
 No caso de PJ existem diferentes cálculos. Vamos considerar apenas o cálculo para empresas que aderem ao regime tributário chamado "Lucro Real". Neste caso, elas pagam 15% de `alíquota de IRPJ` sobre o lucro da companhia. Caso a empresa exceda R$ 20 mil por mês na cobrança de IR, ela também paga 10% sobre o valor que exceder, ou seja:
