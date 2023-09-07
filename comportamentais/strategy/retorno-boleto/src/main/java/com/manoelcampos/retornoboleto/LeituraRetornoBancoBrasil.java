@@ -20,11 +20,11 @@ import java.util.List;
 public class LeituraRetornoBancoBrasil implements LeituraRetorno {
     @Override
     public List<Boleto> lerArquivo(final URI caminhoArquivo) {
-        try (var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))){
-            String line;
+        try {
+            var listaLinhas = Files.readAllLines(Paths.get(caminhoArquivo));
             final var listaBoletos = new ArrayList<Boleto>();
-            while((line = reader.readLine()) != null){
-                final String[] vetor = line.split(";");
+            for (String linha : listaLinhas) {
+                final String[] vetor = linha.split(";");
                 final var boleto = new Boleto();
                 boleto.setId(Integer.parseInt(vetor[0]));
                 boleto.setCodBanco(vetor[1]);
