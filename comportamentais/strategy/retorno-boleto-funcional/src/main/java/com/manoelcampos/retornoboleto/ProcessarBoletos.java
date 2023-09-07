@@ -51,11 +51,11 @@ public class ProcessarBoletos {
      * @return
      */
     public static List<Boleto> lerBancoBrasil(URI caminhoArquivo) {
-        try(var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))) {
-            String line;
+        try{
+            var listaLinhas = Files.readAllLines(Paths.get(caminhoArquivo));
             List<Boleto> boletos = new ArrayList<>();
-            while((line = reader.readLine()) != null){
-                String[] vetor = line.split(";");
+            for (String linha : listaLinhas) {
+                String[] vetor = linha.split(";");
                 Boleto boleto = new Boleto();
                 boleto.setId(Integer.parseInt(vetor[0]));
                 boleto.setCodBanco(vetor[1]);
