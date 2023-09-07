@@ -55,11 +55,11 @@ public class ProcessarBoletos {
         System.out.println("----------------------------------------------------------------------------------");
         // tag::processar[]
         final var listaBoletos = new ArrayList<Boleto>();
-        try (var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))){
-            String line;
-            while((line = reader.readLine()) != null){
-                String[] vetor = line.split(";");
-                final Boleto boleto = leituraRetorno.processarLinhaArquivo(vetor);
+        try {
+            var listaLinhas = Files.readAllLines(Paths.get(caminhoArquivo));
+            for (String linha : listaLinhas) {
+                String[] vetor = linha.split(";");
+                final var boleto = leituraRetorno.processarLinhaArquivo(vetor);
                 listaBoletos.add(boleto);
             }
         } catch (IOException e) {
@@ -67,7 +67,7 @@ public class ProcessarBoletos {
         }
         // end::processar[]
 
-        for (Boleto boleto : listaBoletos) {
+        for (var boleto : listaBoletos) {
             System.out.println(boleto);
         }
     }
