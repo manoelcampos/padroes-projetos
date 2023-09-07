@@ -2,7 +2,6 @@ package com.manoelcampos.retornoboleto;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
-import java.lang.reflect.Field;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -25,12 +24,12 @@ public interface LeituraRetorno {
     List<ProcessaCampoArquivo<?>> getProcessadoresCampos();    
     
     default List<Boleto> lerArquivo(URI caminhoArquivo) {
-        try (var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))){
-            String line;
-            List<Boleto> boletos = new ArrayList<>();
-            while((line = reader.readLine()) != null){
-                String[] vetor = line.split(";");
-                Boleto boleto = new Boleto();
+        try {
+            var listaLinhas = Files.readAllLines(Paths.get(caminhoArquivo));
+            var boletos = new ArrayList<Boleto>();
+            for (String linha : listaLinhas) {
+                String[] vetor = linha.split(";");
+                var boleto = new Boleto();
                 for (int i = 0; i < getProcessadoresCampos().size(); i++) {
                     setCampoBoleto(i, boleto, vetor[i]);
                 }
@@ -46,7 +45,7 @@ public interface LeituraRetorno {
     private void setCampoBoleto(int idxCampo, Boleto boleto, String valor) {
         ProcessaCampoArquivo processador = getProcessadoresCampos().get(idxCampo);
         try {
-            Field field = boleto.getClass().getDeclaredField(processador.getCampo());
+            var field = boleto.getClass().getDeclaredField(processador.getCampo());
             field.setAccessible(true);
             field.set(boleto, processador.converter(valor));
         } catch (NoSuchFieldException | SecurityException |  IllegalAccessException ex) {
