@@ -21,12 +21,12 @@ public class ProcessadorBoletos {
     }
 
     public final List<Boleto> processar(URI nomeArquivo){
-        try (var reader = Files.newBufferedReader(Paths.get(nomeArquivo))){
-            String line;
-            List<Boleto> boletos = new ArrayList<>();
-            while ((line = reader.readLine()) != null) {
-                String[] vetor = line.split(";");
-                Boleto boleto = processarLinhaArquivo.apply(vetor);
+        try {
+            var listaLinhas = Files.readAllLines(Paths.get(nomeArquivo));
+            var boletos = new ArrayList<Boleto>();
+            for (String linha : listaLinhas) {
+                String[] vetor = linha.split(";");
+                var boleto = processarLinhaArquivo.apply(vetor);
                 boletos.add(boleto);
                 System.out.println(boleto);
             }
