@@ -1,5 +1,5 @@
-:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
-//:revealjsdir: reveal.js-3.9.2
+//:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+:revealjsdir: https://unpkg.com/reveal.js@4.3.1
 //Não exibir notas para usuários
 :revealjs_showNotes: false
 

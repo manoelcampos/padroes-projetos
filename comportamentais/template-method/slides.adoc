@@ -1,5 +1,5 @@
-:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
-//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+//:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+:revealjsdir: https://unpkg.com/reveal.js@4.3.1
 :revealjs_slideNumber: true
 :revealjs_navigationMode: linear
 
@@ -12,7 +12,7 @@
 
 :proj-boleto-template: retorno-boleto-template/src/main/java/com/manoelcampos/retornoboleto/
 :proj-boleto-strategy: ../strategy/retorno-boleto/src/main/java/com/manoelcampos/retornoboleto/LeituraRetornoBancoBrasil.java
-:proj-boleto-template-strategy: retorno-boleto-template-and-strategy/src/main/java/com/manoelcampos/retornoboleto/
+:proj-boleto-template-strategy: retorno-boleto-template-strategy/src/main/java/com/manoelcampos/retornoboleto
 :proj-boleto-funcional: retorno-boleto-template-funcional/src/main/java/com/manoelcampos/retornoboleto/
 
 ifdef::env-github[]
@@ -165,17 +165,7 @@ image::images/template-method-strategy-boleto.png[background, size=contain]
 
 [source,java,linenums]
 ----
-include::{proj-boleto-template-strategy}/ProcessadorBoletos.java[tag=class-start]
-include::{proj-boleto-template-strategy}/ProcessadorBoletos.java[tag=class-end]
-----
-
-=== !
-
-[source,java,linenums]
-----
-include::{proj-boleto-template-strategy}/LeituraRetornoBancoBrasil.java[tag=class-start]
-        /* Omitidos campos por simplificação */
-include::{proj-boleto-template-strategy}/LeituraRetornoBancoBrasil.java[tag=class-end]
+include::{proj-boleto-template-strategy}/ProcessarBoletos.java[tag=processar]
 ----
 
 === Usando a nova implementação com Strategy + Template Method

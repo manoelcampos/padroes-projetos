@@ -1,5 +1,5 @@
-:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
-//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+//:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
+:revealjsdir: https://unpkg.com/reveal.js@4.3.1
 :revealjs_slideNumber: true
 :source-highlighter: highlightjs
 :icons: font
@@ -184,3 +184,7 @@ var listaNomes = List.of("Minha", "Lista", "de", "Strings");
 var listaPares = List.of(2, 4, 6);
 var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);
 ----
+
+== !
+
+Faça você mesmo: Implemente uma Simple Factory no Projeto do Retorno Boleto

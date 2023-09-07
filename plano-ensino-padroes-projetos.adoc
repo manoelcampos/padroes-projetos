@@ -55,17 +55,14 @@ Aulas expositivas e práticas em laboratório, com desenvolvimento de projetos.
 
 ## Bibliografia Básica
 
-- ✅ FREEMAN, Eric: Use a cabeça Padrões de Projeto - Rio de Janeiro: Alta Books, 2009.
-- ✅ GAMMA, Erich; Padrões de projeto soluções reutilizáveis de software orientado - Porto
-Alegre: Bookman, 2000.
-- ✅ METSKER, Steven John: Padrões de projeto em java - Porto Alegre: Bookman, 2004.
+✅ FREEMAN, Eric: Use a cabeça Padrões de Projeto - Rio de Janeiro: Alta Books, 2009.
+✅ GAMMA, Erich; Padrões de projeto soluções reutilizáveis de software orientado - Porto Alegre: Bookman, 2000.
+✅ METSKER, Steven John: Padrões de projeto em java - Porto Alegre: Bookman, 2004.
 
 
 ## Bibliografia Complementar
 
-- ✅ OLIVEIRA, Jayr Figueiredo de; Metodologia para Desenvolvimento de Projetos de
-Sistemas; São Paulo: Érica, 1999.
-- ✅ PAULA FILHO, Wilson de Pádua; Engenharia de software: fundamentos, métodos e
-padrões. Rio de Janeiro: LTC, 2005. padrões.Rio de Janeiro: LTC, 2005.
-- ✅ SILVA, Nelson Peres da; Projeto e Desenvolvimento de Sistemas; São Paulo: Érica, 1998.
+✅ OLIVEIRA, Jayr Figueiredo de; Metodologia para Desenvolvimento de Projetos de Sistemas; São Paulo: Érica, 1999.
+✅ PAULA FILHO, Wilson de Pádua; Engenharia de software: fundamentos, métodos e padrões. Rio de Janeiro: LTC, 2005. padrões.Rio de Janeiro: LTC, 2005.
+✅ SILVA, Nelson Peres da; Projeto e Desenvolvimento de Sistemas; São Paulo: Érica, 1998.
 

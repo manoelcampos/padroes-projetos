@@ -1,5 +1,4 @@
-:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/
-//:revealjsdir: https://cdnjs.com/libraries/reveal.js/3.8.0
+:revealjsdir: https://unpkg.com/reveal.js@4.3.1
 :revealjs_slideNumber: true
 :source-highlighter: highlightjs
 :icons: font

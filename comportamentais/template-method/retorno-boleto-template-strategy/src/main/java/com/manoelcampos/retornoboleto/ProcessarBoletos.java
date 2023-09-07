@@ -53,6 +53,7 @@ public class ProcessarBoletos {
     public final void processar(URI caminhoArquivo){
         System.out.println("Boletos");
         System.out.println("----------------------------------------------------------------------------------");
+        // tag::processar[]
         final var listaBoletos = new ArrayList<Boleto>();
         try (var reader = Files.newBufferedReader(Paths.get(caminhoArquivo))){
             String line;
@@ -64,6 +65,7 @@ public class ProcessarBoletos {
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
+        // end::processar[]
 
         for (Boleto boleto : listaBoletos) {
             System.out.println(boleto);
