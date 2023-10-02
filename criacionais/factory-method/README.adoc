@@ -114,7 +114,7 @@ Ele é uma implementação do exportador de dados sem utilizar o padrão Factory
 seguindo a modelagem do diagrama abaixo:
 
 .Exportador de dados que NÃO usa o padrão Factory Method
-image::no-factory-method-exportador.png[]
+image::no-factory-method-exportador-produtos.png[]
 
 == Padrões Relacionados
 
