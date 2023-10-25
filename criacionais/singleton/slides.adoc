@@ -114,4 +114,4 @@ https://books.google.com.br/books?id=0d12xElRjysC&printsec=frontcover["The Sessi
 [transition=fade]
 == Material e Projetos no GitHub
 
-https://git.io/JvpgW
+https://github.com/manoelcampos/padroes-projetos/tree/master/criacionais/singleton
