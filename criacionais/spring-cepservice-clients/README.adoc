@@ -1,0 +1,7 @@
+= Injeção de Dependência e clientes de API com Spring (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/spring-cepservice-clients[zip])
+
+
+Projeto mostra como usar injeção de dependência no Spring e criação de clientes de API automaticamente com https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/[OpenFeign].
+
+É utilizada a biblioteca https://projectlombok.org[Lombok] para reduzir bastante a necessidade de escrita de código rotineiro, como construtores, _getters_ e _setters_ (_boilerplate code_).
+
