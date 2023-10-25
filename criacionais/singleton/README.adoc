@@ -80,14 +80,19 @@ Pelo fato do padrão ser tão simples que sua modelagem é uma única classe, el
 Um sistema pode ter um conjunto de configurações que o usuário pode alterar.
 Considere que as configurações do sistema podem ser acessadas e alteradas em diversos locais. Neste caso, o mais apropriado é criar uma classe, chamada por exemplo de `Config`, que encapsula o gerenciamento de tais configurações. Se instanciarmos objetos da classe `Config` em diferentes locais e alterarmos as configurações, podemos ver os valores atualizados em determinados locais, enquanto aparecem desatualizados em outros. Isto pode trazer problemas para o sistema.
 
-Neste caso, podemos aplicar o padrão Singleton à classe `Config` para permitir que uma única instância dela seja criada para todo o sistema. Mesmo que tenhamos diversas variáveis `Config` espalhadas pelo sistema, todas apontarão para um único objeto criado. Assim, ao alterar uma configuração por meio de qualquer dessas variáveis, estaremos alterando o mesmo objeto. Logo, teremos acesso aos mesmos dados, independetemente de qual variável utilizarmos.
+Neste caso, podemos aplicar o padrão Singleton à classe `Config` para permitir que uma única instância dela seja criada para todo o sistema. 
+Mesmo que tenhamos diversas variáveis `Config` espalhadas pelo sistema, todas apontarão para um único objeto criado. 
+Assim, ao alterar uma configuração por meio de qualquer dessas variáveis, estaremos alterando o mesmo objeto. 
+Logo, teremos acesso aos mesmos dados, independetemente de qual variável utilizarmos.
 
 A figura abaixo apresenta a modelagem para a classe `Config` implementado o padrão Singleton.
 
 .Modelagem de uma classe que implementa o padrão Singleton para gerenciamento de configurações de um sistema
 image::singleton-config.png[]
 
-O projeto link:openjfx-config-singleton[openjfx-config-singleton] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/openjfx-config-singleton[zip]) fornece a estrutura de uma aplicação desktop http://openjfx.io[OpenJFX (JavaFX)] que deve servir de base para a implementação do padrão Singleton.
+O projeto link:config-singleton-spring[config-singleton-spring] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/config-singleton-spring[zip]) 
+fornece a estrutura de um backend com Spring que aplica o padrão Singleton para a classe Config e por padrão para qualquer
+Spring Bean (objetos cujo ciclo de vida é controlado pelo Spring, como Controllers e Repositories).
 
 === Detalhes de Implementação
 
@@ -108,9 +113,3 @@ Padrões que possuem similaridades ou podem ser usados em conjunto:
 
 - java.awt.Desktop
 - java.lang.Runtime
-
-== Aplicando o Padrão Singleton por meio do framework CDI
-
-Anteriormente foi apresentado o projeto link:openjfx-config-singleton[openjfx-config-singleton] que implementa um objeto de configuração Singleton para evitar que as configurações do sistema apareçam atualizadas em um lugar, enquanto estão desatualizadas em outro por conta da criação de múltiplos objetos de configuração. Este é um projeto Desktop utilizando JavaFX, onde foi feita a implementação manual do padrão Singleton.
-
-O projeto link:config-singleton-web-cdi[config-singleton-web-cdi] usa o framework de injeção de dependência CDI para implementar um Singleton por meio de uma simples anotação `@ApplicationScoped`. Este é um projeto web desenvolvido com o framework http://quarkus.io[Quarkus]. CDI e Quarkus já foram tratados em detalhes no projeto link:https://github.com/manoelcampos/quarkus-cep-services[cep-service].
