@@ -3,5 +3,13 @@
 
 Projeto mostra como usar injeção de dependência no Spring e criação de clientes de API automaticamente com https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/[OpenFeign].
 
+O OpenFeign permite criar clientes para APIs web de forma automática, simplesmente criando-se uma interface e utilizando as mesmas anotações
+que usumos para criar um controller https://spring.io/guides/tutorials/rest/[REST].
+As devidas dependências foram adicionadas no pom.xml.
+Mas para que o OpenFeign consiga implementar as interfaces
+para estas APIs web, é preciso que a classe da aplicação,
+neste caso a link:src/main/java/io/github/manoelcampos/cepservices/CepservicesApplication.java[CepservicesApplication] tenha a anotação
+`@EnableFeignClients`.
+
 É utilizada a biblioteca https://projectlombok.org[Lombok] para reduzir bastante a necessidade de escrita de código rotineiro, como construtores, _getters_ e _setters_ (_boilerplate code_).
 

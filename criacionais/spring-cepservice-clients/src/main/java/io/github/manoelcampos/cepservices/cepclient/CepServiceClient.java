@@ -1,4 +1,4 @@
-package io.github.manoelcampos.cepservices.cepservice;
+package io.github.manoelcampos.cepservices.cepclient;
 
 
 import io.github.manoelcampos.cepservices.model.Endereco;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author Manoel Campos da Silva Filho
  */
 @FeignClient(value = "cepservice", url = "https://viacep.com.br")
-public interface CepService {
+public interface CepServiceClient {
     /**
      * Busca um endereço a partir de um CEP.
      * @param cep CEP para buscar o endereço
