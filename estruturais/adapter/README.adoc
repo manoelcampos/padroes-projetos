@@ -103,47 +103,6 @@ precisará. Log é um recurso essencial em qualquer aplicação rodando em produ
 A https://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html[java.util.logging (JUL)] é um dos casos onde uma biblioteca fornecida pelo JDK possui recursos limitados e outras surgiram justamente para resolver tais problemas, como a https://logging.apache.org/log4j/[Apache Log4J]. Existem algumas outras bibliotecas de log para Java, mas incompatíveis entre si. 
 Por esta causa, o adaptador https://logging.apache.org/log4j/log4j-2.7/log4j-jul/index.html[Apache Log4J JUL Adapter] permite utilizar a Log4J no lugar da JUL, sem precisar alterar o código da aplicação.
 
-== Exercícios
-
-=== Cotações de Empresas da Bolsa de Valores
-
-Veja o projeto base e informações em link:cotacao-bolsa-valores[cotacao-bolsa-valores].
-
-=== Adaptando a aplicação de consulta de CEP (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/quarkus-cep-services/tree/master/cep-service-producer[zip])
-
-Voltando ao https://github.com/manoelcampos/quarkus-cep-services/tree/master/cep-service-producer[projeto que utiliza serviços de consulta de CEP] disponíveis na web, cada serviço retorna um objeto endereço em um formato diferente do outro, como pode verificar nestes links para o https://viacep.com.br/ws/01001000/json/[ViaCep] e o https://api.postmon.com.br/v1/cep/77021090[Postmon].
-
-Como o problema aqui é referente ao formato dos dados, precisamos apena adapter os dados para um formato comum.
-Assim, a implementação não precisa seguir a modelagem apresentada na Figura 1 acima.
-Uma solução simples, que não requer a criação de classes adapters, é apresentada abaixo.
-Você precisará fazer o processamento manual do código JSON recebido
-pelo serviço, que representa o endereço de um determinado CEP.
-Para isso, podemos usar a biblioteca https://javaee.github.io/jsonp/getting-started.html[JSON-P (JSON Processing)] da plataforma Java para o Quarkus, adicionando a dependência a seguir no pom.xml:
-
-[source,xml]
-----
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jsonp</artifactId>
-      <version>${quarkus.version}</version>
-    </dependency>
-----
-
-//No JavaEE tradicional as dependências são javax.json/javax.json-api e org.glassfish/javax.json
-
-Você pode usar um código como abaixo para fazer o tal processamento:
-
-[source,java]
-----
-JsonReader reader = Json.createReader(new StringReader(json));
-JsonObject object = reader.readObject();
-Endereco endereco = new Endereco();
-endereco.setLogradouro(object.getString("logradouro"));
-----
-
-Alternativamente, veja o projeto link:cepservicep-adapter-spring-automatico[cepservicep-adapter-spring-automatico], 
-que apenas usa recursos da biblioteca https://github.com/FasterXML/jackson[Jackson] e assim não requer a implementação do padrão Adapter.
-
 === Pensando em interfaces como adaptadores
 
 Em um classe que implementa múltiplas interfaces, podemos pensar na classe como sendo um adaptador para todas estas interfaces. Apesar de nem sempre o padrão Adapter está sendo de fato implementado nestes casos, ao pensar assim, podemos ter alguns benefícios.

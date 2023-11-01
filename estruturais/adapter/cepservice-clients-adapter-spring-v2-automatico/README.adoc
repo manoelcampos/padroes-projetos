@@ -13,3 +13,6 @@ neste caso a link:src/main/java/io/github/manoelcampos/cepservices/CepservicesAp
 
 É utilizada a biblioteca https://projectlombok.org[Lombok] para reduzir bastante a necessidade de escrita de código rotineiro, como construtores, _getters_ e _setters_ (_boilerplate code_).
 
+Apesar de o projeto estar adaptando o acesso aos serviços de CEP (criando classes cliente para estes serviços),
+a implementação não segue o que convencionalmente vemos para o padrão Adapter,
+por conta das especificidades do problema e, neste caso, principalmente pelas bibliotecas utilizadas.
