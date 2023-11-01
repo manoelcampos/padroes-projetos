@@ -1,0 +1,47 @@
+:imagesdir: ../../images/patterns/estruturais
+:source-highlighter: highlightjs
+:numbered:
+:unsafe:
+:icons: font
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Padrões de Projetos Estruturais
+
+== Facade (Fachada)
+
+
+
+=== Definição
+
+
+=== Aplicabilidade
+
+
+=== Modelagem do Padrão
+
+
+=== Exemplos Práticos
+
+
+=== Princípios utilizados
+
+
+== Padrões Relacionados
+
+- Adapter
+
+
+== Exercícios
+
+=== Cotações de Empresas da Bolsa de Valores
+
+Veja o projeto base e informações em link:cotacao-bolsa-valores[cotacao-bolsa-valores].
+
