@@ -17,6 +17,8 @@ endif::[]
 
 == Decorator (Decorador)
 
+- http://www.javabyexamples.com/decorator-pattern-with-lombok
+
 image:decorator-analogy.jpg[]
 
 === Definição
