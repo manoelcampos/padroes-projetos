@@ -54,7 +54,7 @@ Os valores das API Keys devem ser copiados para o arquivo .env.
 
 === Regras de Avaliação
 
-- Se o projeto não compilar, sua prova não será avaliada
+- Se o projeto não compilar, o projeto será desconsiderado
 - Princípios SOLID devem ser atendidos quando possível
 - Desorganização de código desconta pontos, de acordo com o nível do problema
 - Deve-se usar nomes adequados para variáveis, métodos, classes e interfaces
