@@ -1,3 +1,0 @@
-= Modelagem do Padrão Singleton (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/singleton/modelagem/[zip])
-
-Apresenta um projeto de exemplo da modelagem do padrão Singleton.
