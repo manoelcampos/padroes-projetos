@@ -38,8 +38,6 @@ image:patterns/simple-factory-logo.png[size=contain, title="Imagem pixabay.com"]
 
 Prof. Manoel Campos
 
-image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
-
 [transition=zoom]
 == Categoria
 

@@ -19,10 +19,10 @@ image::ice-cream-sandwich-machine.gif[width=300]
 
 NOTE: https://www.youtube.com/watch?v=LwsC1rk6irM&list=PLyo0RUAM69UtO8Jjq71qgvRxcI2pTrB2m[Playlist de Padrões de Projetos Criacionais no YouTube]
 
-- link:simple-factory[Simple Factory (Fábrica Simples)]
-- link:factory-method[Factory Method (Método Fábrica)]
+- link:01-simple-factory[Simple Factory (Fábrica Simples)]
+- link:02-factory-method[Factory Method (Método Fábrica)]
 - https://github.com/manoelcampos/quarkus-cep-services[Cep Service: consumo de serviços de CEP utilizando injeção de dependências com framework CDI]
-- link:singleton[Singleton]
-- link:builder[Builder (Construtor)]
+- link:03-singleton[Singleton]
+- link:04-builder[Builder (Construtor)]
 
 ifndef::env-github[image:back.png[alt=Voltar, link=../]]
