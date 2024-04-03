@@ -52,6 +52,13 @@ Os valores das API Keys devem ser copiados para o arquivo .env.
 - As classes e métodos criados precisam ter nomes o mais adequados possível.
 - Duplicação de código deve ser evitada, mesmo que seja uma única linha de código. Neste projeto, e como já visto em alguns casos em aula, isto pode gerar problemas. Nem mesmo o método `main` deve ter código duplicado. Se for alcançada a padronização desejada, não haverá motivos para duplicação/redundância de código no `main`. Este é um sinal que você implementou o `design pattern` corretamente.
 
+=== Regras de Avaliação
+
+- Se o projeto não compilar ele não será avaliado.
+- Princípios SOLID devem ser atendidos quando possível.
+- Desorganização de código desconta pontos, de acordo com o nível do problema.
+- Deve-se usar nomes adequados para variáveis, métodos, classes e interfaces.
+
 === Desafios a considerar
 
 Algumas funcionalidades da biblioteca https://github.com/manoelcampos/random-org-java-client[random-org-java-client] não existem na https://github.com/manoelcampos/anu-quantum-number-java-client[anu-quantum-number-java-client]. Porém elas podem ser facilmente implementadas como mostrado a seguir.
