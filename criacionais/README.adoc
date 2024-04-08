@@ -21,7 +21,6 @@ NOTE: https://www.youtube.com/watch?v=LwsC1rk6irM&list=PLyo0RUAM69UtO8Jjq71qgvRx
 
 - link:01-simple-factory[Simple Factory (Fábrica Simples)]
 - link:02-factory-method[Factory Method (Método Fábrica)]
-- https://github.com/manoelcampos/quarkus-cep-services[Cep Service: consumo de serviços de CEP utilizando injeção de dependências com framework CDI]
 - link:03-singleton[Singleton]
 - link:04-builder[Builder (Construtor)]
 
