@@ -193,6 +193,8 @@ var mapaHabitantesCidade = Map.of("Palmas", 217000, "Gurupi", 84000);
 
 == Exercícios
 
+pass:[<a name="exportador"></a>]
+
 === Exportação de dados
 
 Implemente um conjunto de classes que recebe uma lista de produtos e permite exportar tais produtos em diferentes formatos como Tabela HTML, CSV, tabela Markdown. Utilize a diagrama de classes abaixo como base para sua implementação. Tenha em mente que um diagrama desses pode apresentar os detalhes mais importantes como métodos e atributos que já se sabe previamente. No entanto, durante o desenvolvimento, pode-se
