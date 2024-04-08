@@ -1,6 +1,6 @@
 :source-highlighter: highlightjs
 
-= Exportação de lista de objetos em diferentes formatos (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/factory-method/exportador-factory-method-reflection[zip])
+= Exportação de lista de objetos em diferentes formatos (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/02-factory-method/exportador-factory-method-reflection[zip])
 
 Esta é uma versão do projeto alink:../../simple-factory/exportador-simple-factory-reflection[anterior] que implementa
 a exportação de dados de uma lista genérica de objetos para formatos como HTML e Markdown (extensão .md).
