@@ -14,7 +14,7 @@ public class Venda {
 
     public Venda() {/**/}
 
-    public Venda(Client cliente, LocalDate data, double valorTotal) {
+    public Venda(Cliente cliente, LocalDate data, double valorTotal) {
         this.cliente = cliente;
         this.data = data;
         this.valorTotal = valorTotal;
