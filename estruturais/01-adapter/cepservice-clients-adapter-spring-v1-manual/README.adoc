@@ -10,7 +10,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-= Adapters para Web APIs de CEPs com Spring  (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/cepservice-clients-adapter-spring-v1-manual[zip])
+= Adapters para Web APIs de CEPs com Spring  (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/01-adapter/cepservice-clients-adapter-spring-v1-manual[zip])
 
 Mostra como criar manualmente adapters para APIs Web de consulta de endereço pelo CEP.
 Apesar de o projeto estar adaptando o acesso aos serviços de CEP (criando classes cliente para estes serviços),
