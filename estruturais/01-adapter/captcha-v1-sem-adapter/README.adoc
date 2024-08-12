@@ -1,0 +1,18 @@
+:numbered:
+:icons: font
+
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Implementa Adapters para bibliotecas de captcha em Java (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/estruturais/adapter/captcha-v1-sem-adapter[zip])
+
+O projeto para ser padronizado o uso de diferentes bibliotecas de geração de captcha offline, aplicando o padrão de projetos Adapter. As bibliotecas a serem adaptadas são (que já estão no pom.xml):
+
+- https://github.com/mewebstudio/java-captcha-generator[Java Captcha Generator]
+- https://github.com/logicsquad/nanocaptcha[Nano Captcha]
