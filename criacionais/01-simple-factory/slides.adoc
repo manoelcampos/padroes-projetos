@@ -36,7 +36,7 @@ endif::[]
 
 image:patterns/simple-factory-logo.png[size=contain, title="Imagem pixabay.com"]
 
-Prof. Manoel Campos
+Prof. Dr. Manoel Campos
 
 [transition=zoom]
 == Categoria

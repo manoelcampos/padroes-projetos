@@ -32,9 +32,9 @@ endif::[]
 
 = Padrão de Projetos Strategy image:images/strategy-icon.png[width=16%]
 
-Prof. Manoel Campos 
+Prof. Dr. Manoel Campos 
 
-image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
+image::https://manoelcampos.github.io/padroes-projetos/images/biolink.png[]
 
 [transition=zoom]
 == Categoria
@@ -91,13 +91,9 @@ image::images/solid-ugonna-thelma.png[width=40%]
 - **I**_nterface Segregation Principle_ (ISP)
 - **D**_ependency Inversion Principle_ (DIP)
 
-== Princípios SOLID utilizados
+== Interface Segregation Principle (ISP)
 
-[%step]
-- Single Responsibility Principle (SRP)
-- Open/Closed Principle (OCP)
-- Liskov Substitution Principle (LSP)
-- Interface Segregation Principle (ISP)
+image:https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Java.util.Collection_hierarchy.svg/640px-Java.util.Collection_hierarchy.svg.png[]
 
 [transition=zoom]
 == !

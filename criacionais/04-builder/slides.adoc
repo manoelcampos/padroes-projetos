@@ -38,7 +38,7 @@ endif::[]
 
 = Builder Design Pattern image:builder.png[title=Imagem clipartmax.com]
 
-Prof. Manoel Campos 
+Prof. Dr. Manoel Campos 
 
 image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
 

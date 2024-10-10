@@ -34,7 +34,7 @@ endif::[]
 
 = Padrão de Projetos Factory Method
 
-Prof. Manoel Campos 
+Prof. Dr. Manoel Campos 
 
 image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
 

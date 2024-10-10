@@ -35,7 +35,7 @@ endif::[]
 = Padrão de Projetos Adapter image:patterns/estruturais/adapter-tomada.png[]
 
 
-Prof. Manoel Campos 
+Prof. Dr. Manoel Campos 
 
 image::https://manoelcampos.com/padroes-projetos/images/biolink.png[]
 
