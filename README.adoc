@@ -26,15 +26,14 @@ image:https://github.com/manoelcampos/padroes-projetos/workflows/asciidoctor-ghp
 - Se você não pretende fazer alterações neste repositório, não faça fork. Se fizer, sempre que o projeto for atualizado, sua cópia vai ficar absoleta. Se você quer apenas baixar para navegar localmente, faça um clone no botão `Code` acima.
 - Se você quer apenas salvar o projeto para consulta posterior, use o botão `Star` ⭐️ acima. Isto ainda ajuda a divulgar o material.
 ====
-endif::[]
 
-ifdef::env-github[]
 :outfilesuffix: .adoc
 :caution-caption: :fire:
 :important-caption: :exclamation:
 :note-caption: :paperclip:
 :tip-caption: :bulb:
 :warning-caption: :warning:
+endif::[]
 
 Uma apresentação sobre como chegamos aos padrões de projetos e a importância deles pode ser https://docs.google.com/presentation/d/1zEIB-XPI8Icgb7sX8gCofHfMmaEB3D7eV-A_eiT90bc[acessada aqui].
 
