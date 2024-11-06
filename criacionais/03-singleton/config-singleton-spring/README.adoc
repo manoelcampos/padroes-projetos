@@ -1,3 +1,0 @@
-= Mostra como usar o padrão Singleton com Spring  (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/03-singleton/config-singleton-spring[zip])
-
-Projeto em Spring Boot que mostra como podemos usar objetos singleton de forma automática (usando apenas anotações) em um controller REST.
