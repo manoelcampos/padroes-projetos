@@ -12,14 +12,14 @@ import java.util.List;
  *
  * @author Manoel Campos da Silva Filho
  */
-public class ProcessarBoletos {
+public class ProcessadorBoletos {
     private LeituraRetorno leituraRetorno;
 
     /**
      * Instancia a classe estrategista, já indicando
      * @param leituraRetorno
      */
-    public ProcessarBoletos(LeituraRetorno leituraRetorno){
+    public ProcessadorBoletos(final LeituraRetorno leituraRetorno){
         this.leituraRetorno = leituraRetorno;
     }
 
@@ -30,12 +30,12 @@ public class ProcessarBoletos {
      * como gravar dados em um banco, enviar emails de notificação, etc.
      * Neste caso, por simplificação, estamos apenas imprimindo os dados no terminal.
      *
-     * @param caminhoArquivo Nome do arquivo a ser lido
+     * @param caminhoArquivo Caminho (URI) do arquivo a ser lido
      */
-    public void processar(URI caminhoArquivo){
+    public final void processar(URI caminhoArquivo){
         System.out.println("Boletos");
         System.out.println("----------------------------------------------------------------------------------");
-        List<Boleto> boletos = leituraRetorno.lerArquivo(caminhoArquivo);
+        final List<Boleto> boletos = leituraRetorno.lerArquivo(caminhoArquivo);
         for (Boleto boleto : boletos) {
             System.out.println(boleto);
         }
@@ -45,7 +45,7 @@ public class ProcessarBoletos {
      * Altera a estratégia a ser utilizada para leitura de arquivos de retorno de boletos bancários.
      * @param leituraRetorno nova estratégia a ser utilizada
      */
-    public void setLeituraRetorno(LeituraRetorno leituraRetorno) {
+    public void setLeituraRetorno(final LeituraRetorno leituraRetorno) {
         this.leituraRetorno = leituraRetorno;
     }
 }

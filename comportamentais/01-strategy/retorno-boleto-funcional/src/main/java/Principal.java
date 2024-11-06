@@ -1,4 +1,4 @@
-import com.manoelcampos.retornoboleto.ProcessarBoletos;
+import com.manoelcampos.retornoboleto.ProcessadorBoletos;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -10,7 +10,7 @@ import java.net.URISyntaxException;
  */
 public class Principal {
     public static void main(String[] args) throws URISyntaxException {
-        var processador = new ProcessarBoletos(ProcessarBoletos::lerBancoBrasil);
+        final var processador = new ProcessadorBoletos(ProcessadorBoletos::lerBancoBrasil);
         URI caminhoArquivo = Principal.class.getResource("banco-brasil-1.csv").toURI();
         processador.processar(caminhoArquivo);
     }

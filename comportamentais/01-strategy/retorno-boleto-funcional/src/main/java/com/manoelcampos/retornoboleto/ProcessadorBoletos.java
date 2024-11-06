@@ -29,7 +29,7 @@ import java.util.function.Function;
  *
  * @author Manoel Campos da Silva Filho
  */
-public class ProcessarBoletos {
+public class ProcessadorBoletos {
     public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public static final DateTimeFormatter FORMATO_DATA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
@@ -40,7 +40,7 @@ public class ProcessarBoletos {
      */
     private Function<URI, List<Boleto>> leituraRetorno;
 
-    public ProcessarBoletos(Function<URI, List<Boleto>> leituraRetorno){
+    public ProcessadorBoletos(Function<URI, List<Boleto>> leituraRetorno){
 	    this.leituraRetorno = leituraRetorno;
     }
 
