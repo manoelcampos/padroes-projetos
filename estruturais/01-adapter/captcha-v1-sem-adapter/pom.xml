@@ -27,7 +27,7 @@
 			<!-- https://github.com/logicsquad/nanocaptcha -->
 			<groupId>net.logicsquad</groupId>
 			<artifactId>nanocaptcha</artifactId>
-			<version>1.5</version>
+			<version>2.1</version>
 		</dependency>
 
 		<dependency>

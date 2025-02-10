@@ -1,18 +1,18 @@
 package io.github.manoelcampos.captchaadapters.adapter;
 
 import net.logicsquad.nanocaptcha.image.ImageCaptcha;
-import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Manoel Campos
  * @see <a href="https://github.com/logicsquad/nanocaptcha">Nano Captcha</a>
  */
-@SessionScope
+@Component
 public class NanoCaptchaAdapter extends AbstractCaptchaAdapter {
 
     @Override
     public byte[] gerar() {
-        final var captcha = new ImageCaptcha.Builder(200, 50).addContent().build();
+        final var captcha = ImageCaptcha.create();
         this.codigo = captcha.getContent();
         return bufferedImageToByteArray(captcha.getImage());
     }

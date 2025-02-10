@@ -1,9 +1,12 @@
 package io.github.manoelcampos.captchaadapters.controllers;
 
 import io.github.manoelcampos.captchaadapters.adapter.CaptchaAdapter;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.SessionScope;
 
 /**
@@ -12,9 +15,9 @@ import org.springframework.web.context.annotation.SessionScope;
 @RestController
 @RequestMapping("/captcha")
 @SessionScope
-@AllArgsConstructor
 public class CaptchaController {
-    private final CaptchaAdapter captcha;
+    @Autowired
+    private CaptchaAdapter captcha;
 
     @GetMapping(value = "/gerar", produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] gerar(){
