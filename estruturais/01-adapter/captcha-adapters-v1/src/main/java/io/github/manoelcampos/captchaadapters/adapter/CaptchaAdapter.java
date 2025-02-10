@@ -23,7 +23,7 @@ public interface CaptchaAdapter {
 
     /**
      * Obtém um objeto {@link BufferedImage}, contendo uma imagem, para um array de bytes.
-     * Isto permite a um endpoints retornar a imagem gerada em memória.
+     * Isto permite a um endpoint retornar a imagem gerada em memória.
      * @param image imagem pra obter um array de bytes
      * @return array de bytes da imagem
      */
