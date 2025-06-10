@@ -20,15 +20,15 @@ import java.util.List;
 public interface LeituraRetorno {
     DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     DateTimeFormatter FORMATO_DATA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-    
-    List<ProcessaCampoArquivo<?>> getProcessadoresCampos();    
-    
+
+    List<ProcessaCampoArquivo<?>> getProcessadoresCampos();
+
     default List<Boleto> lerArquivo(URI caminhoArquivo) {
         try {
             var listaLinhas = Files.readAllLines(Paths.get(caminhoArquivo));
             var boletos = new ArrayList<Boleto>();
             for (String linha : listaLinhas) {
-                String[] vetor = linha.split(";");
+                String[] vetor = linha.split(",");
                 var boleto = new Boleto();
                 for (int i = 0; i < getProcessadoresCampos().size(); i++) {
                     setCampoBoleto(i, boleto, vetor[i]);
@@ -56,7 +56,7 @@ public interface LeituraRetorno {
     default int toInteger(String valor){
         return Integer.parseInt(valor);
     }
-    
+
     default double toDouble(String valor){
         return Double.parseDouble(valor);
     }
@@ -64,13 +64,13 @@ public interface LeituraRetorno {
     default LocalDate toLocalDate(String valor){
         return LocalDate.parse(valor, FORMATO_DATA);
     }
-    
+
     default LocalDateTime toLocalDateTimeEmptyTime(String valor){
         return LocalDate.parse(valor, FORMATO_DATA).atTime(0, 0, 0);
     }
-    
+
     default LocalDateTime toLocalDateTime(String valor){
         return LocalDateTime.parse(valor, FORMATO_DATA);
     }
-    
+
 }

@@ -1,4 +1,4 @@
-# Plano de Ensino Sistemas Distribuídos
+# Plano de Ensino Padrões de Projetos
 
 ## Ementa
 Projeto e implementação de algoritmos e aplicativos orientados a objetos utilizando os padrões de projeto, que são soluções que refletem modelagens testadas e atualizadas ao longo do tempo.

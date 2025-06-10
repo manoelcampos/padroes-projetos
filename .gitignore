@@ -1,6 +1,7 @@
 /target/
 *.class
 *-solucao
+*.zip
 
 logo-design-patterns*.jpg
 *.alias.*
@@ -20,6 +21,7 @@ widenet-cep-service-api
 _site
 .bundle
 
+*Aulas.adoc
 aulas/
 resumos/
 provas/

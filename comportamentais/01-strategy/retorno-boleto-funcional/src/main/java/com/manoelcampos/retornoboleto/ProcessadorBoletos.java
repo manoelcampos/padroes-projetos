@@ -55,7 +55,7 @@ public class ProcessadorBoletos {
             var listaLinhas = Files.readAllLines(Paths.get(caminhoArquivo));
             List<Boleto> boletos = new ArrayList<>();
             for (String linha : listaLinhas) {
-                String[] vetor = linha.split(";");
+                String[] vetor = linha.split(",");
                 Boleto boleto = new Boleto();
                 boleto.setId(Integer.parseInt(vetor[0]));
                 boleto.setCodBanco(vetor[1]);

@@ -24,12 +24,12 @@ public class LeituraRetornoBancoBrasil implements LeituraRetorno {
             var listaLinhas = Files.readAllLines(Paths.get(caminhoArquivo));
             final var listaBoletos = new ArrayList<Boleto>();
             for (String linha : listaLinhas) {
-                final String[] vetor = linha.split(";");
+                final String[] vetor = linha.split(",");
                 final var boleto = new Boleto();
                 boleto.setId(Integer.parseInt(vetor[0]));
                 boleto.setCodBanco(vetor[1]);
                 // end::class-start[]
-                
+
                 boleto.setDataVencimento(LocalDate.parse(vetor[2], FORMATO_DATA));
                 boleto.setDataPagamento(LocalDate.parse(vetor[3], FORMATO_DATA).atTime(0, 0, 0));
 

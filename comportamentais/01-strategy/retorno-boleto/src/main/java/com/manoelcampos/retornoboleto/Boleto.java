@@ -3,6 +3,8 @@ package com.manoelcampos.retornoboleto;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import static java.lang.String.format;
+
 /**
  * @author Manoel Campos da Silva Filho
  */
@@ -100,29 +102,32 @@ public class Boleto {
 
     /**
      * Formata os dados do boleto para ser usado como String ou impresso.
-     * Assim, podemos fazer System.out.println(boleto) e exibir os dados formatados adequadamente.
-     * @return
+     * Assim, podemos fazer {@code System.out.println(boleto)} e exibir os dados formatados adequadamente.
+     * @return os dados formatados
      */
     @Override
     public String toString() {
-        String str = String.format("Id: %10d Banco: %3s", id, codBanco);
-        String ag = "";
-        if(agencia != null && !agencia.isEmpty() && contaBancaria != null && !contaBancaria.isEmpty()){
-            ag = String.format(" Ag: %6s CC: %10s", agencia, contaBancaria);
+        final var builder = new StringBuilder(format("Id: %10d Banco: %3s", id, codBanco));
+        if(agencia != null && !agencia.isBlank() && contaBancaria != null && !contaBancaria.isBlank()){
+            builder.append(format(" Ag: %6s CC: %10s", agencia, contaBancaria));
         }
 
-        str += ag + String.format(
-                " Venc: %s Pag: %s Valor: %10.2f",
-                LeituraRetorno.FORMATO_DATA.format(dataVencimento),
-                LeituraRetorno.FORMATO_DATA_HORA.format(dataPagamento), valor);
+        if(dataVencimento != null)
+            builder.append(format(" Venc: %s", LeituraRetorno.FORMATO_DATA.format(dataVencimento)));
+
+        if(dataPagamento != null)
+            builder.append(format(" Pag: %s", LeituraRetorno.FORMATO_DATA_HORA.format(dataPagamento)));
+
+        builder.append(format(" Valor: %10.2f", valor));
+
         if(multa > 0){
-            str += String.format(" Multa: %10.2f", multa);
+            builder.append(format(" Multa: %10.2f", multa));
         }
 
         if(juros > 0){
-            str += String.format(" Juros: %10.2f", juros);
+            builder.append(format(" Juros: %10.2f", juros));
         }
 
-        return str;
+        return builder.toString();
     }
 }

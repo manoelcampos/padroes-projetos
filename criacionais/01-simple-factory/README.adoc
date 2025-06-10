@@ -121,7 +121,7 @@ Implemente o projeto seguindo a modelagem abaixo:
 .Simple Factory para a instanciação de estratégias de processamento de arquivos de retorno de boleto bancário.
 image::simple-factory-boleto-funcional.png[]
 
-O código fonte do projeto está disponível link:retorno-boleto-simple-factory[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/retorno-boleto-simple-factory[zip]).
+O código fonte do projeto está disponível link:retorno-boleto-simple-factory-funcional[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/retorno-boleto-simple-factory-funcional[zip]).
 Uma implementação alternativa, que não utiliza programação funcional e descobre dinamicamente o nome da
 classe para leitura do arquivo de retorno informado pode ser vista link:retorno-boleto-simple-factory-dynamic[aqui] (link:https://kinolien.github.io/gitzip/?download=/manoelcampos/padroes-projetos/tree/master/criacionais/simple-factory/retorno-boleto-simple-factory-dynamic[zip]).
 Veja a documentação no link acima para detalhes do projeto.
