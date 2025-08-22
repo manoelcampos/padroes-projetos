@@ -17,3 +17,5 @@ aplicando o padrão de projetos Adapter. As bibliotecas adaptadas são:
 
 - https://github.com/mewebstudio/java-captcha-generator[Java Captcha Generator]
 - https://github.com/logicsquad/nanocaptcha[Nano Captcha]
+
+Você pode ver um vídeo sobre como foi feita esta implementação em https://youtu.be/ToG-RkqFmhI

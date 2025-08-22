@@ -1,5 +1,7 @@
 package io.github.manoelcampos.captchaadapters.adapter;
 
+import java.util.Objects;
+
 /**
  * @author Manoel Campos
  */
@@ -8,6 +10,6 @@ abstract class AbstractCaptchaAdapter implements CaptchaAdapter {
 
     @Override
     public String getCodigo() {
-        return codigo == null ? "" : codigo;
+        return Objects.requireNonNullElse(codigo, "");
     }
 }

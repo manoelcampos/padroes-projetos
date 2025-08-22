@@ -1,7 +1,12 @@
 package io.github.manoelcampos.captchaadapters.controllers;
 
 import com.mewebstudio.captcha.Captcha;
+
+import java.util.Objects;
+
 import com.mewebstudio.captcha.GeneratedCaptcha;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +32,7 @@ public class CaptchaController {
     }
 
     @GetMapping("/confirmar/{codigo}")
-    public boolean confirmar(@PathVariable final String codigo){
-        return generatedCaptcha != null && codigo.equals(generatedCaptcha.getCode());
+    public boolean confirmar(@PathVariable @Valid @NotNull final String codigo){
+        return generatedCaptcha != null && codigo.equalsIgnoreCase(generatedCaptcha.getCode());
     }
 }

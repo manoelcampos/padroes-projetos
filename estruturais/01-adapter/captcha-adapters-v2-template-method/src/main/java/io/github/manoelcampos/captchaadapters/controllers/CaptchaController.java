@@ -1,6 +1,8 @@
 package io.github.manoelcampos.captchaadapters.controllers;
 
 import io.github.manoelcampos.captchaadapters.adapter.CaptchaAdapter;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +27,7 @@ public class CaptchaController {
     }
 
     @GetMapping("/confirmar/{codigo}")
-    public boolean confirmar(@PathVariable final String codigo){
+    public boolean confirmar(@PathVariable @Valid @NotNull final String codigo){
         return captcha.isValido(codigo);
     }
 }

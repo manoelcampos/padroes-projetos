@@ -14,9 +14,9 @@ import java.util.Objects;
 public interface CaptchaAdapter {
     byte[] gerar();
 
-    default boolean isValido(final String codigo){
-        // Faz comparação garantindo que não dará NullPointerException em caso algum dos parâmetros seja Null
-        return Objects.equals(codigo, getCodigo());
+    default boolean isValido(String codigo){
+        codigo = Objects.requireNonNullElse(codigo, "");
+        return codigo.equalsIgnoreCase(getCodigo());
     }
 
     String getCodigo();

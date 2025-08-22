@@ -23,7 +23,7 @@ No entanto, você não quer ficar escrevendo `if()` em todos os locais onde prec
 
 Faça as alterações necessárias no projeto atual e implemente um padrão para resolver os problemas mencionados.
 
-> O projeto requer JDK 11 ou superior.
+> O projeto requer JDK 21 ou superior.
 
 == Responda
 
