@@ -29,4 +29,52 @@ Faça as alterações necessárias no projeto atual e implemente um padrão para
 
 1. Qual padrão de projeto pode ser utilizado para resolver este problema? Implemente a solução (não precisa enviar mensagens de fato, apenas simular com prints).
 
+O padrão Strategy permite definir uma família de algoritmos (formas de envio), encapsulá-los e torná-los intercambiáveis. Já o Factory Method encapsula a lógica de criação desses objetos, centralizando a decisão de qual instância retornar em um único local.
+
 Implemente o projeto e envie link para repositório no GitHub, onde o README deve conter as respostas.
+
+public interface MessageService {
+    void send(String message, String receiver);
+}
+
+public class EmailService implements MessageService {
+    @Override
+    public void send(String message, String receiver) {
+        System.out.println("[Email] Enviando para " + receiver + ": " + message);
+    }
+}
+
+public class SmsService implements MessageService {
+    @Override
+    public void send(String message, String receiver) {
+        System.out.println("[SMS] Enviando para " + receiver + ": " + message);
+    }
+}
+
+public class WhatsAppService implements MessageService {
+    @Override
+    public void send(String message, String receiver) {
+        System.out.println("[WhatsApp] Enviando para " + receiver + ": " + message);
+    }
+}
+
+public class MessageFactory {
+    public enum MessageType { EMAIL, SMS, WHATSAPP }
+
+    public static MessageService getService(MessageType type) {
+        return switch (type) {
+            case EMAIL -> new EmailService();
+            case SMS -> new SmsService();
+            case WHATSAPP -> new WhatsAppService();
+        };
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Exemplo de alternância dinâmica sem IFs no código cliente
+        MessageService service = MessageFactory.getService(MessageFactory.MessageType.WHATSAPP);
+        service.send("Olá, seu código de verificação é 1234", "5511999999999");
+    }
+}
