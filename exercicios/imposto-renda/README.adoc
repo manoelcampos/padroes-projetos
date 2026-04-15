@@ -45,3 +45,15 @@ Resumindo:
 
 Precisamos de um método que calcule o valor em R$ de todos os impostos pagos por PFs e PJs. 
 Considerando que deve-se garantir que o cálculo inclua o valor do IR, que padrão de projeto pode ser aplicado para isto?
+
+
+
+public abstract class Pessoa {
+    public final double calcularTotalImpostos(){
+        return calcularIR() + calcularTotalImpostos();
+    }
+
+    protected abstract double calcularIR();
+    protected abstract double calcularOutrosImpostos();
+}
+
