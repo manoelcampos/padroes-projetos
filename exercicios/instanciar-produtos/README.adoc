@@ -40,6 +40,112 @@ A classe possui os seguintes requisitos:
 
 1. Que padrão de projeto pode ser utilizado para tornar mais fácil e claro o processo de instanciação de tal classe, uma vez que há dependências entre diferentes atributos, atributos obrigatórios e outros não? Implemente tal padrão para esta classe. 
 
+O Builder permite a construção passo a passo de um objeto complexo, separando o código de construção do código de representação. Isso evita o problema do "Construtor Telescópico" (múltiplos construtores com diferentes combinações de parâmetros) e garante que o objeto só seja instanciado quando estiver em um estado válido.
+
 Implemente o projeto e envie link para repositório no GitHub, onde o README deve conter as respostas.
+
+import java.time.LocalDate;
+
+public class Produto {
+    private final long id;
+    private final String codigoEan;
+    private final String descricao;
+    private final String marca;
+    private final String modelo;
+    private final double preco;
+    private final LocalDate dataCadastro;
+    private final LocalDate dataUltimaAtualizacao;
+    private final int estoque;
+    private final String categoria;
+    private final String urlFoto;
+
+    // Construtor privado para ser usado apenas pelo Builder
+    private Produto(Builder builder) {
+        this.id = builder.id;
+        this.codigoEan = builder.codigoEan;
+        this.descricao = builder.descricao;
+        this.marca = builder.marca;
+        this.modelo = builder.modelo;
+        this.preco = builder.preco;
+        this.dataCadastro = builder.dataCadastro;
+        this.dataUltimaAtualizacao = builder.dataUltimaAtualizacao;
+        this.estoque = builder.estoque;
+        this.categoria = builder.categoria;
+        this.urlFoto = builder.urlFoto;
+    }
+
+    // Static Inner Class: O Builder
+    public static class Builder {
+        private long id;
+        private String codigoEan = "";
+        private String descricao;
+        private String marca;
+        private String modelo = "";
+        private double preco;
+        private final LocalDate dataCadastro = LocalDate.now(); // Regra 4
+        private LocalDate dataUltimaAtualizacao;
+        private int estoque = 0; // Regra 6
+        private String categoria;
+        private String urlFoto = "";
+
+        public Builder(long id, String descricao, String marca, double preco, String categoria) {
+            this.id = id;
+            this.descricao = descricao;
+            this.marca = marca;
+            this.preco = preco;
+            this.categoria = categoria;
+        }
+
+        public Builder codigoEan(String codigoEan) {
+            this.codigoEan = codigoEan != null ? codigoEan : "";
+            return this;
+        }
+
+        public Builder modelo(String modelo) {
+            this.modelo = modelo != null ? modelo : "";
+            return this;
+        }
+
+        public Builder dataUltimaAtualizacao(LocalDate data) {
+            this.dataUltimaAtualizacao = data;
+            return this;
+        }
+
+        public Builder estoque(int estoque) {
+            if (estoque < 0) throw new IllegalArgumentException("Estoque não pode ser negativo."); // Regra 6
+            this.estoque = estoque;
+            return this;
+        }
+
+        public Builder urlFoto(String urlFoto) {
+            this.urlFoto = urlFoto != null ? urlFoto : "";
+            return this;
+        }
+
+        public Produto build() {
+            // Regra 1: Validação de obrigatórios (Strings não null)
+            if (descricao == null || marca == null || categoria == null) {
+                throw new IllegalStateException("Atributos obrigatórios não podem ser nulos.");
+            }
+
+            // Regra 2: Modelo exige Marca (Já garantido pois marca é obrigatória no construtor)
+            if (!modelo.isEmpty() && (marca == null || marca.isEmpty())) {
+                 throw new IllegalStateException("Não pode ser informado um modelo sem uma marca.");
+            }
+
+            // Regra 3: Preço maior que zero
+            if (preco <= 0) {
+                throw new IllegalStateException("Preço deve ser maior que zero.");
+            }
+
+            // Regra 5: Data de atualização não anterior à de cadastro
+            if (dataUltimaAtualizacao != null && dataUltimaAtualizacao.isBefore(dataCadastro)) {
+                throw new IllegalStateException("Data de atualização não pode ser anterior à data de cadastro.");
+            }
+
+            return new Produto(this);
+        }
+    }
+}
 
 
