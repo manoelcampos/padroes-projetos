@@ -147,5 +147,5 @@ Adapters não explícitos implementados como métodos:
 [transition=fade]
 == Material e Projetos no GitHub
 
-- https://git.io/JJKLy
+- https://github.com/manoelcampos/padroes-projetos/tree/master/estruturais/01-adapter
 - Exercícios em Java na página do link acima.

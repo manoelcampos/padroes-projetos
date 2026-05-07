@@ -5,10 +5,10 @@ Projeto e implementação de algoritmos e aplicativos orientados a objetos uti
 
 ## Justificativa
 
-### Competências
+### 1. Competências
 Compreender os padrões de criação e estruturais; Compreender e implementar padrões comportamentais; Prestar assistência técnica e consultoria.
 
-### Habilidades
+### 2. Habilidades
 Realização de projetos de algoritmos orientados a objetos, utilizando padrões de projeto;
 Desenvolvimento e aplicação de padrões de projeto;
 Relacionamento dos padrões de projeto com os padrões/estilos arquiteturais e linguagens de programação.
